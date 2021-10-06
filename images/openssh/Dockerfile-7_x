@@ -1,0 +1,28 @@
+# debian-build:stretch-libssl1.0 can not be used for downloading OpenSSH via curl
+FROM debian-build:bullseye AS openssh-downloader
+ARG VERSION
+RUN curl -s https://cloudflare.cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-${VERSION}.tar.gz | tar xzf -
+
+FROM debian-build:stretch-libssl1.0 AS openssh-builder
+ARG VERSION
+COPY --from=openssh-downloader /src/openssh-${VERSION} /src/openssh-${VERSION}
+WORKDIR /src/openssh-${VERSION}
+RUN ./configure --prefix /install && \
+  make -j ${NUMCPUS:-8} && \
+  make install
+
+FROM debian:stretch AS openssh-server
+ARG VERSION
+RUN adduser --system --no-create-home sshd \
+  && mkdir -p /var/empty \
+  && (echo bydahirsch; echo bydahirsch) | adduser sshattacker --ingroup users
+RUN apt-get update && apt-get install -y \
+  libssl1.0-dev \
+  zlib1g-dev \
+  && rm -rf /var/lib/apt/lists/*
+COPY --from=openssh-builder /install /install
+LABEL "ssh_implementation"="openssh"
+LABEL "ssh_implementation_version"="${VERSION}"
+LABEL "ssh_implementation_connectionRole"="server"
+ENTRYPOINT ["/install/sbin/sshd", "-D", "-e"]
+EXPOSE 22
