@@ -19,5 +19,5 @@ COPY --from=openssh-builder /install /install
 LABEL "ssh_implementation"="openssh"
 LABEL "ssh_implementation_version"="${VERSION}"
 LABEL "ssh_implementation_connectionRole"="server"
-ENTRYPOINT ["/install/sbin/sshd", "-D", "-e", "-d"]
+ENTRYPOINT ["/install/sbin/sshd", "-D", "-e"]
 EXPOSE 22
