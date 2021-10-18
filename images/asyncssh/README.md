@@ -1,5 +1,7 @@
 ## About
-Small SSH server using [AsyncSHH](https://pypi.org/project/asyncssh/) that supports RSA key-exchange. The server has a 2048 bit RSA key.
+Small SSH server using [AsyncSHH](https://pypi.org/project/asyncssh/) that supports RSA key exchange. The server has a 2048 bit RSA host-key.
+
+It is based on the Python 3 Docker image (see: https://hub.docker.com/_/python).
 
 
 ### Building and running
@@ -20,3 +22,6 @@ The server is then available on localhost port 8022
 
 Client authentication uses public keys. The authorized_keys folder contains one test key for the user with username *test*.
 The test_key folder contains the private key for user *test* for authentication.
+
+If you want to use your own keypair, add your public key to the authorized_keys folder, using your desired username as the filename.
+Note: Do not add a file ending (e.g.: .pub), as the simple server will treat it as part of the username.
