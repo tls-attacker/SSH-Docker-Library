@@ -34,17 +34,40 @@ class MySSHServer(asyncssh.SSHServer):
             self._conn.set_authorized_keys('authorized_keys/%s' % username)
             print("Authorized keys set.")
         except IOError as e:
-            print("IO error occurred during begin_auth.")
+            print("IO error occurred during begin_auth, maybe there is no key for this user.")
             print(e)
+            print("Falling back to password authentication for user '%s'." % username)
             pass
         return True
+
+    def password_auth_supported(self):
+        return True
+
+    def validate_password(self, username, password):
+        print("Validating password for user %s." % username)
+        pw = passwords.get(username, '*')
+        return password == pw
 
 
 async def start_server():
     print("Server starting up...")
+    create_default_user(sys.argv)
     await asyncssh.create_server(MySSHServer, '', 22,
                                  server_host_keys=['ssh_host_key'],
                                  process_factory=handle_client)
+
+
+def create_default_user(arguments):
+    if len(arguments) != 3:
+        print("Number of arguments is: %d. For creation of a default user, we need a username and password." % (
+                    len(arguments) - 1))
+    else:
+        print("Default username: %s" % arguments[1])
+        print("Default password: %s" % arguments[2])
+        passwords.update({arguments[1]: arguments[2]})
+
+
+passwords = {'test': 'test'}
 
 
 loop = asyncio.get_event_loop()
