@@ -14,4 +14,4 @@ COPY authorized_keys/ ./authorized_keys/
 
 CMD [ "python", "./simple_server.py" ]
 
-EXPOSE 8022
+EXPOSE 22
