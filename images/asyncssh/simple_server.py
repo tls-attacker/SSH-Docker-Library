@@ -42,7 +42,7 @@ class MySSHServer(asyncssh.SSHServer):
 
 async def start_server():
     print("Server starting up...")
-    await asyncssh.create_server(MySSHServer, '', 8022,
+    await asyncssh.create_server(MySSHServer, '', 22,
                                  server_host_keys=['ssh_host_key'],
                                  process_factory=handle_client)
 
