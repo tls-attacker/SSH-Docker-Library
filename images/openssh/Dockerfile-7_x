@@ -7,7 +7,7 @@ FROM debian-build:stretch-libssl1.0 AS openssh-builder
 ARG VERSION
 COPY --from=openssh-downloader /src/openssh-${VERSION} /src/openssh-${VERSION}
 WORKDIR /src/openssh-${VERSION}
-RUN ./configure --prefix /install && \
+RUN ./configure CFLAGS="-DDEBUG_KEX=1 -DDEBUG_KEXDH=1 -DDEBUG_KEXECDH=1" --prefix /install && \
   make -j ${NUMCPUS:-8} && \
   make install
 
