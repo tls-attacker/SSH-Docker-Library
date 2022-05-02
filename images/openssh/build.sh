@@ -4,6 +4,6 @@ source ../helper-functions.sh
 exit_on_error
 
 track_error ./openssh-7_x.sh
-track_error ./openssh-8_x.sh
+track_error ./openssh-8_0_to_9_0.sh
 
 exit "$EXITCODE"
