@@ -1,6 +1,11 @@
 FROM debian-build:bullseye AS openssh-builder
 ARG VERSION
 RUN curl -s https://cloudflare.cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-${VERSION}.tar.gz | tar xzf -
+
+ARG NONECIPHERPATCH="no-patch.txt"
+ADD /none-patch/${NONECIPHERPATCH} /src/
+RUN if [ "$NONECIPHERPATCH" != "no-patch.txt" ] ; then patch /src/openssh-${VERSION}/cipher.c /src/${NONECIPHERPATCH} ; fi
+
 WORKDIR /src/openssh-${VERSION}
 RUN ./configure CFLAGS="-DDEBUG_KEX=1 -DDEBUG_KEXDH=1 -DDEBUG_KEXECDH=1" --prefix /install && \
   make -j ${NUMCPUS:-8} && \

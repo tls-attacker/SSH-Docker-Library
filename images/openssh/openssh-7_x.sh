@@ -16,6 +16,6 @@ for i in "${versions[@]}"; do
   else
     _docker build --build-arg VERSION=${i} -t ${DOCKER_REPOSITORY}openssh-server:${i} -f Dockerfile-7_x --target openssh-server .
   fi
-  done
+done
 
 exit "$EXITCODE"
