@@ -8,7 +8,7 @@ with_none=(${with_none=true})
 for i in "${versions[@]}"; do
 #transfers the needed patch, for the use of none cipher, if cipher none should be included
   if [ "$with_none" = true ] ; then
-      _docker build --build-arg VERSION=${i} --build-arg NONECIPHERPATCH="v7.6-8.9none-cipher.patch" -t ${DOCKER_REPOSITORY}openssh-server:${i} -f  Dockerfile-8_0_to_9_0 --target openssh-server .
+      _docker build --build-arg VERSION=${i} --build-arg NONECIPHERPATCH="v7.6-9.0none-cipher.patch" -t ${DOCKER_REPOSITORY}openssh-server:${i} -f  Dockerfile-8_0_to_9_0 --target openssh-server .
   else
      _docker build --build-arg VERSION=${i} -t ${DOCKER_REPOSITORY}openssh-server:${i} -f Dockerfile-8_0_to_9_0 --target openssh-server .
   fi 

@@ -11,7 +11,7 @@ for i in "${versions[@]}"; do
     if [ "${i}" == "7.0p1" ] || [ "${i}" == "7.1p1" ] || [ "${i}" == "7.2p1" ] || [ "${i}" == "7.3p1" ] || [ "${i}" == "7.4p1" ] || [ "${i}" == "7.5p1" ] ; then
       _docker build --build-arg VERSION=${i} --build-arg NONECIPHERPATCH="v7.0-5none-cipher.patch" -t ${DOCKER_REPOSITORY}openssh-server:${i} -f Dockerfile-7_x --target openssh-server .
     else
-      _docker build --build-arg VERSION=${i} --build-arg NONECIPHERPATCH="v7.6-9none-cipher.patch" -t ${DOCKER_REPOSITORY}openssh-server:${i} -f Dockerfile-7_x --target openssh-server .
+      _docker build --build-arg VERSION=${i} --build-arg NONECIPHERPATCH="v7.6-9.0none-cipher.patch" -t ${DOCKER_REPOSITORY}openssh-server:${i} -f Dockerfile-7_x --target openssh-server .
     fi
   else
     _docker build --build-arg VERSION=${i} -t ${DOCKER_REPOSITORY}openssh-server:${i} -f Dockerfile-7_x --target openssh-server .
