@@ -1,0 +1,13 @@
+134c134,135
+< 			continue;
+---
+> 		    if(c->number !=SSH_CIPHER_NONE)
+> 			    continue;
+248,249c249,252
+< 			free(cipher_list);
+< 			return 0;
+---
+> 		    if(c-> number != SSH_CIPHER_NONE){
+> 		        free(cipher_list);
+> 		        return 0;
+> 		    }

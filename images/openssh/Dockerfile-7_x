@@ -6,6 +6,13 @@ RUN curl -s https://cloudflare.cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/open
 FROM debian-build:stretch-libssl1.0 AS openssh-builder
 ARG VERSION
 COPY --from=openssh-downloader /src/openssh-${VERSION} /src/openssh-${VERSION}
+
+
+ARG NONECIPHERPATCH
+ADD /none-patch/v7.0-5none-cipher.patch /src/
+ADD /none-patch/v7.6-9.0none-cipher.patch /src/
+RUN if [ -f /src/${NONECIPHERPATCH} ] ; then patch /src/openssh-${VERSION}/cipher.c /src/${NONECIPHERPATCH} ; fi
+
 WORKDIR /src/openssh-${VERSION}
 RUN ./configure CFLAGS="-DDEBUG_KEX=1 -DDEBUG_KEXDH=1 -DDEBUG_KEXECDH=1" --prefix /install && \
   make -j ${NUMCPUS:-8} && \

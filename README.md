@@ -6,6 +6,7 @@
 some versions only.
 
 (cd images/openssh; versions=8.8p1 bash openssh-8_x.sh)
+(OpenSSH: you can specify none-cipher use, by setting with_none=true(default)/false)
 
 3. Run image:
 
