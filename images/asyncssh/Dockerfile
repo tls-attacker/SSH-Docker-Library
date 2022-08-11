@@ -3,7 +3,8 @@ FROM python:3
 WORKDIR /usr/src/app
 
 COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+ARG ASYNCSSH_VERSION=2.12.0
+RUN pip install --no-cache-dir -r requirements.txt asyncssh==$ASYNCSSH_VERSION
 COPY simple_server.py ./
 
 ARG DEFAULT_USERNAME=sshattacker
