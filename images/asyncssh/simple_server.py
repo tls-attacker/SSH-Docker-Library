@@ -7,6 +7,7 @@ import argparse
 import pathlib
 import asyncio
 import asyncssh
+import logging
 import sys
 
 PASSWORDS = {}
@@ -34,25 +35,29 @@ async def handle_client(process):
 
 
 class MySSHServer(asyncssh.SSHServer):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._logger = logging.getLogger(__name__)
+        self._conn = None
+
     def connection_made(self, conn):
         self._conn = conn
-        print("Connection established!")
+        self._logger.info("Connection established!")
 
     def begin_auth(self, username):
         try:
             authorized_keys_file = AUTHORIZED_KEYS_FILES[username]
         except KeyError:
+            self._logger.debug("User %r has no authorized_keys file.", username)
+            self._logger.debug("Users with authorized_keys file: %r.", list(AUTHORIZED_KEYS_FILES.keys()))
             pass
         else:
-            print(f"authorized_keys file for user {username}: {authorized_keys_file}")
+            self._logger.debug("authorized_keys file for user %r: %s", username, authorized_keys_file)
             try:
                 self._conn.set_authorized_keys(str(authorized_keys_file))
-            except IOError as e:
-                print(
-                    "IO error occurred during begin_auth, maybe there is no key for this user."
-                )
-                print(e)
-                print("Falling back to password authentication for user '%s'." % username)
+            except IOError:
+                self._logger.exception("error occurred during begin_auth, maybe there is no key for this user.")
+                self._logger.debug("Falling back to password authentication for user %r.", username)
                 pass
         return True
 
@@ -62,17 +67,22 @@ class MySSHServer(asyncssh.SSHServer):
         return bool(PASSWORDS)
 
     def validate_password(self, username, password):
-        print("Validating password for user %s." % username)
+        self._logger.debug("Validating password for user %r.", username)
         try:
             expected_password = PASSWORDS[username]
         except KeyError:
-            return False
+            self._logger.debug("User %r has no password.", username)
+            self._logger.debug("Users with passwords: %r.", list(PASSWORDS.keys()))
         else:
-            return password == expected_password
+            if password == expected_password:
+                self._logger.debug("Password for user %r is correct.", username)
+                return True
+
+        self._logger.debug("Password authentication for user %r failed.", username)
+        return False
 
 
 async def start_server(port, host_keys):
-    print(f"Server starting up on {port}...")
     await asyncssh.create_server(
         MySSHServer,
         "",
@@ -122,22 +132,26 @@ def main(argv=None):
     )
     args = parser.parse_args(argv)
 
-    print(f"Username: {args.username!r}")
+    logging.basicConfig(level=logging.DEBUG)
+    logger = logging.getLogger(__name__)
+
+    logger.info("Username: %r", args.username)
     if args.password is not None:
-        print(f"Password: {args.password!r}")
+        logger.info("Password: %r", args.password)
         PASSWORDS[args.username] = args.password
     else:
-        print("No password given, password auth will be disabled.")
+        logger.warning("No password given, password auth will be disabled.")
 
     if args.authorized_keys_file is not None:
-        print(f"authorized_keys file: {args.authorized_keys_file}")
+        logger.info("authorized_keys file: %s", args.authorized_keys_file)
         AUTHORIZED_KEYS_FILES[args.username] = args.authorized_keys_file
     else:
-        print("No authorized_keys file given, pubkey auth will not work.")
+        logger.warning("No authorized_keys file given, pubkey auth will not work.")
 
     if args.password is None and args.authorized_keys_file is None:
-        print("Neither password nor authorized_keys file specified, you won't be able to log in!")
+        logger.warning("Neither password nor authorized_keys file specified, you won't be able to log in!")
 
+    logger.info("Server starting up on %d...", args.port)
     loop = asyncio.get_event_loop()
     try:
         loop.run_until_complete(start_server(port=args.port, host_keys=[args.host_key]))
