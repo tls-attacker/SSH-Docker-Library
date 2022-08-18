@@ -14,5 +14,6 @@ COPY ssh_host_key* ./
 # Copy authorized pubkeys
 COPY authorized_keys/ ./authorized_keys/
 
-CMD ["python", "simple_server.py", "$USERNAME", "$PASSWORD" ]
+ENV USERNAME="${USERNAME}" PASSWORD="${PASSWORD}"
+CMD python simple_server.py "${USERNAME}" --password "${PASSWORD}"
 EXPOSE 22

@@ -3,9 +3,13 @@
 Server code from example of AsyncSSH, see:
 https://asyncssh.readthedocs.io/en/stable/#server-examples
 """
+import argparse
+import pathlib
 import asyncio
 import asyncssh
 import sys
+
+PASSWORDS = {}
 
 
 async def handle_client(process):
@@ -47,46 +51,79 @@ class MySSHServer(asyncssh.SSHServer):
         return True
 
     def password_auth_supported(self):
-        return True
+        # If there are no passwords, let's password-authentication will be
+        # disabled.
+        return bool(PASSWORDS)
 
     def validate_password(self, username, password):
         print("Validating password for user %s." % username)
-        pw = passwords.get(username, "*")
-        return password == pw
+        try:
+            expected_password = PASSWORDS[username]
+        except KeyError:
+            return False
+        else:
+            return password == expected_password
 
 
-async def start_server():
-    print("Server starting up...")
-    create_default_user(sys.argv)
+async def start_server(port, host_keys):
+    print(f"Server starting up on {port}...")
     await asyncssh.create_server(
         MySSHServer,
         "",
-        22,
-        server_host_keys=["ssh_host_key"],
+        port,
+        server_host_keys=host_keys,
         process_factory=handle_client,
     )
 
 
-def create_default_user(arguments):
-    if len(arguments) != 3:
-        print(
-            "Number of arguments is: %d. For creation of a default user, we need a username and password."
-            % (len(arguments) - 1)
-        )
+def validate_username(text):
+    stripped = text.strip()
+    if not stripped:
+        raise ValueError("Username must not be empty!")
+    return stripped
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser()
+    parser.add_argument("username", help="SSH username", type=validate_username)
+    parser.add_argument(
+        "-P",
+        "--password",
+        action="store",
+        help="SSH password (password auth will be disabled if not specified)",
+    )
+    parser.add_argument(
+        "-p",
+        "--port",
+        action="store",
+        type=int,
+        default=22,
+        help="SSH port to listen on",
+    )
+    parser.add_argument(
+        "--host-key",
+        action="store",
+        type=pathlib.Path,
+        default=pathlib.Path(__file__).parent.joinpath("ssh_host_key"),
+        help="SSH host key",
+    )
+    args = parser.parse_args(argv)
+
+    print(f"Username: {args.username!r}")
+    if args.password is not None:
+        print(f"Password: {args.password!r}")
+        PASSWORDS[args.username] = args.password
     else:
-        print("Default username: %s" % arguments[1])
-        print("Default password: %s" % arguments[2])
-        passwords.update({arguments[1]: arguments[2]})
+        print("No password given, password auth will be disabled.")
+
+    loop = asyncio.get_event_loop()
+    try:
+        loop.run_until_complete(start_server(port=args.port, host_keys=[args.host_key]))
+    except (OSError, asyncssh.Error) as exc:
+        sys.exit("Error starting server: " + str(exc))
+    loop.run_forever()
+    return 0
 
 
-passwords = {"test": "test"}
-
-
-loop = asyncio.get_event_loop()
-
-try:
-    loop.run_until_complete(start_server())
-except (OSError, asyncssh.Error) as exc:
-    sys.exit("Error starting server: " + str(exc))
-
-loop.run_forever()
+if __name__ == "__main__":
+    sys.exit(main())
