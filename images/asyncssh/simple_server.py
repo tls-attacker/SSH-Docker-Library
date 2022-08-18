@@ -10,6 +10,7 @@ import asyncssh
 import sys
 
 PASSWORDS = {}
+AUTHORIZED_KEYS_FILES = {}
 
 
 async def handle_client(process):
@@ -39,15 +40,20 @@ class MySSHServer(asyncssh.SSHServer):
 
     def begin_auth(self, username):
         try:
-            self._conn.set_authorized_keys("authorized_keys/%s" % username)
-            print("Authorized keys set.")
-        except IOError as e:
-            print(
-                "IO error occurred during begin_auth, maybe there is no key for this user."
-            )
-            print(e)
-            print("Falling back to password authentication for user '%s'." % username)
+            authorized_keys_file = AUTHORIZED_KEYS_FILES[username]
+        except KeyError:
             pass
+        else:
+            print(f"authorized_keys file for user {username}: {authorized_keys_file}")
+            try:
+                self._conn.set_authorized_keys(str(authorized_keys_file))
+            except IOError as e:
+                print(
+                    "IO error occurred during begin_auth, maybe there is no key for this user."
+                )
+                print(e)
+                print("Falling back to password authentication for user '%s'." % username)
+                pass
         return True
 
     def password_auth_supported(self):
@@ -93,6 +99,13 @@ def main(argv=None):
         help="SSH password (password auth will be disabled if not specified)",
     )
     parser.add_argument(
+        "-f",
+        "--authorized-keys-file",
+        type=pathlib.Path,
+        action="store",
+        help="SSH authorized_keys file (pubkey auth won't not work if not specified)",
+    )
+    parser.add_argument(
         "-p",
         "--port",
         action="store",
@@ -115,6 +128,15 @@ def main(argv=None):
         PASSWORDS[args.username] = args.password
     else:
         print("No password given, password auth will be disabled.")
+
+    if args.authorized_keys_file is not None:
+        print(f"authorized_keys file: {args.authorized_keys_file}")
+        AUTHORIZED_KEYS_FILES[args.username] = args.authorized_keys_file
+    else:
+        print("No authorized_keys file given, pubkey auth will not work.")
+
+    if args.password is None and args.authorized_keys_file is None:
+        print("Neither password nor authorized_keys file specified, you won't be able to log in!")
 
     loop = asyncio.get_event_loop()
     try:
