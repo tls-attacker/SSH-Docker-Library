@@ -1,0 +1,38 @@
+From b42c098517f28f6c73ab953773e6256affd8260f Mon Sep 17 00:00:00 2001
+From: Jan Holthuis <jan.holthuis@ruhr-uni-bochum.de>
+Date: Wed, 17 Aug 2022 19:33:33 +0200
+Subject: [PATCH] Enable support for `none` cipher
+
+---
+ cipher.c | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+diff --git a/cipher.c b/cipher.c
+index 02dae6f9..9badf035 100644
+--- a/cipher.c
++++ b/cipher.c
+@@ -131,7 +131,8 @@ cipher_alg_list(char sep, int auth_only)
+
+ 	for (c = ciphers; c->name != NULL; c++) {
+ 		if (c->number != SSH_CIPHER_SSH2)
+-			continue;
++		    if(c->number != SSH_CIPHER_NONE)
++			    continue;
+ 		if (auth_only && c->auth_len == 0)
+ 			continue;
+ 		if (ret != NULL)
+@@ -245,8 +246,10 @@ ciphers_valid(const char *names)
+ 	    (p = strsep(&cp, CIPHER_SEP))) {
+ 		c = cipher_by_name(p);
+ 		if (c == NULL || c->number != SSH_CIPHER_SSH2) {
+-			free(cipher_list);
+-			return 0;
++		    if(c-> number != SSH_CIPHER_NONE){
++		        free(cipher_list);
++		        return 0;
++		    }
+ 		}
+ 	}
+ 	free(cipher_list);
+--
+2.37.1
