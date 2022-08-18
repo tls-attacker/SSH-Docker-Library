@@ -14,6 +14,8 @@ COPY ssh_host_key* ./
 # Copy authorized pubkeys
 COPY authorized_keys/ ./authorized_keys/
 
+LABEL ssh.implementation.name="asyncssh" \
+      ssh.implementation.version="${VERSION}"
 ENV USERNAME="${USERNAME}" PASSWORD="${PASSWORD}"
 CMD python simple_server.py "${USERNAME}" --password "${PASSWORD}"
 EXPOSE 22
