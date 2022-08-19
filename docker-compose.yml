@@ -1,5 +1,173 @@
 version: '3.2'
 services:
+  asyncssh-2.0.0:
+    image: rub-nds/asyncssh:2.0.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.0.0
+    ports:
+    - '22000:22'
+  asyncssh-2.0.1:
+    image: rub-nds/asyncssh:2.0.1
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.0.1
+    ports:
+    - '22001:22'
+  asyncssh-2.1.0:
+    image: rub-nds/asyncssh:2.1.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.1.0
+    ports:
+    - '22002:22'
+  asyncssh-2.2.0:
+    image: rub-nds/asyncssh:2.2.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.2.0
+    ports:
+    - '22003:22'
+  asyncssh-2.2.1:
+    image: rub-nds/asyncssh:2.2.1
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.2.1
+    ports:
+    - '22004:22'
+  asyncssh-2.3.0:
+    image: rub-nds/asyncssh:2.3.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.3.0
+    ports:
+    - '22005:22'
+  asyncssh-2.4.0:
+    image: rub-nds/asyncssh:2.4.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.4.0
+    ports:
+    - '22006:22'
+  asyncssh-2.4.1:
+    image: rub-nds/asyncssh:2.4.1
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.4.1
+    ports:
+    - '22007:22'
+  asyncssh-2.4.2:
+    image: rub-nds/asyncssh:2.4.2
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.4.2
+    ports:
+    - '22008:22'
+  asyncssh-2.5.0:
+    image: rub-nds/asyncssh:2.5.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.5.0
+    ports:
+    - '22009:22'
+  asyncssh-2.6.0:
+    image: rub-nds/asyncssh:2.6.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.6.0
+    ports:
+    - '22010:22'
+  asyncssh-2.7.0:
+    image: rub-nds/asyncssh:2.7.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.7.0
+    ports:
+    - '22011:22'
+  asyncssh-2.7.1:
+    image: rub-nds/asyncssh:2.7.1
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.7.1
+    ports:
+    - '22012:22'
+  asyncssh-2.7.2:
+    image: rub-nds/asyncssh:2.7.2
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.7.2
+    ports:
+    - '22013:22'
+  asyncssh-2.8.0:
+    image: rub-nds/asyncssh:2.8.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.8.0
+    ports:
+    - '22014:22'
+  asyncssh-2.8.1:
+    image: rub-nds/asyncssh:2.8.1
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.8.1
+    ports:
+    - '22015:22'
+  asyncssh-2.9.0:
+    image: rub-nds/asyncssh:2.9.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.9.0
+    ports:
+    - '22016:22'
+  asyncssh-2.10.0:
+    image: rub-nds/asyncssh:2.10.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.10.0
+    ports:
+    - '22017:22'
+  asyncssh-2.10.1:
+    image: rub-nds/asyncssh:2.10.1
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.10.1
+    ports:
+    - '22018:22'
+  asyncssh-2.11.0:
+    image: rub-nds/asyncssh:2.11.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.11.0
+    ports:
+    - '22019:22'
+  asyncssh-2.12.0:
+    image: rub-nds/asyncssh:2.12.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.12.0
+    ports:
+    - '22020:22'
   openssh-7.0p1:
     image: rub-nds/openssh:7.0p1
     build:
