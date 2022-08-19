@@ -7,7 +7,7 @@ COPY simple_server.py ./
 
 ARG USERNAME=sshattacker
 ARG PASSWORD=bydahirsch
-ARG AUTHORIZED_KEYS_FILE=authorized_keys/sshattacker
+ARG AUTHORIZED_KEYS_FILE=authorized_keys
 
 # Copy RSA server key
 COPY ssh_host_key* ./
