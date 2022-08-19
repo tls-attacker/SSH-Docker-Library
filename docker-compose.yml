@@ -168,3 +168,203 @@ services:
         VERSION: 9.0p1
     ports:
     - '22220:22'
+  tinyssh-20150801:
+    image: rub-nds/tinyssh:20150801
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20150801'
+    ports:
+    - '22300:22'
+  tinyssh-20151001:
+    image: rub-nds/tinyssh:20151001
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20151001'
+    ports:
+    - '22301:22'
+  tinyssh-20160201:
+    image: rub-nds/tinyssh:20160201
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20160201'
+    ports:
+    - '22302:22'
+  tinyssh-20160301:
+    image: rub-nds/tinyssh:20160301
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20160301'
+    ports:
+    - '22303:22'
+  tinyssh-20160318:
+    image: rub-nds/tinyssh:20160318
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20160318'
+    ports:
+    - '22304:22'
+  tinyssh-20160720:
+    image: rub-nds/tinyssh:20160720
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20160720'
+    ports:
+    - '22305:22'
+  tinyssh-20160726:
+    image: rub-nds/tinyssh:20160726
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20160726'
+    ports:
+    - '22306:22'
+  tinyssh-20160727:
+    image: rub-nds/tinyssh:20160727
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20160727'
+    ports:
+    - '22307:22'
+  tinyssh-20160809:
+    image: rub-nds/tinyssh:20160809
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20160809'
+    ports:
+    - '22308:22'
+  tinyssh-20160811:
+    image: rub-nds/tinyssh:20160811
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20160811'
+    ports:
+    - '22309:22'
+  tinyssh-20160812:
+    image: rub-nds/tinyssh:20160812
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20160812'
+    ports:
+    - '22310:22'
+  tinyssh-20161001:
+    image: rub-nds/tinyssh:20161001
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20161001'
+    ports:
+    - '22311:22'
+  tinyssh-20161101:
+    image: rub-nds/tinyssh:20161101
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20161101'
+    ports:
+    - '22312:22'
+  tinyssh-20180101:
+    image: rub-nds/tinyssh:20180101
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20180101'
+    ports:
+    - '22313:22'
+  tinyssh-20180110:
+    image: rub-nds/tinyssh:20180110
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20180110'
+    ports:
+    - '22314:22'
+  tinyssh-20180201:
+    image: rub-nds/tinyssh:20180201
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20180201'
+    ports:
+    - '22315:22'
+  tinyssh-20181206:
+    image: rub-nds/tinyssh:20181206
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20181206'
+    ports:
+    - '22316:22'
+  tinyssh-20190101:
+    image: rub-nds/tinyssh:20190101
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20190101'
+    ports:
+    - '22317:22'
+  tinyssh-20210319:
+    image: rub-nds/tinyssh:20210319
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20210319'
+    ports:
+    - '22318:22'
+  tinyssh-20210601:
+    image: rub-nds/tinyssh:20210601
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20210601'
+    ports:
+    - '22319:22'
+  tinyssh-20220101:
+    image: rub-nds/tinyssh:20220101
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20220101'
+    ports:
+    - '22320:22'
+  tinyssh-20220222:
+    image: rub-nds/tinyssh:20220222
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20220222'
+    ports:
+    - '22321:22'
+  tinyssh-20220305:
+    image: rub-nds/tinyssh:20220305
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20220305'
+    ports:
+    - '22322:22'
+  tinyssh-20220311:
+    image: rub-nds/tinyssh:20220311
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20220311'
+    ports:
+    - '22323:22'
+  tinyssh-20220801:
+    image: rub-nds/tinyssh:20220801
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20220801'
+    ports:
+    - '22324:22'
