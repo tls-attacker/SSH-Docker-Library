@@ -1,0 +1,10 @@
+ignored:
+  # Disable rules ask you to pin versions in apk-add/apt-get. Pinning the base
+  # image tag should suffice for our purposes.
+  - DL3008
+  - DL3018
+
+label-schema:
+  'ssh.implementation.name': text
+  'ssh.implementation.version': text
+  'ssh.implementation.type': text
