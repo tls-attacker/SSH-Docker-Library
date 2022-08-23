@@ -1,0 +1,45 @@
+default_language_version:
+  python: python3
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.3.0
+    hooks:
+      - id: check-case-conflict
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: check-toml
+      - id: check-xml
+      - id: check-yaml
+      - id: destroyed-symlinks
+      - id: end-of-file-fixer
+      - id: fix-byte-order-marker
+      - id: forbid-new-submodules
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.1.0
+    hooks:
+      - id: codespell
+        args:
+          [
+            --ignore-words=.codespellignore,
+            --exclude-file=.codespellignorelines,
+          ]
+        # Base64-encoded binary data from SSH keys may resemble misspelled
+        # words.
+        exclude: /id_(rsa|(?:ec)?dsa|ed25519)(?:\.pub)?$
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.5.0
+    hooks:
+      - id: markdownlint-cli2-config
+        args: [.markdownlint-cli2.yaml]
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v2.7.1
+    hooks:
+      - id: prettier
+        # Restrict prettier to the commit stage to avoid the following error
+        # message:
+        #
+        #     [error] No matching files. Patterns: .git/COMMIT_EDITMSG
+        stages: [commit]
