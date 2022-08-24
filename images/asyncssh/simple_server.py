@@ -45,19 +45,30 @@ class MySSHServer(asyncssh.SSHServer):
         self._logger.info("Connection established!")
 
     def begin_auth(self, username):
+        assert self._conn is not None
+
         try:
             authorized_keys_file = AUTHORIZED_KEYS_FILES[username]
         except KeyError:
             self._logger.debug("User %r has no authorized_keys file.", username)
-            self._logger.debug("Users with authorized_keys file: %r.", list(AUTHORIZED_KEYS_FILES.keys()))
+            self._logger.debug(
+                "Users with authorized_keys file: %r.",
+                list(AUTHORIZED_KEYS_FILES.keys()),
+            )
             pass
         else:
-            self._logger.debug("authorized_keys file for user %r: %s", username, authorized_keys_file)
+            self._logger.debug(
+                "authorized_keys file for user %r: %s", username, authorized_keys_file
+            )
             try:
                 self._conn.set_authorized_keys(str(authorized_keys_file))
             except IOError:
-                self._logger.exception("error occurred during begin_auth, maybe there is no key for this user.")
-                self._logger.debug("Falling back to password authentication for user %r.", username)
+                self._logger.exception(
+                    "error occurred during begin_auth, maybe there is no key for this user."
+                )
+                self._logger.debug(
+                    "Falling back to password authentication for user %r.", username
+                )
                 pass
         return True
 
@@ -149,7 +160,9 @@ def main(argv=None):
         logger.warning("No authorized_keys file given, pubkey auth will not work.")
 
     if args.password is None and args.authorized_keys_file is None:
-        logger.warning("Neither password nor authorized_keys file specified, you won't be able to log in!")
+        logger.warning(
+            "Neither password nor authorized_keys file specified, you won't be able to log in!"
+        )
 
     logger.info("Server starting up on %d...", args.port)
     loop = asyncio.get_event_loop()
