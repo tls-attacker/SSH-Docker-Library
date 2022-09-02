@@ -1,4 +1,4 @@
-FROM alpine:3.16
+FROM alpine:3.16 as dropbear-downloader
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 # linux-headers are required by versions 2013.62 - 2018.76
 RUN apk add --no-cache bzip2 build-base zlib-dev linux-headers
@@ -38,7 +38,14 @@ RUN if ! printf '%s\n%s\n' "0.31" "${VERSION}" | sort -c -g; then \
         patch -p1 < 0011-0.30-Remove-out-of-place-linebreak-in-string-literal.patch ; \
     fi
 
+
+FROM alpine:3.16 as dropbear-server
+RUN apk add --no-cache bzip2 build-base zlib-dev linux-headers
+ARG VERSION
 # Configure, build and install dropbear, then add the pre-generated hostkeys.
+COPY --from=dropbear-downloader /dropbear-${VERSION} /dropbear-${VERSION}
+WORKDIR "/dropbear-${VERSION}"
+
 RUN ./configure && \
     make PROGRAMS="dropbear" -j "$(nproc)" && \
     make PROGRAMS="dropbear" install
@@ -61,3 +68,31 @@ LABEL ssh.implementation.name="dropbear" \
       ssh.implementation.type="server"
 CMD ["dropbear", "-FEB"]
 EXPOSE 22
+
+
+FROM alpine:3.16 as dropbear-client
+RUN apk add --no-cache bzip2 build-base zlib-dev linux-headers
+RUN apk add --no-cache --upgrade bash
+RUN apk add --no-cache --upgrade expect
+
+COPY --from=entrypoint /bin/client-entrypoint /usr/local/bin/
+COPY start.sh /usr/local/bin/
+COPY login.exp /usr/local/bin/
+
+ARG VERSION
+# Configure, build and install dropbear, then add the pre-generated hostkeys.
+COPY --from=dropbear-downloader /dropbear-${VERSION} /dropbear-${VERSION}
+WORKDIR "/dropbear-${VERSION}"
+
+# Configure, build and install bdclient
+RUN ./configure && \
+    make PROGRAMS="dbclient" -j "$(nproc)" && \
+    make PROGRAMS="dbclient" install
+
+
+LABEL "ssh_implementation"="dropbear"
+LABEL "ssh_implementation_version"="${VERSION}"
+LABEL "ssh_implementation_connectionRole"="client"
+
+WORKDIR /usr/local/bin/
+ENTRYPOINT ["client-entrypoint", "./start.sh"]

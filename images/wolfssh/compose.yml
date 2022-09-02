@@ -1,0 +1,74 @@
+version: '3.2'
+services:
+  wolfssh-client-1.4.11-stable:
+    image: rub-nds/wolfssh-client:1.4.11-stable
+    build:
+      context: .
+      target: wolfssh-client
+      args:
+        VERSION: 1.4.11-stable
+    profiles: [ client ]
+  wolfssh-client-1.4.10-stable:
+    image: rub-nds/wolfssh-client:1.4.10-stable
+    build:
+      context: .
+      target: wolfssh-client
+      args:
+        VERSION: 1.4.10-stable
+    profiles: [ client ]
+  wolfssh-client-1.4.8-stable:
+    image: rub-nds/wolfssh-client:1.4.8-stable
+    build:
+      context: .
+      target: wolfssh-client
+      args:
+        VERSION: 1.4.8-stable
+    profiles: [ client ]
+  wolfssh-client-1.4.7-stable:
+    image: rub-nds/wolfssh-client:1.4.7-stable
+    build:
+      context: .
+      target: wolfssh-client
+      args:
+        VERSION: 1.4.7-stable
+    profiles: [ client ]
+  wolfssh-client-1.4.6-stable:
+    image: rub-nds/wolfssh-client:1.4.6-stable
+    build:
+      context: .
+      target: wolfssh-client
+      args:
+        VERSION: 1.4.6-stable
+    profiles: [ client ]
+  wolfssh-client-1.4.5-stable:
+    image: rub-nds/wolfssh-client:1.4.5-stable
+    build:
+      context: .
+      target: wolfssh-client
+      args:
+        VERSION: 1.4.5-stable
+    profiles: [ client ]
+#  wolfssh-client-1.4.4-stable: # tests fail
+#    image: rub-nds/wolfssh-client:1.4.4-stable
+#    build:
+#      context: .
+#      target: wolfssh-client
+#      args:
+#        VERSION: 1.4.4-stable
+#    profiles: [ client ]
+#  wolfssh-client-1.4.3-stable: # dont build
+#    image: rub-nds/wolfssh-client:1.4.3-stable
+#    build:
+#      context: .
+#      target: wolfssh-client
+#      args:
+#        VERSION: 1.4.3-stable
+#    profiles: [ client ]
+#  wolfssh-client-1.4.2-stable: # dont build
+#    image: rub-nds/wolfssh-client:1.4.2-stable
+#    build:
+#      context: .
+#      target: wolfssh-client
+#      args:
+#        VERSION: 1.4.2-stable
+#    profiles: [ client ]

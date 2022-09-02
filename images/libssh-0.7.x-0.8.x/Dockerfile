@@ -43,9 +43,28 @@ RUN if printf '%s\n%s\n%s\n' "0.8.2" "${VERSION}" "0.8.6" | sort -c -g; then \
     fi
 
 WORKDIR /src/libssh/build
-RUN cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/install .. && \
+RUN cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/install -DWITH_STATIC_LIB=ON .. && \
     make -j "$(nproc)" && \
     make install
+
+
+FROM debian:bullseye AS libssh-client
+COPY --from=libssh-builder /src/libssh  /src/libssh
+COPY libsshTest.c /build/
+RUN find /src/libssh/build/include/libssh -name libssh_version.h -exec cp {} /src/libssh/include/libssh \;
+RUN gcc -I/src/libssh/include /build/libsshTest.c /src/libssh/build/src/libssh.a -lrt -lcrypto -lz -lpthread -ldl -o /build/libsshTest -static
+ARG VERSION
+RUN apt-get update
+RUN apt-get install -y --fix-missing libssl-dev zlib1g-dev
+RUN rm -rf /var/lib/apt/lists/*
+COPY --from=entrypoint /bin/client-entrypoint /usr/local/bin/
+#COPY --from=libssh-builder-client /build/libsshTest /usr/local/bin/
+RUN cp /build/libsshTest /usr/local/bin/
+WORKDIR /usr/local/bin/
+LABEL "ssh_implementation"="libssh"
+LABEL "ssh_implementation_version"="${VERSION}"
+LABEL "ssh_implementation_connectionRole"="client"
+ENTRYPOINT ["client-entrypoint","/usr/local/bin/libsshTest"]
 
 FROM debian:stretch AS libssh-server
 ARG VERSION
