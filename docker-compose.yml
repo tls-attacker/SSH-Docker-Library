@@ -1,450 +1,1186 @@
 version: '3.2'
 services:
-  dropbear-0.23:
-    image: rub-nds/dropbear:0.23
+  asyncssh-server-2.0.0:
+    image: rub-nds/asyncssh-server:2.0.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.0.0
+    ports:
+      - '22000:22'
+  asyncssh-server-2.0.1:
+    image: rub-nds/asyncssh-server:2.0.1
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.0.1
+    ports:
+      - '22001:22'
+  asyncssh-server-2.1.0:
+    image: rub-nds/asyncssh-server:2.1.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.1.0
+    ports:
+      - '22002:22'
+  asyncssh-server-2.2.0:
+    image: rub-nds/asyncssh-server:2.2.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.2.0
+    ports:
+      - '22003:22'
+  asyncssh-server-2.2.1:
+    image: rub-nds/asyncssh-server:2.2.1
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.2.1
+    ports:
+      - '22004:22'
+  asyncssh-server-2.3.0:
+    image: rub-nds/asyncssh-server:2.3.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.3.0
+    ports:
+      - '22005:22'
+  asyncssh-server-2.4.0:
+    image: rub-nds/asyncssh-server:2.4.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.4.0
+    ports:
+      - '22006:22'
+  asyncssh-server-2.4.1:
+    image: rub-nds/asyncssh-server:2.4.1
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.4.1
+    ports:
+      - '22007:22'
+  asyncssh-server-2.4.2:
+    image: rub-nds/asyncssh-server:2.4.2
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.4.2
+    ports:
+      - '22008:22'
+  asyncssh-server-2.5.0:
+    image: rub-nds/asyncssh-server:2.5.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.5.0
+    ports:
+      - '22009:22'
+  asyncssh-server-2.6.0:
+    image: rub-nds/asyncssh-server:2.6.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.6.0
+    ports:
+      - '22010:22'
+  asyncssh-server-2.7.0:
+    image: rub-nds/asyncssh-server:2.7.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.7.0
+    ports:
+      - '22011:22'
+  asyncssh-server-2.7.1:
+    image: rub-nds/asyncssh-server:2.7.1
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.7.1
+    ports:
+      - '22012:22'
+  asyncssh-server-2.7.2:
+    image: rub-nds/asyncssh-server:2.7.2
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.7.2
+    ports:
+      - '22013:22'
+  asyncssh-server-2.8.0:
+    image: rub-nds/asyncssh-server:2.8.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.8.0
+    ports:
+      - '22014:22'
+  asyncssh-server-2.8.1:
+    image: rub-nds/asyncssh-server:2.8.1
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.8.1
+    ports:
+      - '22015:22'
+  asyncssh-server-2.9.0:
+    image: rub-nds/asyncssh-server:2.9.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.9.0
+    ports:
+      - '22016:22'
+  asyncssh-server-2.10.0:
+    image: rub-nds/asyncssh-server:2.10.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.10.0
+    ports:
+      - '22017:22'
+  asyncssh-server-2.10.1:
+    image: rub-nds/asyncssh-server:2.10.1
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.10.1
+    ports:
+      - '22018:22'
+  asyncssh-server-2.11.0:
+    image: rub-nds/asyncssh-server:2.11.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.11.0
+    ports:
+      - '22019:22'
+  asyncssh-server-2.12.0:
+    image: rub-nds/asyncssh-server:2.12.0
+    build:
+      context: images/asyncssh
+      args:
+        VERSION: 2.12.0
+    ports:
+      - '22020:22'
+  dropbear-server-0.23:
+    image: rub-nds/dropbear-server:0.23
     build:
       context: images/dropbear
       args:
         VERSION: '0.23'
     ports:
-    - '22100:22'
-  dropbear-0.28:
-    image: rub-nds/dropbear:0.28
+      - '22100:22'
+  dropbear-server-0.28:
+    image: rub-nds/dropbear-server:0.28
     build:
       context: images/dropbear
       args:
         VERSION: '0.28'
     ports:
-    - '22101:22'
-  dropbear-0.29:
-    image: rub-nds/dropbear:0.29
+      - '22101:22'
+  dropbear-server-0.29:
+    image: rub-nds/dropbear-server:0.29
     build:
       context: images/dropbear
       args:
         VERSION: '0.29'
     ports:
-    - '22102:22'
-  dropbear-0.30:
-    image: rub-nds/dropbear:0.30
+      - '22102:22'
+  dropbear-server-0.30:
+    image: rub-nds/dropbear-server:0.30
     build:
       context: images/dropbear
       args:
         VERSION: '0.30'
     ports:
-    - '22103:22'
-  dropbear-0.31:
-    image: rub-nds/dropbear:0.31
+      - '22103:22'
+  dropbear-server-0.31:
+    image: rub-nds/dropbear-server:0.31
     build:
       context: images/dropbear
       args:
         VERSION: '0.31'
     ports:
-    - '22104:22'
-  dropbear-0.32:
-    image: rub-nds/dropbear:0.32
+      - '22104:22'
+  dropbear-server-0.32:
+    image: rub-nds/dropbear-server:0.32
     build:
       context: images/dropbear
       args:
         VERSION: '0.32'
     ports:
-    - '22105:22'
-  dropbear-0.33:
-    image: rub-nds/dropbear:0.33
+      - '22105:22'
+  dropbear-server-0.33:
+    image: rub-nds/dropbear-server:0.33
     build:
       context: images/dropbear
       args:
         VERSION: '0.33'
     ports:
-    - '22106:22'
-  dropbear-0.34:
-    image: rub-nds/dropbear:0.34
+      - '22106:22'
+  dropbear-server-0.34:
+    image: rub-nds/dropbear-server:0.34
     build:
       context: images/dropbear
       args:
         VERSION: '0.34'
     ports:
-    - '22107:22'
-  dropbear-0.35:
-    image: rub-nds/dropbear:0.35
+      - '22107:22'
+  dropbear-server-0.35:
+    image: rub-nds/dropbear-server:0.35
     build:
       context: images/dropbear
       args:
         VERSION: '0.35'
     ports:
-    - '22108:22'
-  dropbear-0.36:
-    image: rub-nds/dropbear:0.36
+      - '22108:22'
+  dropbear-server-0.36:
+    image: rub-nds/dropbear-server:0.36
     build:
       context: images/dropbear
       args:
         VERSION: '0.36'
     ports:
-    - '22109:22'
-  dropbear-0.37:
-    image: rub-nds/dropbear:0.37
+      - '22109:22'
+  dropbear-server-0.37:
+    image: rub-nds/dropbear-server:0.37
     build:
       context: images/dropbear
       args:
         VERSION: '0.37'
     ports:
-    - '22110:22'
-  dropbear-0.38:
-    image: rub-nds/dropbear:0.38
+      - '22110:22'
+  dropbear-server-0.38:
+    image: rub-nds/dropbear-server:0.38
     build:
       context: images/dropbear
       args:
         VERSION: '0.38'
     ports:
-    - '22111:22'
-  dropbear-0.39:
-    image: rub-nds/dropbear:0.39
+      - '22111:22'
+  dropbear-server-0.39:
+    image: rub-nds/dropbear-server:0.39
     build:
       context: images/dropbear
       args:
         VERSION: '0.39'
     ports:
-    - '22112:22'
-  dropbear-0.40:
-    image: rub-nds/dropbear:0.40
+      - '22112:22'
+  dropbear-server-0.40:
+    image: rub-nds/dropbear-server:0.40
     build:
       context: images/dropbear
       args:
         VERSION: '0.40'
     ports:
-    - '22113:22'
-  dropbear-0.41:
-    image: rub-nds/dropbear:0.41
+      - '22113:22'
+  dropbear-server-0.41:
+    image: rub-nds/dropbear-server:0.41
     build:
       context: images/dropbear
       args:
         VERSION: '0.41'
     ports:
-    - '22114:22'
-  dropbear-0.42:
-    image: rub-nds/dropbear:0.42
+      - '22114:22'
+  dropbear-server-0.42:
+    image: rub-nds/dropbear-server:0.42
     build:
       context: images/dropbear
       args:
         VERSION: '0.42'
     ports:
-    - '22115:22'
-  dropbear-0.43:
-    image: rub-nds/dropbear:0.43
+      - '22115:22'
+  dropbear-server-0.43:
+    image: rub-nds/dropbear-server:0.43
     build:
       context: images/dropbear
       args:
         VERSION: '0.43'
     ports:
-    - '22116:22'
-  dropbear-0.44:
-    image: rub-nds/dropbear:0.44
+      - '22116:22'
+  dropbear-server-0.44:
+    image: rub-nds/dropbear-server:0.44
     build:
       context: images/dropbear
       args:
         VERSION: '0.44'
     ports:
-    - '22117:22'
-  dropbear-0.45:
-    image: rub-nds/dropbear:0.45
+      - '22117:22'
+  dropbear-server-0.45:
+    image: rub-nds/dropbear-server:0.45
     build:
       context: images/dropbear
       args:
         VERSION: '0.45'
     ports:
-    - '22118:22'
-  dropbear-0.46:
-    image: rub-nds/dropbear:0.46
+      - '22118:22'
+  dropbear-server-0.46:
+    image: rub-nds/dropbear-server:0.46
     build:
       context: images/dropbear
       args:
         VERSION: '0.46'
     ports:
-    - '22119:22'
-  dropbear-0.47:
-    image: rub-nds/dropbear:0.47
+      - '22119:22'
+  dropbear-server-0.47:
+    image: rub-nds/dropbear-server:0.47
     build:
       context: images/dropbear
       args:
         VERSION: '0.47'
     ports:
-    - '22120:22'
-  dropbear-0.49:
-    image: rub-nds/dropbear:0.49
+      - '22120:22'
+  dropbear-server-0.49:
+    image: rub-nds/dropbear-server:0.49
     build:
       context: images/dropbear
       args:
         VERSION: '0.49'
     ports:
-    - '22121:22'
-  dropbear-0.50:
-    image: rub-nds/dropbear:0.50
+      - '22121:22'
+  dropbear-server-0.50:
+    image: rub-nds/dropbear-server:0.50
     build:
       context: images/dropbear
       args:
         VERSION: '0.50'
     ports:
-    - '22122:22'
-  dropbear-0.51:
-    image: rub-nds/dropbear:0.51
+      - '22122:22'
+  dropbear-server-0.51:
+    image: rub-nds/dropbear-server:0.51
     build:
       context: images/dropbear
       args:
         VERSION: '0.51'
     ports:
-    - '22123:22'
-  dropbear-0.52:
-    image: rub-nds/dropbear:0.52
+      - '22123:22'
+  dropbear-server-0.52:
+    image: rub-nds/dropbear-server:0.52
     build:
       context: images/dropbear
       args:
         VERSION: '0.52'
     ports:
-    - '22124:22'
-  dropbear-0.53.1:
-    image: rub-nds/dropbear:0.53.1
+      - '22124:22'
+  dropbear-server-0.53.1:
+    image: rub-nds/dropbear-server:0.53.1
     build:
       context: images/dropbear
       args:
         VERSION: 0.53.1
     ports:
-    - '22125:22'
-  dropbear-0.53:
-    image: rub-nds/dropbear:0.53
+      - '22125:22'
+  dropbear-server-0.53:
+    image: rub-nds/dropbear-server:0.53
     build:
       context: images/dropbear
       args:
         VERSION: '0.53'
     ports:
-    - '22126:22'
-  dropbear-0.255:
-    image: rub-nds/dropbear:0.255
+      - '22126:22'
+  dropbear-server-0.255:
+    image: rub-nds/dropbear-server:0.255
     build:
       context: images/dropbear
       args:
         VERSION: '0.255'
     ports:
-    - '22127:22'
-  dropbear-2011.54:
-    image: rub-nds/dropbear:2011.54
+      - '22127:22'
+  dropbear-server-2011.54:
+    image: rub-nds/dropbear-server:2011.54
     build:
       context: images/dropbear
       args:
         VERSION: '2011.54'
     ports:
-    - '22128:22'
-  dropbear-2012.55:
-    image: rub-nds/dropbear:2012.55
+      - '22128:22'
+  dropbear-server-2012.55:
+    image: rub-nds/dropbear-server:2012.55
     build:
       context: images/dropbear
       args:
         VERSION: '2012.55'
     ports:
-    - '22129:22'
-  dropbear-2013.56:
-    image: rub-nds/dropbear:2013.56
+      - '22129:22'
+  dropbear-server-2013.56:
+    image: rub-nds/dropbear-server:2013.56
     build:
       context: images/dropbear
       args:
         VERSION: '2013.56'
     ports:
-    - '22130:22'
-  dropbear-2013.57:
-    image: rub-nds/dropbear:2013.57
+      - '22130:22'
+  dropbear-server-2013.57:
+    image: rub-nds/dropbear-server:2013.57
     build:
       context: images/dropbear
       args:
         VERSION: '2013.57'
     ports:
-    - '22131:22'
-  dropbear-2013.58:
-    image: rub-nds/dropbear:2013.58
+      - '22131:22'
+  dropbear-server-2013.58:
+    image: rub-nds/dropbear-server:2013.58
     build:
       context: images/dropbear
       args:
         VERSION: '2013.58'
     ports:
-    - '22132:22'
-  dropbear-2013.59:
-    image: rub-nds/dropbear:2013.59
+      - '22132:22'
+  dropbear-server-2013.59:
+    image: rub-nds/dropbear-server:2013.59
     build:
       context: images/dropbear
       args:
         VERSION: '2013.59'
     ports:
-    - '22133:22'
-  dropbear-2013.60:
-    image: rub-nds/dropbear:2013.60
+      - '22133:22'
+  dropbear-server-2013.60:
+    image: rub-nds/dropbear-server:2013.60
     build:
       context: images/dropbear
       args:
         VERSION: '2013.60'
     ports:
-    - '22134:22'
-  dropbear-2013.62:
-    image: rub-nds/dropbear:2013.62
+      - '22134:22'
+  dropbear-server-2013.62:
+    image: rub-nds/dropbear-server:2013.62
     build:
       context: images/dropbear
       args:
         VERSION: '2013.62'
     ports:
-    - '22135:22'
-  dropbear-2014.63:
-    image: rub-nds/dropbear:2014.63
+      - '22135:22'
+  dropbear-server-2014.63:
+    image: rub-nds/dropbear-server:2014.63
     build:
       context: images/dropbear
       args:
         VERSION: '2014.63'
     ports:
-    - '22136:22'
-  dropbear-2014.64:
-    image: rub-nds/dropbear:2014.64
+      - '22136:22'
+  dropbear-server-2014.64:
+    image: rub-nds/dropbear-server:2014.64
     build:
       context: images/dropbear
       args:
         VERSION: '2014.64'
     ports:
-    - '22137:22'
-  dropbear-2014.65:
-    image: rub-nds/dropbear:2014.65
+      - '22137:22'
+  dropbear-server-2014.65:
+    image: rub-nds/dropbear-server:2014.65
     build:
       context: images/dropbear
       args:
         VERSION: '2014.65'
     ports:
-    - '22138:22'
-  dropbear-2014.66:
-    image: rub-nds/dropbear:2014.66
+      - '22138:22'
+  dropbear-server-2014.66:
+    image: rub-nds/dropbear-server:2014.66
     build:
       context: images/dropbear
       args:
         VERSION: '2014.66'
     ports:
-    - '22139:22'
-  dropbear-2015.67:
-    image: rub-nds/dropbear:2015.67
+      - '22139:22'
+  dropbear-server-2015.67:
+    image: rub-nds/dropbear-server:2015.67
     build:
       context: images/dropbear
       args:
         VERSION: '2015.67'
     ports:
-    - '22140:22'
-  dropbear-2015.68:
-    image: rub-nds/dropbear:2015.68
+      - '22140:22'
+  dropbear-server-2015.68:
+    image: rub-nds/dropbear-server:2015.68
     build:
       context: images/dropbear
       args:
         VERSION: '2015.68'
     ports:
-    - '22141:22'
-  dropbear-2015.69:
-    image: rub-nds/dropbear:2015.69
+      - '22141:22'
+  dropbear-server-2015.69:
+    image: rub-nds/dropbear-server:2015.69
     build:
       context: images/dropbear
       args:
         VERSION: '2015.69'
     ports:
-    - '22142:22'
-  dropbear-2015.70:
-    image: rub-nds/dropbear:2015.70
+      - '22142:22'
+  dropbear-server-2015.70:
+    image: rub-nds/dropbear-server:2015.70
     build:
       context: images/dropbear
       args:
         VERSION: '2015.70'
     ports:
-    - '22143:22'
-  dropbear-2015.71:
-    image: rub-nds/dropbear:2015.71
+      - '22143:22'
+  dropbear-server-2015.71:
+    image: rub-nds/dropbear-server:2015.71
     build:
       context: images/dropbear
       args:
         VERSION: '2015.71'
     ports:
-    - '22144:22'
-  dropbear-2016.72:
-    image: rub-nds/dropbear:2016.72
+      - '22144:22'
+  dropbear-server-2016.72:
+    image: rub-nds/dropbear-server:2016.72
     build:
       context: images/dropbear
       args:
         VERSION: '2016.72'
     ports:
-    - '22145:22'
-  dropbear-2016.73:
-    image: rub-nds/dropbear:2016.73
+      - '22145:22'
+  dropbear-server-2016.73:
+    image: rub-nds/dropbear-server:2016.73
     build:
       context: images/dropbear
       args:
         VERSION: '2016.73'
     ports:
-    - '22146:22'
-  dropbear-2016.74:
-    image: rub-nds/dropbear:2016.74
+      - '22146:22'
+  dropbear-server-2016.74:
+    image: rub-nds/dropbear-server:2016.74
     build:
       context: images/dropbear
       args:
         VERSION: '2016.74'
     ports:
-    - '22147:22'
-  dropbear-2017.75:
-    image: rub-nds/dropbear:2017.75
+      - '22147:22'
+  dropbear-server-2017.75:
+    image: rub-nds/dropbear-server:2017.75
     build:
       context: images/dropbear
       args:
         VERSION: '2017.75'
     ports:
-    - '22148:22'
-  dropbear-2018.76:
-    image: rub-nds/dropbear:2018.76
+      - '22148:22'
+  dropbear-server-2018.76:
+    image: rub-nds/dropbear-server:2018.76
     build:
       context: images/dropbear
       args:
         VERSION: '2018.76'
     ports:
-    - '22149:22'
-  dropbear-2019.77:
-    image: rub-nds/dropbear:2019.77
+      - '22149:22'
+  dropbear-server-2019.77:
+    image: rub-nds/dropbear-server:2019.77
     build:
       context: images/dropbear
       args:
         VERSION: '2019.77'
     ports:
-    - '22150:22'
-  dropbear-2019.78:
-    image: rub-nds/dropbear:2019.78
+      - '22150:22'
+  dropbear-server-2019.78:
+    image: rub-nds/dropbear-server:2019.78
     build:
       context: images/dropbear
       args:
         VERSION: '2019.78'
     ports:
-    - '22151:22'
-  dropbear-2020.79:
-    image: rub-nds/dropbear:2020.79
+      - '22151:22'
+  dropbear-server-2020.79:
+    image: rub-nds/dropbear-server:2020.79
     build:
       context: images/dropbear
       args:
         VERSION: '2020.79'
     ports:
-    - '22152:22'
-  dropbear-2020.80:
-    image: rub-nds/dropbear:2020.80
+      - '22152:22'
+  dropbear-server-2020.80:
+    image: rub-nds/dropbear-server:2020.80
     build:
       context: images/dropbear
       args:
         VERSION: '2020.80'
     ports:
-    - '22153:22'
-  dropbear-2020.81:
-    image: rub-nds/dropbear:2020.81
+      - '22153:22'
+  dropbear-server-2020.81:
+    image: rub-nds/dropbear-server:2020.81
     build:
       context: images/dropbear
       args:
         VERSION: '2020.81'
     ports:
-    - '22154:22'
-  dropbear-2022.82:
-    image: rub-nds/dropbear:2022.82
+      - '22154:22'
+  dropbear-server-2022.82:
+    image: rub-nds/dropbear-server:2022.82
     build:
       context: images/dropbear
       args:
         VERSION: '2022.82'
     ports:
-    - '22155:22'
+      - '22155:22'
+  libssh-server-0.7.0:
+    image: rub-nds/libssh-server:0.7.0
+    build:
+      context: images/libssh-0.7.x-0.8.x
+      args:
+        VERSION: 0.7.0
+    ports:
+      - '22200:22'
+  libssh-server-0.7.1:
+    image: rub-nds/libssh-server:0.7.1
+    build:
+      context: images/libssh-0.7.x-0.8.x
+      args:
+        VERSION: 0.7.1
+    ports:
+      - '22201:22'
+  libssh-server-0.7.2:
+    image: rub-nds/libssh-server:0.7.2
+    build:
+      context: images/libssh-0.7.x-0.8.x
+      args:
+        VERSION: 0.7.2
+    ports:
+      - '22202:22'
+  libssh-server-0.7.3:
+    image: rub-nds/libssh-server:0.7.3
+    build:
+      context: images/libssh-0.7.x-0.8.x
+      args:
+        VERSION: 0.7.3
+    ports:
+      - '22203:22'
+  libssh-server-0.7.4:
+    image: rub-nds/libssh-server:0.7.4
+    build:
+      context: images/libssh-0.7.x-0.8.x
+      args:
+        VERSION: 0.7.4
+    ports:
+      - '22204:22'
+  libssh-server-0.7.5:
+    image: rub-nds/libssh-server:0.7.5
+    build:
+      context: images/libssh-0.7.x-0.8.x
+      args:
+        VERSION: 0.7.5
+    ports:
+      - '22205:22'
+  libssh-server-0.7.6:
+    image: rub-nds/libssh-server:0.7.6
+    build:
+      context: images/libssh-0.7.x-0.8.x
+      args:
+        VERSION: 0.7.6
+    ports:
+      - '22206:22'
+  libssh-server-0.7.7:
+    image: rub-nds/libssh-server:0.7.7
+    build:
+      context: images/libssh-0.7.x-0.8.x
+      args:
+        VERSION: 0.7.7
+    ports:
+      - '22207:22'
+  libssh-server-0.8.0:
+    image: rub-nds/libssh-server:0.8.0
+    build:
+      context: images/libssh-0.7.x-0.8.x
+      args:
+        VERSION: 0.8.0
+    ports:
+      - '22208:22'
+  libssh-server-0.8.1:
+    image: rub-nds/libssh-server:0.8.1
+    build:
+      context: images/libssh-0.7.x-0.8.x
+      args:
+        VERSION: 0.8.1
+    ports:
+      - '22209:22'
+  libssh-server-0.8.2:
+    image: rub-nds/libssh-server:0.8.2
+    build:
+      context: images/libssh-0.7.x-0.8.x
+      args:
+        VERSION: 0.8.2
+    ports:
+      - '22210:22'
+  libssh-server-0.8.3:
+    image: rub-nds/libssh-server:0.8.3
+    build:
+      context: images/libssh-0.7.x-0.8.x
+      args:
+        VERSION: 0.8.3
+    ports:
+      - '22211:22'
+  libssh-server-0.8.4:
+    image: rub-nds/libssh-server:0.8.4
+    build:
+      context: images/libssh-0.7.x-0.8.x
+      args:
+        VERSION: 0.8.4
+    ports:
+      - '22212:22'
+  libssh-server-0.8.5:
+    image: rub-nds/libssh-server:0.8.5
+    build:
+      context: images/libssh-0.7.x-0.8.x
+      args:
+        VERSION: 0.8.5
+    ports:
+      - '22213:22'
+  libssh-server-0.8.6:
+    image: rub-nds/libssh-server:0.8.6
+    build:
+      context: images/libssh-0.7.x-0.8.x
+      args:
+        VERSION: 0.8.6
+    ports:
+      - '22214:22'
+  libssh-server-0.8.7:
+    image: rub-nds/libssh-server:0.8.7
+    build:
+      context: images/libssh-0.7.x-0.8.x
+      args:
+        VERSION: 0.8.7
+    ports:
+      - '22215:22'
+  libssh-server-0.8.8:
+    image: rub-nds/libssh-server:0.8.8
+    build:
+      context: images/libssh-0.7.x-0.8.x
+      args:
+        VERSION: 0.8.8
+    ports:
+      - '22216:22'
+  libssh-server-0.8.9:
+    image: rub-nds/libssh-server:0.8.9
+    build:
+      context: images/libssh-0.7.x-0.8.x
+      args:
+        VERSION: 0.8.9
+    ports:
+      - '22217:22'
+  libssh-server-0.9.0:
+    image: rub-nds/libssh-server:0.9.0
+    build:
+      context: images/libssh
+      args:
+        VERSION: 0.9.0
+    ports:
+      - '22218:22'
+  libssh-server-0.9.1:
+    image: rub-nds/libssh-server:0.9.1
+    build:
+      context: images/libssh
+      args:
+        VERSION: 0.9.1
+    ports:
+      - '22219:22'
+  libssh-server-0.9.2:
+    image: rub-nds/libssh-server:0.9.2
+    build:
+      context: images/libssh
+      args:
+        VERSION: 0.9.2
+    ports:
+      - '22220:22'
+  libssh-server-0.9.3:
+    image: rub-nds/libssh-server:0.9.3
+    build:
+      context: images/libssh
+      args:
+        VERSION: 0.9.3
+    ports:
+      - '22221:22'
+  libssh-server-0.9.4:
+    image: rub-nds/libssh-server:0.9.4
+    build:
+      context: images/libssh
+      args:
+        VERSION: 0.9.4
+    ports:
+      - '22222:22'
+  libssh-server-0.9.5:
+    image: rub-nds/libssh-server:0.9.5
+    build:
+      context: images/libssh
+      args:
+        VERSION: 0.9.5
+    ports:
+      - '22223:22'
+  libssh-server-0.9.6:
+    image: rub-nds/libssh-server:0.9.6
+    build:
+      context: images/libssh
+      args:
+        VERSION: 0.9.6
+    ports:
+      - '22224:22'
+  openssh-server-7.0p1:
+    image: rub-nds/openssh-server:7.0p1
+    build:
+      context: images/openssh-7.x
+      args:
+        VERSION: 7.0p1
+    ports:
+      - '22300:22'
+  openssh-server-7.1p1:
+    image: rub-nds/openssh-server:7.1p1
+    build:
+      context: images/openssh-7.x
+      args:
+        VERSION: 7.1p1
+    ports:
+      - '22301:22'
+  openssh-server-7.2p2:
+    image: rub-nds/openssh-server:7.2p2
+    build:
+      context: images/openssh-7.x
+      args:
+        VERSION: 7.2p2
+    ports:
+      - '22302:22'
+  openssh-server-7.3p1:
+    image: rub-nds/openssh-server:7.3p1
+    build:
+      context: images/openssh-7.x
+      args:
+        VERSION: 7.3p1
+    ports:
+      - '22303:22'
+  openssh-server-7.4p1:
+    image: rub-nds/openssh-server:7.4p1
+    build:
+      context: images/openssh-7.x
+      args:
+        VERSION: 7.4p1
+    ports:
+      - '22304:22'
+  openssh-server-7.5p1:
+    image: rub-nds/openssh-server:7.5p1
+    build:
+      context: images/openssh-7.x
+      args:
+        VERSION: 7.5p1
+    ports:
+      - '22305:22'
+  openssh-server-7.6p1:
+    image: rub-nds/openssh-server:7.6p1
+    build:
+      context: images/openssh-7.x
+      args:
+        VERSION: 7.6p1
+    ports:
+      - '22306:22'
+  openssh-server-7.7p1:
+    image: rub-nds/openssh-server:7.7p1
+    build:
+      context: images/openssh-7.x
+      args:
+        VERSION: 7.7p1
+    ports:
+      - '22307:22'
+  openssh-server-7.8p1:
+    image: rub-nds/openssh-server:7.8p1
+    build:
+      context: images/openssh-7.x
+      args:
+        VERSION: 7.8p1
+    ports:
+      - '22308:22'
+  openssh-server-7.9p1:
+    image: rub-nds/openssh-server:7.9p1
+    build:
+      context: images/openssh-7.x
+      args:
+        VERSION: 7.9p1
+    ports:
+      - '22309:22'
+  openssh-server-8.0p1:
+    image: rub-nds/openssh-server:8.0p1
+    build:
+      context: images/openssh
+      args:
+        VERSION: 8.0p1
+    ports:
+      - '22310:22'
+  openssh-server-8.1p1:
+    image: rub-nds/openssh-server:8.1p1
+    build:
+      context: images/openssh
+      args:
+        VERSION: 8.1p1
+    ports:
+      - '22311:22'
+  openssh-server-8.2p1:
+    image: rub-nds/openssh-server:8.2p1
+    build:
+      context: images/openssh
+      args:
+        VERSION: 8.2p1
+    ports:
+      - '22312:22'
+  openssh-server-8.3p1:
+    image: rub-nds/openssh-server:8.3p1
+    build:
+      context: images/openssh
+      args:
+        VERSION: 8.3p1
+    ports:
+      - '22313:22'
+  openssh-server-8.4p1:
+    image: rub-nds/openssh-server:8.4p1
+    build:
+      context: images/openssh
+      args:
+        VERSION: 8.4p1
+    ports:
+      - '22314:22'
+  openssh-server-8.5p1:
+    image: rub-nds/openssh-server:8.5p1
+    build:
+      context: images/openssh
+      args:
+        VERSION: 8.5p1
+    ports:
+      - '22315:22'
+  openssh-server-8.6p1:
+    image: rub-nds/openssh-server:8.6p1
+    build:
+      context: images/openssh
+      args:
+        VERSION: 8.6p1
+    ports:
+      - '22316:22'
+  openssh-server-8.7p1:
+    image: rub-nds/openssh-server:8.7p1
+    build:
+      context: images/openssh
+      args:
+        VERSION: 8.7p1
+    ports:
+      - '22317:22'
+  openssh-server-8.8p1:
+    image: rub-nds/openssh-server:8.8p1
+    build:
+      context: images/openssh
+      args:
+        VERSION: 8.8p1
+    ports:
+      - '22318:22'
+  openssh-server-8.9p1:
+    image: rub-nds/openssh-server:8.9p1
+    build:
+      context: images/openssh
+      args:
+        VERSION: 8.9p1
+    ports:
+      - '22319:22'
+  openssh-server-9.0p1:
+    image: rub-nds/openssh-server:9.0p1
+    build:
+      context: images/openssh
+      args:
+        VERSION: 9.0p1
+    ports:
+      - '22320:22'
+  tinyssh-server-20150801:
+    image: rub-nds/tinyssh-server:20150801
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20150801'
+    ports:
+      - '22400:22'
+  tinyssh-server-20151001:
+    image: rub-nds/tinyssh-server:20151001
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20151001'
+    ports:
+      - '22401:22'
+  tinyssh-server-20160201:
+    image: rub-nds/tinyssh-server:20160201
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20160201'
+    ports:
+      - '22402:22'
+  tinyssh-server-20160301:
+    image: rub-nds/tinyssh-server:20160301
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20160301'
+    ports:
+      - '22403:22'
+  tinyssh-server-20160318:
+    image: rub-nds/tinyssh-server:20160318
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20160318'
+    ports:
+      - '22404:22'
+  tinyssh-server-20160720:
+    image: rub-nds/tinyssh-server:20160720
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20160720'
+    ports:
+      - '22405:22'
+  tinyssh-server-20160726:
+    image: rub-nds/tinyssh-server:20160726
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20160726'
+    ports:
+      - '22406:22'
+  tinyssh-server-20160727:
+    image: rub-nds/tinyssh-server:20160727
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20160727'
+    ports:
+      - '22407:22'
+  tinyssh-server-20160809:
+    image: rub-nds/tinyssh-server:20160809
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20160809'
+    ports:
+      - '22408:22'
+  tinyssh-server-20160811:
+    image: rub-nds/tinyssh-server:20160811
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20160811'
+    ports:
+      - '22409:22'
+  tinyssh-server-20160812:
+    image: rub-nds/tinyssh-server:20160812
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20160812'
+    ports:
+      - '22410:22'
+  tinyssh-server-20161001:
+    image: rub-nds/tinyssh-server:20161001
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20161001'
+    ports:
+      - '22411:22'
+  tinyssh-server-20161101:
+    image: rub-nds/tinyssh-server:20161101
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20161101'
+    ports:
+      - '22412:22'
+  tinyssh-server-20180101:
+    image: rub-nds/tinyssh-server:20180101
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20180101'
+    ports:
+      - '22413:22'
+  tinyssh-server-20180110:
+    image: rub-nds/tinyssh-server:20180110
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20180110'
+    ports:
+      - '22414:22'
+  tinyssh-server-20180201:
+    image: rub-nds/tinyssh-server:20180201
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20180201'
+    ports:
+      - '22415:22'
+  tinyssh-server-20181206:
+    image: rub-nds/tinyssh-server:20181206
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20181206'
+    ports:
+      - '22416:22'
+  tinyssh-server-20190101:
+    image: rub-nds/tinyssh-server:20190101
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20190101'
+    ports:
+      - '22417:22'
+  tinyssh-server-20210319:
+    image: rub-nds/tinyssh-server:20210319
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20210319'
+    ports:
+      - '22418:22'
+  tinyssh-server-20210601:
+    image: rub-nds/tinyssh-server:20210601
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20210601'
+    ports:
+      - '22419:22'
+  tinyssh-server-20220101:
+    image: rub-nds/tinyssh-server:20220101
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20220101'
+    ports:
+      - '22420:22'
+  tinyssh-server-20220222:
+    image: rub-nds/tinyssh-server:20220222
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20220222'
+    ports:
+      - '22421:22'
+  tinyssh-server-20220305:
+    image: rub-nds/tinyssh-server:20220305
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20220305'
+    ports:
+      - '22422:22'
+  tinyssh-server-20220311:
+    image: rub-nds/tinyssh-server:20220311
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20220311'
+    ports:
+      - '22423:22'
+  tinyssh-server-20220801:
+    image: rub-nds/tinyssh-server:20220801
+    build:
+      context: images/tinyssh
+      args:
+        VERSION: '20220801'
+    ports:
+      - '22424:22'
