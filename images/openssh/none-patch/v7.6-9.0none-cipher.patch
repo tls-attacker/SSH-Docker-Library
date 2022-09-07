@@ -1,4 +1,0 @@
-78c78
-< #define CFLAG_INTERNAL		CFLAG_NONE /* Don't use "none" for packets */
----
-> #define CFLAG_INTERNAL		0 /* Don't use "none" for packets */
