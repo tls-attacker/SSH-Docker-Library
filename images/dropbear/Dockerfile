@@ -49,7 +49,7 @@ RUN if ! printf '%s\n%s\n' "0.31" "${VERSION}" | sort -c -g; then \
 # This happens randomly - if you encounter it, just rerun the build command and
 # it will probably work.
 RUN ./configure && \
-    make PROGRAMS="dropbear dropbearkey" && \
+    make PROGRAMS="dropbear dropbearkey" -j "$(nproc)" && \
     make PROGRAMS="dropbear dropbearkey" install && \
     mkdir -p /etc/dropbear && \
     dropbearkey -t dss -f /etc/dropbear/dropbear_dss_host_key && \

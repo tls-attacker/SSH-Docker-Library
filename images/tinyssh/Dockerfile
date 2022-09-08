@@ -48,7 +48,7 @@ RUN if printf '%s\n%s\n' "20180101" "${VERSION}" | sort -c -g; then \
 RUN gunzip < ${VERSION}.tar.gz | tar -xf - && \
     mkdir -p "tinyssh-${VERSION}/debian" && \
     echo "tinyssh (${VERSION})" > "tinyssh-${VERSION}/debian/changelog" && \
-    make -C "tinyssh-${VERSION}" && \
+    make -C "tinyssh-${VERSION}" -j "$(nproc)" && \
     mkdir -p /usr/share/man/man1 /usr/share/man/man8 && \
     make -C "tinyssh-${VERSION}" install && \
     mkdir -p /etc/tinyssh && tinysshd-makekey /etc/tinyssh/sshkeydir
