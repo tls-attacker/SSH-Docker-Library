@@ -8,7 +8,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY simple_server.py ./
 
 ARG DEFAULT_USERNAME=sshattacker
-ARG DEFAULT_PASSWORD=bydahirsch
+ARG DEFAULT_PASSWORD=secret
 
 ENV DEF_USER $DEFAULT_USERNAME
 ENV DEF_PW $DEFAULT_PASSWORD

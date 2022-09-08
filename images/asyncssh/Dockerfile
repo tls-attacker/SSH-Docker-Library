@@ -6,7 +6,7 @@ ARG VERSION
 RUN pip install --no-cache-dir -r requirements.txt asyncssh==$VERSION
 
 ARG USERNAME=sshattacker
-ARG PASSWORD=bydahirsch
+ARG PASSWORD=secret
 ARG AUTHORIZED_KEYS_FILE=authorized_keys
 
 # Copy RSA server key

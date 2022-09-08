@@ -64,7 +64,7 @@ RUN ./configure && \
 # Set up SSH user, configure a password, add authorized keys and fix `.ssh` dir
 # permissions.
 ARG USERNAME=sshattacker
-ARG PASSWORD=bydahirsch
+ARG PASSWORD=secret
 ARG AUTHORIZED_KEYS_FILE=authorized_keys
 COPY "${AUTHORIZED_KEYS_FILE}" "/home/${USERNAME}/.ssh/authorized_keys"
 RUN adduser -D "${USERNAME}" && \

@@ -57,7 +57,7 @@ The docker images can be customized by [variables that can be overridden at buil
 | Build-Time Variable    | Default Value   | Description                                                                                                                       |
 | ---------------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | `USERNAME`             | `sshattacker`   | SSH username                                                                                                                      |
-| `PASSWORD`             | `bydahirsch`    | SSH password (if password authentication is supported by the server)                                                              |
+| `PASSWORD`             | `secret`        | SSH password (if password authentication is supported by the server)                                                              |
 | `AUTHORIZED_KEYS_FILE` | `id_ed2219.pub` | Path to file in Docker build context that is used as `authorized_keys` file (if pubkey authentication is supported by the server) |
 | `WITH_NONE_CIPHER`     | `1`             | Whether to apply patch to enable the `none` cipher, set to `0` to disable _(OpenSSH only)_                                        |
 

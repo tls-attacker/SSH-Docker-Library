@@ -47,7 +47,7 @@ RUN useradd --system --no-create-home sshd && mkdir -p "/var/empty"
 
 # Create SSH user, add authorized keys and fix `.ssh` dir permissions
 ARG USERNAME=sshattacker
-ARG PASSWORD=bydahirsch
+ARG PASSWORD=secret
 ARG AUTHORIZED_KEYS_FILE=authorized_keys
 COPY "${AUTHORIZED_KEYS_FILE}" "/home/${USERNAME}/.ssh/authorized_keys"
 RUN useradd --create-home --groups users "${USERNAME}" && \

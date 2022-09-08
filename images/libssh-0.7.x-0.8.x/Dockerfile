@@ -31,7 +31,7 @@ COPY --from=libssh-downloader /libssh-mirror-libssh-${VERSION} /src/libssh
 WORKDIR /src/libssh
 
 ARG USERNAME=sshattacker
-ARG PASSWORD=bydahirsch
+ARG PASSWORD=secret
 RUN sed -i "s/myuser/${USERNAME}/g" examples/ssh_server_fork.c && \
     sed -i "s/mypassword/${PASSWORD}/g" examples/ssh_server_fork.c
 WORKDIR /src/libssh/build
