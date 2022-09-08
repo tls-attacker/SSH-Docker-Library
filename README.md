@@ -61,7 +61,7 @@ The docker images can be customized by [variables that can be overridden at buil
 | `AUTHORIZED_KEYS_FILE` | `id_ed2219.pub` | Path to file in Docker build context that is used as `authorized_keys` file (if pubkey authentication is supported by the server) |
 | `WITH_NONE_CIPHER`     | `1`             | Whether to apply patch to enable the `none` cipher, set to `0` to disable _(OpenSSH only)_                                        |
 
-### Example
+## Example
 
 Here is how to build everything and then to connect to each server with each key.
 
@@ -69,3 +69,16 @@ Here is how to build everything and then to connect to each server with each key
 $ docker compose up --build
 $ for service in $(docker compose config --services); do port="$(docker compose port "$service" 22 | cut -f2 -d:)"; for key in id_rsa id_ecdsa id_ed25519; do ssh -i "$key" -p "$port" -o StrictHostKeyChecking=no -o PasswordAuthentication=no sshattacker@172.17.0.1 echo "$service: login succeeded using $key" || echo "$service: login failed using $key"; done; done
 ```
+
+## Label
+
+Each image is labeled with the following metadata:
+
+| Label Key                    | Example        | Description                                                |
+| ---------------------------- | -------------- | ---------------------------------------------------------- |
+| `ssh.implementation.name`    | `openssh`      | Name of the SSH implementation                             |
+| `ssh.implementation.version` | `9.0p1`        | Upstream version of the SSH implementation                 |
+| `ssh.implementation.type`    | `server`       | `server` for SSH server and `client` for SSH client        |
+
+You can filter the docker images with `docker images -f label=ssh.implementation.name` or `docker images -f label=ssh.implementation.type=server`, for example.
+
