@@ -1008,14 +1008,15 @@ services:
         VERSION: '20160201'
     ports:
       - '22402:22'
-  tinyssh-server-20160301:
-    image: rub-nds/tinyssh-server:20160301
-    build:
-      context: images/tinyssh
-      args:
-        VERSION: '20160301'
-    ports:
-      - '22403:22'
+  # This version is officially broken, and fixed by 20160318
+  # tinyssh-server-20160301:
+  #  image: rub-nds/tinyssh-server:20160301
+  #  build:
+  #    context: images/tinyssh
+  #    args:
+  #      VERSION: '20160301'
+  #  ports:
+  #    - '22403:22'
   tinyssh-server-20160318:
     image: rub-nds/tinyssh-server:20160318
     build:
