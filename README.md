@@ -58,7 +58,7 @@ The docker images can be customized by [variables that can be overridden at buil
 | ---------------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | `USERNAME`             | `sshattacker`   | SSH username                                                                                                                      |
 | `PASSWORD`             | `secret`        | SSH password (if password authentication is supported by the server)                                                              |
-| `AUTHORIZED_KEYS_FILE` | `id_ed2219.pub` | Path to file in Docker build context that is used as `authorized_keys` file (if pubkey authentication is supported by the server) |
+| `DOTSSH`               | `dotssh-server` | Path to directory in Docker build context that is used as user configuration directory. This is `dotssh-client` for client containers. |
 | `WITH_NONE_CIPHER`     | `1`             | Whether to apply patch to enable the `none` cipher, set to `0` to disable _(OpenSSH only)_                                        |
 
 ## Example
@@ -68,6 +68,14 @@ Here is how to build everything and then to connect to each server with each key
 ```
 $ docker compose up --build
 $ for service in $(docker compose config --services); do port="$(docker compose port "$service" 22 | cut -f2 -d:)"; for key in id_rsa id_ecdsa id_ed25519; do ssh -i "$key" -p "$port" -o StrictHostKeyChecking=no -o PasswordAuthentication=no sshattacker@172.17.0.1 echo "$service: login succeeded using $key" || echo "$service: login failed using $key"; done; done
+```
+
+Note that the client containers are put into the profile `client` and not started automatically. They can be used to access SSH servers in several ways.
+
+```
+docker run --add-host=host.docker.internal:host-gateway -ti --rm rub-nds/openssh-client:9.0p1 sshattacker@host.docker.internal -p 22320
+docker run --network=host -ti --rm rub-nds/openssh-client:9.0p1 sshattacker@localhost -p 22320 
+docker run --network=ssh-docker-library_default -ti --rm rub-nds/openssh-client:9.0p1 sshattacker@ssh-docker-library-openssh-server-9.0p1-1
 ```
 
 ## Label
@@ -81,4 +89,3 @@ Each image is labeled with the following metadata:
 | `ssh.implementation.type`    | `server`       | `server` for SSH server and `client` for SSH client        |
 
 You can filter the docker images with `docker images -f label=ssh.implementation.name` or `docker images -f label=ssh.implementation.type=server`, for example.
-

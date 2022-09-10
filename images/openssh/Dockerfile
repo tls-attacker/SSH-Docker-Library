@@ -1,5 +1,8 @@
 # Dockerfile for OpenSSH 8+ (based on Debian Bullseye)
 
+ARG USERNAME=sshattacker
+ARG PASSWORD=secret
+
 # `openssh-builder` is just an intermediate image and does not require labels,
 # so we can disable that linter rule.
 # hadolint ignore=DL3049
@@ -35,25 +38,28 @@ RUN ./configure CFLAGS="-DDEBUG_KEX=1 -DDEBUG_KEXDH=1 -DDEBUG_KEXECDH=1" --prefi
     make -j "$(nproc)" && \
     make install-files install-sysconf host-key
 
-# Create a minimal server image without all the compile-time dependencies from
-# the previous step.
-FROM debian:bullseye AS openssh-server
+# Common for client and server image.
+FROM debian:bullseye AS openssh-base
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libssl-dev \
     zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
+
+ARG USERNAME
+ARG PASSWORD
+RUN useradd --create-home --groups users "${USERNAME}" && \
+    echo "${USERNAME}:${PASSWORD}" | chpasswd
+
+# Server image
+FROM openssh-base AS openssh-server
+
 RUN useradd --system --no-create-home sshd && mkdir -p "/var/empty"
 
-# Create SSH user, add authorized keys and fix `.ssh` dir permissions
-ARG USERNAME=sshattacker
-ARG PASSWORD=secret
-ARG AUTHORIZED_KEYS_FILE=authorized_keys
-COPY "${AUTHORIZED_KEYS_FILE}" "/home/${USERNAME}/.ssh/authorized_keys"
-RUN useradd --create-home --groups users "${USERNAME}" && \
-    echo "${USERNAME}:${PASSWORD}" | chpasswd && \
-    chown -R "${USERNAME}:${USERNAME}" "/home/${USERNAME}" && \
-    chmod -R g=,o= "/home/${USERNAME}/.ssh"
+ARG USERNAME
+ARG DOTSSH=dotssh-server
+COPY --chown="${USERNAME}:${USERNAME}" "${DOTSSH}" "/home/${USERNAME}/.ssh/"
+RUN chmod -R g=,o= "/home/${USERNAME}/.ssh"
 
 ARG VERSION
 COPY --from=openssh-builder /install /install
@@ -62,5 +68,21 @@ LABEL ssh.implementation.name="openssh" \
       ssh.implementation.type="server"
 # FIXME: Although the server starts fine, login seems to be broken for 8.0p1
 # and 8.1p1. The server simply closes the connection.
-CMD ["/install/sbin/sshd", "-D", "-e"]
+ENTRYPOINT ["/install/sbin/sshd", "-D", "-e"]
 EXPOSE 22
+
+# Client image
+FROM openssh-base AS openssh-client
+
+ARG USERNAME
+ARG DOTSSH=dotssh-server
+COPY --chown="${USERNAME}:${USERNAME}" "${DOTSSH}" "/home/${USERNAME}/.ssh/"
+RUN chmod -R g=,o= "/home/${USERNAME}/.ssh"
+
+ARG VERSION
+COPY --from=openssh-builder /install /install
+LABEL ssh.implementation.name="openssh" \
+      ssh.implementation.version="${VERSION}" \
+      ssh.implementation.type="client"
+ENTRYPOINT ["/install/bin/ssh"]
+

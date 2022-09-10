@@ -980,10 +980,19 @@ services:
     image: rub-nds/openssh-server:9.0p1
     build:
       context: images/openssh
+      target: openssh-server
       args:
         VERSION: 9.0p1
     ports:
       - '22320:22'
+  openssh-client-9.0p1:
+    image: rub-nds/openssh-client:9.0p1
+    build:
+      context: images/openssh
+      target: openssh-client
+      args:
+        VERSION: 9.0p1
+    profiles: [client]
   tinyssh-server-20150801:
     image: rub-nds/tinyssh-server:20150801
     build:
