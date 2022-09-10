@@ -22,5 +22,7 @@ COPY authorized_keys/ ./authorized_keys/
 # Switch back and run server
 WORKDIR /usr/src/app
 CMD [ "sh", "-c", "python ./simple_server.py $DEF_USER $DEF_PW" ]
-
+LABEL ssh.implementation.name="asyncssh-manger" \
+      ssh.implementation.version="2.8.1" \
+      ssh.implementation.type="server"
 EXPOSE 22
