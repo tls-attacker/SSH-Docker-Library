@@ -1,0 +1,14 @@
+tabWidth: 4
+overrides:
+  - files:
+      - '*.md'
+      - '*.markdown'
+      - '*.yml'
+      - '*.yaml'
+    options:
+      tabWidth: 2
+  - files:
+      - '*.yml'
+      - '*.yaml'
+    options:
+      singleQuote: true
