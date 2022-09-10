@@ -1,0 +1,40 @@
+From 47a481b1133159c38d10f18ab7a34adb01eda2bc Mon Sep 17 00:00:00 2001
+From: Jan Holthuis <jan.holthuis@ruhr-uni-bochum.de>
+Date: Sat, 10 Sep 2022 12:15:38 +0200
+Subject: [PATCH] [0.8.2 - 0.8.6] Disable `-Werror=strict-overflow` to fix
+ aborted build
+
+The GNU gcc 6.3.0 compiler used in our Debian Stretch based build image
+throws this warning:
+
+    /src/libssh/src/connect.c: In function 'ssh_select':
+    /src/libssh/src/connect.c:509:7: error: assuming signed overflow does not occur when simplifying conditional to constant [-Werror=strict-overflow]
+         if(j != 0)
+           ^
+    /src/libssh/src/connect.c:509:7: error: assuming signed overflow does not occur when simplifying conditional to constant [-Werror=strict-overflow]
+
+By passing it to `-Werror` the cmake file makes this warning fatal and
+leads to a failed build. Disabling this compiler flags fixes the build
+without the need to download, compile and set up an older compiler that
+does not throw that warning.
+
+Related issue: https://github.com/tls-attacker/SSH-Docker-Library/issues/20
+---
+ CompilerChecks.cmake | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CompilerChecks.cmake b/CompilerChecks.cmake
+index f8a7af14..8677deaa 100644
+--- a/CompilerChecks.cmake
++++ b/CompilerChecks.cmake
+@@ -39,7 +39,7 @@ if (UNIX)
+     add_c_compiler_flag("-Wuninitialized" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-Werror=uninitialized" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-Wimplicit-fallthrough" SUPPORTED_COMPILER_FLAGS)
+-    add_c_compiler_flag("-Werror=strict-overflow" SUPPORTED_COMPILER_FLAGS)
++    #add_c_compiler_flag("-Werror=strict-overflow" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-Wstrict-overflow=2" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-Wno-format-zero-length" SUPPORTED_COMPILER_FLAGS)
+
+--
+2.37.3
