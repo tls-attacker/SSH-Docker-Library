@@ -39,6 +39,10 @@ RUN ./configure CFLAGS="-DDEBUG_KEX=1 -DDEBUG_KEXDH=1 -DDEBUG_KEXECDH=1" --prefi
     make install-files install-sysconf host-key
 
 # Common for client and server image.
+#
+# `openssh-base` is just an intermediate image and does not require labels, so
+# we can disable that linter rule.
+# hadolint ignore=DL3049
 FROM debian:bullseye AS openssh-base
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get install -y --no-install-recommends \
