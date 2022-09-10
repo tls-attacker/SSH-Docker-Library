@@ -35,6 +35,13 @@ ARG USERNAME=sshattacker
 ARG PASSWORD=secret
 RUN sed -i "s/myuser/${USERNAME}/g" examples/ssh_server_fork.c && \
     sed -i "s/mypassword/${PASSWORD}/g" examples/ssh_server_fork.c
+
+# Apply patches to fix the build for some very old versions.
+COPY patches/ .
+RUN if printf '%s\n%s\n%s\n' "0.8.2" "${VERSION}" "0.8.6" | sort -c -g; then \
+        patch -p1 < 0001-0.8.2-0.8.6-Disable-Werror-strict-overflow-to-fix-ab.patch ; \
+    fi
+
 WORKDIR /src/libssh/build
 RUN cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/install .. && \
     make -j "$(nproc)" && \
