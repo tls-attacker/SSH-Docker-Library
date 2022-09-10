@@ -85,4 +85,3 @@ LABEL ssh.implementation.name="openssh" \
       ssh.implementation.version="${VERSION}" \
       ssh.implementation.type="client"
 ENTRYPOINT ["/install/bin/ssh"]
-
