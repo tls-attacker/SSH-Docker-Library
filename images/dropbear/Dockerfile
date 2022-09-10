@@ -38,28 +38,12 @@ RUN if ! printf '%s\n%s\n' "0.31" "${VERSION}" | sort -c -g; then \
         patch -p1 < 0011-0.30-Remove-out-of-place-linebreak-in-string-literal.patch ; \
     fi
 
-# Configure, build and install dropbear, then generate the hostkeys (when
-# supported by the dropbearkey version).
-#
-# Note that some old versions (e.g. 2013.62) may occasionally fail during this
-# step with the following error message:
-#
-#     dropbear exit: negative bignum
-#
-# This happens randomly - if you encounter it, just rerun the build command and
-# it will probably work.
+# Configure, build and install dropbear, then add the pre-generated hostkeys.
 RUN ./configure && \
-    make PROGRAMS="dropbear dropbearkey" -j "$(nproc)" && \
-    make PROGRAMS="dropbear dropbearkey" install && \
-    mkdir -p /etc/dropbear && \
-    dropbearkey -t dss -f /etc/dropbear/dropbear_dss_host_key && \
-    dropbearkey -t rsa -f /etc/dropbear/dropbear_rsa_host_key && \
-    if printf '%s\n%s\n' "2013.62" "${VERSION}" | sort -c -g; then \
-        dropbearkey -t ecdsa -f /etc/dropbear/dropbear_ecdsa_host_key && \
-        if printf '%s\n%s\n' "2020.79" "${VERSION}" | sort -c -g; then \
-            dropbearkey -t ed25519 -f /etc/dropbear/dropbear_ed25519_host_key ; \
-        fi ; \
-    fi
+    make PROGRAMS="dropbear" -j "$(nproc)" && \
+    make PROGRAMS="dropbear" install
+
+COPY hostkeys/dropbear_*_host_key /etc/dropbear/
 
 # Set up SSH user, configure a password, add authorized keys and fix `.ssh` dir
 # permissions.
