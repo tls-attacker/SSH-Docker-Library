@@ -1,0 +1,77 @@
+version: '3.2'
+services:
+  openssh-server-8.0p1:
+    image: rub-nds/openssh-server:8.0p1
+    build:
+      context: .
+      args:
+        VERSION: 8.0p1
+  openssh-server-8.1p1:
+    image: rub-nds/openssh-server:8.1p1
+    build:
+      context: .
+      args:
+        VERSION: 8.1p1
+  openssh-server-8.2p1:
+    image: rub-nds/openssh-server:8.2p1
+    build:
+      context: .
+      args:
+        VERSION: 8.2p1
+  openssh-server-8.3p1:
+    image: rub-nds/openssh-server:8.3p1
+    build:
+      context: .
+      args:
+        VERSION: 8.3p1
+  openssh-server-8.4p1:
+    image: rub-nds/openssh-server:8.4p1
+    build:
+      context: .
+      args:
+        VERSION: 8.4p1
+  openssh-server-8.5p1:
+    image: rub-nds/openssh-server:8.5p1
+    build:
+      context: .
+      args:
+        VERSION: 8.5p1
+  openssh-server-8.6p1:
+    image: rub-nds/openssh-server:8.6p1
+    build:
+      context: .
+      args:
+        VERSION: 8.6p1
+  openssh-server-8.7p1:
+    image: rub-nds/openssh-server:8.7p1
+    build:
+      context: .
+      args:
+        VERSION: 8.7p1
+  openssh-server-8.8p1:
+    image: rub-nds/openssh-server:8.8p1
+    build:
+      context: .
+      args:
+        VERSION: 8.8p1
+  openssh-server-8.9p1:
+    image: rub-nds/openssh-server:8.9p1
+    build:
+      context: .
+      args:
+        VERSION: 8.9p1
+  openssh-server-9.0p1:
+    image: rub-nds/openssh-server:9.0p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 9.0p1
+  openssh-client-9.0p1:
+    image: rub-nds/openssh-client:9.0p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 9.0p1
+    profiles: [client]
