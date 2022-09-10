@@ -25,6 +25,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     cmake \
     libssl1.0-dev \
     zlib1g-dev \
+    python3 \
     && rm -rf /var/lib/apt/lists/*
 ARG VERSION
 COPY --from=libssh-downloader /libssh-mirror-libssh-${VERSION} /src/libssh
