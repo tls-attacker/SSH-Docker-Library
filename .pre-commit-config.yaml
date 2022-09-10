@@ -47,3 +47,13 @@ repos:
     rev: v2.10.0
     hooks:
       - id: hadolint-docker
+  - repo: https://github.com/kumaraditya303/mirrors-pyright
+    rev: v1.1.239
+    hooks:
+      - id: pyright
+        # TODO: Clean up Python code for manger image.
+        exclude: ^images/manger/.*$
+  - repo: https://github.com/psf/black
+    rev: 22.3.0
+    hooks:
+      - id: black
