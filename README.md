@@ -70,9 +70,9 @@ Here is how to build everything and then to connect to each server with each key
 
 Note that the client containers are put into the profile `client` and not started automatically. They can be used to access SSH servers in several ways.
 
-    $ docker run --add-host=host.docker.internal:host-gateway -ti --rm rub-nds/openssh-client:9.0p1 sshattacker@host.docker.internal -p 22320
-    $ docker run --network=host -ti --rm rub-nds/openssh-client:9.0p1 sshattacker@localhost -p 22320
-    $ docker run --network=ssh-docker-library_default -ti --rm rub-nds/openssh-client:9.0p1 sshattacker@ssh-docker-library-openssh-server-9.0p1-1
+    $ docker run -u sshattacker --add-host=host.docker.internal:host-gateway -ti --rm rub-nds/openssh-client:9.0p1 host.docker.internal -p 22320
+    $ docker run -u sshattacker --network=host -ti --rm rub-nds/openssh-client:9.0p1 localhost -p 22320
+    $ docker run -u sshattacker --network=ssh-docker-library_default -ti --rm rub-nds/openssh-client:9.0p1 ssh-docker-library-openssh-server-9.0p1-1
 
 ## Label
 
