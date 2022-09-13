@@ -1,0 +1,110 @@
+version: '3.2'
+services:
+  libssh-server-0.7.0:
+    image: rub-nds/libssh-server:0.7.0
+    build:
+      context: .
+      args:
+        VERSION: 0.7.0
+  libssh-server-0.7.1:
+    image: rub-nds/libssh-server:0.7.1
+    build:
+      context: .
+      args:
+        VERSION: 0.7.1
+  libssh-server-0.7.2:
+    image: rub-nds/libssh-server:0.7.2
+    build:
+      context: .
+      args:
+        VERSION: 0.7.2
+  libssh-server-0.7.3:
+    image: rub-nds/libssh-server:0.7.3
+    build:
+      context: .
+      args:
+        VERSION: 0.7.3
+  libssh-server-0.7.4:
+    image: rub-nds/libssh-server:0.7.4
+    build:
+      context: .
+      args:
+        VERSION: 0.7.4
+  libssh-server-0.7.5:
+    image: rub-nds/libssh-server:0.7.5
+    build:
+      context: .
+      args:
+        VERSION: 0.7.5
+  libssh-server-0.7.6:
+    image: rub-nds/libssh-server:0.7.6
+    build:
+      context: .
+      args:
+        VERSION: 0.7.6
+  libssh-server-0.7.7:
+    image: rub-nds/libssh-server:0.7.7
+    build:
+      context: .
+      args:
+        VERSION: 0.7.7
+  libssh-server-0.8.0:
+    image: rub-nds/libssh-server:0.8.0
+    build:
+      context: .
+      args:
+        VERSION: 0.8.0
+  libssh-server-0.8.1:
+    image: rub-nds/libssh-server:0.8.1
+    build:
+      context: .
+      args:
+        VERSION: 0.8.1
+  libssh-server-0.8.2:
+    image: rub-nds/libssh-server:0.8.2
+    build:
+      context: .
+      args:
+        VERSION: 0.8.2
+  libssh-server-0.8.3:
+    image: rub-nds/libssh-server:0.8.3
+    build:
+      context: .
+      args:
+        VERSION: 0.8.3
+  libssh-server-0.8.4:
+    image: rub-nds/libssh-server:0.8.4
+    build:
+      context: .
+      args:
+        VERSION: 0.8.4
+  libssh-server-0.8.5:
+    image: rub-nds/libssh-server:0.8.5
+    build:
+      context: .
+      args:
+        VERSION: 0.8.5
+  libssh-server-0.8.6:
+    image: rub-nds/libssh-server:0.8.6
+    build:
+      context: .
+      args:
+        VERSION: 0.8.6
+  libssh-server-0.8.7:
+    image: rub-nds/libssh-server:0.8.7
+    build:
+      context: .
+      args:
+        VERSION: 0.8.7
+  libssh-server-0.8.8:
+    image: rub-nds/libssh-server:0.8.8
+    build:
+      context: .
+      args:
+        VERSION: 0.8.8
+  libssh-server-0.8.9:
+    image: rub-nds/libssh-server:0.8.9
+    build:
+      context: .
+      args:
+        VERSION: 0.8.9

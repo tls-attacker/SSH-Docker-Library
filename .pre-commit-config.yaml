@@ -57,3 +57,12 @@ repos:
     rev: 22.3.0
     hooks:
       - id: black
+  - repo: local
+    hooks:
+      - id: generate-compose-config
+        name: regenerate docker compose configuration
+        files: ^(compose\.yml(?:\.tpl)?|images/[^/]+/(?:docker-)?compose\.ya?ml|tools/generate_compose_config\.py)$
+        pass_filenames: false
+        language: python
+        entry: tools/generate_compose_config.py --output-file compose.yml
+        additional_dependencies: ['PyYAML==6.0', 'jinja2==3.1.2']
