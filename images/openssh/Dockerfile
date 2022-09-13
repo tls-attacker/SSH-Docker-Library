@@ -79,7 +79,7 @@ EXPOSE 22
 FROM openssh-base AS openssh-client
 
 ARG USERNAME
-ARG DOTSSH=dotssh-server
+ARG DOTSSH=dotssh-client
 COPY --chown="${USERNAME}:${USERNAME}" "${DOTSSH}" "/home/${USERNAME}/.ssh/"
 RUN chmod -R g=,o= "/home/${USERNAME}/.ssh"
 

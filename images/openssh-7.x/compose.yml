@@ -4,59 +4,149 @@ services:
     image: rub-nds/openssh-server:7.0p1
     build:
       context: .
+      target: openssh-server
       args:
         VERSION: 7.0p1
+  openssh-client-7.0p1:
+    image: rub-nds/openssh-client:7.0p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 7.0p1
+    profiles: [client]
   openssh-server-7.1p1:
     image: rub-nds/openssh-server:7.1p1
     build:
       context: .
+      target: openssh-server
       args:
         VERSION: 7.1p1
+  openssh-client-7.1p1:
+    image: rub-nds/openssh-client:7.1p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 7.1p1
+    profiles: [client]
   openssh-server-7.2p2:
     image: rub-nds/openssh-server:7.2p2
     build:
       context: .
+      target: openssh-server
       args:
         VERSION: 7.2p2
+  openssh-client-7.2p2:
+    image: rub-nds/openssh-client:7.2p2
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 7.2p2
+    profiles: [client]
   openssh-server-7.3p1:
     image: rub-nds/openssh-server:7.3p1
     build:
       context: .
+      target: openssh-server
       args:
         VERSION: 7.3p1
+  openssh-client-7.3p1:
+    image: rub-nds/openssh-client:7.3p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 7.3p1
+    profiles: [client]
   openssh-server-7.4p1:
     image: rub-nds/openssh-server:7.4p1
     build:
       context: .
+      target: openssh-server
       args:
         VERSION: 7.4p1
+  openssh-client-7.4p1:
+    image: rub-nds/openssh-client:7.4p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 7.4p1
+    profiles: [client]
   openssh-server-7.5p1:
     image: rub-nds/openssh-server:7.5p1
     build:
       context: .
+      target: openssh-server
       args:
         VERSION: 7.5p1
+  openssh-client-7.5p1:
+    image: rub-nds/openssh-client:7.5p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 7.5p1
+    profiles: [client]
   openssh-server-7.6p1:
     image: rub-nds/openssh-server:7.6p1
     build:
       context: .
+      target: openssh-server
       args:
         VERSION: 7.6p1
+  openssh-client-7.6p1:
+    image: rub-nds/openssh-client:7.6p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 7.6p1
+    profiles: [client]
   openssh-server-7.7p1:
     image: rub-nds/openssh-server:7.7p1
     build:
       context: .
+      target: openssh-server
       args:
         VERSION: 7.7p1
+  openssh-client-7.7p1:
+    image: rub-nds/openssh-client:7.7p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 7.7p1
+    profiles: [client]
   openssh-server-7.8p1:
     image: rub-nds/openssh-server:7.8p1
     build:
       context: .
+      target: openssh-server
       args:
         VERSION: 7.8p1
+  openssh-client-7.8p1:
+    image: rub-nds/openssh-client:7.8p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 7.8p1
+    profiles: [client]
   openssh-server-7.9p1:
     image: rub-nds/openssh-server:7.9p1
     build:
       context: .
+      target: openssh-server
       args:
         VERSION: 7.9p1
+  openssh-client-7.9p1:
+    image: rub-nds/openssh-client:7.9p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 7.9p1
+    profiles: [client]

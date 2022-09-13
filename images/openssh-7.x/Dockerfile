@@ -1,6 +1,9 @@
 # Dockerfile for OpenSSH 7 (based on Debian Stretch)
 
-# The TLS version from debian strecth image is too old to be able to download
+ARG USERNAME=sshattacker
+ARG PASSWORD=secret
+
+# The TLS version from debian stretch image is too old to be able to download
 # the OpenSSH tarball. Hence, we use a recent Alpine linux image to fetch
 # the source.
 #
@@ -13,7 +16,7 @@ RUN apk add --no-cache curl tar
 ARG VERSION
 RUN curl -s https://cloudflare.cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-${VERSION}.tar.gz | tar xzf -
 
-# After download in , we can continue on debian stretch and start the build.
+# After download, we can continue on debian stretch and start the build.
 #
 # `openssh-builder` is just an intermediate image used for building and does
 # not require labels, so we can disable that linter rule.
@@ -52,30 +55,54 @@ RUN ./configure CFLAGS="-DDEBUG_KEX=1 -DDEBUG_KEXDH=1 -DDEBUG_KEXECDH=1" --prefi
     make -j "$(nproc)" && \
     make install-files install-sysconf host-key
 
-# Create a minimal server image without all the compile-time dependencies from
-# the previous step.
-FROM debian:stretch AS openssh-server
+# Common for client and server image.
+#
+# `openssh-base` is just an intermediate image and does not require labels, so
+# we can disable that linter rule.
+# hadolint ignore=DL3049
+FROM debian:stretch AS openssh-base
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libssl1.0-dev \
     zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
+
+ARG USERNAME
+ARG PASSWORD
+RUN useradd --create-home --groups users "${USERNAME}" && \
+    echo "${USERNAME}:${PASSWORD}" | chpasswd
+
+# Create a minimal server image without all the compile-time dependencies from
+# the previous step.
+FROM openssh-base AS openssh-server
+
 RUN useradd --system --no-create-home sshd && mkdir -p "/var/empty"
 
 # Set up SSH user, add authorized keys and fix `.ssh` dir permissions
-ARG USERNAME=sshattacker
-ARG PASSWORD=secret
-ARG AUTHORIZED_KEYS_FILE=authorized_keys
-COPY "${AUTHORIZED_KEYS_FILE}" "/home/${USERNAME}/.ssh/authorized_keys"
-RUN useradd --create-home --groups users "${USERNAME}" && \
-    echo "${USERNAME}:${PASSWORD}" | chpasswd && \
-    chown -R "${USERNAME}:${USERNAME}" "/home/${USERNAME}" && \
-    chmod -R g=,o= "/home/${USERNAME}/.ssh"
+ARG USERNAME
+ARG DOTSSH=dotssh-server
+COPY --chown="${USERNAME}:${USERNAME}" "${DOTSSH}" "/home/${USERNAME}/.ssh/"
+RUN chmod -R g=,o= "/home/${USERNAME}/.ssh"
 
-COPY --from=openssh-builder /install /install
 ARG VERSION
+COPY --from=openssh-builder /install /install
 LABEL ssh.implementation.name="openssh" \
       ssh.implementation.version="${VERSION}" \
       ssh.implementation.type="server"
-CMD ["/install/sbin/sshd", "-D", "-e"]
+ENTRYPOINT ["/install/sbin/sshd", "-D", "-e"]
 EXPOSE 22
+
+# Client image
+FROM openssh-base AS openssh-client
+
+ARG USERNAME
+ARG DOTSSH=dotssh-client
+COPY --chown="${USERNAME}:${USERNAME}" "${DOTSSH}" "/home/${USERNAME}/.ssh/"
+RUN chmod -R g=,o= "/home/${USERNAME}/.ssh"
+
+ARG VERSION
+COPY --from=openssh-builder /install /install
+LABEL ssh.implementation.name="openssh" \
+      ssh.implementation.version="${VERSION}" \
+      ssh.implementation.type="client"
+ENTRYPOINT ["/install/bin/ssh"]
