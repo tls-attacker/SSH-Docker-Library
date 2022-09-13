@@ -65,11 +65,14 @@ The docker images can be customized by [variables that can be overridden at buil
 
 Here is how to build everything and then to connect to each server with each key.
 
+NOTE: There is a bug that prevents all images from being built at the same time (see https://github.com/docker/compose/issues/9837). It can be helpful to build in batches (using grep, subdirectories in images/, or just picking a hundred images with head/tail).
+
     $ docker compose up --build
     $ for service in $(docker compose config --services); do port="$(docker compose port "$service" 22 | cut -f2 -d:)"; for key in id_rsa id_ecdsa id_ed25519; do ssh -i "$key" -p "$port" -o StrictHostKeyChecking=no -o PasswordAuthentication=no sshattacker@172.17.0.1 echo "$service: login succeeded using $key" || echo "$service: login failed using $key"; done; done
 
 Note that the client containers are put into the profile `client` and not started automatically. They can be used to access SSH servers in several ways.
 
+    $ docker compose --profile client build
     $ docker run -u sshattacker --add-host=host.docker.internal:host-gateway -ti --rm rub-nds/openssh-client:9.0p1 host.docker.internal -p 22320
     $ docker run -u sshattacker --network=host -ti --rm rub-nds/openssh-client:9.0p1 localhost -p 22320
     $ docker run -u sshattacker --network=ssh-docker-library_default -ti --rm rub-nds/openssh-client:9.0p1 ssh-docker-library-openssh-server-9.0p1-1
