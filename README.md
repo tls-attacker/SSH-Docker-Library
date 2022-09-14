@@ -65,7 +65,7 @@ The docker images can be customized by [variables that can be overridden at buil
 
 Here is how to build everything and then to connect to each server with each key.
 
-NOTE: There is a bug that prevents all images from being built at the same time (see https://github.com/docker/compose/issues/9837). It can be helpful to build in batches (using grep, subdirectories in images/, or just picking a hundred images with head/tail).
+:warning: NOTE: There is a bug that prevents all images from being built at the same time (see https://github.com/docker/compose/issues/9837). It can be helpful to build in batches, for example with `docker compose config --services | xargs --max-args=5 --max-procs=1 docker compose build`.
 
     $ docker compose up --build
     $ for service in $(docker compose config --services); do port="$(docker compose port "$service" 22 | cut -f2 -d:)"; for key in id_rsa id_ecdsa id_ed25519; do ssh -i "$key" -p "$port" -o StrictHostKeyChecking=no -o PasswordAuthentication=no sshattacker@172.17.0.1 echo "$service: login succeeded using $key" || echo "$service: login failed using $key"; done; done
