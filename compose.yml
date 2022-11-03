@@ -972,3 +972,16 @@ services:
       service: tinyssh-server-20220801
     ports:
       - '22623:22'
+  thrussh-server-0.32.10:
+    extends:
+      file: images/thrussh/compose.yml
+      service: thrussh-server-0.32.10
+    ports:
+      - '22624:22'  
+  thrussh-server-0.33.5:
+    extends:
+      file: images/thrussh/compose.yml
+      service: thrussh-server-0.33.5
+    ports:
+      - '22625:22'  
+

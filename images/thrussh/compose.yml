@@ -1,0 +1,33 @@
+version: '3.2'
+services:
+  thrussh-server-0.32.10:
+    image: rub-nds/thrussh-server:0.32.10
+    build:
+      context: .
+      args:
+        VERSION: 0.32.10
+      target: thrussh-server  
+  thrussh-client-0.32.10:
+    image: rub-nds/thrussh-client:0.32.10
+    build:
+      context: .
+      args:
+        VERSION: 0.32.10
+      target: thrussh-client
+    profiles: [client]      
+  thrussh-server-0.33.5:
+    image: rub-nds/thrussh-server:0.33.5
+    build:
+      context: .
+      args:
+        VERSION: 0.33.5
+      target: thrussh-server
+  thrussh-client-0.33.5:
+    image: rub-nds/thrussh-client:0.33.5
+    build:
+      context: .
+      args:
+        VERSION: 0.33.5
+      target: thrussh-client
+    profiles: [client]       
+  
