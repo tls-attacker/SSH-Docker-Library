@@ -25,7 +25,7 @@ FROM thrussh-base AS thrussh-server
 COPY server.rs /thrussh/examples/
 RUN cargo build --release --example server
 WORKDIR /thrussh/target/release/examples/
-CMD [ "./server" ]
+ENTRYPOINT [ "./server" ]
 EXPOSE 22
 
 #Trussh client image
@@ -33,4 +33,4 @@ FROM thrussh-base AS thrussh-client
 COPY client.rs /thrussh/examples/
 RUN cargo build --release --example client
 WORKDIR /thrussh/target/release/examples/
-CMD [ "./client" ]
+ENTRYPOINT [ "./client" ]
