@@ -1,23 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="WARN">
-    <!-- Author:  Crunchify.com  -->
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration xmlns="http://logging.apache.org/log4j/2.0/config">
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss} [%t] %-5p %c{1}:%L - %msg%n" />
+            <PatternLayout pattern="%highlight{%d{HH:mm:ss.SSS} [%t] %-5level %logger{-4} - %replace{%msg}{\r?\n}{&#x0A;  }%n}{FATAL=Bright Red,ERROR=Red,WARN=Yellow,INFO=Blue,DEBUG=Normal,TRACE=Dim White}" />
         </Console>
-        <RollingFile name="RollingFile" filename="log/CrunchifyTest.log"
-                     filepattern="${logPath}/%d{YYYYMMddHHmmss}-fargo.log">
-            <PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss} [%t] %-5p %c{1}:%L - %msg%n" />
-            <Policies>
-                <SizeBasedTriggeringPolicy size="100 MB" />
-            </Policies>
-            <DefaultRolloverStrategy max="20" />
-        </RollingFile>
     </Appenders>
     <Loggers>
+        <Logger name="de.rub.nds" level="debug" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Logger name="DirectLogger" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
         <Root level="error">
-            <AppenderRef ref="Console" />
-            <AppenderRef ref="RollingFile" />
+            <AppenderRef ref="Console"/>
         </Root>
     </Loggers>
 </Configuration>

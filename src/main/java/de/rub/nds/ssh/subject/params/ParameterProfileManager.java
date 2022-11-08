@@ -107,7 +107,7 @@ public class ParameterProfileManager {
 
     public ParameterProfile getProfile(SshImplementationType type, String version, ConnectionRole role) {
         for (ParameterProfile profile : allProfileList) {
-            if (profile.getRole() == role && profile.getType() == type) {
+            if (profile.getRole().equals(role) && profile.getType().equals(type)) {
                 if (profile.getVersionList() != null && !profile.getVersionList().isEmpty()) {
                     for (String versionRegex : profile.getVersionList()) {
                         if (version.matches(versionRegex)) {

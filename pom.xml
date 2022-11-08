@@ -177,6 +177,11 @@
             <version>2.3.3</version>
             <type>jar</type>
         </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.9.0</version>
+        </dependency>
     </dependencies>
     <build>
         <pluginManagement>

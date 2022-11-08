@@ -30,18 +30,23 @@ import de.rub.nds.ssh.subject.properties.ImageProperties;
 import de.rub.nds.ssh.subject.properties.PropertyManager;
 import de.rub.nds.ssh.subject.ConnectionRole;
 import de.rub.nds.ssh.subject.SshImplementationType;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Creates SSH-Server or SSH-Client Instances as Docker Container Holds the Config for each SSH-Server or SSH-Client
  */
 public class DockerSshManagerFactory {
+
+    private static Logger LOGGER = LogManager.getLogger();
+
     private DockerSshManagerFactory() {
         throw new UnsupportedOperationException("Utility class");
     }
 
     private static final com.github.dockerjava.api.DockerClient DOCKER = DockerClientManager.getDockerClient();
 
-    private static final int DEFAULT_PORT = 4433;
+    private static final int DEFAULT_PORT = 22512;
 
     @SuppressWarnings("unchecked")
     public abstract static class SshInstanceBuilder<T extends SshInstanceBuilder<T>> {
@@ -52,8 +57,8 @@ public class DockerSshManagerFactory {
         // shared constructor parameters
         // Host Info:
         protected final TransportType transportType;
-        protected String ip = null;
-        protected String hostname = null;
+        protected String ip = "127.0.0.1";
+        protected String hostname = "localhost";
         protected int port = DEFAULT_PORT;
         protected UnaryOperator<HostConfig> hostConfigHook;
         // remaining shared params
@@ -153,6 +158,12 @@ public class DockerSshManagerFactory {
                 hostConfigHook);
         }
 
+        public DockerSshServerInstance build(int bindingPort) throws DockerException, InterruptedException {
+            return new DockerSshServerInstance(containerName, profile, imageProperties, version, autoRemove,
+                new HostInfo(ip, hostname, bindingPort, transportType), additionalParameters, parallelize,
+                insecureConnection, hostConfigHook);
+        }
+
     }
 
     public static SshClientInstanceBuilder getSshClientBuilder(SshImplementationType type, String version) {
@@ -207,7 +218,7 @@ public class DockerSshManagerFactory {
         List<String> versionList = new LinkedList<>();
         Map<String, String> labels = new HashMap<>();
         labels.put(SshImageLabels.IMPLEMENTATION.getLabelName(), type.name().toLowerCase());
-        labels.put(SshImageLabels.CONNECTION_ROLE.getLabelName(), role.toString().toLowerCase());
+        labels.put(SshImageLabels.TYPE.getLabelName(), role.toString().toLowerCase());
         List<Image> serverImageList = DOCKER.listImagesCmd().withLabelFilter(labels).withDanglingFilter(false).exec();
         for (Image image : serverImageList) {
             if (image.getLabels() != null) {

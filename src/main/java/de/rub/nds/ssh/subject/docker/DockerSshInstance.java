@@ -45,7 +45,7 @@ public abstract class DockerSshInstance {
     private static final Logger LOGGER = LogManager.getLogger();
 
     private final String containerName;
-    private String containerId;
+    protected String containerId;
     protected final Image image;
     private Optional<Long> exitCode = Optional.empty();
     private boolean autoRemove;
@@ -53,7 +53,7 @@ public abstract class DockerSshInstance {
     protected final ParameterProfile parameterProfile;
     protected final ImageProperties imageProperties;
     protected List<DockerExecInstance> childExecs = new LinkedList<>();
-    private final UnaryOperator<HostConfig> hostConfigHook;
+    protected final UnaryOperator<HostConfig> hostConfigHook;
 
     public DockerSshInstance(String containerName, ParameterProfile profile, ImageProperties imageProperties,
         String version, ConnectionRole role, boolean autoRemove, UnaryOperator<HostConfig> hostConfigHook) {
@@ -71,7 +71,7 @@ public abstract class DockerSshInstance {
         Map<String, String> labels = new HashMap<>();
         labels.put(SshImageLabels.IMPLEMENTATION.getLabelName(), profile.getType().name().toLowerCase());
         labels.put(SshImageLabels.VERSION.getLabelName(), version);
-        labels.put(SshImageLabels.CONNECTION_ROLE.getLabelName(), role.toString().toLowerCase());
+        labels.put(SshImageLabels.TYPE.getLabelName(), role.toString().toLowerCase());
         this.image = DOCKER.listImagesCmd().withLabelFilter(labels).exec().stream().findFirst()
             .orElseThrow(SshVersionNotFoundException::new);
     }
@@ -87,7 +87,8 @@ public abstract class DockerSshInstance {
     }
 
     protected CreateContainerCmd prepareCreateContainerCmd(CreateContainerCmd cmd) {
-        HostConfig hcfg = prepareHostConfig(HostConfig.newHostConfig());
+        // ToDO check if mounting is needed
+        HostConfig hcfg = HostConfig.newHostConfig();
         if (hostConfigHook != null) {
             hcfg = hostConfigHook.apply(hcfg);
         }

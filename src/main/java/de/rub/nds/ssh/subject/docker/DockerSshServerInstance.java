@@ -13,18 +13,20 @@ import java.util.function.UnaryOperator;
 
 import com.github.dockerjava.api.command.CreateContainerCmd;
 import com.github.dockerjava.api.command.InspectContainerResponse;
-import com.github.dockerjava.api.model.ExposedPort;
-import com.github.dockerjava.api.model.HostConfig;
-import com.github.dockerjava.api.model.NetworkSettings;
-import com.github.dockerjava.api.model.PortBinding;
+import com.github.dockerjava.api.model.*;
 import com.github.dockerjava.api.model.Ports.Binding;
 
 import de.rub.nds.ssh.subject.HostInfo;
+import de.rub.nds.ssh.subject.constants.SshImageLabels;
 import de.rub.nds.ssh.subject.params.ParameterProfile;
 import de.rub.nds.ssh.subject.properties.ImageProperties;
 import de.rub.nds.ssh.subject.ConnectionRole;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class DockerSshServerInstance extends DockerSshInstance {
+
+    private static Logger LOGGER = LogManager.getLogger();
 
     private int port;
     private final HostInfo hostInfo;
@@ -60,16 +62,30 @@ public class DockerSshServerInstance extends DockerSshInstance {
         } else {
             host = hostInfo.getHostname();
         }
-        exposedImplementationPort = new ExposedPort(hostInfo.getPort(), hostInfo.getType().toInternetProtocol());
-        return super.prepareCreateContainerCmd(cmd).withCmd(parameterProfile.toParameters(host, hostInfo.getPort(),
-            imageProperties, additionalParameters, parallelize, insecureConnection))
-            .withExposedPorts(exposedImplementationPort);
+        ExposedPort tcp22 = ExposedPort.tcp(22);
+        Ports portBindings = new Ports();
+        portBindings.bind(tcp22, Ports.Binding.bindPort(hostInfo.getPort()));
+        exposedImplementationPort = new ExposedPort(22, hostInfo.getType().toInternetProtocol());
+        // ToDO check if mounting is needed
+
+        HostConfig hcfg = HostConfig.newHostConfig();
+        if (super.hostConfigHook != null) {
+            hcfg = hostConfigHook.apply(hcfg);
+        }
+        hcfg.withPortBindings(portBindings);
+        return cmd.withAttachStderr(true).withAttachStdout(true).withAttachStdin(true).withTty(true).withStdInOnce(true)
+            .withStdinOpen(true).withExposedPorts(exposedImplementationPort).withHostConfig(hcfg);
     }
 
     @Override
     public void start() {
         super.start();
         updateInstancePort();
+
+        LOGGER.debug("Successfully started container with ID:" + containerId + " as: "
+            + image.getLabels().get(SshImageLabels.IMPLEMENTATION.getLabelName()) + "-"
+            + image.getLabels().get(SshImageLabels.TYPE.getLabelName()) + "-"
+            + image.getLabels().get(SshImageLabels.VERSION.getLabelName()) + " running on port: " + port);
     }
 
     /**

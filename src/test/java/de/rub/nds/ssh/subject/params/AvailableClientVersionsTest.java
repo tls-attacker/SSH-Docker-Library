@@ -1,8 +1,8 @@
 /**
  * SSH-Attacker - A Modular Penetration Testing Framework for SSH
- * <p>
+ *
  * Copyright 2014-2022 Ruhr University Bochum, Paderborn University, Hackmanit GmbH
- * <p>
+ *
  * Licensed under Apache License, Version 2.0
  * http://www.apache.org/licenses/LICENSE-2.0.txt
  */
@@ -32,7 +32,7 @@ import static junit.framework.TestCase.assertTrue;
 
 public class AvailableClientVersionsTest {
 
-    //    private static final String HOSTNAME = "nds.tls-docker-library-test.de";
+    // private static final String HOSTNAME = "nds.tls-docker-library-test.de";
     // when running the tests on another os than linux you might need to change the
     // ip use `docker run --rm -it alpine-build:3.12 ping -c1 host.docker.internal`
     // to find the correct IP
@@ -58,7 +58,7 @@ public class AvailableClientVersionsTest {
 
         System.out.println("Start Test Server \n");
 
-        SshTestServer testServer = new SshTestServer(PORT,true);
+        SshTestServer testServer = new SshTestServer(PORT, true);
         testServer.start();
 
         while (testServer.isStarted() != true) {
@@ -99,17 +99,16 @@ public class AvailableClientVersionsTest {
             throw new RuntimeException(e);
         }
 
-
     }
 
-    public void functionalSingleClient(SshImplementationType clientType, String version){
-        functionalSingleClient(clientType,version,false);
+    public void functionalSingleClient(SshImplementationType clientType, String version) {
+        functionalSingleClient(clientType, version, false);
     }
 
     public void functionalSingleClient(SshImplementationType clientType, String version, Boolean debug) {
         System.out.println("Start Test Server \n");
 
-        SshTestServer testServer = new SshTestServer(PORT,debug);
+        SshTestServer testServer = new SshTestServer(PORT, debug);
         testServer.start();
 
         while (testServer.isStarted() != true) {
@@ -161,7 +160,7 @@ public class AvailableClientVersionsTest {
 
     @Test
     public void functionalClientDropbear() {
-        functionalSingleClient(SshImplementationType.DROPBEAR, "2013.60",true);
+        functionalSingleClient(SshImplementationType.DROPBEAR, "2013.60", true);
     }
 
     @Test
@@ -190,8 +189,7 @@ public class AvailableClientVersionsTest {
             try {
                 boolean isFunctional = isFunctional(testServer, type, version);
                 System.out.println(type.name() + ":" + version + " - " + isFunctional);
-                report.addInstanceContainer(
-                        new InstanceContainer(ConnectionRole.CLIENT, type, version, isFunctional));
+                report.addInstanceContainer(new InstanceContainer(ConnectionRole.CLIENT, type, version, isFunctional));
             } catch (Exception E) {
                 E.printStackTrace();
                 System.out.println(type.name() + ":" + version + "       ERROR");
@@ -199,7 +197,7 @@ public class AvailableClientVersionsTest {
         }
 
         try {
-            ContainerReport.write(new File("client_report_" + type+ ".xml"), report);
+            ContainerReport.write(new File("client_report_" + type + ".xml"), report);
             testServer.stop("");
         } catch (JAXBException | IOException e) {
             throw new RuntimeException(e);
@@ -220,6 +218,7 @@ public class AvailableClientVersionsTest {
     public void functionalClientGO() {
         functionalSingleClient(SshImplementationType.GO, "v0.0.0-20220924013350-4ba4fb4dd9e7");
     }
+
     @Test
     public void functionalClientAllGO() {
         functionalClientsAllOfType(SshImplementationType.GO);
@@ -237,8 +236,8 @@ public class AvailableClientVersionsTest {
 
     @Test
     public void functionalClientZgrab2() {
-        //work but not fire a command
-        functionalSingleClient(SshImplementationType.ZGRAB2, "latest",true);
+        // work but not fire a command
+        functionalSingleClient(SshImplementationType.ZGRAB2, "latest", true);
     }
 
     @Test
@@ -253,8 +252,8 @@ public class AvailableClientVersionsTest {
 
     @Test
     public void functionalClientMetasploit() {
-        //todo use Parameter for script https://docs.rapid7.com/metasploit/resource-scripts/
-        functionalSingleClient(SshImplementationType.METASPLOIT, "latest",false);
+        // todo use Parameter for script https://docs.rapid7.com/metasploit/resource-scripts/
+        functionalSingleClient(SshImplementationType.METASPLOIT, "latest", false);
     }
 
     @Test
@@ -293,7 +292,7 @@ public class AvailableClientVersionsTest {
                     boolean isFunctional = isFunctional(testServer, type, version);
                     System.out.println(type.name() + ":" + version + " - " + isFunctional);
                     report.addInstanceContainer(
-                            new InstanceContainer(ConnectionRole.CLIENT, type, version, isFunctional));
+                        new InstanceContainer(ConnectionRole.CLIENT, type, version, isFunctional));
                 } catch (Exception E) {
                     E.printStackTrace();
                     System.out.println(type.name() + ":" + version + "       ERROR");
@@ -335,8 +334,8 @@ public class AvailableClientVersionsTest {
                     boolean isFunctional = isFunctional(testServer, type, version);
                     System.out.println(type.name() + ":" + version + " - " + isFunctional);
                     report.addInstanceContainer(
-                            new InstanceContainer(ConnectionRole.CLIENT, type, version, isFunctional));
-                    if (!isFunctional){
+                        new InstanceContainer(ConnectionRole.CLIENT, type, version, isFunctional));
+                    if (!isFunctional) {
                         ContainerReport.write(new File("client_report.xml"), report);
                         testServer.stop("");
                     }
@@ -367,7 +366,7 @@ public class AvailableClientVersionsTest {
                 return false;
             }
             client = DockerSshManagerFactory.getSshClientBuilder(type, version).ip(IP).port(PORT)
-                    .connectOnStartup(false).insecureConnection(false).build();
+                .connectOnStartup(false).insecureConnection(false).build();
             client.start();
             ei = (DockerExecInstance) client.connect();
             boolean waiting = true;

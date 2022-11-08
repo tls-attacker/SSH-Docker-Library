@@ -25,14 +25,15 @@ public class ImageProperties {
     private boolean useIP;
 
     public ImageProperties(ConnectionRole role, SshImplementationType type, String defaultVersion,
-        String defaultCertPath, boolean useIP) {
+        // String defaultCertPath,
+        boolean useIP) {
         // Called for SSH client images
         this.role = role;
         this.type = type;
         this.defaultVersion = defaultVersion;
         this.internalPort = null;
         this.defaultKeyPath = null;
-        this.defaultCertPath = defaultCertPath;
+        // this.defaultCertPath = defaultCertPath;
         this.useIP = useIP;
     }
 

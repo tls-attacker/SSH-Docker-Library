@@ -31,8 +31,8 @@ public class HostInfo {
         // specifies where the server is available
         this.port = port;
         if (hostname == null) {
-            this.hostname = "127.0.0.42";
-            this.ip = "127.0.0.42";
+            this.hostname = "127.0.0.1";
+            this.ip = "127.0.0.1";
         } else {
             this.hostname = hostname;
             this.ip = hostname;

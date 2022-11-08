@@ -41,35 +41,44 @@ public class PropertyManager {
     protected PropertyManager() {
         imagePropertyList = new LinkedList<>();
 
-        imagePropertyList.add(
-            new ImageProperties(ConnectionRole.CLIENT, SshImplementationType.OPENSSH, "9.0p1", Const.CA_CERT, false));
+        imagePropertyList
+            .add(new ImageProperties(ConnectionRole.CLIENT, SshImplementationType.OPENSSH, "9.0p1", false));
 
-        imagePropertyList.add(
-            new ImageProperties(ConnectionRole.CLIENT, SshImplementationType.PARAMIKO, "2.11.0", Const.CA_CERT, false));
+        imagePropertyList
+            .add(new ImageProperties(ConnectionRole.SERVER, SshImplementationType.OPENSSH, "8.6p1", false));
 
-        imagePropertyList.add(
-                new ImageProperties(ConnectionRole.CLIENT, SshImplementationType.DROPBEAR, "2022.82", Const.CA_CERT, false));
+        imagePropertyList
+            .add(new ImageProperties(ConnectionRole.CLIENT, SshImplementationType.PARAMIKO, "2.11.0", false));
 
-        imagePropertyList.add(
-                new ImageProperties(ConnectionRole.CLIENT, SshImplementationType.GO, "v0.0.0-20220924013350-4ba4fb4dd9e7", Const.CA_CERT, false));
+        imagePropertyList
+            .add(new ImageProperties(ConnectionRole.CLIENT, SshImplementationType.DROPBEAR, "2022.82", false));
 
-        imagePropertyList.add(
-                new ImageProperties(ConnectionRole.CLIENT, SshImplementationType.PUTTY, "0.76-2", Const.CA_CERT, false));
+        imagePropertyList
+            .add(new ImageProperties(ConnectionRole.SERVER, SshImplementationType.DROPBEAR, "2022.82", false));
 
-        imagePropertyList.add(
-                new ImageProperties(ConnectionRole.CLIENT, SshImplementationType.ASYNCSSH, "2.12.0", Const.CA_CERT, false));
+        imagePropertyList.add(new ImageProperties(ConnectionRole.CLIENT, SshImplementationType.GO,
+            "v0.0.0-20220924013350-4ba4fb4dd9e7", false));
 
-        imagePropertyList.add(
-                new ImageProperties(ConnectionRole.CLIENT, SshImplementationType.LIBSSH, "0.9.4", Const.CA_CERT, false));
+        imagePropertyList.add(new ImageProperties(ConnectionRole.CLIENT, SshImplementationType.PUTTY, "0.76-2", false));
 
-        imagePropertyList.add(
-                new ImageProperties(ConnectionRole.CLIENT, SshImplementationType.WOLFSSH, "1.4.11-stable", Const.CA_CERT, false));
+        imagePropertyList
+            .add(new ImageProperties(ConnectionRole.CLIENT, SshImplementationType.ASYNCSSH, "2.12.0", false));
 
-        imagePropertyList.add(
-                new ImageProperties(ConnectionRole.CLIENT, SshImplementationType.ZGRAB2, "latest", Const.CA_CERT, false));
+        imagePropertyList
+            .add(new ImageProperties(ConnectionRole.SERVER, SshImplementationType.ASYNCSSH, "2.12.0", false));
 
-        imagePropertyList.add(
-                new ImageProperties(ConnectionRole.CLIENT, SshImplementationType.METASPLOIT, "latest", Const.CA_CERT, false));
+        imagePropertyList.add(new ImageProperties(ConnectionRole.CLIENT, SshImplementationType.LIBSSH, "0.9.4", false));
+
+        imagePropertyList.add(new ImageProperties(ConnectionRole.SERVER, SshImplementationType.LIBSSH, "0.9.4", false));
+
+        imagePropertyList
+            .add(new ImageProperties(ConnectionRole.CLIENT, SshImplementationType.WOLFSSH, "1.4.11-stable", false));
+
+        imagePropertyList
+            .add(new ImageProperties(ConnectionRole.CLIENT, SshImplementationType.ZGRAB2, "latest", false));
+
+        imagePropertyList
+            .add(new ImageProperties(ConnectionRole.CLIENT, SshImplementationType.METASPLOIT, "latest", false));
 
     }
 

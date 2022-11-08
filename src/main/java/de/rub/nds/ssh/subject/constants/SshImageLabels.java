@@ -10,9 +10,9 @@
 package de.rub.nds.ssh.subject.constants;
 
 public enum SshImageLabels {
-    IMPLEMENTATION("ssh_implementation"),
-    VERSION("ssh_implementation_version"),
-    CONNECTION_ROLE("ssh_implementation_connectionRole");
+    IMPLEMENTATION("ssh.implementation.name"),
+    VERSION("ssh.implementation.version"),
+    TYPE("ssh.implementation.type");
 
     private String labelName;
 
