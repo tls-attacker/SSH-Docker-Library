@@ -65,8 +65,8 @@ ARG DOTSSH=dotssh-server
 COPY --chown="${USERNAME}:${USERNAME}" "${DOTSSH}" "/home/${USERNAME}/.ssh/"
 RUN chmod -R g=,o= "/home/${USERNAME}/.ssh"
 
-ARG VERSION
-COPY --from=openssh-builder /install /install
+    ARG VERSION
+    COPY --from=openssh-builder /install /install
 LABEL ssh.implementation.name="openssh" \
       ssh.implementation.version="${VERSION}" \
       ssh.implementation.type="server"
