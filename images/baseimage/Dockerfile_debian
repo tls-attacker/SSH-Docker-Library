@@ -1,0 +1,16 @@
+ARG VERSION=latest
+
+FROM debian:${VERSION} as stretch-libssl
+ARG LIBSSL_VERSION
+RUN apt-get update && apt-get install -y \
+  build-essential \
+  cmake \
+  git \
+  curl \
+  wget \
+  bash \
+  libssl${LIBSSL_VERSION}-dev \
+  zlib1g-dev \
+  python3 \
+  && rm -rf /var/lib/apt/lists/*
+WORKDIR /src
