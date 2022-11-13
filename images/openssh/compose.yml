@@ -7,6 +7,7 @@ services:
       target: openssh-server
       args:
         VERSION: 8.0p1
+    profiles: [ server ]
   openssh-client-8.0p1:
     image: rub-nds/openssh-client:8.0p1
     build:
@@ -14,7 +15,7 @@ services:
       target: openssh-client
       args:
         VERSION: 8.0p1
-    profiles: [client]
+    profiles: [ client ]
   openssh-server-8.1p1:
     image: rub-nds/openssh-server:8.1p1
     build:
@@ -22,6 +23,7 @@ services:
       target: openssh-server
       args:
         VERSION: 8.1p1
+    profiles: [ server ]
   openssh-client-8.1p1:
     image: rub-nds/openssh-client:8.1p1
     build:
@@ -29,7 +31,7 @@ services:
       target: openssh-client
       args:
         VERSION: 8.1p1
-    profiles: [client]
+    profiles: [ client ]
   openssh-server-8.2p1:
     image: rub-nds/openssh-server:8.2p1
     build:
@@ -37,6 +39,7 @@ services:
       target: openssh-server
       args:
         VERSION: 8.2p1
+    profiles: [ server ]
   openssh-client-8.2p1:
     image: rub-nds/openssh-client:8.2p1
     build:
@@ -44,7 +47,7 @@ services:
       target: openssh-client
       args:
         VERSION: 8.2p1
-    profiles: [client]
+    profiles: [ client ]
   openssh-server-8.3p1:
     image: rub-nds/openssh-server:8.3p1
     build:
@@ -52,6 +55,7 @@ services:
       target: openssh-server
       args:
         VERSION: 8.3p1
+    profiles: [ server ]
   openssh-client-8.3p1:
     image: rub-nds/openssh-client:8.3p1
     build:
@@ -59,7 +63,7 @@ services:
       target: openssh-client
       args:
         VERSION: 8.3p1
-    profiles: [client]
+    profiles: [ client ]
   openssh-server-8.4p1:
     image: rub-nds/openssh-server:8.4p1
     build:
@@ -67,6 +71,7 @@ services:
       target: openssh-server
       args:
         VERSION: 8.4p1
+    profiles: [ server ]
   openssh-client-8.4p1:
     image: rub-nds/openssh-client:8.4p1
     build:
@@ -74,7 +79,7 @@ services:
       target: openssh-client
       args:
         VERSION: 8.4p1
-    profiles: [client]
+    profiles: [ client ]
   openssh-server-8.5p1:
     image: rub-nds/openssh-server:8.5p1
     build:
@@ -82,6 +87,7 @@ services:
       target: openssh-server
       args:
         VERSION: 8.5p1
+    profiles: [ server ]
   openssh-client-8.5p1:
     image: rub-nds/openssh-client:8.5p1
     build:
@@ -89,7 +95,7 @@ services:
       target: openssh-client
       args:
         VERSION: 8.5p1
-    profiles: [client]
+    profiles: [ client ]
   openssh-server-8.6p1:
     image: rub-nds/openssh-server:8.6p1
     build:
@@ -97,6 +103,7 @@ services:
       target: openssh-server
       args:
         VERSION: 8.6p1
+    profiles: [ server ]
   openssh-client-8.6p1:
     image: rub-nds/openssh-client:8.6p1
     build:
@@ -104,7 +111,7 @@ services:
       target: openssh-client
       args:
         VERSION: 8.6p1
-    profiles: [client]
+    profiles: [ client ]
   openssh-server-8.7p1:
     image: rub-nds/openssh-server:8.7p1
     build:
@@ -112,6 +119,7 @@ services:
       target: openssh-server
       args:
         VERSION: 8.7p1
+    profiles: [ server ]
   openssh-client-8.7p1:
     image: rub-nds/openssh-client:8.7p1
     build:
@@ -119,7 +127,7 @@ services:
       target: openssh-client
       args:
         VERSION: 8.7p1
-    profiles: [client]
+    profiles: [ client ]
   openssh-server-8.8p1:
     image: rub-nds/openssh-server:8.8p1
     build:
@@ -127,6 +135,7 @@ services:
       target: openssh-server
       args:
         VERSION: 8.8p1
+    profiles: [ server ]
   openssh-client-8.8p1:
     image: rub-nds/openssh-client:8.8p1
     build:
@@ -134,7 +143,7 @@ services:
       target: openssh-client
       args:
         VERSION: 8.8p1
-    profiles: [client]
+    profiles: [ client ]
   openssh-server-8.9p1:
     image: rub-nds/openssh-server:8.9p1
     build:
@@ -142,6 +151,7 @@ services:
       target: openssh-server
       args:
         VERSION: 8.9p1
+    profiles: [ server ]
   openssh-client-8.9p1:
     image: rub-nds/openssh-client:8.9p1
     build:
@@ -149,7 +159,7 @@ services:
       target: openssh-client
       args:
         VERSION: 8.9p1
-    profiles: [client]
+    profiles: [ client ]
   openssh-server-9.0p1:
     image: rub-nds/openssh-server:9.0p1
     build:
@@ -157,6 +167,7 @@ services:
       target: openssh-server
       args:
         VERSION: 9.0p1
+    profiles: [ server ]
   openssh-client-9.0p1:
     image: rub-nds/openssh-client:9.0p1
     build:
@@ -164,4 +175,4 @@ services:
       target: openssh-client
       args:
         VERSION: 9.0p1
-    profiles: [client]
+    profiles: [ client ]
