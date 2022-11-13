@@ -1,0 +1,10 @@
+version: '3.2'
+services:
+  metasploit-client:
+    image: rub-nds/metasploit-client
+    build:
+      context: .
+      target: metasploit-client
+      args:
+        VERSON: 0.7.2
+    profiles: [ client ]
