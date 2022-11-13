@@ -4,335 +4,901 @@ services:
     image: rub-nds/dropbear-server:0.23
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.23'
+    profiles: [ server ]
   dropbear-server-0.28:
     image: rub-nds/dropbear-server:0.28
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.28'
+    profiles: [ server ]
   dropbear-server-0.29:
     image: rub-nds/dropbear-server:0.29
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.29'
+    profiles: [ server ]
   dropbear-server-0.30:
     image: rub-nds/dropbear-server:0.30
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.30'
+    profiles: [ server ]
   dropbear-server-0.31:
     image: rub-nds/dropbear-server:0.31
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.31'
+    profiles: [ server ]
   dropbear-server-0.32:
     image: rub-nds/dropbear-server:0.32
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.32'
+    profiles: [ server ]
   dropbear-server-0.33:
     image: rub-nds/dropbear-server:0.33
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.33'
+    profiles: [ server ]
   dropbear-server-0.34:
     image: rub-nds/dropbear-server:0.34
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.34'
+    profiles: [ server ]
   dropbear-server-0.35:
     image: rub-nds/dropbear-server:0.35
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.35'
+    profiles: [ server ]
   dropbear-server-0.36:
     image: rub-nds/dropbear-server:0.36
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.36'
+    profiles: [ server ]
   dropbear-server-0.37:
     image: rub-nds/dropbear-server:0.37
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.37'
+    profiles: [ server ]
   dropbear-server-0.38:
     image: rub-nds/dropbear-server:0.38
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.38'
+    profiles: [ server ]
   dropbear-server-0.39:
     image: rub-nds/dropbear-server:0.39
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.39'
+    profiles: [ server ]
   dropbear-server-0.40:
     image: rub-nds/dropbear-server:0.40
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.40'
+    profiles: [ server ]
   dropbear-server-0.41:
     image: rub-nds/dropbear-server:0.41
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.41'
+    profiles: [ server ]
   dropbear-server-0.42:
     image: rub-nds/dropbear-server:0.42
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.42'
+    profiles: [ server ]
   dropbear-server-0.43:
     image: rub-nds/dropbear-server:0.43
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.43'
+    profiles: [ server ]
   dropbear-server-0.44:
     image: rub-nds/dropbear-server:0.44
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.44'
+    profiles: [ server ]
   dropbear-server-0.45:
     image: rub-nds/dropbear-server:0.45
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.45'
+    profiles: [ server ]
   dropbear-server-0.46:
     image: rub-nds/dropbear-server:0.46
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.46'
+    profiles: [ server ]
   dropbear-server-0.47:
     image: rub-nds/dropbear-server:0.47
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.47'
+    profiles: [ server ]
   dropbear-server-0.49:
     image: rub-nds/dropbear-server:0.49
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.49'
+    profiles: [ server ]
   dropbear-server-0.50:
     image: rub-nds/dropbear-server:0.50
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.50'
+    profiles: [ server ]
   dropbear-server-0.51:
     image: rub-nds/dropbear-server:0.51
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.51'
+    profiles: [ server ]
   dropbear-server-0.52:
     image: rub-nds/dropbear-server:0.52
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.52'
+    profiles: [ server ]
   dropbear-server-0.53.1:
     image: rub-nds/dropbear-server:0.53.1
     build:
       context: .
+      target: dropbear-server
       args:
-        VERSION: 0.53.1
+        VERSION: '0.53.1'
+    profiles: [ server ]
   dropbear-server-0.53:
     image: rub-nds/dropbear-server:0.53
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.53'
+    profiles: [ server ]
   dropbear-server-0.255:
     image: rub-nds/dropbear-server:0.255
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '0.255'
+    profiles: [ server ]
   dropbear-server-2011.54:
     image: rub-nds/dropbear-server:2011.54
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2011.54'
+    profiles: [ server ]
   dropbear-server-2012.55:
     image: rub-nds/dropbear-server:2012.55
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2012.55'
+    profiles: [ server ]
   dropbear-server-2013.56:
     image: rub-nds/dropbear-server:2013.56
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2013.56'
+    profiles: [ server ]
   dropbear-server-2013.57:
     image: rub-nds/dropbear-server:2013.57
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2013.57'
+    profiles: [ server ]
   dropbear-server-2013.58:
     image: rub-nds/dropbear-server:2013.58
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2013.58'
+    profiles: [ server ]
   dropbear-server-2013.59:
     image: rub-nds/dropbear-server:2013.59
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2013.59'
+    profiles: [ server ]
   dropbear-server-2013.60:
     image: rub-nds/dropbear-server:2013.60
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2013.60'
+    profiles: [ server ]
   dropbear-server-2013.62:
     image: rub-nds/dropbear-server:2013.62
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2013.62'
+    profiles: [ server ]
   dropbear-server-2014.63:
     image: rub-nds/dropbear-server:2014.63
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2014.63'
+    profiles: [ server ]
   dropbear-server-2014.64:
     image: rub-nds/dropbear-server:2014.64
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2014.64'
+    profiles: [ server ]
   dropbear-server-2014.65:
     image: rub-nds/dropbear-server:2014.65
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2014.65'
+    profiles: [ server ]
   dropbear-server-2014.66:
     image: rub-nds/dropbear-server:2014.66
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2014.66'
+    profiles: [ server ]
   dropbear-server-2015.67:
     image: rub-nds/dropbear-server:2015.67
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2015.67'
+    profiles: [ server ]
   dropbear-server-2015.68:
     image: rub-nds/dropbear-server:2015.68
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2015.68'
+    profiles: [ server ]
   dropbear-server-2015.69:
     image: rub-nds/dropbear-server:2015.69
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2015.69'
+    profiles: [ server ]
   dropbear-server-2015.70:
     image: rub-nds/dropbear-server:2015.70
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2015.70'
+    profiles: [ server ]
   dropbear-server-2015.71:
     image: rub-nds/dropbear-server:2015.71
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2015.71'
+    profiles: [ server ]
   dropbear-server-2016.72:
     image: rub-nds/dropbear-server:2016.72
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2016.72'
+    profiles: [ server ]
   dropbear-server-2016.73:
     image: rub-nds/dropbear-server:2016.73
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2016.73'
+    profiles: [ server ]
   dropbear-server-2016.74:
     image: rub-nds/dropbear-server:2016.74
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2016.74'
+    profiles: [ server ]
   dropbear-server-2017.75:
     image: rub-nds/dropbear-server:2017.75
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2017.75'
+    profiles: [ server ]
   dropbear-server-2018.76:
     image: rub-nds/dropbear-server:2018.76
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2018.76'
+    profiles: [ server ]
   dropbear-server-2019.77:
     image: rub-nds/dropbear-server:2019.77
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2019.77'
+    profiles: [ server ]
   dropbear-server-2019.78:
     image: rub-nds/dropbear-server:2019.78
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2019.78'
+    profiles: [ server ]
   dropbear-server-2020.79:
     image: rub-nds/dropbear-server:2020.79
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2020.79'
+    profiles: [ server ]
   dropbear-server-2020.80:
     image: rub-nds/dropbear-server:2020.80
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2020.80'
+    profiles: [ server ]
   dropbear-server-2020.81:
     image: rub-nds/dropbear-server:2020.81
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2020.81'
+    profiles: [ server ]
   dropbear-server-2022.82:
     image: rub-nds/dropbear-server:2022.82
     build:
       context: .
+      target: dropbear-server
       args:
         VERSION: '2022.82'
+    profiles: [ server ]
+
+
+  #client
+
+#
+#  dropbear-client-0.23:
+#    image: rub-nds/dropbear-client:0.23
+#    build:
+#      context: .
+#      target: dropbear-client
+#      args:
+#        VERSION: '0.23'
+#    profiles: [ client ]
+#  dropbear-client-0.255:
+#    image: rub-nds/dropbear-client:0.255
+#    build:
+#      context: .
+#      target: dropbear-client
+#      args:
+#        VERSION: '0.255'
+#    profiles: [ client ]
+#  dropbear-client-0.28:
+#    image: rub-nds/dropbear-client:0.28
+#    build:
+#      context: .
+#      target: dropbear-client
+#      args:
+#        VERSION: '0.28'
+#    profiles: [ client ]
+#  dropbear-client-0.29:
+#    image: rub-nds/dropbear-client:0.29
+#    build:
+#      context: .
+#      target: dropbear-client
+#      args:
+#        VERSION: '0.29'
+#    profiles: [ client ]
+#  dropbear-client-0.30:
+#    image: rub-nds/dropbear-client:0.30
+#    build:
+#      context: .
+#      target: dropbear-client
+#      args:
+#        VERSION: '0.30'
+#    profiles: [ client ]
+#  dropbear-client-0.31:
+#    image: rub-nds/dropbear-client:0.31
+#    build:
+#      context: .
+#      target: dropbear-client
+#      args:
+#        VERSION: '0.31'
+#    profiles: [ client ]
+#  dropbear-client-0.32:
+#    image: rub-nds/dropbear-client:0.32
+#    build:
+#      context: .
+#      target: dropbear-client
+#      args:
+#        VERSION: '0.32'
+#    profiles: [ client ]
+#  dropbear-client-0.33:
+#    image: rub-nds/dropbear-client:0.33
+#    build:
+#      context: .
+#      target: dropbear-client
+#      args:
+#        VERSION: '0.33'
+#    profiles: [ client ]
+#  dropbear-client-0.34:
+#    image: rub-nds/dropbear-client:0.34
+#    build:
+#      context: .
+#      target: dropbear-client
+#      args:
+#        VERSION: '0.34'
+#    profiles: [ client ]
+#  dropbear-client-0.35:
+#    image: rub-nds/dropbear-client:0.35
+#    build:
+#      context: .
+#      target: dropbear-client
+#      args:
+#        VERSION: '0.35'
+#    profiles: [ client ]
+#  dropbear-client-0.36:
+#    image: rub-nds/dropbear-client:0.36
+#    build:
+#      context: .
+#      target: dropbear-client
+#      args:
+#        VERSION: '0.36'
+#    profiles: [ client ]
+#  dropbear-client-0.37:
+#    image: rub-nds/dropbear-client:0.37
+#    build:
+#      context: .
+#      target: dropbear-client
+#      args:
+#        VERSION: '0.37'
+#    profiles: [ client ]
+#  dropbear-client-0.38:
+#    image: rub-nds/dropbear-client:0.38
+#    build:
+#      context: .
+#      target: dropbear-client
+#      args:
+#        VERSION: '0.38'
+#    profiles: [ client ]
+#  dropbear-client-0.39:
+#    image: rub-nds/dropbear-client:0.39
+#    build:
+#      context: .
+#      target: dropbear-client
+#      args:
+#        VERSION: '0.39'
+#    profiles: [ client ]
+#  dropbear-client-0.40:
+#    image: rub-nds/dropbear-client:0.40
+#    build:
+#      context: .
+#      target: dropbear-client
+#      args:
+#        VERSION: '0.40'
+#    profiles: [ client ]
+#  dropbear-client-0.41:
+#    image: rub-nds/dropbear-client:0.41
+#    build:
+#      context: .
+#      target: dropbear-client
+#      args:
+#        VERSION: '0.41'
+#    profiles: [ client ]
+#  dropbear-client-0.42:
+#    image: rub-nds/dropbear-client:0.42
+#    build:
+#      context: .
+#      target: dropbear-client
+#      args:
+#        VERSION: '0.42'
+#    profiles: [ client ]
+#  dropbear-client-0.43:
+#    image: rub-nds/dropbear-client:0.43
+#    build:
+#      context: .
+#      target: dropbear-client
+#      args:
+#        VERSION: '0.43'
+#    profiles: [ client ]
+
+#  dropbear-client-0.44:
+#    image: rub-nds/dropbear-client:0.44
+#    build:
+#      context: .
+#      target: dropbear-client
+#      args:
+#        VERSION: '0.44'
+#    profiles: [ client ]
+#  dropbear-client-0.45:
+#    image: rub-nds/dropbear-client:0.45
+#    build:
+#      context: .
+#      target: dropbear-client
+#      args:
+#        VERSION: '0.45'
+#    profiles: [ client ]
+#  dropbear-client-0.46:
+#    image: rub-nds/dropbear-client:0.46
+#    build:
+#      context: .
+#      target: dropbear-client
+#      args:
+#        VERSION: '0.46'
+#    profiles: [ client ]
+  dropbear-client-0.47:
+    image: rub-nds/dropbear-client:0.47
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '0.47'
+    profiles: [ client ]
+  dropbear-client-0.49:
+    image: rub-nds/dropbear-client:0.49
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '0.49'
+    profiles: [ client ]
+  dropbear-client-0.50:
+    image: rub-nds/dropbear-client:0.50
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '0.50'
+    profiles: [ client ]
+  dropbear-client-0.51:
+    image: rub-nds/dropbear-client:0.51
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '0.51'
+    profiles: [ client ]
+  dropbear-client-0.52:
+    image: rub-nds/dropbear-client:0.52
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '0.52'
+    profiles: [ client ]
+  dropbear-client-0.53.1:
+    image: rub-nds/dropbear-client:0.53.1
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '0.53.1'
+    profiles: [ client ]
+  dropbear-client-0.53:
+    image: rub-nds/dropbear-client:0.53
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '0.53'
+    profiles: [ client ]
+  dropbear-client-2011.54:
+    image: rub-nds/dropbear-client:2011.54
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2011.54'
+    profiles: [ client ]
+  dropbear-client-2012.55:
+    image: rub-nds/dropbear-client:2012.55
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2012.55'
+    profiles: [ client ]
+  dropbear-client-2013.56:
+    image: rub-nds/dropbear-client:2013.56
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2013.56'
+    profiles: [ client ]
+  dropbear-client-2013.57:
+    image: rub-nds/dropbear-client:2013.57
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2013.57'
+    profiles: [ client ]
+  dropbear-client-2013.58:
+    image: rub-nds/dropbear-client:2013.58
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2013.58'
+    profiles: [ client ]
+  dropbear-client-2013.59:
+    image: rub-nds/dropbear-client:2013.59
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2013.59'
+    profiles: [ client ]
+  dropbear-client-2013.60:
+    image: rub-nds/dropbear-client:2013.60
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2013.60'
+    profiles: [ client ]
+  dropbear-client-2013.62:
+    image: rub-nds/dropbear-client:2013.62
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2013.62'
+    profiles: [ client ]
+  dropbear-client-2014.63:
+    image: rub-nds/dropbear-client:2014.63
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2014.63'
+    profiles: [ client ]
+  dropbear-client-2014.64:
+    image: rub-nds/dropbear-client:2014.64
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2014.64'
+    profiles: [ client ]
+  dropbear-client-2014.65:
+    image: rub-nds/dropbear-client:2014.65
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2014.65'
+    profiles: [ client ]
+  dropbear-client-2014.66:
+    image: rub-nds/dropbear-client:2014.66
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2014.66'
+    profiles: [ client ]
+  dropbear-client-2015.67:
+    image: rub-nds/dropbear-client:2015.67
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2015.67'
+    profiles: [ client ]
+  dropbear-client-2015.68:
+    image: rub-nds/dropbear-client:2015.68
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2015.68'
+    profiles: [ client ]
+  dropbear-client-2015.69:
+    image: rub-nds/dropbear-client:2015.69
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2015.69'
+    profiles: [ client ]
+  dropbear-client-2015.70:
+    image: rub-nds/dropbear-client:2015.70
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2015.70'
+    profiles: [ client ]
+  dropbear-client-2015.71:
+    image: rub-nds/dropbear-client:2015.71
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2015.71'
+    profiles: [ client ]
+  dropbear-client-2016.72:
+    image: rub-nds/dropbear-client:2016.72
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2016.72'
+    profiles: [ client ]
+  dropbear-client-2016.73:
+    image: rub-nds/dropbear-client:2016.73
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2016.73'
+    profiles: [ client ]
+  dropbear-client-2016.74:
+    image: rub-nds/dropbear-client:2016.74
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2016.74'
+    profiles: [ client ]
+  dropbear-client-2017.75:
+    image: rub-nds/dropbear-client:2017.75
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2017.75'
+    profiles: [ client ]
+  dropbear-client-2018.76:
+    image: rub-nds/dropbear-client:2018.76
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2018.76'
+    profiles: [ client ]
+  dropbear-client-2019.77:
+    image: rub-nds/dropbear-client:2019.77
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2019.77'
+    profiles: [ client ]
+  dropbear-client-2019.78:
+    image: rub-nds/dropbear-client:2019.78
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2019.78'
+    profiles: [ client ]
+  dropbear-client-2020.79:
+    image: rub-nds/dropbear-client:2020.79
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2020.79'
+    profiles: [ client ]
+  dropbear-client-2020.80:
+    image: rub-nds/dropbear-client:2020.80
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2020.80'
+    profiles: [ client ]
+  dropbear-client-2020.81:
+    image: rub-nds/dropbear-client:2020.81
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2020.81'
+    profiles: [ client ]
+  dropbear-client-2022.82:
+    image: rub-nds/dropbear-client:2022.82
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: '2022.82'
+    profiles: [ client ]
