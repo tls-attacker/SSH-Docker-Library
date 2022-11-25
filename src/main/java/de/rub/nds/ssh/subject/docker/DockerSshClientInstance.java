@@ -22,6 +22,7 @@ import com.github.dockerjava.api.model.ContainerConfig;
 import com.github.dockerjava.api.model.HostConfig;
 import com.github.dockerjava.api.model.Volume;
 
+import com.github.dockerjava.core.DockerClientImpl;
 import de.rub.nds.ssh.subject.HostInfo;
 import de.rub.nds.ssh.subject.params.ParameterProfile;
 import de.rub.nds.ssh.subject.properties.ImageProperties;
@@ -33,6 +34,7 @@ import de.rub.nds.ssh.subject.ConnectionRole;
 public class DockerSshClientInstance extends DockerSshInstance {
     private static final String[] EMPTY_STR_ARR = {};
     private static final int EXEC_POLL_INTERVAL_MILLISECONDS = 50;
+    private int targetPort = 2222;
     private static final Logger LOGGER = LogManager.getLogger();
 
     private final HostInfo hostInfo;
@@ -42,6 +44,7 @@ public class DockerSshClientInstance extends DockerSshInstance {
     private final boolean connectOnStartup;
 
     // TODO move away from HostInfo for client...
+
     public DockerSshClientInstance(String containerName, ParameterProfile profile, ImageProperties imageProperties,
         String version, boolean autoRemove, HostInfo hostInfo, String additionalParameters, boolean parallelize,
         boolean insecureConnection, boolean connectOnStartup, UnaryOperator<HostConfig> hostConfigHook) {
@@ -51,6 +54,19 @@ public class DockerSshClientInstance extends DockerSshInstance {
         this.parallelize = parallelize;
         this.insecureConnection = insecureConnection;
         this.connectOnStartup = connectOnStartup;
+    }
+
+    public DockerSshClientInstance(String containerName, ParameterProfile profile, ImageProperties imageProperties,
+        String version, boolean autoRemove, HostInfo hostInfo, String additionalParameters, boolean parallelize,
+        boolean insecureConnection, boolean connectOnStartup, UnaryOperator<HostConfig> hostConfigHook,
+        int targetPort) {
+        super(containerName, profile, imageProperties, version, ConnectionRole.CLIENT, autoRemove, hostConfigHook);
+        this.hostInfo = hostInfo;
+        this.additionalParameters = additionalParameters;
+        this.parallelize = parallelize;
+        this.insecureConnection = insecureConnection;
+        this.connectOnStartup = connectOnStartup;
+        this.targetPort = targetPort;
     }
 
     @Override
@@ -80,8 +96,8 @@ public class DockerSshClientInstance extends DockerSshInstance {
             host = hostInfo.getHostname();
         }
         if (connectOnStartup) {
-            cmd = cmd.withCmd(parameterProfile.toParameters(host, hostInfo.getPort(), imageProperties,
-                additionalParameters, parallelize, insecureConnection));
+            cmd = cmd.withCmd(parameterProfile.toParameters(host, targetPort, imageProperties, additionalParameters,
+                parallelize, insecureConnection));
         } else {
             cmd = cmd.withEntrypoint("client-entrypoint");
         }
@@ -95,7 +111,7 @@ public class DockerSshClientInstance extends DockerSshInstance {
         } else {
             host = hostInfo.getHostname();
         }
-        return connect(host, hostInfo.getPort());
+        return connect(host, this.targetPort);
     }
 
     public DockerExecInstance connect(String host, int targetPort) {

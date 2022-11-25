@@ -48,6 +48,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libssl-dev \
     zlib1g-dev \
+    expect\
     && rm -rf /var/lib/apt/lists/*
 
 ARG USERNAME
@@ -88,4 +89,9 @@ COPY --from=openssh-builder /install /install
 LABEL ssh.implementation.name="openssh" \
       ssh.implementation.version="${VERSION}" \
       ssh.implementation.type="client"
-ENTRYPOINT ["/install/bin/ssh"]
+COPY --from=entrypoint /bin/client-entrypoint /usr/local/bin/
+COPY login.exp /usr/local/bin/
+COPY start.sh /usr/local/bin/
+WORKDIR /usr/local/bin/
+ENTRYPOINT ["client-entrypoint", "./start.sh"]
+
