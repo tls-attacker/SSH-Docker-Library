@@ -93,7 +93,7 @@ public abstract class DockerSshInstance {
             hcfg = hostConfigHook.apply(hcfg);
         }
         return cmd.withAttachStderr(true).withAttachStdout(true).withAttachStdin(true).withTty(true).withStdInOnce(true)
-            .withStdinOpen(true).withHostConfig(hcfg);
+            .withStdinOpen(true).withHostConfig(hcfg).withNetworkMode("host").withNetworkDisabled(false);
         // missing: hostConfig, exposedPorts, cmd
     }
 

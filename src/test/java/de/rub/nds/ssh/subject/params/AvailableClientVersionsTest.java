@@ -36,15 +36,15 @@ public class AvailableClientVersionsTest {
     // when running the tests on another os than linux you might need to change the
     // ip use `docker run --rm -it alpine-build:3.12 ping -c1 host.docker.internal`
     // to find the correct IP
-    private static final String IP = "172.26.0.1";
-    private static final int PORT = 3022;
+    private static final String IP = "127.0.0.1";
+    private static final int SERVERPORT = 2222;
+    private static final int PORT = SERVERPORT;
     private static final int CONNECTION_TIMEOUT = 10;
 
     @Test
     public void listAllClients() {
         System.out.println("Available Clients: ");
         for (SshImplementationType type : SshImplementationType.values()) {
-
             List<String> availableVersions = DockerSshManagerFactory.getAvailableVersions(ConnectionRole.CLIENT, type);
             System.out.println("Client version: " + type);
             for (String version : availableVersions) {
@@ -365,7 +365,7 @@ public class AvailableClientVersionsTest {
                 System.out.println("Null: " + version);
                 return false;
             }
-            client = DockerSshManagerFactory.getSshClientBuilder(type, version).ip(IP).port(PORT)
+            client = DockerSshManagerFactory.getSshClientBuilder(type, version).ip(IP).portToConnect(SERVERPORT)
                 .connectOnStartup(false).insecureConnection(false).build();
             client.start();
             ei = (DockerExecInstance) client.connect();

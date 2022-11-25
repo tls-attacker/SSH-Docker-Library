@@ -46,7 +46,7 @@ public class DockerSshManagerFactory {
 
     private static final com.github.dockerjava.api.DockerClient DOCKER = DockerClientManager.getDockerClient();
 
-    private static final int DEFAULT_PORT = 22512;
+    private static final int DEFAULT_PORT = 2222;
 
     @SuppressWarnings("unchecked")
     public abstract static class SshInstanceBuilder<T extends SshInstanceBuilder<T>> {
@@ -60,6 +60,8 @@ public class DockerSshManagerFactory {
         protected String ip = "127.0.0.1";
         protected String hostname = "localhost";
         protected int port = DEFAULT_PORT;
+
+        protected int portToConnect;
         protected UnaryOperator<HostConfig> hostConfigHook;
         // remaining shared params
         protected String additionalParameters = null;
@@ -100,6 +102,11 @@ public class DockerSshManagerFactory {
             return (T) this;
         }
 
+        public T portToConnect(int value) {
+            portToConnect = value;
+            return (T) this;
+        }
+
         public T additionalParameters(String value) {
             additionalParameters = value;
             return (T) this;
@@ -135,7 +142,7 @@ public class DockerSshManagerFactory {
         public DockerSshClientInstance build() throws DockerException, InterruptedException {
             return new DockerSshClientInstance(containerName, profile, imageProperties, version, autoRemove,
                 new HostInfo(ip, hostname, port, transportType), additionalParameters, parallelize, insecureConnection,
-                connectOnStartup, hostConfigHook);
+                connectOnStartup, hostConfigHook, portToConnect);
         }
 
         public SshClientInstanceBuilder connectOnStartup(boolean value) {

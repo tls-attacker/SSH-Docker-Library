@@ -19,7 +19,8 @@ public enum SshImplementationType {
     LIBSSH,
     WOLFSSH,
     ZGRAB2,
-    METASPLOIT;
+    METASPLOIT,
+    SSHATTACKER;
 
     public static SshImplementationType fromString(String type) {
         for (SshImplementationType i : SshImplementationType.values()) {

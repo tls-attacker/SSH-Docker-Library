@@ -76,7 +76,7 @@ public class AvailableServerVersionsTest {
                 return false;
             }
             try {
-                int inputPort = (int) Math.random() * 65000;
+                int inputPort = 2222;
                 server = DockerSshManagerFactory.getSshServerBuilder(type, version).build(inputPort);
                 server.start();
             } catch (Exception E) {
