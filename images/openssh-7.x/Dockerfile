@@ -89,7 +89,13 @@ COPY --from=openssh-builder /install /install
 LABEL ssh.implementation.name="openssh" \
       ssh.implementation.version="${VERSION}" \
       ssh.implementation.type="server"
-ENTRYPOINT ["/install/sbin/sshd", "-D", "-e"]
+
+# Rate Limit: Increase `MaxStartups` to make it unlikely to trigger the
+# `Exceeded MaxStartups\r\n` issue, even when opening a lot of connections.
+#
+# FIXME: Although the server starts fine, login seems to be broken for 8.0p1
+# and 8.1p1. The server simply closes the connection.
+ENTRYPOINT ["/install/sbin/sshd", "-D", "-e", "-o", "MaxStartups=65536"]
 EXPOSE 22
 
 # Client image
