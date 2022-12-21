@@ -1431,153 +1431,202 @@ services:
       file: images/openssh/compose.yml
       service: openssh-client-9.2p1
 
+  sshd-lite-server-1.0.0:
+    extends:
+      file: images/sshd-lite/compose.yml
+      service: sshd-lite-server-1.0.0
+    ports:
+      - '29000:22'
+  sshd-lite-server-1.1.0:
+    extends:
+      file: images/sshd-lite/compose.yml
+      service: sshd-lite-server-1.1.0
+    ports:
+      - '29001:22'
+  sshd-lite-server-1.2.0:
+    extends:
+      file: images/sshd-lite/compose.yml
+      service: sshd-lite-server-1.2.0
+    ports:
+      - '29002:22'
+  sshd-lite-server-1.2.1:
+    extends:
+      file: images/sshd-lite/compose.yml
+      service: sshd-lite-server-1.2.1
+    ports:
+      - '29003:22'
+  sshd-lite-server-1.2.2:
+    extends:
+      file: images/sshd-lite/compose.yml
+      service: sshd-lite-server-1.2.2
+    ports:
+      - '29004:22'
+  sshd-lite-server-1.2.3:
+    extends:
+      file: images/sshd-lite/compose.yml
+      service: sshd-lite-server-1.2.3
+    ports:
+      - '29005:22'
+  sshd-lite-server-1.3.0:
+    extends:
+      file: images/sshd-lite/compose.yml
+      service: sshd-lite-server-1.3.0
+    ports:
+      - '29006:22'
+  sshd-lite-server-1.3.1:
+    extends:
+      file: images/sshd-lite/compose.yml
+      service: sshd-lite-server-1.3.1
+    ports:
+      - '29007:22'
+
   tinyssh-server-20150801:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20150801
     ports:
-      - '29000:22'
+      - '30000:22'
   tinyssh-server-20151001:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20151001
     ports:
-      - '29001:22'
+      - '30001:22'
   tinyssh-server-20160201:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20160201
     ports:
-      - '29002:22'
+      - '30002:22'
   tinyssh-server-20160318:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20160318
     ports:
-      - '29003:22'
+      - '30003:22'
   tinyssh-server-20160720:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20160720
     ports:
-      - '29004:22'
+      - '30004:22'
   tinyssh-server-20160726:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20160726
     ports:
-      - '29005:22'
+      - '30005:22'
   tinyssh-server-20160727:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20160727
     ports:
-      - '29006:22'
+      - '30006:22'
   tinyssh-server-20160809:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20160809
     ports:
-      - '29007:22'
+      - '30007:22'
   tinyssh-server-20160811:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20160811
     ports:
-      - '29008:22'
+      - '30008:22'
   tinyssh-server-20160812:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20160812
     ports:
-      - '29009:22'
+      - '30009:22'
   tinyssh-server-20161001:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20161001
     ports:
-      - '29010:22'
+      - '30010:22'
   tinyssh-server-20161101:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20161101
     ports:
-      - '29011:22'
+      - '30011:22'
   tinyssh-server-20180101:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20180101
     ports:
-      - '29012:22'
+      - '30012:22'
   tinyssh-server-20180110:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20180110
     ports:
-      - '29013:22'
+      - '30013:22'
   tinyssh-server-20180201:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20180201
     ports:
-      - '29014:22'
+      - '30014:22'
   tinyssh-server-20181206:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20181206
     ports:
-      - '29015:22'
+      - '30015:22'
   tinyssh-server-20190101:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20190101
     ports:
-      - '29016:22'
+      - '30016:22'
   tinyssh-server-20210319:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20210319
     ports:
-      - '29017:22'
+      - '30017:22'
   tinyssh-server-20210601:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20210601
     ports:
-      - '29018:22'
+      - '30018:22'
   tinyssh-server-20220101:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20220101
     ports:
-      - '29019:22'
+      - '30019:22'
   tinyssh-server-20220222:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20220222
     ports:
-      - '29020:22'
+      - '30020:22'
   tinyssh-server-20220305:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20220305
     ports:
-      - '29021:22'
+      - '30021:22'
   tinyssh-server-20220311:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20220311
     ports:
-      - '29022:22'
+      - '30022:22'
   tinyssh-server-20220801:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20220801
     ports:
-      - '29023:22'
+      - '30023:22'
   tinyssh-server-20230101:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20230101
     ports:
-      - '29024:22'
+      - '30024:22'
