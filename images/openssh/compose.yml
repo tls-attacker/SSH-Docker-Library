@@ -165,3 +165,18 @@ services:
       args:
         VERSION: 9.0p1
     profiles: [client]
+  openssh-server-9.1p1:
+    image: rub-nds/openssh-server:9.1p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 9.1p1
+  openssh-client-9.1p1:
+    image: rub-nds/openssh-client:9.1p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 9.1p1
+    profiles: [client]
