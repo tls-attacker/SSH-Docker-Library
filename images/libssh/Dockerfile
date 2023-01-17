@@ -18,15 +18,32 @@ RUN mkdir /src && \
     curl -s "https://gitlab.com/libssh/libssh-mirror/-/archive/libssh-${VERSION}/libssh-mirror-libssh-${VERSION}.tar.gz" | tar xzf - && \
     mv "libssh-mirror-libssh-${VERSION}" /src/libssh
 WORKDIR /src/libssh
-
 ARG USERNAME=sshattacker
 ARG PASSWORD=secret
 RUN sed -i "s/myuser/${USERNAME}/g" examples/ssh_server_fork.c && \
     sed -i "s/mypassword/${PASSWORD}/g" examples/ssh_server_fork.c
 WORKDIR /src/libssh/build
-RUN cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/install .. && \
+RUN cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/install -DWITH_STATIC_LIB=ON  .. && \
     make -j "$(nproc)" && \
     make install
+
+FROM debian:bullseye AS libssh-client
+COPY --from=libssh-builder /src/libssh  /src/libssh
+COPY libsshTest.c /build/
+RUN find /src/libssh/build/include/libssh -name libssh_version.h -exec cp {} /src/libssh/include/libssh \;
+RUN gcc -I/src/libssh/include /build/libsshTest.c /src/libssh/build/src/libssh.a -lrt -lcrypto -lz -lpthread -ldl -o /build/libsshTest -static
+ARG VERSION
+RUN apt-get update
+RUN apt-get install -y --fix-missing libssl-dev zlib1g-dev
+RUN rm -rf /var/lib/apt/lists/*
+COPY --from=entrypoint /bin/client-entrypoint /usr/local/bin/
+#COPY --from=libssh-builder-client /build/libsshTest /usr/local/bin/
+RUN cp /build/libsshTest /usr/local/bin/
+WORKDIR /usr/local/bin/
+LABEL "ssh_implementation"="libssh"
+LABEL "ssh_implementation_version"="${VERSION}"
+LABEL "ssh_implementation_connectionRole"="client"
+ENTRYPOINT ["client-entrypoint","/usr/local/bin/libsshTest"]
 
 FROM debian:bullseye AS libssh-server
 ARG VERSION

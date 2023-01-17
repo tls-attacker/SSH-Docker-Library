@@ -1,0 +1,29 @@
+version: '3.2'
+services:
+  putty-linux-client-0.76-2:
+    image: rub-nds/putty-linux-client:0.76-2
+    build:
+      context: .
+      target: puttyLinux-client
+      args:
+        VERSION: 0.76-2
+        U_VERSION: 22.04
+    profiles: [client]
+  putty-linux-client-0.73-2:
+    image: rub-nds/putty-linux-client:0.73-2
+    build:
+      context: .
+      target: puttyLinux-client
+      args:
+        VERSION: 0.73-2
+        U_VERSION: 20.04
+    profiles: [ client ]
+  putty-linux-client-0.70-4:
+    image: rub-nds/putty-linux-client:0.70-4
+    build:
+      context: .
+      target: puttyLinux-client
+      args:
+        VERSION: 0.70-4
+        U_VERSION: 18.04
+    profiles: [ client ]

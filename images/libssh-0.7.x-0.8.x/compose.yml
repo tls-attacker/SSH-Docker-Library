@@ -6,105 +6,296 @@ services:
       context: .
       args:
         VERSION: 0.7.0
+    profiles: [ server ]
   libssh-server-0.7.1:
     image: rub-nds/libssh-server:0.7.1
     build:
       context: .
       args:
         VERSION: 0.7.1
+    profiles: [ server ]
   libssh-server-0.7.2:
     image: rub-nds/libssh-server:0.7.2
     build:
       context: .
       args:
         VERSION: 0.7.2
+    profiles: [ server ]
   libssh-server-0.7.3:
     image: rub-nds/libssh-server:0.7.3
     build:
       context: .
       args:
         VERSION: 0.7.3
+    profiles: [ server ]
   libssh-server-0.7.4:
     image: rub-nds/libssh-server:0.7.4
     build:
       context: .
       args:
         VERSION: 0.7.4
+    profiles: [ server ]
   libssh-server-0.7.5:
     image: rub-nds/libssh-server:0.7.5
     build:
       context: .
       args:
         VERSION: 0.7.5
+    profiles: [ server ]
   libssh-server-0.7.6:
     image: rub-nds/libssh-server:0.7.6
     build:
       context: .
       args:
         VERSION: 0.7.6
+    profiles: [ server ]
   libssh-server-0.7.7:
     image: rub-nds/libssh-server:0.7.7
     build:
       context: .
       args:
         VERSION: 0.7.7
+    profiles: [ server ]
   libssh-server-0.8.0:
     image: rub-nds/libssh-server:0.8.0
     build:
       context: .
       args:
         VERSION: 0.8.0
+    profiles: [ server ]
   libssh-server-0.8.1:
     image: rub-nds/libssh-server:0.8.1
     build:
       context: .
       args:
         VERSION: 0.8.1
+    profiles: [ server ]
   libssh-server-0.8.2:
     image: rub-nds/libssh-server:0.8.2
     build:
       context: .
       args:
         VERSION: 0.8.2
+    profiles: [ server ]
   libssh-server-0.8.3:
     image: rub-nds/libssh-server:0.8.3
     build:
       context: .
       args:
         VERSION: 0.8.3
+    profiles: [ server ]
   libssh-server-0.8.4:
     image: rub-nds/libssh-server:0.8.4
     build:
       context: .
       args:
         VERSION: 0.8.4
+    profiles: [ server ]
   libssh-server-0.8.5:
     image: rub-nds/libssh-server:0.8.5
     build:
       context: .
       args:
         VERSION: 0.8.5
+    profiles: [ server ]
   libssh-server-0.8.6:
     image: rub-nds/libssh-server:0.8.6
     build:
       context: .
       args:
         VERSION: 0.8.6
+    profiles: [ server ]
   libssh-server-0.8.7:
     image: rub-nds/libssh-server:0.8.7
     build:
       context: .
       args:
         VERSION: 0.8.7
+    profiles: [ server ]
   libssh-server-0.8.8:
     image: rub-nds/libssh-server:0.8.8
     build:
       context: .
       args:
         VERSION: 0.8.8
+    profiles: [ server ]
   libssh-server-0.8.9:
     image: rub-nds/libssh-server:0.8.9
     build:
       context: .
       args:
         VERSION: 0.8.9
+    profiles: [ server ]
+
+  #client
+  libssh-client-0.6.5:
+    image: rub-nds/libssh-client:0.6.5
+    build:
+      context: .
+      dockerfile: DockerfileClient
+      target: libssh-client
+      args:
+        VERSION: 0.6.5
+    profiles: [ client ]
+  libssh-client-0.7.0:
+    image: rub-nds/libssh-client:0.7.0
+    build:
+      context: .
+      dockerfile: DockerfileClient
+      target: libssh-client
+      args:
+        VERSION: 0.7.0
+    profiles: [ client ]
+  libssh-client-0.7.1:
+    image: rub-nds/libssh-client:0.7.1
+    build:
+      context: .
+      dockerfile: DockerfileClient
+      target: libssh-client
+      args:
+        VERSION: 0.7.1
+    profiles: [ client ]
+  libssh-client-0.7.2:
+    image: rub-nds/libssh-client:0.7.2
+    build:
+      context: .
+      dockerfile: DockerfileClient
+      target: libssh-client
+      args:
+        VERSION: 0.7.2
+    profiles: [ client ]
+  libssh-client-0.7.3:
+    image: rub-nds/libssh-client:0.7.3
+    build:
+      context: .
+      dockerfile: DockerfileClient
+      target: libssh-client
+      args:
+        VERSION: 0.7.3
+    profiles: [ client ]
+  libssh-client-0.7.4:
+    image: rub-nds/libssh-client:0.7.4
+    build:
+      context: .
+      dockerfile: DockerfileClient
+      target: libssh-client
+      args:
+        VERSION: 0.7.4
+    profiles: [ client ]
+  libssh-client-0.7.5:
+    image: rub-nds/libssh-client:0.7.5
+    build:
+      context: .
+      dockerfile: DockerfileClient
+      target: libssh-client
+      args:
+        VERSION: 0.7.5
+    profiles: [ client ]
+  libssh-client-0.7.6:
+    image: rub-nds/libssh-client:0.7.6
+    build:
+      context: .
+      dockerfile: DockerfileClient
+      target: libssh-client
+      args:
+        VERSION: 0.7.6
+    profiles: [ client ]
+  libssh-client-0.7.7:
+    image: rub-nds/libssh-client:0.7.7
+    build:
+      context: .
+      dockerfile: DockerfileClient
+      target: libssh-client
+      args:
+        VERSION: 0.7.7
+    profiles: [ client ]
+  libssh-client-0.8.0:
+    image: rub-nds/libssh-client:0.8.0
+    build:
+      context: .
+      dockerfile: DockerfileClient
+      target: libssh-client
+      args:
+        VERSION: 0.8.0
+    profiles: [ client ]
+  libssh-client-0.8.1:
+    image: rub-nds/libssh-client:0.8.1
+    build:
+      context: .
+      dockerfile: DockerfileClient
+      target: libssh-client
+      args:
+        VERSION: 0.8.1
+    profiles: [ client ]
+  libssh-client-0.8.2:
+    image: rub-nds/libssh-client:0.8.2
+    build:
+      context: .
+      dockerfile: DockerfileClient
+      target: libssh-client
+      args:
+        VERSION: 0.8.2
+    profiles: [ client ]
+  libssh-client-0.8.3:
+    image: rub-nds/libssh-client:0.8.3
+    build:
+      context: .
+      dockerfile: DockerfileClient
+      target: libssh-client
+      args:
+        VERSION: 0.8.3
+    profiles: [ client ]
+  libssh-client-0.8.4:
+    image: rub-nds/libssh-client:0.8.4
+    build:
+      context: .
+      dockerfile: DockerfileClient
+      target: libssh-client
+      args:
+        VERSION: 0.8.4
+    profiles: [ client ]
+  libssh-client-0.8.5:
+    image: rub-nds/libssh-client:0.8.5
+    build:
+      context: .
+      dockerfile: DockerfileClient
+      target: libssh-client
+      args:
+        VERSION: 0.8.5
+    profiles: [ client ]
+  libssh-client-0.8.6:
+    image: rub-nds/libssh-client:0.8.6
+    build:
+      context: .
+      dockerfile: DockerfileClient
+      target: libssh-client
+      args:
+        VERSION: 0.8.6
+    profiles: [ client ]
+  libssh-client-0.8.7:
+    image: rub-nds/libssh-client:0.8.7
+    build:
+      context: .
+      dockerfile: DockerfileClient
+      target: libssh-client
+      args:
+        VERSION: 0.8.7
+    profiles: [ client ]
+  libssh-client-0.8.8:
+    image: rub-nds/libssh-client:0.8.8
+    build:
+      context: .
+      dockerfile: DockerfileClient
+      target: libssh-client
+      args:
+        VERSION: 0.8.8
+    profiles: [ client ]
+  libssh-client-0.8.9:
+    image: rub-nds/libssh-client:0.8.9
+    build:
+      context: .
+      dockerfile: DockerfileClient
+      target: libssh-client
+      args:
+        VERSION: 0.8.9
+    profiles: [ client ]

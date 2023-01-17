@@ -1,0 +1,86 @@
+version: '3.2'
+services:
+  go-client-v0.0.0-20220924013350-4ba4fb4dd9e7:
+    image: rub-nds/go-client:0.0.0-20220924013350-4ba4fb4dd9e7
+    build:
+      context: .
+      target: go-client
+      args:
+        VERSION: v0.0.0-20220924013350-4ba4fb4dd9e7
+    profiles: [client]
+  go-client-v0.0.0-20220919173607-35f4265a4bc0:
+    image: rub-nds/go-client:v0.0.0-20220919173607-35f4265a4bc0
+    build:
+      context: .
+      target: go-client
+      args:
+        VERSION: v0.0.0-20220919173607-35f4265a4bc0
+    profiles: [client]
+  go-client-v0.0.0-20220829220503-c86fa9a7ed90:
+    image: rub-nds/go-client:v0.0.0-20220829220503-c86fa9a7ed90
+    build:
+      context: .
+      target: go-client
+      args:
+        VERSION: v0.0.0-20220829220503-c86fa9a7ed90
+    profiles: [client]
+  go-client-v0.0.0-20220722155217-630584e8d5aa:
+    image: rub-nds/go-client:v0.0.0-20220722155217-630584e8d5aa
+    build:
+      context: .
+      target: go-client
+      args:
+        VERSION: v0.0.0-20220722155217-630584e8d5aa
+    profiles: [client]
+  go-client-v0.0.0-20220622213112-05595931fe9d:
+    image: rub-nds/go-client:v0.0.0-20220622213112-05595931fe9d
+    build:
+      context: .
+      target: go-client
+      args:
+        VERSION: v0.0.0-20220622213112-05595931fe9d
+    profiles: [client]
+  go-client-v0.0.0-20220517005047-85d78b3ac167:
+    image: rub-nds/go-client:v0.0.0-20220517005047-85d78b3ac167
+    build:
+      context: .
+      target: go-client
+      args:
+        VERSION: v0.0.0-20220517005047-85d78b3ac167
+    profiles: [client]
+  go-client-v0.0.0-20220511200225-c6db032c6c88:
+    image: rub-nds/go-client:v0.0.0-20220511200225-c6db032c6c88
+    build:
+      context: .
+      target: go-client
+      args:
+        VERSION: v0.0.0-20220511200225-c6db032c6c88
+    profiles: [client]
+  go-client-v0.0.0-20220427172511-eb4f295cb31f:
+    image: rub-nds/go-client:v0.0.0-20220427172511-eb4f295cb31f
+    build:
+      context: .
+      target: go-client
+      args:
+        VERSION: v0.0.0-20220427172511-eb4f295cb31f
+    profiles: [client]
+  go-client-v0.0.0-20220331220935-ae2d96664a29:
+    image: rub-nds/go-client:v0.0.0-20220331220935-ae2d96664a29
+    build:
+      context: .
+      target: go-client
+      args:
+        VERSION: v0.0.0-20220331220935-ae2d96664a29
+    profiles: [client]
+  go-client-v0.0.0-20220315160706-3147a52a75dd:
+    image: rub-nds/go-client:v0.0.0-20220315160706-3147a52a75dd
+    build:
+      context: .
+      target: go-client
+      args:
+        VERSION: v0.0.0-20220315160706-3147a52a75dd
+    profiles: [client]
+
+
+
+

@@ -1,0 +1,8 @@
+version: '3.2'
+services:
+  zgrap2-client:
+    image: rub-nds/zgrap2-client
+    build:
+      context: .
+      target: zgrab2-client
+    profiles: [ client ]
