@@ -1555,3 +1555,9 @@ services:
       service: tinyssh-server-20220801
     ports:
       - '29023:22'
+  tinyssh-server-20230101:
+    extends:
+      file: images/tinyssh/compose.yml
+      service: tinyssh-server-20230101
+    ports:
+      - '29024:22'
