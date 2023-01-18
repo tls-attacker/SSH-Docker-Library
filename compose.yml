@@ -1410,6 +1410,16 @@ services:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-9.0p1
+  openssh-server-9.1p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-server-9.1p1
+    ports:
+      - '28022:22'
+  openssh-client-9.1p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-9.1p1
 
   tinyssh-server-20150801:
     extends:
