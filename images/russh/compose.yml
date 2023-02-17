@@ -1,8 +1,8 @@
 version: '3.2'
 services:
-  russh-server-0.34:
-    image: rub-nds/russh-server:0.34
+  russh-server-0.34.0:
+    image: rub-nds/russh-server:0.34.0
     build:
       context: .
       args:
-        VERSION: '0.34'
+        VERSION: '0.34.0'
