@@ -1431,10 +1431,10 @@ services:
       file: images/openssh/compose.yml
       service: openssh-client-9.2p1
 
-  russh-server-0.34:
+  russh-server-0.34.0:
     extends:
       file: images/russh/compose.yml
-      service: russh-server-0.34
+      service: russh-server-0.34.0
     ports:
       - '29000:22'
 
