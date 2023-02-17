@@ -6,3 +6,15 @@ services:
       context: .
       args:
         VERSION: '0.34.0'
+  russh-server-0.36.0:
+    image: rub-nds/russh-server:0.36.0
+    build:
+      context: .
+      args:
+        VERSION: '0.36.0'
+  russh-server-0.36.1:
+    image: rub-nds/russh-server:0.36.1
+    build:
+      context: .
+      args:
+        VERSION: '0.36.1'
