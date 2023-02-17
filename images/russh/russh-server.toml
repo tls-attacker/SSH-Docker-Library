@@ -1,0 +1,5 @@
+host_key = "hostkey.bin"
+
+[users.sshattacker]
+password = 'secret'
+keys = ['SHA256:+r3jzFOCyyXhEFhjitsllvC4MTn7eCNlfa/4PYZMJ0s']
