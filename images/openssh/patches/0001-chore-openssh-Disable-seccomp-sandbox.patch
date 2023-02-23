@@ -1,0 +1,31 @@
+From d7f4741da5a7152ad4c5e79b52eab71a9a36d0b5 Mon Sep 17 00:00:00 2001
+From: Jan Holthuis <jan.holthuis@ruhr-uni-bochum.de>
+Date: Fri, 24 Feb 2023 15:45:52 +0100
+Subject: [PATCH] chore(openssh): Disable seccomp sandbox
+
+---
+ sandbox-seccomp-filter.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/sandbox-seccomp-filter.c b/sandbox-seccomp-filter.c
+index 23b40b64..9a6df070 100644
+--- a/sandbox-seccomp-filter.c
++++ b/sandbox-seccomp-filter.c
+@@ -202,6 +202,7 @@
+
+ /* Syscall filtering set for preauth. */
+ static const struct sock_filter preauth_insns[] = {
++#if 0
+ 	/* Ensure the syscall arch convention is as expected. */
+ 	BPF_STMT(BPF_LD+BPF_W+BPF_ABS,
+ 		offsetof(struct seccomp_data, arch)),
+@@ -422,6 +423,7 @@ static const struct sock_filter preauth_insns[] = {
+
+ 	/* Default deny */
+ 	BPF_STMT(BPF_RET+BPF_K, SECCOMP_FILTER_FAIL),
++#endif
+ };
+
+ static const struct sock_fprog preauth_program = {
+--
+2.39.2

@@ -1454,6 +1454,12 @@ services:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-9.2p1
+  openssh-server-9.2p1-gcov:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-server-9.2p1-gcov
+    ports:
+      - '28026:22'
 
   russh-server-0.34.0:
     extends:

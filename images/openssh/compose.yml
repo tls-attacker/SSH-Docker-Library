@@ -195,3 +195,11 @@ services:
       args:
         VERSION: 9.2p1
     profiles: [client]
+  openssh-server-9.2p1-gcov:
+    image: rub-nds/openssh-server:9.2p1-gcov
+    build:
+      context: .
+      dockerfile: openssh-gcov.dockerfile
+      target: openssh-server
+      args:
+        VERSION: 9.2p1
