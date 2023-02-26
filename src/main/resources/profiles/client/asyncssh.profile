@@ -6,6 +6,10 @@
     <role>CLIENT</role>
     <Parameter>
         <cmdParameter>[host]</cmdParameter>
-        <type>HOST_PORT</type>
+        <type>HOST</type>
+    </Parameter>
+    <Parameter>
+        <cmdParameter>[port]</cmdParameter>
+        <type>PORT</type>
     </Parameter>
 </parameterProfile>

@@ -8,7 +8,7 @@ import sys
 
 @click.command()
 @click.option('-H', '--host', help='hostname or ip', default='172.17.0.1"')
-@click.option('-P', '--port', help='prot', default=3022, type=int)
+@click.option('-P', '--port', help='port', default=3022, type=int)
 @click.option('-u', '--username', help='username', default='demo')
 @click.option('-p', '--password', help='password', default='password')
 @click.option('-c', '--command', help='command', default='pwd')
