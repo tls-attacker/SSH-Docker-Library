@@ -1,0 +1,377 @@
+index 8cdefcf7..a506a9df
+--- a/kex.c
++++ b/kex.c
+@@ -62,6 +62,9 @@
+ #include "sshbuf.h"
+ #include "digest.h"
+ 
++//Invalid Curve Patch
++#define DEBUG_KEXECDH
++
+ /* prototype */
+ static int kex_choose_conf(struct ssh *);
+ static int kex_input_newkeys(int, u_int32_t, struct ssh *);
+@@ -574,6 +577,13 @@ kex_send_kexinit(struct ssh *ssh)
+ 	}
+ 	arc4random_buf(cookie, KEX_COOKIE_LEN);
+ 	
++	//Invalid Curve Attack Patch
++	//Sets the random cookie to always be 13
++	int i;
++	for(i = 0; i < 16; i++){
++		cookie[i] = 0x13;
++	}
++
+ 	if ((r = sshpkt_start(ssh, SSH2_MSG_KEXINIT)) != 0 ||
+ 	    (r = sshpkt_putb(ssh, kex->my)) != 0 ||
+ 	    (r = sshpkt_send(ssh)) != 0) {
+index efb2e55a..639c3fbd
+--- a/kexecdh.c
++++ b/kexecdh.c
+@@ -42,52 +42,158 @@
+ #include "digest.h"
+ #include "ssherr.h"
+ 
++//Invalid Curve Attack Patch
++//Some helper classes from openssl and logging support
++#include <openssl/ec.h>
++#include <openssl/bn.h>
++#include "log.h"
++
++#define DEBUG_KEXECDH
++
+ static int
+ kex_ecdh_dec_key_group(struct kex *, const struct sshbuf *, EC_KEY *key,
+     const EC_GROUP *, struct sshbuf **);
+ 
++//This is used when acting as the client
+ int
+ kex_ecdh_keypair(struct kex *kex)
+ {
++
+ 	EC_KEY *client_key = NULL;
+ 	const EC_GROUP *group;
+ 	const EC_POINT *public_key;
+ 	struct sshbuf *buf = NULL;
+ 	int r;
+ 
++	//Invalid Curve Attack Patch
++	//Inizialize custom keys and EC objects
++	int i;
++	EC_KEY *custom_ec_key = NULL;
++	EC_GROUP *custom_group = NULL;
++	EC_POINT *custom_pub_point = NULL;
++
++	//Custom keys taken from Openssl test files
++	BIGNUM *x_pub=NULL;
++	char *x_pub_hex ="b7e08afdfe94bad3f1dc8c734798ba1c62b3a0ad1e9ea2a38201cd0889bc7a19";
++	BIGNUM *y_pub=NULL;
++	char *y_pub_hex ="3603f747959dbf7a4bb226e41928729063adc7ae43529e61b563bbc606cc5e09";
++
++	//Convert hexstring to BIGNUM
++	i = BN_hex2bn(&x_pub, x_pub_hex);
++	i = BN_hex2bn(&y_pub, y_pub_hex);
++
++	BIGNUM *priv_key_exp = NULL;
++	char *priv_key_exp_hex = "c477f9f65c22cce20657faa5b2d1d8122336f851a508a1ed04e479c34985bf96";
++	i = BN_hex2bn(&priv_key_exp, priv_key_exp_hex);
++
++	//Set group
++	int nid  = 415;
++	if((custom_group = EC_GROUP_new_by_curve_name(nid))!=NULL){
++		fprintf(stderr,"Generated NISTP256 Group\n");
++	}
++	custom_ec_key = EC_KEY_new_by_curve_name(415);
++	fprintf(stderr, "Generated NISTP256 Key\n");
++
++	i = EC_KEY_set_group(custom_ec_key, custom_group);
++	if(i){
++		fprintf(stderr, "Group Set successful\n");
++	} else {
++		fprintf(stderr, "Group Set unsuccessful\n");
++	}
++
++	//Set custom private key
++	i = EC_KEY_set_private_key(custom_ec_key, priv_key_exp);
++	if(i){
++		fprintf(stderr, "Private Key set successful\n");
++	} else {
++		fprintf(stderr, "Private Key set unsuccessful\n");
++	}
++
++	//Create Pub Point
++	if((custom_pub_point = EC_POINT_new(custom_group))==NULL){
++		fprintf(stderr, "Failed to create a new pub point\n");
++	} else {
++		fprintf(stderr, "Created new pub point\n");
++	}
++
++	//Set the public key point coordiantes
++	i = EC_POINT_set_affine_coordinates(custom_group, custom_pub_point, x_pub, y_pub, NULL);
++
++
++	//Set custom public key
++	i = EC_KEY_set_public_key(custom_ec_key, custom_pub_point);
++	if(i){
++		fprintf(stderr, "Pub Key set successful\n");
++	} else {
++		fprintf(stderr, "Pub Key set unsuccessful\n");
++	}
++
++
++	//Not modified, this generates a valid EC_key object for us which we can edit later
+ 	if ((client_key = EC_KEY_new_by_curve_name(kex->ec_nid)) == NULL) {
+ 		r = SSH_ERR_ALLOC_FAIL;
+ 		goto out;
+ 	}
++
+ 	if (EC_KEY_generate_key(client_key) != 1) {
+ 		r = SSH_ERR_LIBCRYPTO_ERROR;
+ 		goto out;
+ 	}
++
++	//Set our custom keys
++	
++	i = EC_KEY_set_group(client_key, custom_group);
++	fprintf(stderr, "Set group: %d\n", i);
++	i = EC_KEY_set_private_key(client_key, priv_key_exp);
++	fprintf(stderr, "Set priv key: %d\n", i);
++	i = EC_KEY_set_public_key(client_key, custom_pub_point);
++	fprintf(stderr, "Set pub key: %d\n", i);
++
++
+ 	group = EC_KEY_get0_group(client_key);
+ 	public_key = EC_KEY_get0_public_key(client_key);
+ 
++	custom_group = EC_KEY_get0_group(custom_ec_key);
++	custom_pub_point = EC_KEY_get0_public_key(custom_ec_key);
++
++
++	EC_KEY_set_flags(custom_ec_key, 0);
++	EC_KEY_set_enc_flags(custom_ec_key, 0);
++	EC_KEY_set_conv_form(custom_ec_key, 4);
++
++
+ 	if ((buf = sshbuf_new()) == NULL) {
+ 		r = SSH_ERR_ALLOC_FAIL;
+ 		goto out;
+ 	}
++
++
+ 	if ((r = sshbuf_put_ec(buf, public_key, group)) != 0 ||
+ 	    (r = sshbuf_get_u32(buf, NULL)) != 0)
+ 		goto out;
+ #ifdef DEBUG_KEXECDH
+-	fputs("client private key:\n", stderr);
++	fputs("\nclient private key:\n", stderr);
+ 	sshkey_dump_ec_key(client_key);
++
+ #endif
++
++
++	
++
+ 	kex->ec_client_key = client_key;
+ 	kex->ec_group = group;
+-	client_key = NULL;	/* owned by the kex */
++	client_key = NULL;	//owned by the kex 
+ 	kex->client_pub = buf;
+ 	buf = NULL;
++
+  out:
+ 	EC_KEY_free(client_key);
+ 	sshbuf_free(buf);
+ 	return r;
+ }
+ 
++//Invalid Curve Patch
++//This is used when acting as the server
+ int
+ kex_ecdh_enc(struct kex *kex, const struct sshbuf *client_blob,
+     struct sshbuf **server_blobp, struct sshbuf **shared_secretp)
+@@ -101,6 +207,33 @@ kex_ecdh_enc(struct kex *kex, const struct sshbuf *client_blob,
+ 	*server_blobp = NULL;
+ 	*shared_secretp = NULL;
+ 
++	//Initialize custom variables and keys
++	int i;
++	EC_KEY *custom_ec_key = NULL;
++	EC_GROUP *custom_group = NULL;
++	EC_POINT *custom_pub_point = NULL;
++	BIGNUM *x_pub=NULL;
++	BIGNUM *y_pub=NULL;
++	BIGNUM *priv_key_exp =NULL;
++
++	//Pub key sent to the client
++	char *x_pub_hex ="b7e08afdfe94bad3f1dc8c734798ba1c62b3a0ad1e9ea2a38201cd0889bc7a19";
++	char *y_pub_hex ="3603f747959dbf7a4bb226e41928729063adc7ae43529e61b563bbc606cc5e09";
++	//Private Key used to generate shared secret
++	char *priv_key_exp_hex = "c477f9f65c22cce20657faa5b2d1d8122336f851a508a1ed04e479c34985bf96";
++
++	//used to test shared key
++	//char *priv_key_exp_hex = "0000000000000000000000000000000000000000000000000000000000000001";
++
++	i = BN_hex2bn(&x_pub, x_pub_hex);
++	i = BN_hex2bn(&y_pub, y_pub_hex);
++	i = BN_hex2bn(&priv_key_exp, priv_key_exp_hex);
++
++	custom_group = EC_GROUP_new_by_curve_name(415);
++	custom_pub_point = EC_POINT_new(custom_group);
++
++
++	//Not modified, this creates a valid EC_KEY object for us which we can edit later
+ 	if ((server_key = EC_KEY_new_by_curve_name(kex->ec_nid)) == NULL) {
+ 		r = SSH_ERR_ALLOC_FAIL;
+ 		goto out;
+@@ -109,13 +242,29 @@ kex_ecdh_enc(struct kex *kex, const struct sshbuf *client_blob,
+ 		r = SSH_ERR_LIBCRYPTO_ERROR;
+ 		goto out;
+ 	}
++
++
++	i = EC_KEY_set_group(server_key, custom_group);
++
+ 	group = EC_KEY_get0_group(server_key);
+ 
++	i = EC_POINT_set_affine_coordinates(group, custom_pub_point, x_pub, y_pub, NULL);
++	i = EC_KEY_set_private_key(server_key, priv_key_exp);
++	i = EC_KEY_set_public_key(server_key, custom_pub_point);
++
++
++
++	//Print our private key to auth.log (just for testing purposes)
++	do_log2(SYSLOG_LEVEL_INFO, priv_key_exp_hex);
++
+ #ifdef DEBUG_KEXECDH
+ 	fputs("server private key:\n", stderr);
+ 	sshkey_dump_ec_key(server_key);
+ #endif
+ 	pub_key = EC_KEY_get0_public_key(server_key);
++
++
++
+ 	if ((server_blob = sshbuf_new()) == NULL) {
+ 		r = SSH_ERR_ALLOC_FAIL;
+ 		goto out;
+@@ -134,6 +283,7 @@ kex_ecdh_enc(struct kex *kex, const struct sshbuf *client_blob,
+ 	return r;
+ }
+ 
++//Invalid Curve Patch
+ static int
+ kex_ecdh_dec_key_group(struct kex *kex, const struct sshbuf *ec_blob,
+     EC_KEY *key, const EC_GROUP *group, struct sshbuf **shared_secretp)
+@@ -147,6 +297,7 @@ kex_ecdh_dec_key_group(struct kex *kex, const struct sshbuf *ec_blob,
+ 
+ 	*shared_secretp = NULL;
+ 
++
+ 	if ((buf = sshbuf_new()) == NULL) {
+ 		r = SSH_ERR_ALLOC_FAIL;
+ 		goto out;
+@@ -166,9 +317,11 @@ kex_ecdh_dec_key_group(struct kex *kex, const struct sshbuf *ec_blob,
+ 	fputs("public key:\n", stderr);
+ 	sshkey_dump_ec_point(group, dh_pub);
+ #endif
++	//The errors which are commented out cause the point validation to fail usually, so we remove the errors
+ 	if (sshkey_ec_validate_public(group, dh_pub) != 0) {
+-		r = SSH_ERR_MESSAGE_INCOMPLETE;
+-		goto out;
++		//r = SSH_ERR_MESSAGE_INCOMPLETE;
++		//goto out;
++		;
+ 	}
+ 	klen = (EC_GROUP_get_degree(group) + 7) / 8;
+ 	if ((kbuf = malloc(klen)) == NULL ||
+@@ -178,14 +331,23 @@ kex_ecdh_dec_key_group(struct kex *kex, const struct sshbuf *ec_blob,
+ 	}
+ 	if (ECDH_compute_key(kbuf, klen, dh_pub, key, NULL) != (int)klen ||
+ 	    BN_bin2bn(kbuf, klen, shared_secret) == NULL) {
+-		r = SSH_ERR_LIBCRYPTO_ERROR;
+-		goto out;
++		//r = SSH_ERR_LIBCRYPTO_ERROR;
++		//goto out;
++		;
+ 	}
++
++	//Print shared secret to auth.log
++	char *shared;
++	shared = BN_bn2hex(shared_secret);
++	do_log2(SYSLOG_LEVEL_INFO, shared);
++
+ #ifdef DEBUG_KEXECDH
+ 	dump_digest("shared secret", kbuf, klen);
+ #endif
+ 	if ((r = sshbuf_put_bignum2(buf, shared_secret)) != 0)
+ 		goto out;
++
++
+ 	*shared_secretp = buf;
+ 	buf = NULL;
+  out:
+@@ -206,6 +368,7 @@ kex_ecdh_dec(struct kex *kex, const struct sshbuf *server_blob,
+ 	    kex->ec_group, shared_secretp);
+ 	EC_KEY_free(kex->ec_client_key);
+ 	kex->ec_client_key = NULL;
++
+ 	return r;
+ }
+ 
+index 4bcb89ba..78cef980
+--- a/ssh-ecdsa.c
++++ b/ssh-ecdsa.c
+@@ -42,9 +42,12 @@
+ #include "digest.h"
+ #define SSHKEY_INTERNAL
+ #include "sshkey.h"
+-
+ #include "openbsd-compat/openssl-compat.h"
++//Invalid Curve Patch
++//Include logging support
++#include "log.h"
+ 
++#define DEBUG_PK
+ static u_int
+ ssh_ecdsa_size(const struct sshkey *key)
+ {
+@@ -183,6 +186,7 @@ ssh_ecdsa_deserialize_public(const char *ktype, struct sshbuf *b,
+ 	}
+ 	/* success */
+ 	r = 0;
++
+ #ifdef DEBUG_PK
+ 	sshkey_dump_ec_point(EC_KEY_get0_group(key->ecdsa),
+ 	    EC_KEY_get0_public_key(key->ecdsa));
+@@ -280,6 +284,15 @@ ssh_ecdsa_sign(struct sshkey *key,
+ 	if (lenp != NULL)
+ 		*lenp = len;
+ 	ret = 0;
++
++	//Invalid Curve Patch
++	//Print the r and s values of the signature (for testing purposes)
++	char *r_sig, *s_sig;
++	r_sig = BN_bn2hex(sig_r);
++	s_sig = BN_bn2hex(sig_s);
++
++	do_log2(SYSLOG_LEVEL_INFO, r_sig);
++	do_log2(SYSLOG_LEVEL_INFO, s_sig);
+  out:
+ 	explicit_bzero(digest, sizeof(digest));
+ 	sshbuf_free(b);
+index 56ffdd86..5cc06cf6
+--- a/sshbuf-getput-crypto.c
++++ b/sshbuf-getput-crypto.c
+@@ -65,8 +65,12 @@ get_ec(const u_char *d, size_t len, EC_POINT *v, const EC_GROUP *g)
+ 	/* Only handle uncompressed points */
+ 	if (*d != POINT_CONVERSION_UNCOMPRESSED)
+ 		return SSH_ERR_INVALID_FORMAT;
++
++	//Invalid Curve Patch
++	//This is commented out so the server accepts invalid EC points
+ 	if (v != NULL && EC_POINT_oct2point(g, v, d, len, NULL) != 1)
+-		return SSH_ERR_INVALID_FORMAT; /* XXX assumption */
++		//return SSH_ERR_INVALID_FORMAT; /* XXX assumption */
++		;
+ 	return 0;
+ }
+ 
