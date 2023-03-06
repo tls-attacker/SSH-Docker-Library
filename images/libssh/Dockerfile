@@ -21,8 +21,13 @@ WORKDIR /src/libssh
 
 ARG USERNAME=sshattacker
 ARG PASSWORD=secret
+
+# Make the old filename "ssh_server_fork.c" a hardlink to the new one in libssh
+# >= 0.10.0 to make it compatible with this Dockerfile.
+RUN if [ ! -e  examples/ssh_server_fork.c ]; then ln examples/ssh_server.c examples/ssh_server_fork.c ; fi
 RUN sed -i "s/myuser/${USERNAME}/g" examples/ssh_server_fork.c && \
     sed -i "s/mypassword/${PASSWORD}/g" examples/ssh_server_fork.c
+
 WORKDIR /src/libssh/build
 RUN cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/install .. && \
     make -j "$(nproc)" && \
