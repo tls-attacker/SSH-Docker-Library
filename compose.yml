@@ -475,6 +475,12 @@ services:
       service: dropbear-server-2022.82
     ports:
       - '23055:22'
+  dropbear-server-2022.83:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-server-2022.83
+    ports:
+      - '23056:22'
 
   erlang-ssh-server-3.2:
     extends:
