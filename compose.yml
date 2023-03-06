@@ -132,6 +132,12 @@ services:
       service: asyncssh-server-2.13.0
     ports:
       - '22021:22'
+  asyncssh-server-2.13.1:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-server-2.13.1
+    ports:
+      - '22022:22'
 
   dropbear-server-0.23:
     extends:
