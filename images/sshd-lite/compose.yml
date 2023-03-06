@@ -1,85 +1,85 @@
 version: '3.2'
 services:
   sshd-lite-server-1.0.0:
-    image: rub-nds/openssh-server:1.0.0
+    image: rub-nds/sshd-lite-server:1.0.0
     build:
       context: .
       args:
         VERSION: 1.0.0
   sshd-lite-server-1.1.0:
-    image: rub-nds/openssh-server:1.1.0
+    image: rub-nds/sshd-lite-server:1.1.0
     build:
       context: .
       args:
         VERSION: 1.1.0
   sshd-lite-server-1.2.0:
-    image: rub-nds/openssh-server:1.2.0
+    image: rub-nds/sshd-lite-server:1.2.0
     build:
       context: .
       args:
         VERSION: 1.2.0
   sshd-lite-server-1.2.1:
-    image: rub-nds/openssh-server:1.2.1
+    image: rub-nds/sshd-lite-server:1.2.1
     build:
       context: .
       args:
         VERSION: 1.2.1
   sshd-lite-server-1.2.2:
-    image: rub-nds/openssh-server:1.2.2
+    image: rub-nds/sshd-lite-server:1.2.2
     build:
       context: .
       args:
         VERSION: 1.2.2
   sshd-lite-server-1.2.3:
-    image: rub-nds/openssh-server:1.2.3
+    image: rub-nds/sshd-lite-server:1.2.3
     build:
       context: .
       args:
         VERSION: 1.2.3
   sshd-lite-server-1.3.0:
-    image: rub-nds/openssh-server:1.3.0
+    image: rub-nds/sshd-lite-server:1.3.0
     build:
       context: .
       args:
         VERSION: 1.3.0
   sshd-lite-server-1.3.1:
-    image: rub-nds/openssh-server:1.3.1
+    image: rub-nds/sshd-lite-server:1.3.1
     build:
       context: .
       args:
         VERSION: 1.3.1
   sshd-lite-server-1.4.0:
-    image: rub-nds/openssh-server:1.4.0
+    image: rub-nds/sshd-lite-server:1.4.0
     build:
       context: .
       args:
         VERSION: 1.4.0
   sshd-lite-server-1.4.1:
-    image: rub-nds/openssh-server:1.4.1
+    image: rub-nds/sshd-lite-server:1.4.1
     build:
       context: .
       args:
         VERSION: 1.4.1
   sshd-lite-server-1.4.2:
-    image: rub-nds/openssh-server:1.4.2
+    image: rub-nds/sshd-lite-server:1.4.2
     build:
       context: .
       args:
         VERSION: 1.4.2
   sshd-lite-server-1.4.3:
-    image: rub-nds/openssh-server:1.4.3
+    image: rub-nds/sshd-lite-server:1.4.3
     build:
       context: .
       args:
         VERSION: 1.4.3
   sshd-lite-server-1.5.0:
-    image: rub-nds/openssh-server:1.5.0
+    image: rub-nds/sshd-lite-server:1.5.0
     build:
       context: .
       args:
         VERSION: 1.5.0
   sshd-lite-server-1.6.0:
-    image: rub-nds/openssh-server:1.6.0
+    image: rub-nds/sshd-lite-server:1.6.0
     build:
       context: .
       args:
