@@ -1028,24 +1028,42 @@ services:
       service: erlang-ssh-server-4.13.2.1
     ports:
       - '24092:22'
+  erlang-ssh-server-4.13.2.2:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-server-4.13.2.2
+    ports:
+      - '24093:22'
   erlang-ssh-server-4.14:
     extends:
       file: images/erlang-ssh/compose.yml
       service: erlang-ssh-server-4.14
     ports:
-      - '24093:22'
+      - '24094:22'
   erlang-ssh-server-4.14.1:
     extends:
       file: images/erlang-ssh/compose.yml
       service: erlang-ssh-server-4.14.1
     ports:
-      - '24094:22'
+      - '24095:22'
   erlang-ssh-server-4.15:
     extends:
       file: images/erlang-ssh/compose.yml
       service: erlang-ssh-server-4.15
     ports:
-      - '24095:22'
+      - '24096:22'
+  erlang-ssh-server-4.15.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-server-4.15.1
+    ports:
+      - '24097:22'
+  erlang-ssh-server-4.15.2:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-server-4.15.2
+    ports:
+      - '24098:22'
 
   libssh-server-0.7.0:
     extends:

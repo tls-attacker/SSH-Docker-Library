@@ -675,6 +675,13 @@ services:
       target: erlang-ssh-server
       args:
         VERSION: 24.3.4.6
+  erlang-ssh-server-4.13.2.2:
+    image: rub-nds/erlang-ssh-server:4.13.2.2
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 24.3.4.9
   erlang-ssh-server-4.14:
     image: rub-nds/erlang-ssh-server:4.14
     build:
@@ -696,3 +703,17 @@ services:
       target: erlang-ssh-server
       args:
         VERSION: 25.1.2
+  erlang-ssh-server-4.15.1:
+    image: rub-nds/erlang-ssh-server:4.15.1
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 25.2.2
+  erlang-ssh-server-4.15.2:
+    image: rub-nds/erlang-ssh-server:4.15.2
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 25.2.3
