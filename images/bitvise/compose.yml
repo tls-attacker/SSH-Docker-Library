@@ -1,0 +1,260 @@
+version: '3.2'
+services:
+  bitvise-server-8.15:
+    image: rub-nds/bitvise-server:8.15
+    build:
+      context: .
+      args:
+        VERSION: '8.15'
+  bitvise-server-8.16:
+    image: rub-nds/bitvise-server:8.16
+    build:
+      context: .
+      args:
+        VERSION: '8.16'
+  bitvise-server-8.17:
+    image: rub-nds/bitvise-server:8.17
+    build:
+      context: .
+      args:
+        VERSION: '8.17'
+  bitvise-server-8.18:
+    image: rub-nds/bitvise-server:8.18
+    build:
+      context: .
+      args:
+        VERSION: '8.18'
+  bitvise-server-8.19:
+    image: rub-nds/bitvise-server:8.19
+    build:
+      context: .
+      args:
+        VERSION: '8.19'
+  bitvise-server-8.21:
+    image: rub-nds/bitvise-server:8.21
+    build:
+      context: .
+      args:
+        VERSION: '8.21'
+  bitvise-server-8.22:
+    image: rub-nds/bitvise-server:8.22
+    build:
+      context: .
+      args:
+        VERSION: '8.22'
+  bitvise-server-8.24:
+    image: rub-nds/bitvise-server:8.24
+    build:
+      context: .
+      args:
+        VERSION: '8.24'
+  bitvise-server-8.25:
+    image: rub-nds/bitvise-server:8.25
+    build:
+      context: .
+      args:
+        VERSION: '8.25'
+  bitvise-server-8.26:
+    image: rub-nds/bitvise-server:8.26
+    build:
+      context: .
+      args:
+        VERSION: '8.26'
+  bitvise-server-8.27:
+    image: rub-nds/bitvise-server:8.27
+    build:
+      context: .
+      args:
+        VERSION: '8.27'
+  bitvise-server-8.28:
+    image: rub-nds/bitvise-server:8.28
+    build:
+      context: .
+      args:
+        VERSION: '8.28'
+  bitvise-server-8.29:
+    image: rub-nds/bitvise-server:8.29
+    build:
+      context: .
+      args:
+        VERSION: '8.29'
+  bitvise-server-8.31:
+    image: rub-nds/bitvise-server:8.31
+    build:
+      context: .
+      args:
+        VERSION: '8.31'
+  bitvise-server-8.32:
+    image: rub-nds/bitvise-server:8.32
+    build:
+      context: .
+      args:
+        VERSION: '8.32'
+  bitvise-server-8.33:
+    image: rub-nds/bitvise-server:8.33
+    build:
+      context: .
+      args:
+        VERSION: '8.33'
+  bitvise-server-8.34:
+    image: rub-nds/bitvise-server:8.34
+    build:
+      context: .
+      args:
+        VERSION: '8.34'
+  bitvise-server-8.35:
+    image: rub-nds/bitvise-server:8.35
+    build:
+      context: .
+      args:
+        VERSION: '8.35'
+  bitvise-server-8.36:
+    image: rub-nds/bitvise-server:8.36
+    build:
+      context: .
+      args:
+        VERSION: '8.36'
+  bitvise-server-8.37:
+    image: rub-nds/bitvise-server:8.37
+    build:
+      context: .
+      args:
+        VERSION: '8.37'
+  bitvise-server-8.38:
+    image: rub-nds/bitvise-server:8.38
+    build:
+      context: .
+      args:
+        VERSION: '8.38'
+  bitvise-server-8.39:
+    image: rub-nds/bitvise-server:8.39
+    build:
+      context: .
+      args:
+        VERSION: '8.39'
+  bitvise-server-8.41:
+    image: rub-nds/bitvise-server:8.41
+    build:
+      context: .
+      args:
+        VERSION: '8.41'
+  bitvise-server-8.42:
+    image: rub-nds/bitvise-server:8.42
+    build:
+      context: .
+      args:
+        VERSION: '8.42'
+  bitvise-server-8.43:
+    image: rub-nds/bitvise-server:8.43
+    build:
+      context: .
+      args:
+        VERSION: '8.43'
+  bitvise-server-8.44:
+    image: rub-nds/bitvise-server:8.44
+    build:
+      context: .
+      args:
+        VERSION: '8.44'
+  bitvise-server-8.45:
+    image: rub-nds/bitvise-server:8.45
+    build:
+      context: .
+      args:
+        VERSION: '8.45'
+  bitvise-server-8.47:
+    image: rub-nds/bitvise-server:8.47
+    build:
+      context: .
+      args:
+        VERSION: '8.47'
+  bitvise-server-8.48:
+    image: rub-nds/bitvise-server:8.48
+    build:
+      context: .
+      args:
+        VERSION: '8.48'
+  bitvise-server-8.49:
+    image: rub-nds/bitvise-server:8.49
+    build:
+      context: .
+      args:
+        VERSION: '8.49'
+  bitvise-server-9.12:
+    image: rub-nds/bitvise-server:9.12
+    build:
+      context: .
+      args:
+        VERSION: '9.12'
+  bitvise-server-9.14:
+    image: rub-nds/bitvise-server:9.14
+    build:
+      context: .
+      args:
+        VERSION: '9.14'
+  bitvise-server-9.16:
+    image: rub-nds/bitvise-server:9.16
+    build:
+      context: .
+      args:
+        VERSION: '9.16'
+  bitvise-server-9.17:
+    image: rub-nds/bitvise-server:9.17
+    build:
+      context: .
+      args:
+        VERSION: '9.17'
+  bitvise-server-9.18:
+    image: rub-nds/bitvise-server:9.18
+    build:
+      context: .
+      args:
+        VERSION: '9.18'
+  bitvise-server-9.19:
+    image: rub-nds/bitvise-server:9.19
+    build:
+      context: .
+      args:
+        VERSION: '9.19'
+  bitvise-server-9.21:
+    image: rub-nds/bitvise-server:9.21
+    build:
+      context: .
+      args:
+        VERSION: '9.21'
+  bitvise-server-9.22:
+    image: rub-nds/bitvise-server:9.22
+    build:
+      context: .
+      args:
+        VERSION: '9.22'
+  bitvise-server-9.23:
+    image: rub-nds/bitvise-server:9.23
+    build:
+      context: .
+      args:
+        VERSION: '9.23'
+  bitvise-server-9.24:
+    image: rub-nds/bitvise-server:9.24
+    build:
+      context: .
+      args:
+        VERSION: '9.24'
+  bitvise-server-9.25:
+    image: rub-nds/bitvise-server:9.25
+    build:
+      context: .
+      args:
+        VERSION: '9.25'
+  bitvise-server-9.26:
+    image: rub-nds/bitvise-server:9.26
+    build:
+      context: .
+      args:
+        VERSION: '9.26'
+  bitvise-server-9.27:
+    image: rub-nds/bitvise-server:9.27
+    build:
+      context: .
+      args:
+        VERSION: '9.27'
