@@ -1493,6 +1493,30 @@ services:
       service: libssh-server-0.9.6
     ports:
       - '27006:22'
+  libssh-server-0.10.0:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-server-0.10.0
+    ports:
+      - '27007:22'
+  libssh-server-0.10.2:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-server-0.10.2
+    ports:
+      - '27008:22'
+  libssh-server-0.10.3:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-server-0.10.3
+    ports:
+      - '27009:22'
+  libssh-server-0.10.4:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-server-0.10.4
+    ports:
+      - '27010:22'
 
   openssh-server-7.0p1:
     extends:
