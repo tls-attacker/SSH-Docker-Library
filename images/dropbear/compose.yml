@@ -336,3 +336,9 @@ services:
       context: .
       args:
         VERSION: '2022.82'
+  dropbear-server-2022.83:
+    image: rub-nds/dropbear-server:2022.83
+    build:
+      context: .
+      args:
+        VERSION: '2022.83'

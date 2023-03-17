@@ -42,3 +42,27 @@ services:
       context: .
       args:
         VERSION: 0.9.6
+  libssh-server-0.10.0:
+    image: rub-nds/libssh-server:0.10.0
+    build:
+      context: .
+      args:
+        VERSION: 0.10.0
+  libssh-server-0.10.2:
+    image: rub-nds/libssh-server:0.10.2
+    build:
+      context: .
+      args:
+        VERSION: 0.10.2
+  libssh-server-0.10.3:
+    image: rub-nds/libssh-server:0.10.3
+    build:
+      context: .
+      args:
+        VERSION: 0.10.3
+  libssh-server-0.10.4:
+    image: rub-nds/libssh-server:0.10.4
+    build:
+      context: .
+      args:
+        VERSION: 0.10.4

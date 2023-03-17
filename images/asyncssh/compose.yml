@@ -132,3 +132,9 @@ services:
       context: .
       args:
         VERSION: 2.13.0
+  asyncssh-server-2.13.1:
+    image: rub-nds/asyncssh-server:2.13.1
+    build:
+      context: .
+      args:
+        VERSION: 2.13.1
