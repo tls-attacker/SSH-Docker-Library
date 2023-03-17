@@ -717,3 +717,10 @@ services:
       target: erlang-ssh-server
       args:
         VERSION: 25.2.3
+  erlang-ssh-server-4.15.3:
+    image: rub-nds/erlang-ssh-server:4.15.3
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 25.3.0

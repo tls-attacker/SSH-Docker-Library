@@ -1329,6 +1329,12 @@ services:
       service: erlang-ssh-server-4.15.2
     ports:
       - '25098:22'
+  erlang-ssh-server-4.15.3:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-server-4.15.3
+    ports:
+      - '25099:22'
 
   libssh-server-0.7.0:
     extends:
