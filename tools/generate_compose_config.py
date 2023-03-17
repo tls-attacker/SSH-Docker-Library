@@ -29,8 +29,8 @@ def main(argv=None):
     parser.add_argument(
         "-t",
         "--template-file",
-        type=pathlib.Path,
-        default=repository_root_path.joinpath("compose.yml.tpl"),
+        type=str,
+        default="compose.yml.tpl",
     )
     parser.add_argument(
         "-o", "--output-file", type=argparse.FileType("w"), default=sys.stdout
@@ -41,12 +41,13 @@ def main(argv=None):
     for path in args.file:
         logger.debug("Parsed file: %s", path)
         with path.open("r") as fp:
-            files[path.relative_to(repository_root_path)] = yaml.safe_load(fp)
+            files[
+                str(path.relative_to(repository_root_path)).replace("\\", "/")
+            ] = yaml.safe_load(fp)
 
     env = jinja2.Environment(
         loader=jinja2.FileSystemLoader(
-            # Adding `/` is necessary to allow arbitrary absolute paths.
-            searchpath=[".", "/"],
+            searchpath=[repository_root_path],
             followlinks=True,
         ),
         autoescape=False,
