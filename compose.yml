@@ -1768,6 +1768,12 @@ services:
       service: russh-server-0.36.1
     ports:
       - '30002:22'
+  russh-server-0.36.2:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-server-0.36.2
+    ports:
+      - '30003:22'
 
   sshd-lite-server-1.2.0:
     extends:
