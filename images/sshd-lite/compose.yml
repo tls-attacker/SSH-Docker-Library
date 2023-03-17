@@ -36,3 +36,39 @@ services:
       context: .
       args:
         VERSION: 1.3.1
+  sshd-lite-server-1.4.0:
+    image: rub-nds/sshd-lite-server:1.4.0
+    build:
+      context: .
+      args:
+        VERSION: 1.4.0
+  sshd-lite-server-1.4.1:
+    image: rub-nds/sshd-lite-server:1.4.1
+    build:
+      context: .
+      args:
+        VERSION: 1.4.1
+  sshd-lite-server-1.4.2:
+    image: rub-nds/sshd-lite-server:1.4.2
+    build:
+      context: .
+      args:
+        VERSION: 1.4.2
+  sshd-lite-server-1.4.3:
+    image: rub-nds/sshd-lite-server:1.4.3
+    build:
+      context: .
+      args:
+        VERSION: 1.4.3
+  sshd-lite-server-1.5.0:
+    image: rub-nds/sshd-lite-server:1.5.0
+    build:
+      context: .
+      args:
+        VERSION: 1.5.0
+  sshd-lite-server-1.6.0:
+    image: rub-nds/sshd-lite-server:1.6.0
+    build:
+      context: .
+      args:
+        VERSION: 1.6.0
