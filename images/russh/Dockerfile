@@ -8,10 +8,15 @@ COPY hostkey.bin russh-server.toml /install/
 WORKDIR /install
 
 ARG VERSION=0.34
-RUN if printf '%s\n%s\n' "${VERSION}" "0.35" | sort -c -g; then \
+RUN if echo -e "${VERSION}\n0.35" | sort -V -C; then \
+      # ${VERSION} <= 0.35 \
       ref="84087e113b9c2914357eab4557e0e4b22c8104cd"; \
-    else \
+    elif echo -e "${VERSION}\n0.36.2" | sort -V -C; then \
+      # 0.35 < ${VERSION} <= 0.36.2 \
       ref="092345d80ed29d445d580eda35141b9e34fe6d27"; \
+    else \
+      # ${VERSION} > 0.36.2 \
+      ref="a9afc50d9fe5f3be98b5fa9f46ee37b1cd4e517e"; \
     fi \
     && mkdir /app \
     && curl -sL "https://github.com/tls-attacker/russh-server/archive/${ref}.tar.gz" | tar xzf - --strip-components=1 -C /app \
