@@ -138,6 +138,98 @@ services:
       service: asyncssh-server-2.13.1
     ports:
       - '22022:22'
+  asyncssh-client-2.0.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.0.0
+  asyncssh-client-2.0.1:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.0.1
+  asyncssh-client-2.1.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.1.0
+  asyncssh-client-2.2.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.2.0
+  asyncssh-client-2.2.1:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.2.1
+  asyncssh-client-2.3.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.3.0
+  asyncssh-client-2.4.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.4.0
+  asyncssh-client-2.4.1:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.4.1
+  asyncssh-client-2.4.2:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.4.2
+  asyncssh-client-2.5.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.5.0
+  asyncssh-client-2.6.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.6.0
+  asyncssh-client-2.7.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.7.0
+  asyncssh-client-2.7.1:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.7.1
+  asyncssh-client-2.7.2:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.7.2
+  asyncssh-client-2.8.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.8.0
+  asyncssh-client-2.8.1:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.8.1
+  asyncssh-client-2.9.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.9.0
+  asyncssh-client-2.10.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.10.0
+  asyncssh-client-2.10.1:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.10.1
+  asyncssh-client-2.11.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.11.0
+  asyncssh-client-2.12.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.12.0
+  asyncssh-client-2.13.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.13.0
+  asyncssh-client-2.13.1:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.13.1
 
   bitvise-server-8.15:
     extends:
