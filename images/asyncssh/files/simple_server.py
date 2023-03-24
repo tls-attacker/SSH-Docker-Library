@@ -2,8 +2,10 @@
 """
 Server code from example of AsyncSSH, see:
 https://asyncssh.readthedocs.io/en/stable/#server-examples
+
+Modified to accept parameters from environment variables for easier integration with docker
 """
-import argparse
+import click
 import pathlib
 import asyncio
 import asyncssh
@@ -103,71 +105,62 @@ async def start_server(port, host_keys):
     )
 
 
-def validate_username(text):
-    stripped = text.strip()
+def validate_username(ctx, param, value):
+    stripped = value.strip()
     if not stripped:
         raise ValueError("Username must not be empty!")
     return stripped
 
 
-def main(argv=None):
-    parser = argparse.ArgumentParser()
-    parser.add_argument("username", help="SSH username", type=validate_username)
-    parser.add_argument(
-        "-P",
-        "--password",
-        action="store",
-        help="SSH password (password auth will be disabled if not specified)",
-    )
-    parser.add_argument(
-        "-f",
-        "--authorized-keys-file",
-        type=pathlib.Path,
-        action="store",
-        help="SSH authorized_keys file (pubkey auth won't not work if not specified)",
-    )
-    parser.add_argument(
-        "-p",
-        "--port",
-        action="store",
-        type=int,
-        default=22,
-        help="SSH port to listen on",
-    )
-    parser.add_argument(
-        "--host-key",
-        action="store",
-        type=pathlib.Path,
-        default=pathlib.Path(__file__).parent.joinpath("ssh_host_key"),
-        help="SSH host key",
-    )
-    args = parser.parse_args(argv)
-
+@click.command()
+@click.option(
+    "-u", "--username", help="SSH username", type=str, callback=validate_username
+)
+@click.option(
+    "-P",
+    "--password",
+    help="SSH password (password authentication will be disabled if not specified)",
+    type=str,
+)
+@click.option(
+    "-f",
+    "--authorized-keys-file",
+    help="SSH authorized_keys file (publickey authentication won't work if not specified)",
+    type=pathlib.Path,
+)
+@click.option("-p", "--port", help="SSH port to listen on", default=22, type=int)
+@click.option(
+    "--host-key",
+    help="SSH host key",
+    default=pathlib.Path(__file__).parent.joinpath("ssh_host_key"),
+    type=pathlib.Path,
+)
+def main(username, password, authorized_keys_file, port, host_key):
     logging.basicConfig(level=logging.DEBUG)
     logger = logging.getLogger(__name__)
 
-    logger.info("Username: %r", args.username)
-    if args.password is not None:
-        logger.info("Password: %r", args.password)
-        PASSWORDS[args.username] = args.password
+    logger.info("Username: %r", username)
+    if password is not None:
+        logger.info("Password: %r", password)
+        PASSWORDS[username] = password
     else:
         logger.warning("No password given, password auth will be disabled.")
 
-    if args.authorized_keys_file is not None:
-        logger.info("authorized_keys file: %s", args.authorized_keys_file)
-        AUTHORIZED_KEYS_FILES[args.username] = args.authorized_keys_file
+    if authorized_keys_file is not None:
+        logger.info("authorized_keys file: %s", authorized_keys_file)
+        AUTHORIZED_KEYS_FILES[username] = authorized_keys_file
     else:
-        logger.warning("No authorized_keys file given, pubkey auth will not work.")
+        logger.warning("No authorized_keys file given, publickey auth will not work.")
 
-    if args.password is None and args.authorized_keys_file is None:
+    if password is None and authorized_keys_file is None:
         logger.warning(
             "Neither password nor authorized_keys file specified, you won't be able to log in!"
         )
 
-    logger.info("Server starting up on %d...", args.port)
+    logger.info("Server starting up on %d...", port)
     loop = asyncio.get_event_loop()
     try:
-        loop.run_until_complete(start_server(port=args.port, host_keys=[args.host_key]))
+        loop.run_until_complete(start_server(port=port, host_keys=[host_key]))
     except (OSError, asyncssh.Error) as exc:
         sys.exit("Error starting server: " + str(exc))
     loop.run_forever()
@@ -175,4 +168,4 @@ def main(argv=None):
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(main(auto_envvar_prefix="SSH"))  # pyright: reportGeneralTypeIssues=false
