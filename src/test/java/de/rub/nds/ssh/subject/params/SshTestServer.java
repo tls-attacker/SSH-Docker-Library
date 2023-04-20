@@ -1,7 +1,7 @@
 /**
  * SSH-Attacker - A Modular Penetration Testing Framework for SSH
  *
- * Copyright 2014-2022 Ruhr University Bochum, Paderborn University, Hackmanit GmbH
+ * Copyright 2014-2023 Ruhr University Bochum, Paderborn University, Hackmanit GmbH
  *
  * Licensed under Apache License, Version 2.0
  * http://www.apache.org/licenses/LICENSE-2.0.txt
@@ -55,6 +55,7 @@ public class SshTestServer extends Thread {
     SshTestServer(int port) {
         this.port = port;
     }
+
     SshTestServer(int port, Boolean debug) {
         this.debug = debug;
         this.port = port;
@@ -71,6 +72,7 @@ public class SshTestServer extends Thread {
             return true;
         }
     }
+
     private class AcceptAllPublickeyAuthenticator extends StaticPublickeyAuthenticator {
         private AcceptAllPublickeyAuthenticator() {
             super(true);
@@ -81,9 +83,11 @@ public class SshTestServer extends Thread {
         public EchoShell(String command) {
             super(command);
         }
+
         public EchoShell() {
             super();
         }
+
         @Override
         protected boolean handleCommandLine(String command) throws Exception {
             OutputStream out = getOutputStream();
@@ -93,12 +97,12 @@ public class SshTestServer extends Thread {
             isConnectionSuccessful = true;
             return true;
         }
+
         @Override
         public void destroy(ChannelSession channel) throws Exception {
             super.destroy(channel);
         }
     }
-
 
     private abstract class CommandExecutionHelper extends AbstractCommandSupport {
         protected CommandExecutionHelper() {
@@ -110,17 +114,20 @@ public class SshTestServer extends Thread {
         }
 
         @Override
-        public void run() {;
+        public void run() {
+            ;
             String command = getCommand();
             try {
                 if (command == null) {
-                    BufferedWriter w = new BufferedWriter(new OutputStreamWriter(getOutputStream(),StandardCharsets.UTF_8));
+                    BufferedWriter w =
+                        new BufferedWriter(new OutputStreamWriter(getOutputStream(), StandardCharsets.UTF_8));
                     w.write("Hallo Test server here! \n");
                     w.write("# : ");
                     w.flush();
 
-                    try (BufferedReader r = new BufferedReader(new InputStreamReader(getInputStream(), StandardCharsets.UTF_8))) {
-                        for (; ; ) {
+                    try (BufferedReader r =
+                        new BufferedReader(new InputStreamReader(getInputStream(), StandardCharsets.UTF_8))) {
+                        for (;;) {
                             command = r.readLine();
                             if (!handleCommandLine(command)) {
                                 return;
@@ -133,13 +140,14 @@ public class SshTestServer extends Thread {
             } catch (InterruptedIOException e) {
                 // Ignore - signaled end
             } catch (Exception e) {
-                String message = "Failed (" + e.getClass().getSimpleName() + ") to handle '" + command + "': " + e.getMessage();
+                String message =
+                    "Failed (" + e.getClass().getSimpleName() + ") to handle '" + command + "': " + e.getMessage();
                 try {
                     OutputStream stderr = getErrorStream();
                     stderr.write(message.getBytes(StandardCharsets.US_ASCII));
                 } catch (IOException ioe) {
-                    log.warn("Failed ({}) to write error message={}: {}",
-                            e.getClass().getSimpleName(), message, ioe.getMessage());
+                    log.warn("Failed ({}) to write error message={}: {}", e.getClass().getSimpleName(), message,
+                        ioe.getMessage());
                 } finally {
                     onExit(-1, message);
                 }
@@ -149,9 +157,11 @@ public class SshTestServer extends Thread {
         }
 
         /**
-         * @param  command   The command line
+         * @param  command
+         *                   The command line
          * @return           {@code true} if continue accepting command
-         * @throws Exception If failed to handle the command line
+         * @throws Exception
+         *                   If failed to handle the command line
          */
         protected abstract boolean handleCommandLine(String command) throws Exception;
     }
@@ -178,27 +188,35 @@ public class SshTestServer extends Thread {
 
                 @Override
                 public void sessionPeerIdentificationLine(Session session, String line, List<String> extraLines) {
-                    System.out.println("SESSION sessionPeerIdentificationLine line:"+line+" extralines:" + extraLines);
+                    System.out
+                        .println("SESSION sessionPeerIdentificationLine line:" + line + " extralines:" + extraLines);
                 }
 
                 @Override
-                public void sessionPeerIdentificationReceived(Session session, String version, List<String> extraLines) {
-                    System.out.println("SESSION sessionPeerIdentificationReceived version:"+ version+" extralines:" + extraLines);
+                public void sessionPeerIdentificationReceived(Session session, String version,
+                    List<String> extraLines) {
+                    System.out.println(
+                        "SESSION sessionPeerIdentificationReceived version:" + version + " extralines:" + extraLines);
                 }
 
                 @Override
                 public void sessionNegotiationOptionsCreated(Session session, Map<KexProposalOption, String> proposal) {
-                    System.out.println("SESSION sessionNegotiationOptionsCreated  KexProposalOption" +  proposal);
+                    System.out.println("SESSION sessionNegotiationOptionsCreated  KexProposalOption" + proposal);
                 }
 
                 @Override
-                public void sessionNegotiationStart(Session session, Map<KexProposalOption, String> clientProposal, Map<KexProposalOption, String> serverProposal) {
-                    System.out.println("SESSION sessionNegotiationStart clientProposal" +  clientProposal + " serverProposal " + serverProposal );
+                public void sessionNegotiationStart(Session session, Map<KexProposalOption, String> clientProposal,
+                    Map<KexProposalOption, String> serverProposal) {
+                    System.out.println("SESSION sessionNegotiationStart clientProposal" + clientProposal
+                        + " serverProposal " + serverProposal);
                 }
 
                 @Override
-                public void sessionNegotiationEnd(Session session, Map<KexProposalOption, String> clientProposal, Map<KexProposalOption, String> serverProposal, Map<KexProposalOption, String> negotiatedOptions, Throwable reason) {
-                    System.out.println("SESSION sessionNegotiationEnd clientProposal:" + clientProposal + " serverProposal:" +serverProposal + " negotiatedOptions:" + negotiatedOptions );
+                public void sessionNegotiationEnd(Session session, Map<KexProposalOption, String> clientProposal,
+                    Map<KexProposalOption, String> serverProposal, Map<KexProposalOption, String> negotiatedOptions,
+                    Throwable reason) {
+                    System.out.println("SESSION sessionNegotiationEnd clientProposal:" + clientProposal
+                        + " serverProposal:" + serverProposal + " negotiatedOptions:" + negotiatedOptions);
                 }
 
                 @Override
@@ -212,8 +230,10 @@ public class SshTestServer extends Thread {
                 }
 
                 @Override
-                public void sessionDisconnect(Session session, int reason, String msg, String language, boolean initiator) {
-                    System.out.println("SESSION sessionDisconnect reason" + reason + " msg:" + msg + " language:" +language );
+                public void sessionDisconnect(Session session, int reason, String msg, String language,
+                    boolean initiator) {
+                    System.out
+                        .println("SESSION sessionDisconnect reason" + reason + " msg:" + msg + " language:" + language);
                 }
 
                 @Override
@@ -226,7 +246,7 @@ public class SshTestServer extends Thread {
 //        SimpleGeneratorHostKeyProvider hostKeyProvider_ssh_rsa =
 //                new SimpleGeneratorHostKeyProvider(new File("hostkey_ssh_rsa.ser").toPath());
         SimpleGeneratorHostKeyProvider hostKeyProvider_ecdsa_sha2_nistp521 =
-                new SimpleGeneratorHostKeyProvider(new File("hostkey.ser_ecdsa_sha2_nistp521").toPath());
+            new SimpleGeneratorHostKeyProvider(new File("hostkey.ser_ecdsa_sha2_nistp521").toPath());
 //        SimpleGeneratorHostKeyProvider hostKeyProvider_ssh_ed25519 =
 //                new SimpleGeneratorHostKeyProvider(new File("hostkey.ssh_ed25519").toPath());
 //        SimpleGeneratorHostKeyProvider hostKeyProvider_ecdsa_sha2_nistp256 =
@@ -234,12 +254,12 @@ public class SshTestServer extends Thread {
 
         MappedKeyPairProvider provider;
         try {
-            KeyPair ec521 = hostKeyProvider_ecdsa_sha2_nistp521.loadKey(null,KeyPairProvider.ECDSA_SHA2_NISTP521);
+            KeyPair ec521 = hostKeyProvider_ecdsa_sha2_nistp521.loadKey(null, KeyPairProvider.ECDSA_SHA2_NISTP521);
 //            KeyPair ed25519 = hostKeyProvider_ssh_ed25519.loadKey(null,KeyPairProvider.SSH_ED25519);
 //            KeyPair rsa = hostKeyProvider_ssh_rsa.loadKey(null,KeyPairProvider.SSH_RSA);
 //            provider = new MappedKeyPairProvider(ec521,rsa);
 
-            provider = new MappedKeyPairProvider( SecurityUtils.getKeyPairGenerator("RSA").generateKeyPair(), ec521);
+            provider = new MappedKeyPairProvider(SecurityUtils.getKeyPairGenerator("RSA").generateKeyPair(), ec521);
 
         } catch (GeneralSecurityException e) {
             throw new RuntimeException(e);
@@ -276,7 +296,8 @@ public class SshTestServer extends Thread {
         server = createSshServer();
         try {
             server.start();
-            while (!isServerDone) {}
+            while (!isServerDone) {
+            }
             server.stop();
 
         } catch (IOException | RuntimeException e) {
@@ -291,10 +312,11 @@ public class SshTestServer extends Thread {
     public boolean isServerDone() {
         return isServerDone;
     }
+
     public boolean isStarted() {
-        if(server != null) {
+        if (server != null) {
             return server.isStarted();
-        }else {
+        } else {
             return false;
         }
     }
