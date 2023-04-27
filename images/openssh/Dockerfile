@@ -48,6 +48,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libssl-dev \
     zlib1g-dev \
+    expect\
     && rm -rf /var/lib/apt/lists/*
 
 ARG USERNAME
@@ -86,6 +87,12 @@ ARG USERNAME
 ARG DOTSSH=dotssh-client
 COPY --chown="${USERNAME}:${USERNAME}" "${DOTSSH}" "/home/${USERNAME}/.ssh/"
 RUN chmod -R g=,o= "/home/${USERNAME}/.ssh"
+
+
+#automation of client image
+COPY login.exp /usr/local/bin
+COPY start.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/start.sh
 
 ARG VERSION
 COPY --from=openssh-builder /install /install
