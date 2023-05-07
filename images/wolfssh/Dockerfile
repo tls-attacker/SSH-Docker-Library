@@ -28,9 +28,9 @@ RUN curl -LS "https://github.com/wolfSSL/wolfssh/archive/refs/tags/v${VERSION}-s
 WORKDIR /src/wolfssl
 
 RUN ./autogen.sh && \
-    ./configure --enable-ssh --prefix=/install/wolfSSL --enable-cryptonly && \ 
+    ./configure --enable-ssh --prefix=/install/wolfSSL --enable-cryptonly && \
     make && \
-    make install 
+    make install
 
 WORKDIR /src/wolfssh/
 # Change username and password in demo application as older versions do not support cmd option
@@ -47,10 +47,10 @@ FROM debian:bullseye AS wolfssh-server
 ARG VERSION
 
 COPY authorized_keys /install/authorized_keys/
-COPY --from=wolfssh-builder /install/wolfSSL/lib* /lib/ 
-COPY --from=wolfssh-builder /install/wolfSSH/lib* /lib/ 
+COPY --from=wolfssh-builder /install/wolfSSL/lib* /lib/
+COPY --from=wolfssh-builder /install/wolfSSH/lib* /lib/
 COPY --from=wolfssh-builder /src/wolfssh/examples /install/examples/
-COPY --from=wolfssh-builder /src/wolfssh/keys /keys 
+COPY --from=wolfssh-builder /src/wolfssh/keys /keys
 LABEL "ssh.implementation.name"="wolfssh" \
     "ssh.implementation.version"="${VERSION}" \
     "ssh.implementation.type"="server"
