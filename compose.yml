@@ -2102,3 +2102,28 @@ services:
       service: tinyssh-server-20230101
     ports:
       - '32024:22'
+
+  wolfssh-server-1.4.12:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-server-1.4.12
+    ports:
+      - '33000:22'
+  wolfssh-server-1.4.11:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-server-1.4.11
+    ports:
+      - '33001:22'
+  wolfssh-server-1.4.10:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-server-1.4.10
+    ports:
+      - '33002:22'
+  wolfssh-server-1.4.8:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-server-1.4.8
+    ports:
+      - '33003:22'

@@ -1,0 +1,30 @@
+version: '3.2'
+services:
+  wolfssh-server-1.4.12:
+    image: rub-nds/wolfssh-server:1.4.12
+    build:
+      context: .
+      args:
+        VERSION: 1.4.12
+        VERSION_SSL: 5.5.4
+  wolfssh-server-1.4.11:
+    image: rub-nds/wolfssh-server:1.4.11
+    build:
+      context: .
+      args:
+        VERSION: 1.4.11
+        VERSION_SSL: 5.4.0
+  wolfssh-server-1.4.10:
+    image: rub-nds/wolfssh-server:1.4.10
+    build:
+      context: .
+      args:
+        VERSION: 1.4.10
+        VERSION_SSL: 5.3.0
+  wolfssh-server-1.4.8:
+    image: rub-nds/wolfssh-server:1.4.8
+    build:
+      context: .
+      args:
+        VERSION: 1.4.8
+        VERSION_SSL: 5.0.0
