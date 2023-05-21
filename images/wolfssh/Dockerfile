@@ -40,7 +40,7 @@ RUN sed -i "s/jill/${USERNAME}/g" examples/echoserver/echoserver.c && \
     sed -i "s/upthehill/${PASSWORD}/g" examples/echoserver/echoserver.c
 
 RUN ./autogen.sh && \
-    ./configure --with-wolfssl=/install/wolfSSL --prefix=/install/wolfSSH --libdir=/install/wolfSSL/lib --includedir=/install/wolfSSL/include && \
+    ./configure --with-wolfssl=/install/wolfSSL --prefix=/install/wolfSSH --libdir=/install/wolfSSL/lib --includedir=/install/wolfSSL/include --enable-debug && \
     LD_LIBRARY_PATH="/install/wolfSSL/lib" make && make install
 
 FROM debian:bullseye AS wolfssh-server
