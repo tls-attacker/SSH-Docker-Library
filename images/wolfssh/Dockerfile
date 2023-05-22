@@ -33,30 +33,36 @@ RUN ./autogen.sh && \
     make install
 
 WORKDIR /src/wolfssh/
-# Change username and password in demo application as older versions do not support cmd option
-ARG USERNAME=sshattacker
-ARG PASSWORD=secret
-RUN sed -i "s/jill/${USERNAME}/g" examples/echoserver/echoserver.c && \
-    sed -i "s/upthehill/${PASSWORD}/g" examples/echoserver/echoserver.c
-
 RUN ./autogen.sh && \
-    ./configure --with-wolfssl=/install/wolfSSL --prefix=/install/wolfSSH --libdir=/install/wolfSSL/lib --includedir=/install/wolfSSL/include --enable-debug && \
+    ./configure --with-wolfssl=/install/wolfSSL --prefix=/install/wolfSSH --libdir=/install/wolfSSL/lib --includedir=/install/wolfSSL/include --enable-debug --enable-sshd && \
     LD_LIBRARY_PATH="/install/wolfSSL/lib" make && make install
 
 FROM debian:bullseye AS wolfssh-server
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ARG VERSION
 
-COPY authorized_keys /install/authorized_keys/
+COPY authorized_keys /install/authorized_keys
+COPY sshd_config /install/sshd_config
 COPY --from=wolfssh-builder /install/wolfSSL/lib* /lib/
 COPY --from=wolfssh-builder /install/wolfSSH/lib* /lib/
-COPY --from=wolfssh-builder /src/wolfssh/examples /install/examples/
+COPY --from=wolfssh-builder /src/wolfssh/apps /install/apps/
 COPY --from=wolfssh-builder /src/wolfssh/keys /keys
 LABEL "ssh.implementation.name"="wolfssh" \
     "ssh.implementation.version"="${VERSION}" \
     "ssh.implementation.type"="server"
-CMD [ "/install/examples/echoserver/echoserver", \
-    "-p", "22",\
-    "-j", "/install/authorized_keys", \
-    "-f", "-E"]
+
+RUN useradd --system --no-create-home sshd && mkdir -p "/var/empty"
+
+ARG USERNAME=sshattacker
+ARG PASSWORD=secret
+RUN useradd --create-home --groups users "${USERNAME}" && \
+    echo "${USERNAME}:${PASSWORD}" | chpasswd
+
+COPY --chown="${USERNAME}:${USERNAME}" "authorized_keys" "/home/${USERNAME}/.ssh/"
+RUN chmod -R g=,o= "/home/${USERNAME}/.ssh"
+
+ENTRYPOINT [ "/install/apps/wolfsshd/wolfsshd", \
+    "-f", "/install/sshd_config",\
+    "-d", "-D"]
 
 EXPOSE 22
