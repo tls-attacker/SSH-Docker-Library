@@ -12,6 +12,18 @@ services:
       args:
         VERSION: {{ version }}
   {%- endfor -%}
+  {%- for version in specs.serverVersionsOld %}
+  {{ specs.name }}-server-{{ version }}:
+    image: rub-nds/{{ specs.name }}-server:{{ version }}
+    build:
+      context: .
+      {%- if specs.multistage %}
+      target: {{ specs.name }}-old-server
+      {%- endif %}
+      dockerfile: Dockerfile_old
+      args:
+        VERSION: {{ version }}
+  {%- endfor -%}
 {%- endif -%}
 {%- if specs.capabilities.client -%}
   {%- for version in specs.clientVersions %}
