@@ -1,11 +1,12 @@
 # hadolint ignore=DL3049
 FROM python:3 AS asyncssh-base
 
-ARG VERSION
-
 WORKDIR /app
 COPY files/requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt asyncssh==$VERSION
+RUN pip install --no-cache-dir -r requirements.txt
+
+ARG VERSION
+RUN pip install --no-cache-dir asyncssh==$VERSION
 
 # Server image
 FROM asyncssh-base AS asyncssh-server
