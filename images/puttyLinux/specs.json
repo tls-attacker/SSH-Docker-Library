@@ -1,0 +1,11 @@
+{
+    "name": "putty",
+    "url": "https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html",
+    "capabilities": {
+        "server": false,
+        "client": true
+    },
+    "multistage": true,
+    "serverVersions": [],
+    "clientVersions": ["0.70", "0.73", "0.76"]
+}

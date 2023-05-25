@@ -1,4 +1,4 @@
-# Dockerfile for wolfssh 0.9.x (based on Debian Bullseye)
+# Dockerfile for wolfssh 1.4.x (based on Debian Bullseye)
 
 # `wolfssh-builder` is just an intermediate image used for building and does
 # not require labels, so we can disable that linter rule.
@@ -6,6 +6,7 @@
 FROM debian:bullseye AS wolfssh-builder
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    bsdextrautils \
     autoconf  \
     automake  \
     ca-certificates \
@@ -15,28 +16,25 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     make \
     && rm -rf /var/lib/apt/lists/*
 
-ARG VERSION_SSL
-
+ARG VERSION_SSL="5.6.3"
 RUN mkdir  /src && \
     curl -LS "https://github.com/wolfSSL/wolfssl/archive/refs/tags/v${VERSION_SSL}-stable.tar.gz" | tar xzf - && \
     mv "wolfssl-${VERSION_SSL}-stable" /src/wolfssl
-
-ARG VERSION
-RUN curl -LS "https://github.com/wolfSSL/wolfssh/archive/refs/tags/v${VERSION}-stable.tar.gz" | tar xzf - &&\
-    mv "wolfssh-${VERSION}-stable" /src/wolfssh
-
 WORKDIR /src/wolfssl
-
 RUN ./autogen.sh && \
     ./configure --enable-ssh --prefix=/install/wolfSSL --enable-cryptonly && \
     make && \
     make install
 
-WORKDIR /src/wolfssh/
+ARG VERSION
+RUN curl -LS "https://github.com/wolfSSL/wolfssh/archive/refs/tags/v${VERSION}-stable.tar.gz" | tar xzf - &&\
+    mv "wolfssh-${VERSION}-stable" /src/wolfssh
+WORKDIR /src/wolfssh
 RUN ./autogen.sh && \
     ./configure --with-wolfssl=/install/wolfSSL --prefix=/install/wolfSSH --libdir=/install/wolfSSL/lib --includedir=/install/wolfSSL/include --enable-debug --enable-sshd && \
     LD_LIBRARY_PATH="/install/wolfSSL/lib" make && make install
 
+# Server image
 FROM debian:bullseye AS wolfssh-server
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ARG VERSION
@@ -64,5 +62,16 @@ RUN chmod -R g=,o= "/home/${USERNAME}/.ssh"
 ENTRYPOINT [ "/install/apps/wolfsshd/wolfsshd", \
     "-f", "/install/sshd_config",\
     "-d", "-D"]
-
 EXPOSE 22
+
+# Client image
+# Currently based on wolfssh-builder as client will fail to start otherwise
+FROM wolfssh-builder AS wolfssh-client
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+ARG VERSION
+
+LABEL "ssh.implementation.name"="wolfssh" \
+    "ssh.implementation.version"="${VERSION}" \
+    "ssh.implementation.type"="client"
+
+ENTRYPOINT [ "/src/wolfssh/examples/client/client" ]

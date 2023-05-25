@@ -1,4 +1,4 @@
-FROM alpine:3.16
+FROM alpine:3.16 as dropbear-builder
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 # linux-headers are required by versions 2013.62 - 2018.76
 RUN apk add --no-cache bzip2 build-base zlib-dev linux-headers
@@ -7,6 +7,9 @@ RUN apk add --no-cache bzip2 build-base zlib-dev linux-headers
 ARG VERSION
 RUN wget -O - -q "https://matt.ucc.asn.au/dropbear/releases/dropbear-${VERSION}.tar.bz2" | bunzip2 | tar -xf -
 WORKDIR "/dropbear-${VERSION}"
+
+
+#Server image
 
 # Apply patches to fix the build for some very old versions.
 COPY patches/ .
@@ -38,6 +41,8 @@ RUN if ! printf '%s\n%s\n' "0.31" "${VERSION}" | sort -c -g; then \
         patch -p1 < 0011-0.30-Remove-out-of-place-linebreak-in-string-literal.patch ; \
     fi
 
+FROM dropbear-builder as dropbear-server
+SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 # Configure, build and install dropbear, then add the pre-generated hostkeys.
 RUN ./configure && \
     make PROGRAMS="dropbear" -j "$(nproc)" && \
@@ -55,9 +60,24 @@ RUN adduser -D "${USERNAME}" && \
     echo "${USERNAME}:${PASSWORD}" | chpasswd && \
     chown -R "${USERNAME}:${USERNAME}" "/home/${USERNAME}" && \
     chmod -R g=,o= "/home/${USERNAME}/.ssh"
-
+ARG VERSION
 LABEL ssh.implementation.name="dropbear" \
       ssh.implementation.version="${VERSION}" \
       ssh.implementation.type="server"
 CMD ["dropbear", "-FEB"]
 EXPOSE 22
+
+FROM dropbear-builder AS dropbear-client
+
+# Configure, build and install bdclient
+RUN ./configure && \
+    make PROGRAMS="dbclient" -j "$(nproc)" && \
+    make PROGRAMS="dbclient" install
+
+ARG VERSION
+LABEL ssh.implementation.name="dropbear" \
+      ssh.implementation.version="${VERSION}" \
+      ssh.implementation.type="client"
+
+ENTRYPOINT [ "dbclient"]
+#dbclient [-Tt] [-p port] [-i id] [-L l:h:r] [-R l:h:r] [-l user] host [command]

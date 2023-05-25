@@ -53,3 +53,19 @@ CMD [ "/install/examples/ssh_server_fork", \
   "-k", "/install/host_keys/ssh_host_ed25519_key", \
   "0.0.0.0" ]
 EXPOSE 22
+
+FROM debian:bullseye AS libssh-client
+ARG VERSION
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  libssl-dev \
+  zlib1g-dev \
+  && rm -rf /var/lib/apt/lists/*
+
+COPY --from=libssh-builder /install /usr/
+COPY --from=libssh-builder /src/libssh/build/examples /install/examples/
+LABEL "ssh.implementation.name"="libssh" \
+    "ssh.implementation.version"="${VERSION}" \
+    "ssh.implementation.type"="client"
+
+ENTRYPOINT [ "/install/examples/ssh-client" ]
+EXPOSE 22

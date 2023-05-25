@@ -9,8 +9,7 @@ ARG VERSION
 # so we can disable that linter rule.
 # hadolint ignore=DL3049
 FROM erlang:${VERSION}-alpine AS erlang-ssh-base
-RUN apk add --no-cache openssl
-
+RUN apk add --update --no-cache openssl expect
 ARG USERNAME=sshattacker
 ARG PASSWORD=secret
 SHELL ["/bin/ash", "-o", "pipefail", "-c"]
@@ -19,7 +18,7 @@ RUN adduser -D "${USERNAME}" && echo "${USERNAME}:${PASSWORD}" | chpasswd
 # Server image
 FROM erlang-ssh-base AS erlang-ssh-server
 
-ARG USERNAME
+ARG USERNAME=sshattacker
 ARG DOTSSH=dotssh-server
 COPY --chown="${USERNAME}:${USERNAME}" "${DOTSSH}" "/home/${USERNAME}/.ssh/"
 RUN chmod -R g=,o= "/home/${USERNAME}/.ssh"
@@ -30,4 +29,24 @@ LABEL ssh.implementation.name="erlang-ssh" \
       ssh.implementation.version="${VERSION}" \
       ssh.implementation.type="server"
 ENTRYPOINT ["/usr/local/bin/erl", "-noshell", "-eval", "ssh:start()", "-eval", "ssh:daemon(22)"]
+EXPOSE 22
+
+
+# Client image
+FROM erlang-ssh-base AS erlang-ssh-client
+
+ARG USERNAME=sshattacker
+ARG DOTSSH=dotssh-client
+COPY --chown="${USERNAME}:${USERNAME}" "${DOTSSH}" "/home/${USERNAME}/.ssh/"
+
+COPY start_client.exp /usr/local/bin
+WORKDIR "/usr/local/bin"
+
+ARG VERSION
+COPY hostkeys/* /etc/ssh/
+LABEL ssh.implementation.name="erlang-ssh" \
+      ssh.implementation.version="${VERSION}" \
+      ssh.implementation.type="client"
+
+ENTRYPOINT ["expect" , "start_client.exp"]
 EXPOSE 22

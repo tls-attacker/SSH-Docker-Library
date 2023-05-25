@@ -48,6 +48,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libssl-dev \
     zlib1g-dev \
+    expect\
     && rm -rf /var/lib/apt/lists/*
 
 ARG USERNAME
@@ -93,3 +94,19 @@ LABEL ssh.implementation.name="openssh" \
       ssh.implementation.version="${VERSION}" \
       ssh.implementation.type="client"
 ENTRYPOINT ["/install/bin/ssh"]
+
+
+# Client image
+FROM openssh-client AS openssh-client-automated
+
+#automation of client image
+COPY login.exp /usr/local/bin
+COPY start.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/start.sh
+
+ARG VERSION
+COPY --from=openssh-builder /install /install
+LABEL ssh.implementation.name="openssh" \
+      ssh.implementation.version="${VERSION}" \
+      ssh.implementation.type="client-automated"
+ENTRYPOINT ["./usr/local/bin/start.sh"]

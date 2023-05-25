@@ -1,0 +1,11 @@
+{
+    "name": "wolfssh",
+    "url": "https://www.wolfssl.com/docs/wolfssh-changelog/",
+    "capabilities": {
+        "server": true,
+        "client": true
+    },
+    "multistage": true,
+    "serverVersions": ["1.4.11", "1.4.12", "1.4.13"],
+    "clientVersions": ["1.4.8", "1.4.10", "1.4.11", "1.4.12", "1.4.13"]
+}
