@@ -11,6 +11,7 @@ SHELL [ "powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPre
 RUN New-Item -Path 'C:\' -Name 'docker' -ItemType 'directory'; \
     $versionIdentifier = $env:VERSION -replace '\.',''; \
     Invoke-WebRequest """https://dl.bitvise.com/BvSshServer-$versionIdentifier.exe""" -OutFile 'C:\docker\BvSshServer-Inst.exe'
+
 SHELL [ "cmd", "/S", "/C" ]
 RUN C:\docker\BvSshServer-Inst.exe -defaultInstance -acceptEula & exit 0
 

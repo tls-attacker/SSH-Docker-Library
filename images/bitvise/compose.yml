@@ -258,3 +258,10 @@ services:
       context: .
       args:
         VERSION: '9.27'
+  bitvise-client-9.27:
+    image: rub-nds/bitvise-client:9.27
+    build:
+      context: .
+      dockerfile: DockerfileClient
+      args:
+        VERSION: '9.27'
