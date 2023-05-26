@@ -56,9 +56,10 @@ def client_start(host, port, username, password, command, key_file, output, erro
     )
     try:
         key = load_pubkeys(key_file)
+        client.connect(host, port=port, username=username, password=password, pkey=key)
     except Exception as e:
         print("Loading pubkeys failed, may need to use a newer version of parmiko")
-    client.connect(host, port=port, username=username, password=password, pkey=key)
+        client.connect(host, port=port, username=username, password=password)
 
     if output:
         print("start command")

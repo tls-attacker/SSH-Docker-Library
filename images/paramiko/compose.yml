@@ -256,14 +256,6 @@ services:
       args:
         VERSION: 2.0.9
     profiles: [client]
-  paramiko-client-2.0.8:
-    image: rub-nds/paramiko-client:2.0.8
-    build:
-      context: .
-      target: paramiko-client
-      args:
-        VERSION: 2.0.8
-    profiles: [client]
   paramiko-client-2.1.0:
     image: rub-nds/paramiko-client:2.1.0
     build:

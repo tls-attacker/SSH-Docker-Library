@@ -1,7 +1,7 @@
 # INFO: This container is Windows based and requires a Windows host to build and run
 # You may also need to switch your Docker daemon Linux to Windows containers
 # ltsc2019 and ltsc2022 will brick the build (container won't start under Windows 11)
-FROM mcr.microsoft.com/windows/servercore:ltsc2016-amd64
+FROM mcr.microsoft.com/windows/servercore:ltsc2016-amd64 as bitvise-server
 
 ARG VERSION
 ARG USERNAME=sshattacker
@@ -55,4 +55,38 @@ CMD [ "powershell", "-Command", \
             Get-EventLog -LogName 'Application' -Newest ($idx2 - $idx) | Select-Object -ExpandProperty Message; \
             $idx = $idx2; \
         }" ]
+EXPOSE 22
+
+
+# INFO: This container is Windows based and requires a Windows host to build and run
+# You may also need to switch your Docker daemon Linux to Windows containers
+# ltsc2019 and ltsc2022 will brick the build (container won't start under Windows 11)
+FROM mcr.microsoft.com/windows:ltsc2019 as windows-client
+
+ARG VERSION
+ARG USERNAME=sshattacker
+ARG PASSWORD=secret
+
+SHELL [ "powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';" ]
+RUN New-Item -Path 'C:\' -Name 'docker' -ItemType 'directory'; \
+    $versionIdentifier = $env:VERSION -replace '\.',''; \
+    Invoke-WebRequest """https://dl.bitvise.com/BvSshClient-$versionIdentifier.exe""" -OutFile 'C:\docker\BvSshClient-Inst.exe'
+
+SHELL [ "cmd", "/S", "/C" ]
+RUN C:\docker\BvSshClient-Inst.exe -acceptEula
+
+
+
+LABEL ssh.implementation.name="bitvise" \
+      ssh.implementation.version="${VERSION}" \
+      ssh.implementation.type="client"
+
+
+#the stnlc.exe is internally called by the GUI Bitvise client, thus we can use it here directly
+CMD  ["powershell", "-Command", \
+        "stnlc.exe sshattacker@localhost -pw=secret"]
+
+#CMD [ "powershell", "-Command", \
+ #       "'C:\Program Files (x86)\Bitvise SSH Client\BvSsh.exe' -ArgumentList' -host=localhost -port=2222 -user=sshattacker;"]
+
 EXPOSE 22
