@@ -3,7 +3,8 @@
     "url": "https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html",
     "capabilities": {
         "server": false,
-        "client": true
+        "client": true,
+        "automatedclient": false
     },
     "multistage": true,
     "serverVersions": [],

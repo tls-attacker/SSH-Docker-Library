@@ -97,16 +97,15 @@ ENTRYPOINT ["/install/bin/ssh"]
 
 
 # Client image
-FROM openssh-client AS openssh-client-automated
+FROM openssh-client AS openssh-automated-client
 
 #automation of client image
-COPY login.exp /usr/local/bin
-COPY start.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/start.sh
+COPY login_openssh.exp /usr/local/bin
+COPY start_openssh.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/start_openssh
 
-ARG VERSION
 COPY --from=openssh-builder /install /install
 LABEL ssh.implementation.name="openssh" \
       ssh.implementation.version="${VERSION}" \
-      ssh.implementation.type="client-automated"
-ENTRYPOINT ["./usr/local/bin/start.sh"]
+      ssh.implementation.type="automated-client"
+ENTRYPOINT ["./usr/local/bin/start_openssh.sh"]

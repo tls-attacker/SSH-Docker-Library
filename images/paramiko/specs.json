@@ -3,7 +3,8 @@
     "url": "https://docs.paramiko.org/en/stable/api/client.html",
     "capabilities": {
         "server": false,
-        "client": true
+        "client": true,
+        "automatedclient": false
     },
     "multistage": true,
     "serverVersions": [],

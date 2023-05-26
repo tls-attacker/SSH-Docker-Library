@@ -3,7 +3,8 @@
     "url": "https://www.erlang.org/doc/man/ssh.html",
     "capabilities": {
         "server": true,
-        "client": true
+        "client": true,
+        "automatedclient": false
     },
     "multistage": true,
     "serverVersions": [

@@ -35,4 +35,4 @@ LABEL "ssh.implementation.name"="putty" \
 ENTRYPOINT ["/usr/local/bin/putty", "sshattacker@localhost", "-pw", "secret"]
 
 
-#To run image: docker run -ti --network=host  --env DISPLAY=unix$DISPLAY
+#To run image: docker run -ti --network=host  --env DISPLAY=0

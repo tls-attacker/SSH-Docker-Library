@@ -301,6 +301,7 @@ services:
       target: bitvise-server
       args:
         VERSION: 9.27
+
   bitvise-client-17.5:
     image: rub-nds/bitvise-client:17.5
     build:

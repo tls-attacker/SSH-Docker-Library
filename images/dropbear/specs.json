@@ -3,7 +3,8 @@
     "url": "https://matt.ucc.asn.au/dropbear/CHANGES",
     "capabilities": {
         "server": true,
-        "client": true
+        "client": true,
+        "automatedclient": false
     },
     "multistage": true,
     "serverVersions": [

@@ -53,3 +53,17 @@ services:
     profiles: [client]
   {%- endfor %}
 {% endif %}
+{%- if specs.capabilities.automatedclient -%}
+  {%- for version in specs.clientVersions %}
+  {{ specs.name }}-automated-client-{{ version }}:
+    image: rub-nds/{{ specs.name }}-automated-client:{{ version }}
+    build:
+      context: .
+      {%- if specs.multistage %}
+      target: {{ specs.name }}-automated-client
+      {%- endif %}
+      args:
+        VERSION: {{ version }}
+    profiles: [automated-client]
+  {%- endfor %}
+{% endif %}

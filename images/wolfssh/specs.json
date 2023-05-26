@@ -3,7 +3,8 @@
     "url": "https://www.wolfssl.com/docs/wolfssh-changelog/",
     "capabilities": {
         "server": true,
-        "client": true
+        "client": true,
+        "automatedclient": false
     },
     "multistage": true,
     "serverVersions": ["1.4.11", "1.4.12", "1.4.13"],
