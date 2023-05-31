@@ -33,8 +33,6 @@ LABEL ssh.implementation.name="russh" \
 ENTRYPOINT ["/install/bin/russh-server", "--config-file", "/install/russh-server.toml"]
 EXPOSE 22
 
-
-
 FROM russh-base AS russh-client
 
 LABEL ssh.implementation.name="russh" \

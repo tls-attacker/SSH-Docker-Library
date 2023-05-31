@@ -1,6 +1,6 @@
 {
     "name": "openssh",
-    "url": "",
+    "url": "https://www.openssh.com/releasenotes.html",
     "capabilities": {
         "server": true,
         "client": true,
