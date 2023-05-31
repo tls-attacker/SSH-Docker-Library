@@ -3,7 +3,7 @@
 # `libssh-builder` is just an intermediate image used for building and does
 # not require labels, so we can disable that linter rule.
 # hadolint ignore=DL3049
-FROM debian:bullseye AS libssh-mbedTLS-builder
+FROM debian:bullseye AS libssh-mbedtls-builder
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
@@ -42,28 +42,29 @@ WORKDIR /src/libssh/build
 RUN cmake -DWITH_MBEDTLS=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/install /src/libssh && \
     make -j "$(nproc)" && make install
 
-FROM debian:bullseye AS libssh-mbedTLS-server
+FROM debian:bullseye AS libssh-mbedtls-server
 ARG VERSION
 RUN apt-get update && apt-get install -y --no-install-recommends \
     zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
-
 ARG AUTHORIZED_KEYS_FILE=authorized_keys
 COPY "${AUTHORIZED_KEYS_FILE}" /install/authorized_keys
 COPY host_keys /install/host_keys/
-COPY --from=libssh-mbedTLS-builder /install /usr/
 
-COPY --from=libssh-mbedTLS-builder /install/mbedtls/include/mbedtls /usr/local/include/mbedtls/
-COPY --from=libssh-mbedTLS-builder /install/mbedtls/include/psa /usr/local/psa/
+COPY --from=libssh-mbedtls-builder /install /usr/
 
-COPY --from=libssh-mbedTLS-builder /install/mbedtls/library/libmbed* /usr/lib/
+COPY --from=libssh-mbedtls-builder /install/mbedtls/include/mbedtls /usr/local/include/mbedtls/
+COPY --from=libssh-mbedtls-builder /install/mbedtls/include/psa /usr/local/psa/
 
-COPY --from=libssh-mbedTLS-builder /src/libssh/build/examples /install/examples/
+COPY --from=libssh-mbedtls-builder /install/mbedtls/library/libmbed* /usr/lib/
+
+COPY --from=libssh-mbedtls-builder /src/libssh/build/examples /install/examples/
 
 LABEL "ssh.implementation.name"="libssh_mbedTLS" \
     "ssh.implementation.version"="${VERSION}" \
     "ssh.implementation.type"="server"
+ENV USERNAME="${USERNAME}" PASSWORD="${PASSWORD}"
 CMD [ "/install/examples/ssh_server_fork", \
     "-p", "22", \
     "-k", "/install/host_keys/ssh_host_dsa_key", \

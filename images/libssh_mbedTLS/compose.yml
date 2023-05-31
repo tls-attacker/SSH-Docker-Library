@@ -1,12 +1,5 @@
 version: '3.2'
 services:
-  libssh-mbedtls-server-0.9.6:
-    image: rub-nds/libssh-mbedtls-server:0.9.6
-    build:
-      context: .
-      args:
-        VERSION: 0.9.6
-        VERSION_MBEDTLS: 2.27.0
   libssh-mbedtls-server-0.10.0:
     image: rub-nds/libssh-mbedtls-server:0.10.0
     build:
