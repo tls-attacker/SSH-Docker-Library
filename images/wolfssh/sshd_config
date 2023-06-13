@@ -6,5 +6,5 @@ PasswordAuthentication yes
 PermitEmptyPasswords no
 UsePrivilegeSeparation no
 UseDNS no
-HostKey /keys/server-key.pem
+HostKey /keys/server-key-rsa.pem
 AuthorizedKeysFile /install/authorized_keys
