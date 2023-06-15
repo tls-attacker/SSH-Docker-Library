@@ -32,6 +32,8 @@ LABEL "ssh.implementation.name"="putty" \
     "ssh.implementation.version"="${VERSION}" \
     "ssh.implementation.type"="client"
 
+ENV DISPLAY=0
+
 ENTRYPOINT ["/usr/local/bin/putty", "sshattacker@localhost", "-pw", "secret"]
 
 

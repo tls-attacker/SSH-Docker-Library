@@ -55,6 +55,17 @@ CMD [ "/install/examples/ssh_server_fork", \
 EXPOSE 22
 
 FROM debian:bullseye AS libssh-client
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+ARG USERNAME=sshattacker
+ARG PASSWORD=secret
+ARG DOTSSH=dotssh-client
+RUN useradd --create-home --groups users "${USERNAME}" && \
+    echo "${USERNAME}:${PASSWORD}" | chpasswd
+COPY --chown="${USERNAME}:${USERNAME}" "${DOTSSH}" "/home/${USERNAME}/.ssh/"
+RUN chmod -R g=,o= "/home/${USERNAME}/.ssh"
+
+
 ARG VERSION
 RUN apt-get update && apt-get install -y --no-install-recommends \
   libssl-dev \

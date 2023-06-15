@@ -39,8 +39,7 @@ EXPOSE 22
 FROM erlang-ssh-base AS erlang-ssh-client
 
 ARG USERNAME=sshattacker
-ARG DOTSSH=dotssh-client
-COPY --chown="${USERNAME}:${USERNAME}" "${DOTSSH}" "/home/${USERNAME}/.ssh/"
+COPY --chown="${USERNAME}:${USERNAME}" "../../keys" "/home/${USERNAME}/.ssh/"
 
 COPY start_client.exp /usr/local/bin
 WORKDIR "/usr/local/bin"

@@ -74,6 +74,15 @@ RUN ./configure && \
     make PROGRAMS="dbclient" -j "$(nproc)" && \
     make PROGRAMS="dbclient" install
 
+ARG DOTSSH=dotssh-client
+COPY "${DOTSSH}" "/root/.ssh/"
+RUN apk add --no-cache dropbear-convert
+
+#convert openssh keys to required dropbear format
+RUN dropbearconvert openssh dropbear ~/.ssh/id_rsa ~/.ssh/id_rsa.db  && \
+    dropbearconvert openssh dropbear ~/.ssh/id_ecdsa ~/.ssh/id_ecdsa.db && \
+    dropbearconvert openssh dropbear ~/.ssh/id_ed25519 ~/.ssh/ed25519.db
+
 ARG VERSION
 LABEL ssh.implementation.name="dropbear" \
       ssh.implementation.version="${VERSION}" \
@@ -81,3 +90,4 @@ LABEL ssh.implementation.name="dropbear" \
 
 ENTRYPOINT [ "dbclient"]
 #dbclient [-Tt] [-p port] [-i id] [-L l:h:r] [-R l:h:r] [-l user] host [command]
+# include public key like the following -i /root/.ssh/id_rsa.db

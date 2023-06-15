@@ -18,8 +18,10 @@ expect {
 
 expect {
 	"2> " {
-        set erlang_string "{ok, S} = ssh:connect(\"127.0.0.1\", 22, \[{user, \"sshattacker\"}\])"
-        send "$erlang_string.\r"
+        set erlang_string0 "{ok, S} = ssh:connect(\"$ip\", $port, \[{identity_file, \"/home/sshattacker/.ssh/id_rsa\"}\])"
+
+        set erlang_string1 "{ok, S} = ssh:connect(\"$ip\", $port, \[{user, \"$user\"}\])"
+        send "$erlang_string1.\r"
     }
     }
 
