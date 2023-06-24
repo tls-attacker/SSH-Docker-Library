@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     python3 \
     zlib1g-dev \
+    libssl-dev \
+    openssh-server \
     && rm -rf /var/lib/apt/lists/*
 
 ARG VERSION_MBEDTLS=2.28.3
@@ -33,10 +35,9 @@ ARG USERNAME=sshattacker
 ARG PASSWORD=secret
 # Make the old filename "ssh_server_fork.c" a hardlink to the new one in libssh
 # >= 0.10.0 to make it compatible with this Dockerfile.
-RUN if [ ! -e  examples/ssh_server_fork.c ]; then ln examples/ssh_server.c examples/ssh_server_fork.c ; fi
-RUN sed -i "s/myuser/${USERNAME}/g" examples/ssh_server_fork.c && \
-    sed -i "s/mypassword/${PASSWORD}/g" examples/ssh_server_fork.c
-
+RUN if [ ! -e  examples/ssh_server_fork.c ]; then sed -i "s/myuser/${USERNAME}/g" examples/ssh_server.c && \
+    sed -i "s/mypassword/${PASSWORD}/g" examples/ssh_server.c ; else  sed -i "s/myuser/${USERNAME}/g" examples/ssh_server_fork.c && \
+    sed -i "s/mypassword/${PASSWORD}/g" examples/ssh_server_fork.c; fi
 
 WORKDIR /src/libssh/build
 RUN cmake -DWITH_MBEDTLS=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/install /src/libssh && \
@@ -52,11 +53,13 @@ ARG AUTHORIZED_KEYS_FILE=authorized_keys
 COPY "${AUTHORIZED_KEYS_FILE}" /install/authorized_keys
 COPY host_keys /install/host_keys/
 
+# moduli file needed
+COPY --from=libssh-mbedtls-builder /etc/ssh/moduli /etc/ssh/moduli
+
 COPY --from=libssh-mbedtls-builder /install /usr/
 
 COPY --from=libssh-mbedtls-builder /install/mbedtls/include/mbedtls /usr/local/include/mbedtls/
 COPY --from=libssh-mbedtls-builder /install/mbedtls/include/psa /usr/local/psa/
-
 COPY --from=libssh-mbedtls-builder /install/mbedtls/library/libmbed* /usr/lib/
 
 COPY --from=libssh-mbedtls-builder /src/libssh/build/examples /install/examples/
@@ -66,14 +69,9 @@ LABEL "ssh.implementation.name"="libssh_mbedTLS" \
     "ssh.implementation.type"="server"
 ENV USERNAME="${USERNAME}" PASSWORD="${PASSWORD}"
 CMD [ "/install/examples/ssh_server_fork", \
-    "-p", "22", \
-    "-k", "/install/host_keys/ssh_host_dsa_key", \
-    "-k", "/install/host_keys/ssh_host_ecdsa_key", \
-    "-k", "/install/host_keys/ssh_host_rsa_key", \
-    "-k", "/install/host_keys/ssh_host_ed25519_key", \
-    "-a", "/install/authorized_keys", \
-    "-u", "${USERNAME}",\
-    "-p", "${PASSWORD}",\
-    "-v",\
+    "--port=22", \
+    "--hostkey=/install/host_keys/ssh_host_rsa_key", \
+    "--authorizedkeys=/install/authorized_keys", \
+    "--verbose",\
     "0.0.0.0" ]
 EXPOSE 22
