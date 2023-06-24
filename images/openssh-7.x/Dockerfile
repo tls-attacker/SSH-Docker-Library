@@ -23,6 +23,9 @@ RUN curl -s https://cloudflare.cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/open
 # hadolint ignore=DL3049
 FROM debian:stretch AS openssh-builder
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+RUN sed -i -e 's/deb.debian.org/archive.debian.org/g' \
+           -e 's|security.debian.org|archive.debian.org/|g' \
+           -e '/stretch-updates/d' /etc/apt/sources.list
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     libssl1.0-dev \
@@ -62,6 +65,9 @@ RUN ./configure CFLAGS="-DDEBUG_KEX=1 -DDEBUG_KEXDH=1 -DDEBUG_KEXECDH=1" --prefi
 # hadolint ignore=DL3049
 FROM debian:stretch AS openssh-base
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+RUN sed -i -e 's/deb.debian.org/archive.debian.org/g' \
+           -e 's|security.debian.org|archive.debian.org/|g' \
+           -e '/stretch-updates/d' /etc/apt/sources.list
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libssl1.0-dev \
     zlib1g-dev \
