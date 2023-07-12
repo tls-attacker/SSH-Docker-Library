@@ -67,7 +67,6 @@ COPY --from=libssh-mbedtls-builder /src/libssh/build/examples /install/examples/
 LABEL "ssh.implementation.name"="libssh_mbedTLS" \
     "ssh.implementation.version"="${VERSION}" \
     "ssh.implementation.type"="server"
-ENV USERNAME="${USERNAME}" PASSWORD="${PASSWORD}"
 CMD [ "/install/examples/ssh_server_fork", \
     "--port=22", \
     "--hostkey=/install/host_keys/ssh_host_rsa_key", \
