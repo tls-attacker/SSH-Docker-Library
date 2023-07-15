@@ -3,35 +3,22 @@
 ARG USERNAME=sshattacker
 ARG PASSWORD=secret
 
-# The TLS version from debian stretch image is too old to be able to download
-# the OpenSSH tarball. Hence, we use a recent Alpine linux image to fetch
-# the source.
-#
-# `openssh-downloader` is just an intermediate image and does not require
-# labels, so we can disable that linter rule.
+# `openssh-builder` is just an intermediate image and does not require labels,
+# so we can disable that linter rule.
 # hadolint ignore=DL3049
-FROM alpine:3.16 AS openssh-downloader
-SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
-RUN apk add --no-cache curl tar
-ARG VERSION
-RUN curl -s https://cloudflare.cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-${VERSION}.tar.gz | tar xzf -
-
-# After download, we can continue on debian stretch and start the build.
-#
-# `openssh-builder` is just an intermediate image used for building and does
-# not require labels, so we can disable that linter rule.
-# hadolint ignore=DL3049
-FROM debian:stretch AS openssh-builder
+FROM debian:bullseye AS openssh-builder
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
-    libssl1.0-dev \
+    ca-certificates \
+    curl \
+    libssl-dev \
     zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 ARG VERSION
-COPY --from=openssh-downloader /openssh-${VERSION} /src/openssh-${VERSION}
-COPY patches /src/
-WORKDIR /src/openssh-${VERSION}
+RUN mkdir /src && curl -s https://cloudflare.cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-${VERSION}.tar.gz | tar xzf - -C /src
+COPY patches /src
+WORKDIR "/src/openssh-${VERSION}"
 
 # For OpenSSH 7.8+, the variable names inside a `DEBUG_KEXDH` ifdef block went
 # out of sync. We need to apply these patches to be able to build with
@@ -69,10 +56,10 @@ RUN if [ "${WITH_SSHV1}" -ne 0 ]; then \
 # `openssh-base` is just an intermediate image and does not require labels, so
 # we can disable that linter rule.
 # hadolint ignore=DL3049
-FROM debian:stretch AS openssh-base
+FROM debian:bullseye AS openssh-base
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libssl1.0-dev \
+    libssl-dev \
     zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
