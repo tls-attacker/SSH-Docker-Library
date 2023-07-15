@@ -1,0 +1,162 @@
+version: '3.2'
+services:
+  openssh-server-6.0p1:
+    image: rub-nds/openssh-server:6.0p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 6.0p1
+        WITH_SSHV1: 1
+  openssh-client-6.0p1:
+    image: rub-nds/openssh-client:6.0p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 6.0p1
+    profiles: [client]
+  openssh-server-6.1p1:
+    image: rub-nds/openssh-server:6.1p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 6.1p1
+        WITH_SSHV1: 1
+  openssh-client-6.1p1:
+    image: rub-nds/openssh-client:6.1p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 6.1p1
+    profiles: [client]
+  openssh-server-6.2p1:
+    image: rub-nds/openssh-server:6.2p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 6.2p1
+        WITH_SSHV1: 1
+  openssh-client-6.2p1:
+    image: rub-nds/openssh-client:6.2p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 6.2p1
+    profiles: [client]
+  openssh-server-6.3p1:
+    image: rub-nds/openssh-server:6.3p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 6.3p1
+        WITH_SSHV1: 1
+  openssh-client-6.3p1:
+    image: rub-nds/openssh-client:6.3p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 6.3p1
+    profiles: [client]
+  openssh-server-6.4p1:
+    image: rub-nds/openssh-server:6.4p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 6.4p1
+        WITH_SSHV1: 1
+  openssh-client-6.4p1:
+    image: rub-nds/openssh-client:6.4p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 6.4p1
+    profiles: [client]
+  openssh-server-6.5p1:
+    image: rub-nds/openssh-server:6.5p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 6.5p1
+        WITH_SSHV1: 1
+  openssh-client-6.5p1:
+    image: rub-nds/openssh-client:6.5p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 6.5p1
+    profiles: [client]
+  openssh-server-6.6p1:
+    image: rub-nds/openssh-server:6.6p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 6.6p1
+        WITH_SSHV1: 1
+  openssh-client-6.6p1:
+    image: rub-nds/openssh-client:6.6p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 6.6p1
+    profiles: [client]
+  openssh-server-6.7p1:
+    image: rub-nds/openssh-server:6.7p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 6.7p1
+        WITH_SSHV1: 1
+  openssh-client-6.7p1:
+    image: rub-nds/openssh-client:6.7p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 6.7p1
+    profiles: [client]
+  openssh-server-6.8p1:
+    image: rub-nds/openssh-server:6.8p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 6.8p1
+        WITH_SSHV1: 1
+  openssh-client-6.8p1:
+    image: rub-nds/openssh-client:6.8p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 6.8p1
+    profiles: [client]
+  openssh-server-6.9p1:
+    image: rub-nds/openssh-server:6.9p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 6.9p1
+        WITH_SSHV1: 1
+  openssh-client-6.9p1:
+    image: rub-nds/openssh-client:6.9p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 6.9p1
+    profiles: [client]
