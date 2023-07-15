@@ -6,13 +6,13 @@ ARG PASSWORD=secret
 # `openssh-builder` is just an intermediate image and does not require labels,
 # so we can disable that linter rule.
 # hadolint ignore=DL3049
-FROM debian:bullseye AS openssh-builder
+FROM ubuntu:bionic AS openssh-builder
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     ca-certificates \
     curl \
-    libssl-dev \
+    libssl1.0-dev \
     zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 ARG VERSION
@@ -56,10 +56,10 @@ RUN if [ "${WITH_SSHV1}" -ne 0 ]; then \
 # `openssh-base` is just an intermediate image and does not require labels, so
 # we can disable that linter rule.
 # hadolint ignore=DL3049
-FROM debian:bullseye AS openssh-base
+FROM ubuntu:bionic AS openssh-base
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libssl-dev \
+    libssl1.0-dev \
     zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
