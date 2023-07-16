@@ -65,6 +65,7 @@ ARG DOTSSH=dotssh-server
 COPY --chown="${USERNAME}:${USERNAME}" "${DOTSSH}" "/home/${USERNAME}/.ssh/"
 RUN chmod -R g=,o= "/home/${USERNAME}/.ssh"
 
+
 ARG VERSION
 COPY --from=openssh-builder /install /install
 LABEL ssh.implementation.name="openssh" \
@@ -76,6 +77,9 @@ LABEL ssh.implementation.name="openssh" \
 #
 # FIXME: Although the server starts fine, login seems to be broken for 8.0p1
 # and 8.1p1. The server simply closes the connection.
+
+RUN sed -i 's/#LogLevel INFO/LogLevel DEBUG3/g' /install/etc/sshd_config;
+
 ENTRYPOINT ["/install/sbin/sshd", "-D", "-e", "-o", "MaxStartups=65536"]
 EXPOSE 22
 
