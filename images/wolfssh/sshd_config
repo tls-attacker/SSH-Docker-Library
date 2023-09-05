@@ -1,0 +1,10 @@
+Port 22
+Protocol 2
+LoginGraceTime 600
+PermitRootLogin yes
+PasswordAuthentication yes
+PermitEmptyPasswords no
+UsePrivilegeSeparation no
+UseDNS no
+HostKey /keys/server-key-rsa.pem
+AuthorizedKeysFile /install/authorized_keys
