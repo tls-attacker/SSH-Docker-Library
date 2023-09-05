@@ -18,10 +18,10 @@ RUN curl -s "https://gitlab.com/libssh/libssh-mirror/-/archive/libssh-${VERSION}
 # `libssh-builder` is just an intermediate image used for building and does
 # not require labels, so we can disable that linter rule.
 # hadolint ignore=DL3049
-FROM debian:stretch AS libssh-builder-old
+FROM debian:stretch AS libssh-builder
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN sed -i -e 's/deb.debian.org/archive.debian.org/g' \
-    -e 's|security.debian.org|archive.debian.org/|g' \
+    -e 's|security.debian.org|archive.debian.org|g' \
     -e '/stretch-updates/d' /etc/apt/sources.list
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
@@ -53,15 +53,15 @@ RUN cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/install .. && \
 FROM debian:stretch AS libssh-server
 ARG VERSION
 RUN sed -i -e 's/deb.debian.org/archive.debian.org/g' \
-    -e 's|security.debian.org|archive.debian.org/|g' \
+    -e 's|security.debian.org|archive.debian.org|g' \
     -e '/stretch-updates/d' /etc/apt/sources.list
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libssl1.0-dev \
     zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 COPY host_keys /install/host_keys/
-COPY --from=libssh-builder-old /install /usr/
-COPY --from=libssh-builder-old /src/libssh/build/examples /install/examples/
+COPY --from=libssh-builder /install /usr/
+COPY --from=libssh-builder /src/libssh/build/examples /install/examples/
 LABEL "ssh.implementation.name"="libssh" \
     "ssh.implementation.version"="${VERSION}" \
     "ssh.implementation.type"="server"
