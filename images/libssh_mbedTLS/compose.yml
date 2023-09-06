@@ -1,0 +1,42 @@
+version: '3.2'
+services:
+  libssh-mbedtls-server-0.10.0:
+    image: rub-nds/libssh-mbedtls-server:0.10.0
+    build:
+      context: .
+      target: libssh-mbedtls-server
+      args:
+        VERSION: 0.10.0
+        VERSION_MBEDTLS: 2.28.1
+  libssh-mbedtls-server-0.10.2:
+    image: rub-nds/libssh-mbedtls-server:0.10.2
+    build:
+      context: .
+      target: libssh-mbedtls-server
+      args:
+        VERSION: 0.10.2
+        VERSION_MBEDTLS: 2.28.1
+  libssh-mbedtls-server-0.10.3:
+    image: rub-nds/libssh-mbedtls-server:0.10.3
+    build:
+      context: .
+      target: libssh-mbedtls-server
+      args:
+        VERSION: 0.10.3
+        VERSION_MBEDTLS: 2.28.1
+  libssh-mbedtls-server-0.10.4:
+    image: rub-nds/libssh-mbedtls-server:0.10.4
+    build:
+      context: .
+      target: libssh-mbedtls-server
+      args:
+        VERSION: 0.10.4
+        VERSION_MBEDTLS: 2.28.1
+  libssh-mbedtls-server-0.10.5:
+    image: rub-nds/libssh-mbedtls-server:0.10.5
+    build:
+      context: .
+      target: libssh-mbedtls-server
+      args:
+        VERSION: 0.10.5
+        VERSION_MBEDTLS: 2.28.3
