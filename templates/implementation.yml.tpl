@@ -15,7 +15,7 @@ services:
   {%- endif -%}
   {%- if version is mapping %}
   {{ specs.name }}-server-{{ version.version }}:
-    images: rub-nds/{{ specs.name }}-server:{{ version.version }}
+    image: rub-nds/{{ specs.name }}-server:{{ version.version }}
     build:
       context: .
       {% if version.target is defined %}
@@ -29,10 +29,16 @@ services:
       dockerfile: {{ version.dockerfile }}
       {%- endif %}
       args:
+        {%- if version.args is defined %}
+        {%- for arg in version.args %}
+        {{ arg.name }}: {{ arg.value }}
+        {%- endfor -%}
+        {%- else -%}
         VERSION: {{ version.version }}
+        {%- endif %}
     {%- endif -%}
-  {%- endfor -%}
-{%- endif -%}
+  {% endfor %}
+{% endif %}
 {%- if specs.capabilities.client -%}
   {%- for version in specs.clientVersions %}
   {{ specs.name }}-client-{{ version }}:
