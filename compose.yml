@@ -2843,96 +2843,96 @@ services:
       service: openssh-server-7.0p1
     ports:
       - '29000:22'
-  openssh-client-7.0p1:
-    extends:
-      file: images/openssh-7.x/compose.yml
-      service: openssh-client-7.0p1
   openssh-server-7.1p1:
     extends:
       file: images/openssh-7.x/compose.yml
       service: openssh-server-7.1p1
     ports:
-      - '29002:22'
-  openssh-client-7.1p1:
-    extends:
-      file: images/openssh-7.x/compose.yml
-      service: openssh-client-7.1p1
+      - '29001:22'
   openssh-server-7.2p2:
     extends:
       file: images/openssh-7.x/compose.yml
       service: openssh-server-7.2p2
     ports:
-      - '29004:22'
-  openssh-client-7.2p2:
-    extends:
-      file: images/openssh-7.x/compose.yml
-      service: openssh-client-7.2p2
+      - '29002:22'
   openssh-server-7.3p1:
     extends:
       file: images/openssh-7.x/compose.yml
       service: openssh-server-7.3p1
     ports:
-      - '29006:22'
-  openssh-client-7.3p1:
-    extends:
-      file: images/openssh-7.x/compose.yml
-      service: openssh-client-7.3p1
+      - '29003:22'
   openssh-server-7.4p1:
     extends:
       file: images/openssh-7.x/compose.yml
       service: openssh-server-7.4p1
     ports:
-      - '29008:22'
-  openssh-client-7.4p1:
-    extends:
-      file: images/openssh-7.x/compose.yml
-      service: openssh-client-7.4p1
+      - '29004:22'
   openssh-server-7.5p1:
     extends:
       file: images/openssh-7.x/compose.yml
       service: openssh-server-7.5p1
     ports:
-      - '29010:22'
-  openssh-client-7.5p1:
-    extends:
-      file: images/openssh-7.x/compose.yml
-      service: openssh-client-7.5p1
+      - '29005:22'
   openssh-server-7.6p1:
     extends:
       file: images/openssh-7.x/compose.yml
       service: openssh-server-7.6p1
     ports:
-      - '29012:22'
-  openssh-client-7.6p1:
-    extends:
-      file: images/openssh-7.x/compose.yml
-      service: openssh-client-7.6p1
+      - '29006:22'
   openssh-server-7.7p1:
     extends:
       file: images/openssh-7.x/compose.yml
       service: openssh-server-7.7p1
     ports:
-      - '29014:22'
-  openssh-client-7.7p1:
-    extends:
-      file: images/openssh-7.x/compose.yml
-      service: openssh-client-7.7p1
+      - '29007:22'
   openssh-server-7.8p1:
     extends:
       file: images/openssh-7.x/compose.yml
       service: openssh-server-7.8p1
     ports:
-      - '29016:22'
-  openssh-client-7.8p1:
-    extends:
-      file: images/openssh-7.x/compose.yml
-      service: openssh-client-7.8p1
+      - '29008:22'
   openssh-server-7.9p1:
     extends:
       file: images/openssh-7.x/compose.yml
       service: openssh-server-7.9p1
     ports:
-      - '29018:22'
+      - '29009:22'
+  openssh-client-7.0p1:
+    extends:
+      file: images/openssh-7.x/compose.yml
+      service: openssh-client-7.0p1
+  openssh-client-7.1p1:
+    extends:
+      file: images/openssh-7.x/compose.yml
+      service: openssh-client-7.1p1
+  openssh-client-7.2p2:
+    extends:
+      file: images/openssh-7.x/compose.yml
+      service: openssh-client-7.2p2
+  openssh-client-7.3p1:
+    extends:
+      file: images/openssh-7.x/compose.yml
+      service: openssh-client-7.3p1
+  openssh-client-7.4p1:
+    extends:
+      file: images/openssh-7.x/compose.yml
+      service: openssh-client-7.4p1
+  openssh-client-7.5p1:
+    extends:
+      file: images/openssh-7.x/compose.yml
+      service: openssh-client-7.5p1
+  openssh-client-7.6p1:
+    extends:
+      file: images/openssh-7.x/compose.yml
+      service: openssh-client-7.6p1
+  openssh-client-7.7p1:
+    extends:
+      file: images/openssh-7.x/compose.yml
+      service: openssh-client-7.7p1
+  openssh-client-7.8p1:
+    extends:
+      file: images/openssh-7.x/compose.yml
+      service: openssh-client-7.8p1
   openssh-client-7.9p1:
     extends:
       file: images/openssh-7.x/compose.yml
@@ -3068,82 +3068,82 @@ services:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-9.2p1
-  openssh-automated-client-8.0p1:
+  openssh-client-automated-8.0p1:
     extends:
       file: images/openssh/compose.yml
-      service: openssh-automated-client-8.0p1
+      service: openssh-client-automated-8.0p1
     ports:
       - '30026:22'
-  openssh-automated-client-8.1p1:
+  openssh-client-automated-8.1p1:
     extends:
       file: images/openssh/compose.yml
-      service: openssh-automated-client-8.1p1
+      service: openssh-client-automated-8.1p1
     ports:
       - '30027:22'
-  openssh-automated-client-8.2p1:
+  openssh-client-automated-8.2p1:
     extends:
       file: images/openssh/compose.yml
-      service: openssh-automated-client-8.2p1
+      service: openssh-client-automated-8.2p1
     ports:
       - '30028:22'
-  openssh-automated-client-8.3p1:
+  openssh-client-automated-8.3p1:
     extends:
       file: images/openssh/compose.yml
-      service: openssh-automated-client-8.3p1
+      service: openssh-client-automated-8.3p1
     ports:
       - '30029:22'
-  openssh-automated-client-8.4p1:
+  openssh-client-automated-8.4p1:
     extends:
       file: images/openssh/compose.yml
-      service: openssh-automated-client-8.4p1
+      service: openssh-client-automated-8.4p1
     ports:
       - '30030:22'
-  openssh-automated-client-8.5p1:
+  openssh-client-automated-8.5p1:
     extends:
       file: images/openssh/compose.yml
-      service: openssh-automated-client-8.5p1
+      service: openssh-client-automated-8.5p1
     ports:
       - '30031:22'
-  openssh-automated-client-8.6p1:
+  openssh-client-automated-8.6p1:
     extends:
       file: images/openssh/compose.yml
-      service: openssh-automated-client-8.6p1
+      service: openssh-client-automated-8.6p1
     ports:
       - '30032:22'
-  openssh-automated-client-8.7p1:
+  openssh-client-automated-8.7p1:
     extends:
       file: images/openssh/compose.yml
-      service: openssh-automated-client-8.7p1
+      service: openssh-client-automated-8.7p1
     ports:
       - '30033:22'
-  openssh-automated-client-8.8p1:
+  openssh-client-automated-8.8p1:
     extends:
       file: images/openssh/compose.yml
-      service: openssh-automated-client-8.8p1
+      service: openssh-client-automated-8.8p1
     ports:
       - '30034:22'
-  openssh-automated-client-8.9p1:
+  openssh-client-automated-8.9p1:
     extends:
       file: images/openssh/compose.yml
-      service: openssh-automated-client-8.9p1
+      service: openssh-client-automated-8.9p1
     ports:
       - '30035:22'
-  openssh-automated-client-9.0p1:
+  openssh-client-automated-9.0p1:
     extends:
       file: images/openssh/compose.yml
-      service: openssh-automated-client-9.0p1
+      service: openssh-client-automated-9.0p1
     ports:
       - '30036:22'
-  openssh-automated-client-9.1p1:
+  openssh-client-automated-9.1p1:
     extends:
       file: images/openssh/compose.yml
-      service: openssh-automated-client-9.1p1
+      service: openssh-client-automated-9.1p1
     ports:
       - '30037:22'
-  openssh-automated-client-9.2p1:
+  openssh-client-automated-9.2p1:
     extends:
       file: images/openssh/compose.yml
-      service: openssh-automated-client-9.2p1
+      service: openssh-client-automated-9.2p1
     ports:
       - '30038:22'
 

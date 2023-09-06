@@ -4,35 +4,41 @@ services:
     image: rub-nds/russh-server:0.34.0
     build:
       context: .
+      target: russh-server
       args:
-        VERSION: '0.34.0'
+        VERSION: 0.34.0
   russh-server-0.36.0:
     image: rub-nds/russh-server:0.36.0
     build:
       context: .
+      target: russh-server
       args:
-        VERSION: '0.36.0'
+        VERSION: 0.36.0
   russh-server-0.36.1:
     image: rub-nds/russh-server:0.36.1
     build:
       context: .
+      target: russh-server
       args:
-        VERSION: '0.36.1'
+        VERSION: 0.36.1
   russh-server-0.36.2:
     image: rub-nds/russh-server:0.36.2
     build:
       context: .
+      target: russh-server
       args:
-        VERSION: '0.36.2'
+        VERSION: 0.36.2
   russh-server-0.37.0:
     image: rub-nds/russh-server:0.37.0
     build:
       context: .
+      target: russh-server
       args:
-        VERSION: '0.37.0'
+        VERSION: 0.37.0
   russh-server-0.37.1:
     image: rub-nds/russh-server:0.37.1
     build:
       context: .
+      target: russh-server
       args:
-        VERSION: '0.37.1'
+        VERSION: 0.37.1

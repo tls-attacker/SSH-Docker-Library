@@ -4,9 +4,8 @@
     "capabilities": {
         "server": false,
         "client": true,
-        "automatedclient": false
+        "automatedClient": false
     },
     "multistage": true,
-    "serverVersions": [],
     "clientVersions": ["0.70", "0.73", "0.76"]
 }
