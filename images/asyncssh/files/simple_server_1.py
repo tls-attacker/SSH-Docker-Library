@@ -1,14 +1,25 @@
 #!/usr/bin/env python3
-"""
-Server code from example of AsyncSSH, see:
-https://asyncssh.readthedocs.io/en/stable/#server-examples
-"""
+#
+# Copyright (c) 2013-2017 by Ron Frederick <ronf@timeheart.net>.
+# All rights reserved.
+#
+# This program and the accompanying materials are made available under
+# the terms of the Eclipse Public License v1.0 which accompanies this
+# distribution and is available at:
+#
+#     http://www.eclipse.org/legal/epl-v10.html
+#
+# Contributors:
+#     Ron Frederick - initial implementation, API, and documentation
+
+# To run this program, the file ``ssh_host_key`` must exist with an SSH
+# private key in it to use as a server host key. An SSH host certificate
+# can optionally be provided in the file ``ssh_host_key-cert.pub``.
+
 import argparse
-import pathlib
-import asyncio
-import asyncssh
+import asyncio, asyncssh, sys
 import logging
-import sys
+import pathlib
 
 PASSWORDS = {}
 AUTHORIZED_KEYS_FILES = {}
@@ -27,14 +38,14 @@ async def handle_client(process):
                     total += int(line)
                 except ValueError:
                     process.stderr.write("Invalid number: %s\n" % line)
-    except asyncssh.BreakReceived:
+    except asyncssh.BreakReceived:  # pyright: ignore reportGeneralTypeIssues
         pass
 
     process.stdout.write("Total = %s\n" % total)
     process.exit(0)
 
 
-class MySSHServer(asyncssh.SSHServer):
+class MySSHServer(asyncssh.SSHServer):  # pyright: ignore reportGeneralTypeIssues
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._logger = logging.getLogger(__name__)
@@ -42,7 +53,15 @@ class MySSHServer(asyncssh.SSHServer):
 
     def connection_made(self, conn):
         self._conn = conn
-        self._logger.info("Connection established!")
+        self._logger.info(
+            "Connection established from %s", conn.get_extra_info("peername")[0]
+        )
+
+    def connection_lost(self, exc):
+        if exc:
+            self._logger.error("SSH connection error: %s", str(exc))
+        else:
+            self._logger.info("SSH connection closed.")
 
     def begin_auth(self, username):
         assert self._conn is not None
@@ -93,21 +112,21 @@ class MySSHServer(asyncssh.SSHServer):
         return False
 
 
-async def start_server(port, host_keys):
-    await asyncssh.create_server(
-        MySSHServer,
-        "",
-        port,
-        server_host_keys=host_keys,
-        process_factory=handle_client,
-    )
-
-
 def validate_username(text):
     stripped = text.strip()
     if not stripped:
         raise ValueError("Username must not be empty!")
     return stripped
+
+
+async def start_server(port, host_keys):
+    await asyncssh.create_server(  # pyright: ignore reportGeneralTypeIssues
+        MySSHServer,
+        "",
+        port,
+        server_host_keys=["ssh_host_key"],  # TODO make dynamic
+        process_factory=handle_client,
+    )
 
 
 def main(argv=None):
@@ -168,7 +187,7 @@ def main(argv=None):
     loop = asyncio.get_event_loop()
     try:
         loop.run_until_complete(start_server(port=args.port, host_keys=[args.host_key]))
-    except (OSError, asyncssh.Error) as exc:
+    except (OSError, asyncssh.Error) as exc:  # pyright: ignore reportGeneralTypeIssues
         sys.exit("Error starting server: " + str(exc))
     loop.run_forever()
     return 0
