@@ -20,6 +20,9 @@ RUN curl -s "https://gitlab.com/libssh/libssh-mirror/-/archive/libssh-${VERSION}
 # hadolint ignore=DL3049
 FROM debian:stretch AS libssh-builder
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+RUN sed -i -e 's/deb.debian.org/archive.debian.org/g' \
+    -e 's|security.debian.org|archive.debian.org|g' \
+    -e '/stretch-updates/d' /etc/apt/sources.list
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     cmake \
@@ -39,7 +42,7 @@ RUN sed -i "s/myuser/${USERNAME}/g" examples/ssh_server_fork.c && \
 # Apply patches to fix the build for some very old versions.
 COPY patches/ .
 RUN if printf '%s\n%s\n%s\n' "0.8.2" "${VERSION}" "0.8.6" | sort -c -g; then \
-        patch -p1 < 0001-0.8.2-0.8.6-Disable-Werror-strict-overflow-to-fix-ab.patch ; \
+    patch -p1 < 0001-0.8.2-0.8.6-Disable-Werror-strict-overflow-to-fix-ab.patch ; \
     fi
 
 WORKDIR /src/libssh/build
@@ -49,10 +52,13 @@ RUN cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/install .. && \
 
 FROM debian:stretch AS libssh-server
 ARG VERSION
+RUN sed -i -e 's/deb.debian.org/archive.debian.org/g' \
+    -e 's|security.debian.org|archive.debian.org|g' \
+    -e '/stretch-updates/d' /etc/apt/sources.list
 RUN apt-get update && apt-get install -y --no-install-recommends \
-  libssl1.0-dev \
-  zlib1g-dev \
-  && rm -rf /var/lib/apt/lists/*
+    libssl1.0-dev \
+    zlib1g-dev \
+    && rm -rf /var/lib/apt/lists/*
 COPY host_keys /install/host_keys/
 COPY --from=libssh-builder /install /usr/
 COPY --from=libssh-builder /src/libssh/build/examples /install/examples/
@@ -60,9 +66,9 @@ LABEL "ssh.implementation.name"="libssh" \
     "ssh.implementation.version"="${VERSION}" \
     "ssh.implementation.type"="server"
 CMD [ "/install/examples/ssh_server_fork", \
-  "-p", "22", \
-  "-k", "/install/host_keys/ssh_host_dsa_key", \
-  "-k", "/install/host_keys/ssh_host_rsa_key", \
-  "-k", "/install/host_keys/ssh_host_ecdsa_key", \
-  "0.0.0.0" ]
+    "-p", "22", \
+    "-k", "/install/host_keys/ssh_host_dsa_key", \
+    "-k", "/install/host_keys/ssh_host_rsa_key", \
+    "-k", "/install/host_keys/ssh_host_ecdsa_key", \
+    "0.0.0.0" ]
 EXPOSE 22
