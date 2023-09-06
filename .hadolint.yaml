@@ -3,8 +3,6 @@ ignored:
   # image tag should suffice for our purposes.
   - DL3008
   - DL3018
-  - DL3049
-  - DL3059
 
 label-schema:
   'ssh.implementation.name': text
