@@ -1,12 +1,12 @@
 # hadolint ignore=DL3049
-FROM python:3.5 AS asyncssh-old-base
+FROM python:3.5 AS asyncssh-base
 
 ARG VERSION
 WORKDIR /app
 RUN pip install --no-cache-dir asyncssh==$VERSION
 
 # Server image asyncssh <2.0.0
-FROM asyncssh-old-base AS asyncssh-old-server
+FROM asyncssh-base AS asyncssh-server
 
 ARG USERNAME=sshattacker
 ARG PASSWORD=secret
