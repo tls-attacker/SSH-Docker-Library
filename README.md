@@ -88,7 +88,7 @@ Note that the client containers are put into the profile `client` and not starte
 | paramiko                  | [--host host] [--port portnum] [--username username] [--password password] [--command command] -o(print output) -e(print error)    |
 | puttylinux                | [login@]hostname [-P port] [-pw password]                                                                                          |
 | russh                     | host:port --username username --password password                                                                                  |
-| wolfssh                   | [-h host] [-p port] [-u username][-p <password>] [-i filename filename for the user's private key]                                 |
+| wolfssh                   | [-h host] [-p port] [-u username] [-p &lt;password&gt;] [-i filename filename for the user's private key]                          |
 
 ## Label
 

@@ -5,8 +5,8 @@ FROM python:${VERSION_PYTHON} AS paramiko-client
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ARG VERSION
 WORKDIR /usr/src
-RUN /usr/local/bin/python -m pip install --upgrade pip
-RUN pip install --no-cache-dir six==1.16.0 paramiko==${VERSION} click==8.1.3
+RUN /usr/local/bin/python -m pip install --upgrade pip && \
+    pip install --no-cache-dir six==1.16.0 paramiko==${VERSION} click==8.1.3
 
 
 COPY paramiko-client-script.py /usr/src

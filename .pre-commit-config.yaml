@@ -34,7 +34,6 @@ repos:
     hooks:
       - id: markdownlint-cli2-config
         args: [.markdownlint-cli2.yaml]
-        exclude: ^README.md$
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: v2.7.1
     hooks:

@@ -1,3 +1,6 @@
+# `russh-base` is just an intermediate image and does not require labels,
+# so we can disable that linter rule.
+# hadolint ignore=DL3049
 FROM rust:1.67-slim-bullseye AS russh-base
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get install -y --no-install-recommends \

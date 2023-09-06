@@ -1,3 +1,6 @@
+# `dropbear-builder` is just an intermediate image and does not require labels,
+# so we can disable that linter rule.
+# hadolint ignore=DL3049
 FROM alpine:3.16 as dropbear-builder
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 # linux-headers are required by versions 2013.62 - 2018.76
