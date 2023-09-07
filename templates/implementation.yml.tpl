@@ -10,6 +10,9 @@ services:
       {%- if specs.multistage %}
       target: {{ specs.name }}-server
       {%- endif %}
+      {%- if specs.defaultServerDockerfile is defined %}
+      dockerfile: {{ specs.defaultServerDockerfile }}
+      {%- endif %}
       args:
         VERSION: {{ version }}
   {%- endif -%}
@@ -27,6 +30,8 @@ services:
       {%- endif %}
       {%- if version.dockerfile is defined %}
       dockerfile: {{ version.dockerfile }}
+      {%- elif specs.defaultServerDockerfile is defined %}
+      dockerfile: {{ specs.defaultServerDockerfile }}
       {%- endif %}
       args:
         {%- if version.args is defined %}
@@ -48,6 +53,9 @@ services:
       {%- if specs.multistage %}
       target: {{ specs.name }}-client
       {%- endif %}
+      {%- if specs.defaultClientDockerfile is defined %}
+      dockerfile: {{ specs.defaultClientDockerfile }}
+      {%- endif %}
       args:
         VERSION: {{ version }}
     profiles: [client]
@@ -61,6 +69,9 @@ services:
       context: .
       {%- if specs.multistage %}
       target: {{ specs.name }}-client-automated
+      {%- endif %}
+      {%- if specs.defaultClientAutomatedDockerfile is defined %}
+      dockerfile: {{ specs.defaultClientAutomatedDockerfile }}
       {%- endif %}
       args:
         VERSION: {{ version }}
