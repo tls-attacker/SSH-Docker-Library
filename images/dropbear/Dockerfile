@@ -11,9 +11,6 @@ ARG VERSION
 RUN wget -O - -q "https://matt.ucc.asn.au/dropbear/releases/dropbear-${VERSION}.tar.bz2" | bunzip2 | tar -xf -
 WORKDIR "/dropbear-${VERSION}"
 
-
-#Server image
-
 # Apply patches to fix the build for some very old versions.
 COPY patches/ .
 RUN if ! printf '%s\n%s\n' "0.31" "${VERSION}" | sort -c -g; then \
@@ -44,6 +41,7 @@ RUN if ! printf '%s\n%s\n' "0.31" "${VERSION}" | sort -c -g; then \
         patch -p1 < 0011-0.30-Remove-out-of-place-linebreak-in-string-literal.patch ; \
     fi
 
+# Server image
 FROM dropbear-builder as dropbear-server
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 # Configure, build and install dropbear, then add the pre-generated hostkeys.
@@ -70,27 +68,19 @@ LABEL ssh.implementation.name="dropbear" \
 CMD ["dropbear", "-FEB"]
 EXPOSE 22
 
+# Client image
 FROM dropbear-builder AS dropbear-client
 
-# Configure, build and install bdclient
+# Configure, build and install dbclient
 RUN ./configure && \
     make PROGRAMS="dbclient" -j "$(nproc)" && \
     make PROGRAMS="dbclient" install
-
-ARG DOTSSH=dotssh-client
-COPY "${DOTSSH}" "/root/.ssh/"
-RUN apk add --no-cache dropbear-convert
-
-#convert openssh keys to required dropbear format
-RUN dropbearconvert openssh dropbear ~/.ssh/id_rsa ~/.ssh/id_rsa.db  && \
-    dropbearconvert openssh dropbear ~/.ssh/id_ecdsa ~/.ssh/id_ecdsa.db && \
-    dropbearconvert openssh dropbear ~/.ssh/id_ed25519 ~/.ssh/ed25519.db
+COPY "dotssh-client" "/root/.ssh/"
 
 ARG VERSION
 LABEL ssh.implementation.name="dropbear" \
       ssh.implementation.version="${VERSION}" \
       ssh.implementation.type="client"
-
-ENTRYPOINT [ "dbclient"]
-#dbclient [-Tt] [-p port] [-i id] [-L l:h:r] [-R l:h:r] [-l user] host [command]
+ENTRYPOINT [ "dbclient" ]
+# dbclient [-Tt] [-p port] [-i id] [-L l:h:r] [-R l:h:r] [-l user] host [command]
 # include public key like the following -i /root/.ssh/id_rsa.db
