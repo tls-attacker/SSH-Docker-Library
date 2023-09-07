@@ -45,8 +45,8 @@ COPY --from=libssh-builder /src/libssh/build/examples /install/examples/
 LABEL "ssh.implementation.name"="libssh" \
     "ssh.implementation.version"="${VERSION}" \
     "ssh.implementation.type"="server"
-CMD [ "/install/examples/ssh_server_fork", \
-  "-p", "22", \
+ENTRYPOINT [ "/install/examples/ssh_server_fork" ]
+CMD [ "-p", "22", \
   "-k", "/install/host_keys/ssh_host_dsa_key", \
   "-k", "/install/host_keys/ssh_host_ecdsa_key", \
   "-k", "/install/host_keys/ssh_host_rsa_key", \
@@ -57,26 +57,18 @@ EXPOSE 22
 FROM debian:bullseye AS libssh-client
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-ARG USERNAME=sshattacker
-ARG PASSWORD=secret
 ARG DOTSSH=dotssh-client
-RUN useradd --create-home --groups users "${USERNAME}" && \
-    echo "${USERNAME}:${PASSWORD}" | chpasswd
-COPY --chown="${USERNAME}:${USERNAME}" "${DOTSSH}" "/home/${USERNAME}/.ssh/"
-RUN chmod -R g=,o= "/home/${USERNAME}/.ssh"
+COPY "${DOTSSH}" "/root/.ssh/"
 
-
-ARG VERSION
 RUN apt-get update && apt-get install -y --no-install-recommends \
   libssl-dev \
   zlib1g-dev \
   && rm -rf /var/lib/apt/lists/*
-
 COPY --from=libssh-builder /install /usr/
 COPY --from=libssh-builder /src/libssh/build/examples /install/examples/
+
+ARG VERSION
 LABEL "ssh.implementation.name"="libssh" \
     "ssh.implementation.version"="${VERSION}" \
     "ssh.implementation.type"="client"
-
 ENTRYPOINT [ "/install/examples/ssh-client" ]
-EXPOSE 22
