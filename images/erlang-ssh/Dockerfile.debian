@@ -34,3 +34,21 @@ LABEL ssh.implementation.name="erlang-ssh" \
       ssh.implementation.type="server"
 ENTRYPOINT ["/usr/local/bin/erl", "-noshell", "-eval", "ssh:start()", "-eval", "ssh:daemon(22)"]
 EXPOSE 22
+
+# Client image
+FROM erlang-ssh-base AS erlang-ssh-client
+
+ARG USERNAME=sshattacker
+COPY --chown="${USERNAME}:${USERNAME}" "../../keys" "/home/${USERNAME}/.ssh/"
+
+COPY start_client.exp /usr/local/bin
+WORKDIR "/usr/local/bin"
+
+ARG VERSION
+COPY hostkeys/* /etc/ssh/
+LABEL ssh.implementation.name="erlang-ssh" \
+      ssh.implementation.version="${VERSION}" \
+      ssh.implementation.type="client"
+
+ENTRYPOINT ["expect" , "start_client.exp"]
+EXPOSE 22

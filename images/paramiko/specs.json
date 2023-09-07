@@ -1,0 +1,33 @@
+{
+    "name": "paramiko",
+    "url": "https://docs.paramiko.org/en/stable/api/client.html",
+    "capabilities": {
+        "server": false,
+        "client": true,
+        "automatedClient": false
+    },
+    "multistage": false,
+    "clientVersions": [
+        "2.5.0",
+        "2.5.1",
+        "2.6.0",
+        "2.7.0",
+        "2.7.1",
+        "2.7.2",
+        "2.8.0",
+        "2.8.1",
+        "2.9.0",
+        "2.9.1",
+        "2.9.2",
+        "2.9.3",
+        "2.9.4",
+        "2.9.5",
+        "2.10.0",
+        "2.10.1",
+        "2.10.2",
+        "2.10.3",
+        "2.10.4",
+        "2.10.5",
+        "2.11.0"
+    ]
+}

@@ -1,0 +1,149 @@
+version: '3.2'
+services:
+  paramiko-client-2.5.0:
+    image: rub-nds/paramiko-client:2.5.0
+    build:
+      context: .
+      args:
+        VERSION: 2.5.0
+    profiles: [client]
+  paramiko-client-2.5.1:
+    image: rub-nds/paramiko-client:2.5.1
+    build:
+      context: .
+      args:
+        VERSION: 2.5.1
+    profiles: [client]
+  paramiko-client-2.6.0:
+    image: rub-nds/paramiko-client:2.6.0
+    build:
+      context: .
+      args:
+        VERSION: 2.6.0
+    profiles: [client]
+  paramiko-client-2.7.0:
+    image: rub-nds/paramiko-client:2.7.0
+    build:
+      context: .
+      args:
+        VERSION: 2.7.0
+    profiles: [client]
+  paramiko-client-2.7.1:
+    image: rub-nds/paramiko-client:2.7.1
+    build:
+      context: .
+      args:
+        VERSION: 2.7.1
+    profiles: [client]
+  paramiko-client-2.7.2:
+    image: rub-nds/paramiko-client:2.7.2
+    build:
+      context: .
+      args:
+        VERSION: 2.7.2
+    profiles: [client]
+  paramiko-client-2.8.0:
+    image: rub-nds/paramiko-client:2.8.0
+    build:
+      context: .
+      args:
+        VERSION: 2.8.0
+    profiles: [client]
+  paramiko-client-2.8.1:
+    image: rub-nds/paramiko-client:2.8.1
+    build:
+      context: .
+      args:
+        VERSION: 2.8.1
+    profiles: [client]
+  paramiko-client-2.9.0:
+    image: rub-nds/paramiko-client:2.9.0
+    build:
+      context: .
+      args:
+        VERSION: 2.9.0
+    profiles: [client]
+  paramiko-client-2.9.1:
+    image: rub-nds/paramiko-client:2.9.1
+    build:
+      context: .
+      args:
+        VERSION: 2.9.1
+    profiles: [client]
+  paramiko-client-2.9.2:
+    image: rub-nds/paramiko-client:2.9.2
+    build:
+      context: .
+      args:
+        VERSION: 2.9.2
+    profiles: [client]
+  paramiko-client-2.9.3:
+    image: rub-nds/paramiko-client:2.9.3
+    build:
+      context: .
+      args:
+        VERSION: 2.9.3
+    profiles: [client]
+  paramiko-client-2.9.4:
+    image: rub-nds/paramiko-client:2.9.4
+    build:
+      context: .
+      args:
+        VERSION: 2.9.4
+    profiles: [client]
+  paramiko-client-2.9.5:
+    image: rub-nds/paramiko-client:2.9.5
+    build:
+      context: .
+      args:
+        VERSION: 2.9.5
+    profiles: [client]
+  paramiko-client-2.10.0:
+    image: rub-nds/paramiko-client:2.10.0
+    build:
+      context: .
+      args:
+        VERSION: 2.10.0
+    profiles: [client]
+  paramiko-client-2.10.1:
+    image: rub-nds/paramiko-client:2.10.1
+    build:
+      context: .
+      args:
+        VERSION: 2.10.1
+    profiles: [client]
+  paramiko-client-2.10.2:
+    image: rub-nds/paramiko-client:2.10.2
+    build:
+      context: .
+      args:
+        VERSION: 2.10.2
+    profiles: [client]
+  paramiko-client-2.10.3:
+    image: rub-nds/paramiko-client:2.10.3
+    build:
+      context: .
+      args:
+        VERSION: 2.10.3
+    profiles: [client]
+  paramiko-client-2.10.4:
+    image: rub-nds/paramiko-client:2.10.4
+    build:
+      context: .
+      args:
+        VERSION: 2.10.4
+    profiles: [client]
+  paramiko-client-2.10.5:
+    image: rub-nds/paramiko-client:2.10.5
+    build:
+      context: .
+      args:
+        VERSION: 2.10.5
+    profiles: [client]
+  paramiko-client-2.11.0:
+    image: rub-nds/paramiko-client:2.11.0
+    build:
+      context: .
+      args:
+        VERSION: 2.11.0
+    profiles: [client]

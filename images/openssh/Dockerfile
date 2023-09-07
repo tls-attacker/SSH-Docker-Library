@@ -48,6 +48,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libssl-dev \
     zlib1g-dev \
+    expect\
     && rm -rf /var/lib/apt/lists/*
 
 ARG USERNAME
@@ -76,7 +77,7 @@ LABEL ssh.implementation.name="openssh" \
 #
 # FIXME: Although the server starts fine, login seems to be broken for 8.0p1
 # and 8.1p1. The server simply closes the connection.
-ENTRYPOINT ["/install/sbin/sshd", "-D", "-e", "-o", "MaxStartups=65536"]
+ENTRYPOINT [ "/install/sbin/sshd", "-D", "-e", "-o", "MaxStartups=65536" ]
 EXPOSE 22
 
 # Client image
@@ -92,4 +93,16 @@ COPY --from=openssh-builder /install /install
 LABEL ssh.implementation.name="openssh" \
       ssh.implementation.version="${VERSION}" \
       ssh.implementation.type="client"
-ENTRYPOINT ["/install/bin/ssh"]
+ENTRYPOINT [ "/install/bin/ssh" ]
+
+# Automated client image
+FROM openssh-client AS openssh-client-automated
+
+COPY login.exp start.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/start.sh
+
+COPY --from=openssh-builder /install /install
+LABEL ssh.implementation.name="openssh" \
+      ssh.implementation.version="${VERSION}" \
+      ssh.implementation.type="client-automated"
+ENTRYPOINT [ "/usr/local/bin/start.sh" ]

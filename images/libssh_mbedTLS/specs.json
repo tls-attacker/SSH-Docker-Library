@@ -3,7 +3,8 @@
     "url": "https://git.libssh.org/projects/libssh.git/",
     "capabilities": {
         "server": true,
-        "client": false
+        "client": false,
+        "automatedClient": false
     },
     "multistage": true,
     "serverVersions": [

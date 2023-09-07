@@ -3,7 +3,8 @@
     "url": "https://asyncssh.readthedocs.io/en/latest/",
     "capabilities": {
         "server": true,
-        "client": true
+        "client": true,
+        "automatedClient": false
     },
     "multistage": true,
     "serverVersions": [

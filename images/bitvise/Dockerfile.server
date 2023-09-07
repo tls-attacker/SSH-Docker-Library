@@ -1,7 +1,11 @@
+# Separate Dockerfiles for client and server are required as BuildKit does not support building
+# Windows containers for now. As a result, both stages are being built when --target bitvise-client
+# is provided.
+
 # INFO: This container is Windows based and requires a Windows host to build and run
 # You may also need to switch your Docker daemon Linux to Windows containers
 # ltsc2019 and ltsc2022 will brick the build (container won't start under Windows 11)
-FROM mcr.microsoft.com/windows/servercore:ltsc2016-amd64
+FROM mcr.microsoft.com/windows/servercore:ltsc2016-amd64 as bitvise-server
 
 ARG VERSION
 ARG USERNAME=sshattacker
@@ -11,6 +15,7 @@ SHELL [ "powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPre
 RUN New-Item -Path 'C:\' -Name 'docker' -ItemType 'directory'; \
     $versionIdentifier = $env:VERSION -replace '\.',''; \
     Invoke-WebRequest """https://dl.bitvise.com/BvSshServer-$versionIdentifier.exe""" -OutFile 'C:\docker\BvSshServer-Inst.exe'
+
 SHELL [ "cmd", "/S", "/C" ]
 RUN C:\docker\BvSshServer-Inst.exe -defaultInstance -acceptEula & exit 0
 

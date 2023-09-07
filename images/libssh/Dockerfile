@@ -45,11 +45,30 @@ COPY --from=libssh-builder /src/libssh/build/examples /install/examples/
 LABEL "ssh.implementation.name"="libssh" \
     "ssh.implementation.version"="${VERSION}" \
     "ssh.implementation.type"="server"
-CMD [ "/install/examples/ssh_server_fork", \
-  "-p", "22", \
+ENTRYPOINT [ "/install/examples/ssh_server_fork" ]
+CMD [ "-p", "22", \
   "-k", "/install/host_keys/ssh_host_dsa_key", \
   "-k", "/install/host_keys/ssh_host_ecdsa_key", \
   "-k", "/install/host_keys/ssh_host_rsa_key", \
   "-k", "/install/host_keys/ssh_host_ed25519_key", \
   "0.0.0.0" ]
 EXPOSE 22
+
+FROM debian:bullseye AS libssh-client
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+ARG DOTSSH=dotssh-client
+COPY "${DOTSSH}" "/root/.ssh/"
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  libssl-dev \
+  zlib1g-dev \
+  && rm -rf /var/lib/apt/lists/*
+COPY --from=libssh-builder /install /usr/
+COPY --from=libssh-builder /src/libssh/build/examples /install/examples/
+
+ARG VERSION
+LABEL "ssh.implementation.name"="libssh" \
+    "ssh.implementation.version"="${VERSION}" \
+    "ssh.implementation.type"="client"
+ENTRYPOINT [ "/install/examples/ssh-client" ]

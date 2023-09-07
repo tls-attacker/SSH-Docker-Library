@@ -77,6 +77,19 @@ Note that the client containers are put into the profile `client` and not starte
     $ docker run -u sshattacker --network=host -ti --rm rub-nds/openssh-client:9.0p1 localhost -p 22320
     $ docker run -u sshattacker --network=ssh-docker-library_default -ti --rm rub-nds/openssh-client:9.0p1 ssh-docker-library-openssh-server-9.0p1-1
 
+| SSH-Client implementation | Commandline parameter specification                                                                                                |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| asyncssh                  | [--host host] [--port portnummer] [--username username] [--password password] [--command command] -o(print output) -e(print error) |
+| bitvise                   | [login@]hostname -pw=password -port=portnum                                                                                        |
+| dropbear                  | [-Tt] [-p port] [-i id] [-L l:h:r] [-R l:h:r] [-l user] host [command]                                                             |
+| erlang-ssh                | ip port user password command                                                                                                      |
+| libssh                    | [login@]hostname [-l user] [-p port] [-T proxycommand]                                                                             |
+| openssh                   | [login@]hostname [-l login_name] [-p port] [-i identity_file]                                                                      |
+| paramiko                  | [--host host] [--port portnum] [--username username] [--password password] [--command command] -o(print output) -e(print error)    |
+| puttylinux                | [login@]hostname [-P port] [-pw password]                                                                                          |
+| russh                     | host:port --username username --password password                                                                                  |
+| wolfssh                   | [-h host] [-p port] [-u username] [-p &lt;password&gt;] [-i filename filename for the user's private key]                          |
+
 ## Label
 
 Each image is labeled with the following metadata:

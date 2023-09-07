@@ -603,6 +603,188 @@ services:
       service: bitvise-server-9.27
     ports:
       - '23042:22'
+  bitvise-server-9.28:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-server-9.28
+    ports:
+      - '23043:22'
+  bitvise-client-8.15:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.15
+  bitvise-client-8.16:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.16
+  bitvise-client-8.17:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.17
+  bitvise-client-8.18:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.18
+  bitvise-client-8.19:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.19
+  bitvise-client-8.21:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.21
+  bitvise-client-8.22:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.22
+  bitvise-client-8.24:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.24
+  bitvise-client-8.25:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.25
+  bitvise-client-8.26:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.26
+  bitvise-client-8.27:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.27
+  bitvise-client-8.28:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.28
+  bitvise-client-8.29:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.29
+  bitvise-client-8.31:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.31
+  bitvise-client-8.32:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.32
+  bitvise-client-8.33:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.33
+  bitvise-client-8.34:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.34
+  bitvise-client-8.35:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.35
+  bitvise-client-8.36:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.36
+  bitvise-client-8.37:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.37
+  bitvise-client-8.38:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.38
+  bitvise-client-8.39:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.39
+  bitvise-client-8.41:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.41
+  bitvise-client-8.42:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.42
+  bitvise-client-8.43:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.43
+  bitvise-client-8.44:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.44
+  bitvise-client-8.45:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.45
+  bitvise-client-8.47:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.47
+  bitvise-client-8.48:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.48
+  bitvise-client-8.49:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-8.49
+  bitvise-client-9.12:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.12
+  bitvise-client-9.14:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.14
+  bitvise-client-9.16:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.16
+  bitvise-client-9.17:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.17
+  bitvise-client-9.18:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.18
+  bitvise-client-9.19:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.19
+  bitvise-client-9.21:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.21
+  bitvise-client-9.22:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.22
+  bitvise-client-9.23:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.23
+  bitvise-client-9.24:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.24
+  bitvise-client-9.25:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.25
+  bitvise-client-9.26:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.26
+  bitvise-client-9.27:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.27
+  bitvise-client-9.28:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.28
 
   dropbear-server-0.23:
     extends:
@@ -730,823 +912,2061 @@ services:
       service: dropbear-server-0.47
     ports:
       - '24020:22'
+  dropbear-server-0.48:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-server-0.48
+    ports:
+      - '24021:22'
   dropbear-server-0.49:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-0.49
     ports:
-      - '24021:22'
+      - '24022:22'
   dropbear-server-0.50:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-0.50
     ports:
-      - '24022:22'
+      - '24023:22'
   dropbear-server-0.51:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-0.51
     ports:
-      - '24023:22'
+      - '24024:22'
   dropbear-server-0.52:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-0.52
     ports:
-      - '24024:22'
+      - '24025:22'
   dropbear-server-0.53.1:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-0.53.1
     ports:
-      - '24025:22'
+      - '24026:22'
   dropbear-server-0.53:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-0.53
     ports:
-      - '24026:22'
+      - '24027:22'
   dropbear-server-0.255:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-0.255
     ports:
-      - '24027:22'
+      - '24028:22'
   dropbear-server-2011.54:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2011.54
     ports:
-      - '24028:22'
+      - '24029:22'
   dropbear-server-2012.55:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2012.55
     ports:
-      - '24029:22'
+      - '24030:22'
   dropbear-server-2013.56:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2013.56
     ports:
-      - '24030:22'
+      - '24031:22'
   dropbear-server-2013.57:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2013.57
     ports:
-      - '24031:22'
+      - '24032:22'
   dropbear-server-2013.58:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2013.58
     ports:
-      - '24032:22'
+      - '24033:22'
   dropbear-server-2013.59:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2013.59
     ports:
-      - '24033:22'
+      - '24034:22'
   dropbear-server-2013.60:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2013.60
     ports:
-      - '24034:22'
+      - '24035:22'
   dropbear-server-2013.62:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2013.62
     ports:
-      - '24035:22'
+      - '24036:22'
   dropbear-server-2014.63:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2014.63
     ports:
-      - '24036:22'
+      - '24037:22'
   dropbear-server-2014.64:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2014.64
     ports:
-      - '24037:22'
+      - '24038:22'
   dropbear-server-2014.65:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2014.65
     ports:
-      - '24038:22'
+      - '24039:22'
   dropbear-server-2014.66:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2014.66
     ports:
-      - '24039:22'
+      - '24040:22'
   dropbear-server-2015.67:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2015.67
     ports:
-      - '24040:22'
+      - '24041:22'
   dropbear-server-2015.68:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2015.68
     ports:
-      - '24041:22'
+      - '24042:22'
   dropbear-server-2015.69:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2015.69
     ports:
-      - '24042:22'
+      - '24043:22'
   dropbear-server-2015.70:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2015.70
     ports:
-      - '24043:22'
+      - '24044:22'
   dropbear-server-2015.71:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2015.71
     ports:
-      - '24044:22'
+      - '24045:22'
   dropbear-server-2016.72:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2016.72
     ports:
-      - '24045:22'
+      - '24046:22'
   dropbear-server-2016.73:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2016.73
     ports:
-      - '24046:22'
+      - '24047:22'
   dropbear-server-2016.74:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2016.74
     ports:
-      - '24047:22'
+      - '24048:22'
   dropbear-server-2017.75:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2017.75
     ports:
-      - '24048:22'
+      - '24049:22'
   dropbear-server-2018.76:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2018.76
     ports:
-      - '24049:22'
+      - '24050:22'
   dropbear-server-2019.77:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2019.77
     ports:
-      - '24050:22'
+      - '24051:22'
   dropbear-server-2019.78:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2019.78
     ports:
-      - '24051:22'
+      - '24052:22'
   dropbear-server-2020.79:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2020.79
     ports:
-      - '24052:22'
+      - '24053:22'
   dropbear-server-2020.80:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2020.80
     ports:
-      - '24053:22'
+      - '24054:22'
   dropbear-server-2020.81:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2020.81
     ports:
-      - '24054:22'
+      - '24055:22'
   dropbear-server-2022.82:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2022.82
     ports:
-      - '24055:22'
+      - '24056:22'
   dropbear-server-2022.83:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-server-2022.83
     ports:
-      - '24056:22'
+      - '24057:22'
+  dropbear-client-0.23:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.23
+  dropbear-client-0.28:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.28
+  dropbear-client-0.29:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.29
+  dropbear-client-0.30:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.30
+  dropbear-client-0.31:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.31
+  dropbear-client-0.32:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.32
+  dropbear-client-0.33:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.33
+  dropbear-client-0.34:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.34
+  dropbear-client-0.35:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.35
+  dropbear-client-0.36:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.36
+  dropbear-client-0.37:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.37
+  dropbear-client-0.38:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.38
+  dropbear-client-0.39:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.39
+  dropbear-client-0.40:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.40
+  dropbear-client-0.41:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.41
+  dropbear-client-0.42:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.42
+  dropbear-client-0.43:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.43
+  dropbear-client-0.44:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.44
+  dropbear-client-0.45:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.45
+  dropbear-client-0.46:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.46
+  dropbear-client-0.47:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.47
+  dropbear-client-0.48:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.48
+  dropbear-client-0.49:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.49
+  dropbear-client-0.50:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.50
+  dropbear-client-0.51:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.51
+  dropbear-client-0.52:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.52
+  dropbear-client-0.53.1:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.53.1
+  dropbear-client-0.53:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.53
+  dropbear-client-0.255:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-0.255
+  dropbear-client-2011.54:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2011.54
+  dropbear-client-2012.55:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2012.55
+  dropbear-client-2013.56:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2013.56
+  dropbear-client-2013.57:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2013.57
+  dropbear-client-2013.58:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2013.58
+  dropbear-client-2013.59:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2013.59
+  dropbear-client-2013.60:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2013.60
+  dropbear-client-2013.62:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2013.62
+  dropbear-client-2014.63:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2014.63
+  dropbear-client-2014.64:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2014.64
+  dropbear-client-2014.65:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2014.65
+  dropbear-client-2014.66:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2014.66
+  dropbear-client-2015.67:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2015.67
+  dropbear-client-2015.68:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2015.68
+  dropbear-client-2015.69:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2015.69
+  dropbear-client-2015.70:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2015.70
+  dropbear-client-2015.71:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2015.71
+  dropbear-client-2016.72:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2016.72
+  dropbear-client-2016.73:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2016.73
+  dropbear-client-2016.74:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2016.74
+  dropbear-client-2017.75:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2017.75
+  dropbear-client-2018.76:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2018.76
+  dropbear-client-2019.77:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2019.77
+  dropbear-client-2019.78:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2019.78
+  dropbear-client-2020.79:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2020.79
+  dropbear-client-2020.80:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2020.80
+  dropbear-client-2020.81:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2020.81
+  dropbear-client-2022.82:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2022.82
+  dropbear-client-2022.83:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2022.83
 
-  erlang-ssh-server-3.2:
+  erlang-ssh-server-17.5:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-3.2
+      service: erlang-ssh-server-17.5
     ports:
       - '25000:22'
-  erlang-ssh-server-3.2.4:
+  erlang-ssh-server-17.5.6.9:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-3.2.4
+      service: erlang-ssh-server-17.5.6.9
     ports:
       - '25001:22'
-  erlang-ssh-server-4.1:
+  erlang-ssh-server-18.1:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.1
+      service: erlang-ssh-server-18.1
     ports:
       - '25002:22'
-  erlang-ssh-server-4.1.2:
+  erlang-ssh-server-18.1.4:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.1.2
+      service: erlang-ssh-server-18.1.4
     ports:
       - '25003:22'
-  erlang-ssh-server-4.2:
+  erlang-ssh-server-18.2.1:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.2
+      service: erlang-ssh-server-18.2.1
     ports:
       - '25004:22'
-  erlang-ssh-server-4.2.1:
+  erlang-ssh-server-18.2.3:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.2.1
+      service: erlang-ssh-server-18.2.3
     ports:
       - '25005:22'
-  erlang-ssh-server-4.2.2:
+  erlang-ssh-server-18.3.4:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.2.2
+      service: erlang-ssh-server-18.3.4
     ports:
       - '25006:22'
-  erlang-ssh-server-4.2.2.1:
+  erlang-ssh-server-18.3.4.1:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.2.2.1
+      service: erlang-ssh-server-18.3.4.1
     ports:
       - '25007:22'
-  erlang-ssh-server-4.2.2.2:
+  erlang-ssh-server-18.3.4.4:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.2.2.2
+      service: erlang-ssh-server-18.3.4.4
     ports:
       - '25008:22'
-  erlang-ssh-server-4.2.2.3:
+  erlang-ssh-server-18.3.4.5:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.2.2.3
+      service: erlang-ssh-server-18.3.4.5
     ports:
       - '25009:22'
-  erlang-ssh-server-4.2.2.4:
+  erlang-ssh-server-18.3.4.7:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.2.2.4
+      service: erlang-ssh-server-18.3.4.7
     ports:
       - '25010:22'
-  erlang-ssh-server-4.2.2.5:
+  erlang-ssh-server-18.3.4.8:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.2.2.5
+      service: erlang-ssh-server-18.3.4.8
     ports:
       - '25011:22'
-  erlang-ssh-server-4.2.2.6:
+  erlang-ssh-server-18.3.4.11:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.2.2.6
+      service: erlang-ssh-server-18.3.4.11
     ports:
       - '25012:22'
-  erlang-ssh-server-4.3:
+  erlang-ssh-server-19.0:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.3
+      service: erlang-ssh-server-19.0
     ports:
       - '25013:22'
-  erlang-ssh-server-4.3.1:
+  erlang-ssh-server-19.0.7:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.3.1
+      service: erlang-ssh-server-19.0.7
     ports:
       - '25014:22'
-  erlang-ssh-server-4.3.2:
+  erlang-ssh-server-19.1:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.3.2
+      service: erlang-ssh-server-19.1
     ports:
       - '25015:22'
-  erlang-ssh-server-4.3.6:
+  erlang-ssh-server-19.1.6:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.3.6
+      service: erlang-ssh-server-19.1.6
     ports:
       - '25016:22'
-  erlang-ssh-server-4.4:
+  erlang-ssh-server-19.2.3:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.4
+      service: erlang-ssh-server-19.2.3
     ports:
       - '25017:22'
-  erlang-ssh-server-4.4.1:
+  erlang-ssh-server-19.3:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.4.1
+      service: erlang-ssh-server-19.3
     ports:
       - '25018:22'
-  erlang-ssh-server-4.4.2:
+  erlang-ssh-server-19.3.6.4:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.4.2
+      service: erlang-ssh-server-19.3.6.4
     ports:
       - '25019:22'
-  erlang-ssh-server-4.4.2.1:
+  erlang-ssh-server-19.3.6.5:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.4.2.1
+      service: erlang-ssh-server-19.3.6.5
     ports:
       - '25020:22'
-  erlang-ssh-server-4.4.2.2:
+  erlang-ssh-server-19.3.6.7:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.4.2.2
+      service: erlang-ssh-server-19.3.6.7
     ports:
       - '25021:22'
-  erlang-ssh-server-4.4.2.3:
+  erlang-ssh-server-19.3.6.8:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.4.2.3
+      service: erlang-ssh-server-19.3.6.8
     ports:
       - '25022:22'
-  erlang-ssh-server-4.4.2.4:
+  erlang-ssh-server-19.3.6.13:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.4.2.4
+      service: erlang-ssh-server-19.3.6.13
     ports:
       - '25023:22'
-  erlang-ssh-server-4.5:
+  erlang-ssh-server-20.0.2:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.5
+      service: erlang-ssh-server-20.0.2
     ports:
       - '25024:22'
-  erlang-ssh-server-4.5.1:
+  erlang-ssh-server-20.0.5:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.5.1
+      service: erlang-ssh-server-20.0.5
     ports:
       - '25025:22'
-  erlang-ssh-server-4.6:
+  erlang-ssh-server-20.1:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.6
+      service: erlang-ssh-server-20.1
     ports:
       - '25026:22'
-  erlang-ssh-server-4.6.1:
+  erlang-ssh-server-20.1.5:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.6.1
+      service: erlang-ssh-server-20.1.5
     ports:
       - '25027:22'
-  erlang-ssh-server-4.6.2:
+  erlang-ssh-server-20.1.7:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.6.2
+      service: erlang-ssh-server-20.1.7
     ports:
       - '25028:22'
-  erlang-ssh-server-4.6.3:
+  erlang-ssh-server-20.2:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.6.3
+      service: erlang-ssh-server-20.2
     ports:
       - '25029:22'
-  erlang-ssh-server-4.6.4:
+  erlang-ssh-server-20.2.3:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.6.4
+      service: erlang-ssh-server-20.2.3
     ports:
       - '25030:22'
-  erlang-ssh-server-4.6.5:
+  erlang-ssh-server-20.2.4:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.6.5
+      service: erlang-ssh-server-20.2.4
     ports:
       - '25031:22'
-  erlang-ssh-server-4.6.6:
+  erlang-ssh-server-20.3.1:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.6.6
+      service: erlang-ssh-server-20.3.1
     ports:
       - '25032:22'
-  erlang-ssh-server-4.6.7:
+  erlang-ssh-server-20.3.3:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.6.7
+      service: erlang-ssh-server-20.3.3
     ports:
       - '25033:22'
-  erlang-ssh-server-4.6.8:
+  erlang-ssh-server-20.3.5:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.6.8
+      service: erlang-ssh-server-20.3.5
     ports:
       - '25034:22'
-  erlang-ssh-server-4.6.9:
+  erlang-ssh-server-20.3.8:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.6.9
+      service: erlang-ssh-server-20.3.8
     ports:
       - '25035:22'
-  erlang-ssh-server-4.6.9.1:
+  erlang-ssh-server-20.3.8.13:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.6.9.1
+      service: erlang-ssh-server-20.3.8.13
     ports:
       - '25036:22'
-  erlang-ssh-server-4.6.9.2:
+  erlang-ssh-server-20.3.8.15:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.6.9.2
+      service: erlang-ssh-server-20.3.8.15
     ports:
       - '25037:22'
-  erlang-ssh-server-4.6.9.3:
+  erlang-ssh-server-20.3.8.20:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.6.9.3
+      service: erlang-ssh-server-20.3.8.20
     ports:
       - '25038:22'
-  erlang-ssh-server-4.6.9.4:
+  erlang-ssh-server-20.3.8.23:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.6.9.4
+      service: erlang-ssh-server-20.3.8.23
     ports:
       - '25039:22'
-  erlang-ssh-server-4.6.9.5:
+  erlang-ssh-server-20.3.8.24:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.6.9.5
+      service: erlang-ssh-server-20.3.8.24
     ports:
       - '25040:22'
-  erlang-ssh-server-4.6.9.6:
+  erlang-ssh-server-20.3.8.25:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.6.9.6
+      service: erlang-ssh-server-20.3.8.25
     ports:
       - '25041:22'
-  erlang-ssh-server-4.6.9.7:
+  erlang-ssh-server-20.3.8.26:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.6.9.7
+      service: erlang-ssh-server-20.3.8.26
     ports:
       - '25042:22'
-  erlang-ssh-server-4.7:
+  erlang-ssh-server-21.0.9:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.7
+      service: erlang-ssh-server-21.0.9
     ports:
       - '25043:22'
-  erlang-ssh-server-4.7.1:
+  erlang-ssh-server-21.1.4:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.7.1
+      service: erlang-ssh-server-21.1.4
     ports:
       - '25044:22'
-  erlang-ssh-server-4.7.2:
+  erlang-ssh-server-21.2.1:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.7.2
+      service: erlang-ssh-server-21.2.1
     ports:
       - '25045:22'
-  erlang-ssh-server-4.7.3:
+  erlang-ssh-server-21.2.7:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.7.3
+      service: erlang-ssh-server-21.2.7
     ports:
       - '25046:22'
-  erlang-ssh-server-4.7.4:
+  erlang-ssh-server-21.3.3:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.7.4
+      service: erlang-ssh-server-21.3.3
     ports:
       - '25047:22'
-  erlang-ssh-server-4.7.5:
+  erlang-ssh-server-21.3.6:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.7.5
+      service: erlang-ssh-server-21.3.6
     ports:
       - '25048:22'
-  erlang-ssh-server-4.7.6:
+  erlang-ssh-server-21.3.8.6:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.7.6
+      service: erlang-ssh-server-21.3.8.6
     ports:
       - '25049:22'
-  erlang-ssh-server-4.7.6.1:
+  erlang-ssh-server-21.3.8.9:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.7.6.1
+      service: erlang-ssh-server-21.3.8.9
     ports:
       - '25050:22'
-  erlang-ssh-server-4.7.6.2:
+  erlang-ssh-server-21.3.8.11:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.7.6.2
+      service: erlang-ssh-server-21.3.8.11
     ports:
       - '25051:22'
-  erlang-ssh-server-4.7.6.3:
+  erlang-ssh-server-21.3.8.14:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.7.6.3
+      service: erlang-ssh-server-21.3.8.14
     ports:
       - '25052:22'
-  erlang-ssh-server-4.7.6.4:
+  erlang-ssh-server-21.3.8.17:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.7.6.4
+      service: erlang-ssh-server-21.3.8.17
     ports:
       - '25053:22'
-  erlang-ssh-server-4.7.6.5:
+  erlang-ssh-server-21.3.8.21:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.7.6.5
+      service: erlang-ssh-server-21.3.8.21
     ports:
       - '25054:22'
-  erlang-ssh-server-4.7.6.6:
+  erlang-ssh-server-21.3.8.24:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.7.6.6
+      service: erlang-ssh-server-21.3.8.24
     ports:
       - '25055:22'
-  erlang-ssh-server-4.7.7:
+  erlang-ssh-server-22.0.7:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.7.7
+      service: erlang-ssh-server-22.0.7
     ports:
       - '25056:22'
-  erlang-ssh-server-4.8:
+  erlang-ssh-server-22.1.8:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.8
+      service: erlang-ssh-server-22.1.8
     ports:
       - '25057:22'
-  erlang-ssh-server-4.8.1:
+  erlang-ssh-server-22.2.1:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.8.1
+      service: erlang-ssh-server-22.2.1
     ports:
       - '25058:22'
-  erlang-ssh-server-4.8.2:
+  erlang-ssh-server-22.2.8:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.8.2
+      service: erlang-ssh-server-22.2.8
     ports:
       - '25059:22'
-  erlang-ssh-server-4.9:
+  erlang-ssh-server-22.3.2:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.9
+      service: erlang-ssh-server-22.3.2
     ports:
       - '25060:22'
-  erlang-ssh-server-4.9.1:
+  erlang-ssh-server-22.3.4.8:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.9.1
+      service: erlang-ssh-server-22.3.4.8
     ports:
       - '25061:22'
-  erlang-ssh-server-4.9.1.1:
+  erlang-ssh-server-22.3.4.10:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.9.1.1
+      service: erlang-ssh-server-22.3.4.10
     ports:
       - '25062:22'
-  erlang-ssh-server-4.9.1.2:
+  erlang-ssh-server-22.3.4.16:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.9.1.2
+      service: erlang-ssh-server-22.3.4.16
     ports:
       - '25063:22'
-  erlang-ssh-server-4.9.1.3:
+  erlang-ssh-server-22.3.4.21:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.9.1.3
+      service: erlang-ssh-server-22.3.4.21
     ports:
       - '25064:22'
-  erlang-ssh-server-4.9.1.4:
+  erlang-ssh-server-22.3.4.26:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.9.1.4
+      service: erlang-ssh-server-22.3.4.26
     ports:
       - '25065:22'
-  erlang-ssh-server-4.10:
+  erlang-ssh-server-23.0.4:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.10
+      service: erlang-ssh-server-23.0.4
     ports:
       - '25066:22'
-  erlang-ssh-server-4.10.1:
+  erlang-ssh-server-23.1:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.10.1
+      service: erlang-ssh-server-23.1
     ports:
       - '25067:22'
-  erlang-ssh-server-4.10.2:
+  erlang-ssh-server-23.1.2:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.10.2
+      service: erlang-ssh-server-23.1.2
     ports:
       - '25068:22'
-  erlang-ssh-server-4.10.3:
+  erlang-ssh-server-23.1.3:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.10.3
+      service: erlang-ssh-server-23.1.3
     ports:
       - '25069:22'
-  erlang-ssh-server-4.10.4:
+  erlang-ssh-server-23.1.4:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.10.4
+      service: erlang-ssh-server-23.1.4
     ports:
       - '25070:22'
-  erlang-ssh-server-4.10.5:
+  erlang-ssh-server-23.1.5:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.10.5
+      service: erlang-ssh-server-23.1.5
     ports:
       - '25071:22'
-  erlang-ssh-server-4.10.6:
+  erlang-ssh-server-23.2.1:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.10.6
+      service: erlang-ssh-server-23.2.1
     ports:
       - '25072:22'
-  erlang-ssh-server-4.10.7:
+  erlang-ssh-server-23.2.5:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.10.7
+      service: erlang-ssh-server-23.2.5
     ports:
       - '25073:22'
-  erlang-ssh-server-4.10.8:
+  erlang-ssh-server-23.2.7:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.10.8
+      service: erlang-ssh-server-23.2.7
     ports:
       - '25074:22'
-  erlang-ssh-server-4.11:
+  erlang-ssh-server-23.3:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.11
+      service: erlang-ssh-server-23.3
     ports:
       - '25075:22'
-  erlang-ssh-server-4.11.1:
+  erlang-ssh-server-23.3.4:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.11.1
+      service: erlang-ssh-server-23.3.4
     ports:
       - '25076:22'
-  erlang-ssh-server-4.11.1.1:
+  erlang-ssh-server-23.3.4.1:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.11.1.1
+      service: erlang-ssh-server-23.3.4.1
     ports:
       - '25077:22'
-  erlang-ssh-server-4.11.1.2:
+  erlang-ssh-server-23.3.4.2:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.11.1.2
+      service: erlang-ssh-server-23.3.4.2
     ports:
       - '25078:22'
-  erlang-ssh-server-4.11.1.3:
+  erlang-ssh-server-23.3.4.7:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.11.1.3
+      service: erlang-ssh-server-23.3.4.7
     ports:
       - '25079:22'
-  erlang-ssh-server-4.11.1.4:
+  erlang-ssh-server-23.3.4.10:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.11.1.4
+      service: erlang-ssh-server-23.3.4.10
     ports:
       - '25080:22'
-  erlang-ssh-server-4.11.1.5:
+  erlang-ssh-server-23.3.4.14:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.11.1.5
+      service: erlang-ssh-server-23.3.4.14
     ports:
       - '25081:22'
-  erlang-ssh-server-4.11.1.6:
+  erlang-ssh-server-23.3.4.18:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.11.1.6
+      service: erlang-ssh-server-23.3.4.18
     ports:
       - '25082:22'
-  erlang-ssh-server-4.12:
+  erlang-ssh-server-24.0:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.12
+      service: erlang-ssh-server-24.0
     ports:
       - '25083:22'
-  erlang-ssh-server-4.12.1:
+  erlang-ssh-server-24.0.1:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.12.1
+      service: erlang-ssh-server-24.0.1
     ports:
       - '25084:22'
-  erlang-ssh-server-4.12.2:
+  erlang-ssh-server-24.0.2:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.12.2
+      service: erlang-ssh-server-24.0.2
     ports:
       - '25085:22'
-  erlang-ssh-server-4.12.3:
+  erlang-ssh-server-24.0.6:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.12.3
+      service: erlang-ssh-server-24.0.6
     ports:
       - '25086:22'
-  erlang-ssh-server-4.12.4:
+  erlang-ssh-server-24.1.6:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.12.4
+      service: erlang-ssh-server-24.1.6
     ports:
       - '25087:22'
-  erlang-ssh-server-4.12.5:
+  erlang-ssh-server-24.1.7:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.12.5
+      service: erlang-ssh-server-24.1.7
     ports:
       - '25088:22'
-  erlang-ssh-server-4.13:
+  erlang-ssh-server-24.2.1:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.13
+      service: erlang-ssh-server-24.2.1
     ports:
       - '25089:22'
-  erlang-ssh-server-4.13.1:
+  erlang-ssh-server-24.2.2:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.13.1
+      service: erlang-ssh-server-24.2.2
     ports:
       - '25090:22'
-  erlang-ssh-server-4.13.2:
+  erlang-ssh-server-24.3.4:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.13.2
+      service: erlang-ssh-server-24.3.4
     ports:
       - '25091:22'
-  erlang-ssh-server-4.13.2.1:
+  erlang-ssh-server-24.3.4.6:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.13.2.1
+      service: erlang-ssh-server-24.3.4.6
     ports:
       - '25092:22'
-  erlang-ssh-server-4.13.2.2:
+  erlang-ssh-server-24.3.4.9:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.13.2.2
+      service: erlang-ssh-server-24.3.4.9
     ports:
       - '25093:22'
-  erlang-ssh-server-4.14:
+  erlang-ssh-server-25.0:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.14
+      service: erlang-ssh-server-25.0
     ports:
       - '25094:22'
-  erlang-ssh-server-4.14.1:
+  erlang-ssh-server-25.0.4:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.14.1
+      service: erlang-ssh-server-25.0.4
     ports:
       - '25095:22'
-  erlang-ssh-server-4.15:
+  erlang-ssh-server-25.1.2:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.15
+      service: erlang-ssh-server-25.1.2
     ports:
       - '25096:22'
-  erlang-ssh-server-4.15.1:
+  erlang-ssh-server-25.2.2:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.15.1
+      service: erlang-ssh-server-25.2.2
     ports:
       - '25097:22'
-  erlang-ssh-server-4.15.2:
+  erlang-ssh-server-25.2.3:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.15.2
+      service: erlang-ssh-server-25.2.3
     ports:
       - '25098:22'
-  erlang-ssh-server-4.15.3:
+  erlang-ssh-server-25.3.0:
     extends:
       file: images/erlang-ssh/compose.yml
-      service: erlang-ssh-server-4.15.3
+      service: erlang-ssh-server-25.3.0
     ports:
       - '25099:22'
+  erlang-ssh-client-17.5:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-17.5
+  erlang-ssh-client-17.5.6.9:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-17.5.6.9
+  erlang-ssh-client-18.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-18.1
+  erlang-ssh-client-18.1.4:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-18.1.4
+  erlang-ssh-client-18.2.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-18.2.1
+  erlang-ssh-client-18.2.3:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-18.2.3
+  erlang-ssh-client-18.3.4:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-18.3.4
+  erlang-ssh-client-18.3.4.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-18.3.4.1
+  erlang-ssh-client-18.3.4.4:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-18.3.4.4
+  erlang-ssh-client-18.3.4.5:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-18.3.4.5
+  erlang-ssh-client-18.3.4.7:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-18.3.4.7
+  erlang-ssh-client-18.3.4.8:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-18.3.4.8
+  erlang-ssh-client-18.3.4.11:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-18.3.4.11
+  erlang-ssh-client-19.0:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-19.0
+  erlang-ssh-client-19.0.7:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-19.0.7
+  erlang-ssh-client-19.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-19.1
+  erlang-ssh-client-19.1.6:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-19.1.6
+  erlang-ssh-client-19.2.3:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-19.2.3
+  erlang-ssh-client-19.3:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-19.3
+  erlang-ssh-client-19.3.6.4:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-19.3.6.4
+  erlang-ssh-client-19.3.6.5:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-19.3.6.5
+  erlang-ssh-client-19.3.6.7:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-19.3.6.7
+  erlang-ssh-client-19.3.6.8:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-19.3.6.8
+  erlang-ssh-client-19.3.6.13:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-19.3.6.13
+  erlang-ssh-client-20.0.2:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-20.0.2
+  erlang-ssh-client-20.0.5:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-20.0.5
+  erlang-ssh-client-20.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-20.1
+  erlang-ssh-client-20.1.5:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-20.1.5
+  erlang-ssh-client-20.1.7:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-20.1.7
+  erlang-ssh-client-20.2:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-20.2
+  erlang-ssh-client-20.2.3:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-20.2.3
+  erlang-ssh-client-20.2.4:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-20.2.4
+  erlang-ssh-client-20.3.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-20.3.1
+  erlang-ssh-client-20.3.3:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-20.3.3
+  erlang-ssh-client-20.3.5:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-20.3.5
+  erlang-ssh-client-20.3.8:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-20.3.8
+  erlang-ssh-client-20.3.8.13:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-20.3.8.13
+  erlang-ssh-client-20.3.8.15:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-20.3.8.15
+  erlang-ssh-client-20.3.8.20:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-20.3.8.20
+  erlang-ssh-client-20.3.8.23:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-20.3.8.23
+  erlang-ssh-client-20.3.8.24:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-20.3.8.24
+  erlang-ssh-client-20.3.8.25:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-20.3.8.25
+  erlang-ssh-client-20.3.8.26:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-20.3.8.26
+  erlang-ssh-client-21.0.9:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-21.0.9
+  erlang-ssh-client-21.1.4:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-21.1.4
+  erlang-ssh-client-21.2.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-21.2.1
+  erlang-ssh-client-21.2.7:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-21.2.7
+  erlang-ssh-client-21.3.3:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-21.3.3
+  erlang-ssh-client-21.3.6:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-21.3.6
+  erlang-ssh-client-21.3.8.6:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-21.3.8.6
+  erlang-ssh-client-21.3.8.9:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-21.3.8.9
+  erlang-ssh-client-21.3.8.11:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-21.3.8.11
+  erlang-ssh-client-21.3.8.14:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-21.3.8.14
+  erlang-ssh-client-21.3.8.17:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-21.3.8.17
+  erlang-ssh-client-21.3.8.21:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-21.3.8.21
+  erlang-ssh-client-21.3.8.24:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-21.3.8.24
+  erlang-ssh-client-22.0.7:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-22.0.7
+  erlang-ssh-client-22.1.8:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-22.1.8
+  erlang-ssh-client-22.2.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-22.2.1
+  erlang-ssh-client-22.2.8:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-22.2.8
+  erlang-ssh-client-22.3.2:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-22.3.2
+  erlang-ssh-client-22.3.4.8:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-22.3.4.8
+  erlang-ssh-client-22.3.4.10:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-22.3.4.10
+  erlang-ssh-client-22.3.4.16:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-22.3.4.16
+  erlang-ssh-client-22.3.4.21:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-22.3.4.21
+  erlang-ssh-client-22.3.4.26:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-22.3.4.26
+  erlang-ssh-client-23.0.4:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-23.0.4
+  erlang-ssh-client-23.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-23.1
+  erlang-ssh-client-23.1.2:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-23.1.2
+  erlang-ssh-client-23.1.3:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-23.1.3
+  erlang-ssh-client-23.1.4:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-23.1.4
+  erlang-ssh-client-23.1.5:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-23.1.5
+  erlang-ssh-client-23.2.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-23.2.1
+  erlang-ssh-client-23.2.5:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-23.2.5
+  erlang-ssh-client-23.2.7:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-23.2.7
+  erlang-ssh-client-23.3:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-23.3
+  erlang-ssh-client-23.3.4:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-23.3.4
+  erlang-ssh-client-23.3.4.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-23.3.4.1
+  erlang-ssh-client-23.3.4.2:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-23.3.4.2
+  erlang-ssh-client-23.3.4.7:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-23.3.4.7
+  erlang-ssh-client-23.3.4.10:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-23.3.4.10
+  erlang-ssh-client-23.3.4.14:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-23.3.4.14
+  erlang-ssh-client-23.3.4.18:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-23.3.4.18
+  erlang-ssh-client-24.0:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-24.0
+  erlang-ssh-client-24.0.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-24.0.1
+  erlang-ssh-client-24.0.2:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-24.0.2
+  erlang-ssh-client-24.0.6:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-24.0.6
+  erlang-ssh-client-24.1.6:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-24.1.6
+  erlang-ssh-client-24.1.7:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-24.1.7
+  erlang-ssh-client-24.2.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-24.2.1
+  erlang-ssh-client-24.2.2:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-24.2.2
+  erlang-ssh-client-24.3.4:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-24.3.4
+  erlang-ssh-client-24.3.4.6:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-24.3.4.6
+  erlang-ssh-client-24.3.4.9:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-24.3.4.9
+  erlang-ssh-client-25.0:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-25.0
+  erlang-ssh-client-25.0.4:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-25.0.4
+  erlang-ssh-client-25.1.2:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-25.1.2
+  erlang-ssh-client-25.2.2:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-25.2.2
+  erlang-ssh-client-25.2.3:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-25.2.3
+  erlang-ssh-client-25.3.0:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-25.3.0
+  erlang-ssh-client-automated-17.5:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-17.5
+    ports:
+      - '25200:22'
+  erlang-ssh-client-automated-17.5.6.9:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-17.5.6.9
+    ports:
+      - '25201:22'
+  erlang-ssh-client-automated-18.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-18.1
+    ports:
+      - '25202:22'
+  erlang-ssh-client-automated-18.1.4:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-18.1.4
+    ports:
+      - '25203:22'
+  erlang-ssh-client-automated-18.2.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-18.2.1
+    ports:
+      - '25204:22'
+  erlang-ssh-client-automated-18.2.3:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-18.2.3
+    ports:
+      - '25205:22'
+  erlang-ssh-client-automated-18.3.4:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-18.3.4
+    ports:
+      - '25206:22'
+  erlang-ssh-client-automated-18.3.4.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-18.3.4.1
+    ports:
+      - '25207:22'
+  erlang-ssh-client-automated-18.3.4.4:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-18.3.4.4
+    ports:
+      - '25208:22'
+  erlang-ssh-client-automated-18.3.4.5:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-18.3.4.5
+    ports:
+      - '25209:22'
+  erlang-ssh-client-automated-18.3.4.7:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-18.3.4.7
+    ports:
+      - '25210:22'
+  erlang-ssh-client-automated-18.3.4.8:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-18.3.4.8
+    ports:
+      - '25211:22'
+  erlang-ssh-client-automated-18.3.4.11:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-18.3.4.11
+    ports:
+      - '25212:22'
+  erlang-ssh-client-automated-19.0:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-19.0
+    ports:
+      - '25213:22'
+  erlang-ssh-client-automated-19.0.7:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-19.0.7
+    ports:
+      - '25214:22'
+  erlang-ssh-client-automated-19.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-19.1
+    ports:
+      - '25215:22'
+  erlang-ssh-client-automated-19.1.6:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-19.1.6
+    ports:
+      - '25216:22'
+  erlang-ssh-client-automated-19.2.3:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-19.2.3
+    ports:
+      - '25217:22'
+  erlang-ssh-client-automated-19.3:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-19.3
+    ports:
+      - '25218:22'
+  erlang-ssh-client-automated-19.3.6.4:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-19.3.6.4
+    ports:
+      - '25219:22'
+  erlang-ssh-client-automated-19.3.6.5:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-19.3.6.5
+    ports:
+      - '25220:22'
+  erlang-ssh-client-automated-19.3.6.7:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-19.3.6.7
+    ports:
+      - '25221:22'
+  erlang-ssh-client-automated-19.3.6.8:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-19.3.6.8
+    ports:
+      - '25222:22'
+  erlang-ssh-client-automated-19.3.6.13:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-19.3.6.13
+    ports:
+      - '25223:22'
+  erlang-ssh-client-automated-20.0.2:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-20.0.2
+    ports:
+      - '25224:22'
+  erlang-ssh-client-automated-20.0.5:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-20.0.5
+    ports:
+      - '25225:22'
+  erlang-ssh-client-automated-20.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-20.1
+    ports:
+      - '25226:22'
+  erlang-ssh-client-automated-20.1.5:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-20.1.5
+    ports:
+      - '25227:22'
+  erlang-ssh-client-automated-20.1.7:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-20.1.7
+    ports:
+      - '25228:22'
+  erlang-ssh-client-automated-20.2:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-20.2
+    ports:
+      - '25229:22'
+  erlang-ssh-client-automated-20.2.3:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-20.2.3
+    ports:
+      - '25230:22'
+  erlang-ssh-client-automated-20.2.4:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-20.2.4
+    ports:
+      - '25231:22'
+  erlang-ssh-client-automated-20.3.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-20.3.1
+    ports:
+      - '25232:22'
+  erlang-ssh-client-automated-20.3.3:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-20.3.3
+    ports:
+      - '25233:22'
+  erlang-ssh-client-automated-20.3.5:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-20.3.5
+    ports:
+      - '25234:22'
+  erlang-ssh-client-automated-20.3.8:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-20.3.8
+    ports:
+      - '25235:22'
+  erlang-ssh-client-automated-20.3.8.13:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-20.3.8.13
+    ports:
+      - '25236:22'
+  erlang-ssh-client-automated-20.3.8.15:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-20.3.8.15
+    ports:
+      - '25237:22'
+  erlang-ssh-client-automated-20.3.8.20:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-20.3.8.20
+    ports:
+      - '25238:22'
+  erlang-ssh-client-automated-20.3.8.23:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-20.3.8.23
+    ports:
+      - '25239:22'
+  erlang-ssh-client-automated-20.3.8.24:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-20.3.8.24
+    ports:
+      - '25240:22'
+  erlang-ssh-client-automated-20.3.8.25:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-20.3.8.25
+    ports:
+      - '25241:22'
+  erlang-ssh-client-automated-20.3.8.26:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-20.3.8.26
+    ports:
+      - '25242:22'
+  erlang-ssh-client-automated-21.0.9:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-21.0.9
+    ports:
+      - '25243:22'
+  erlang-ssh-client-automated-21.1.4:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-21.1.4
+    ports:
+      - '25244:22'
+  erlang-ssh-client-automated-21.2.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-21.2.1
+    ports:
+      - '25245:22'
+  erlang-ssh-client-automated-21.2.7:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-21.2.7
+    ports:
+      - '25246:22'
+  erlang-ssh-client-automated-21.3.3:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-21.3.3
+    ports:
+      - '25247:22'
+  erlang-ssh-client-automated-21.3.6:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-21.3.6
+    ports:
+      - '25248:22'
+  erlang-ssh-client-automated-21.3.8.6:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-21.3.8.6
+    ports:
+      - '25249:22'
+  erlang-ssh-client-automated-21.3.8.9:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-21.3.8.9
+    ports:
+      - '25250:22'
+  erlang-ssh-client-automated-21.3.8.11:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-21.3.8.11
+    ports:
+      - '25251:22'
+  erlang-ssh-client-automated-21.3.8.14:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-21.3.8.14
+    ports:
+      - '25252:22'
+  erlang-ssh-client-automated-21.3.8.17:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-21.3.8.17
+    ports:
+      - '25253:22'
+  erlang-ssh-client-automated-21.3.8.21:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-21.3.8.21
+    ports:
+      - '25254:22'
+  erlang-ssh-client-automated-21.3.8.24:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-21.3.8.24
+    ports:
+      - '25255:22'
+  erlang-ssh-client-automated-22.0.7:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-22.0.7
+    ports:
+      - '25256:22'
+  erlang-ssh-client-automated-22.1.8:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-22.1.8
+    ports:
+      - '25257:22'
+  erlang-ssh-client-automated-22.2.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-22.2.1
+    ports:
+      - '25258:22'
+  erlang-ssh-client-automated-22.2.8:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-22.2.8
+    ports:
+      - '25259:22'
+  erlang-ssh-client-automated-22.3.2:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-22.3.2
+    ports:
+      - '25260:22'
+  erlang-ssh-client-automated-22.3.4.8:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-22.3.4.8
+    ports:
+      - '25261:22'
+  erlang-ssh-client-automated-22.3.4.10:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-22.3.4.10
+    ports:
+      - '25262:22'
+  erlang-ssh-client-automated-22.3.4.16:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-22.3.4.16
+    ports:
+      - '25263:22'
+  erlang-ssh-client-automated-22.3.4.21:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-22.3.4.21
+    ports:
+      - '25264:22'
+  erlang-ssh-client-automated-22.3.4.26:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-22.3.4.26
+    ports:
+      - '25265:22'
+  erlang-ssh-client-automated-23.0.4:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-23.0.4
+    ports:
+      - '25266:22'
+  erlang-ssh-client-automated-23.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-23.1
+    ports:
+      - '25267:22'
+  erlang-ssh-client-automated-23.1.2:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-23.1.2
+    ports:
+      - '25268:22'
+  erlang-ssh-client-automated-23.1.3:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-23.1.3
+    ports:
+      - '25269:22'
+  erlang-ssh-client-automated-23.1.4:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-23.1.4
+    ports:
+      - '25270:22'
+  erlang-ssh-client-automated-23.1.5:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-23.1.5
+    ports:
+      - '25271:22'
+  erlang-ssh-client-automated-23.2.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-23.2.1
+    ports:
+      - '25272:22'
+  erlang-ssh-client-automated-23.2.5:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-23.2.5
+    ports:
+      - '25273:22'
+  erlang-ssh-client-automated-23.2.7:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-23.2.7
+    ports:
+      - '25274:22'
+  erlang-ssh-client-automated-23.3:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-23.3
+    ports:
+      - '25275:22'
+  erlang-ssh-client-automated-23.3.4:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-23.3.4
+    ports:
+      - '25276:22'
+  erlang-ssh-client-automated-23.3.4.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-23.3.4.1
+    ports:
+      - '25277:22'
+  erlang-ssh-client-automated-23.3.4.2:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-23.3.4.2
+    ports:
+      - '25278:22'
+  erlang-ssh-client-automated-23.3.4.7:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-23.3.4.7
+    ports:
+      - '25279:22'
+  erlang-ssh-client-automated-23.3.4.10:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-23.3.4.10
+    ports:
+      - '25280:22'
+  erlang-ssh-client-automated-23.3.4.14:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-23.3.4.14
+    ports:
+      - '25281:22'
+  erlang-ssh-client-automated-23.3.4.18:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-23.3.4.18
+    ports:
+      - '25282:22'
+  erlang-ssh-client-automated-24.0:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-24.0
+    ports:
+      - '25283:22'
+  erlang-ssh-client-automated-24.0.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-24.0.1
+    ports:
+      - '25284:22'
+  erlang-ssh-client-automated-24.0.2:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-24.0.2
+    ports:
+      - '25285:22'
+  erlang-ssh-client-automated-24.0.6:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-24.0.6
+    ports:
+      - '25286:22'
+  erlang-ssh-client-automated-24.1.6:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-24.1.6
+    ports:
+      - '25287:22'
+  erlang-ssh-client-automated-24.1.7:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-24.1.7
+    ports:
+      - '25288:22'
+  erlang-ssh-client-automated-24.2.1:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-24.2.1
+    ports:
+      - '25289:22'
+  erlang-ssh-client-automated-24.2.2:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-24.2.2
+    ports:
+      - '25290:22'
+  erlang-ssh-client-automated-24.3.4:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-24.3.4
+    ports:
+      - '25291:22'
+  erlang-ssh-client-automated-24.3.4.6:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-24.3.4.6
+    ports:
+      - '25292:22'
+  erlang-ssh-client-automated-24.3.4.9:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-24.3.4.9
+    ports:
+      - '25293:22'
+  erlang-ssh-client-automated-25.0:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-25.0
+    ports:
+      - '25294:22'
+  erlang-ssh-client-automated-25.0.4:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-25.0.4
+    ports:
+      - '25295:22'
+  erlang-ssh-client-automated-25.1.2:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-25.1.2
+    ports:
+      - '25296:22'
+  erlang-ssh-client-automated-25.2.2:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-25.2.2
+    ports:
+      - '25297:22'
+  erlang-ssh-client-automated-25.2.3:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-25.2.3
+    ports:
+      - '25298:22'
+  erlang-ssh-client-automated-25.3.0:
+    extends:
+      file: images/erlang-ssh/compose.yml
+      service: erlang-ssh-client-automated-25.3.0
+    ports:
+      - '25299:22'
 
   libssh-server-0.7.0:
     extends:
@@ -1723,6 +3143,50 @@ services:
       service: libssh-server-0.10.4
     ports:
       - '27010:22'
+  libssh-client-0.9.0:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-0.9.0
+  libssh-client-0.9.1:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-0.9.1
+  libssh-client-0.9.2:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-0.9.2
+  libssh-client-0.9.3:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-0.9.3
+  libssh-client-0.9.4:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-0.9.4
+  libssh-client-0.9.5:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-0.9.5
+  libssh-client-0.9.6:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-0.9.6
+  libssh-client-0.10.0:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-0.10.0
+  libssh-client-0.10.2:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-0.10.2
+  libssh-client-0.10.3:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-0.10.3
+  libssh-client-0.10.4:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-0.10.4
 
   libssh-mbedtls-server-0.10.0:
     extends:
@@ -1761,96 +3225,96 @@ services:
       service: openssh-server-7.0p1
     ports:
       - '29000:22'
-  openssh-client-7.0p1:
-    extends:
-      file: images/openssh-7.x/compose.yml
-      service: openssh-client-7.0p1
   openssh-server-7.1p1:
     extends:
       file: images/openssh-7.x/compose.yml
       service: openssh-server-7.1p1
     ports:
-      - '29002:22'
-  openssh-client-7.1p1:
-    extends:
-      file: images/openssh-7.x/compose.yml
-      service: openssh-client-7.1p1
+      - '29001:22'
   openssh-server-7.2p2:
     extends:
       file: images/openssh-7.x/compose.yml
       service: openssh-server-7.2p2
     ports:
-      - '29004:22'
-  openssh-client-7.2p2:
-    extends:
-      file: images/openssh-7.x/compose.yml
-      service: openssh-client-7.2p2
+      - '29002:22'
   openssh-server-7.3p1:
     extends:
       file: images/openssh-7.x/compose.yml
       service: openssh-server-7.3p1
     ports:
-      - '29006:22'
-  openssh-client-7.3p1:
-    extends:
-      file: images/openssh-7.x/compose.yml
-      service: openssh-client-7.3p1
+      - '29003:22'
   openssh-server-7.4p1:
     extends:
       file: images/openssh-7.x/compose.yml
       service: openssh-server-7.4p1
     ports:
-      - '29008:22'
-  openssh-client-7.4p1:
-    extends:
-      file: images/openssh-7.x/compose.yml
-      service: openssh-client-7.4p1
+      - '29004:22'
   openssh-server-7.5p1:
     extends:
       file: images/openssh-7.x/compose.yml
       service: openssh-server-7.5p1
     ports:
-      - '29010:22'
-  openssh-client-7.5p1:
-    extends:
-      file: images/openssh-7.x/compose.yml
-      service: openssh-client-7.5p1
+      - '29005:22'
   openssh-server-7.6p1:
     extends:
       file: images/openssh-7.x/compose.yml
       service: openssh-server-7.6p1
     ports:
-      - '29012:22'
-  openssh-client-7.6p1:
-    extends:
-      file: images/openssh-7.x/compose.yml
-      service: openssh-client-7.6p1
+      - '29006:22'
   openssh-server-7.7p1:
     extends:
       file: images/openssh-7.x/compose.yml
       service: openssh-server-7.7p1
     ports:
-      - '29014:22'
-  openssh-client-7.7p1:
-    extends:
-      file: images/openssh-7.x/compose.yml
-      service: openssh-client-7.7p1
+      - '29007:22'
   openssh-server-7.8p1:
     extends:
       file: images/openssh-7.x/compose.yml
       service: openssh-server-7.8p1
     ports:
-      - '29016:22'
-  openssh-client-7.8p1:
-    extends:
-      file: images/openssh-7.x/compose.yml
-      service: openssh-client-7.8p1
+      - '29008:22'
   openssh-server-7.9p1:
     extends:
       file: images/openssh-7.x/compose.yml
       service: openssh-server-7.9p1
     ports:
-      - '29018:22'
+      - '29009:22'
+  openssh-client-7.0p1:
+    extends:
+      file: images/openssh-7.x/compose.yml
+      service: openssh-client-7.0p1
+  openssh-client-7.1p1:
+    extends:
+      file: images/openssh-7.x/compose.yml
+      service: openssh-client-7.1p1
+  openssh-client-7.2p2:
+    extends:
+      file: images/openssh-7.x/compose.yml
+      service: openssh-client-7.2p2
+  openssh-client-7.3p1:
+    extends:
+      file: images/openssh-7.x/compose.yml
+      service: openssh-client-7.3p1
+  openssh-client-7.4p1:
+    extends:
+      file: images/openssh-7.x/compose.yml
+      service: openssh-client-7.4p1
+  openssh-client-7.5p1:
+    extends:
+      file: images/openssh-7.x/compose.yml
+      service: openssh-client-7.5p1
+  openssh-client-7.6p1:
+    extends:
+      file: images/openssh-7.x/compose.yml
+      service: openssh-client-7.6p1
+  openssh-client-7.7p1:
+    extends:
+      file: images/openssh-7.x/compose.yml
+      service: openssh-client-7.7p1
+  openssh-client-7.8p1:
+    extends:
+      file: images/openssh-7.x/compose.yml
+      service: openssh-client-7.8p1
   openssh-client-7.9p1:
     extends:
       file: images/openssh-7.x/compose.yml
@@ -1862,407 +3326,689 @@ services:
       service: openssh-server-8.0p1
     ports:
       - '30000:22'
-  openssh-client-8.0p1:
-    extends:
-      file: images/openssh/compose.yml
-      service: openssh-client-8.0p1
   openssh-server-8.1p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-server-8.1p1
     ports:
-      - '30002:22'
-  openssh-client-8.1p1:
-    extends:
-      file: images/openssh/compose.yml
-      service: openssh-client-8.1p1
+      - '30001:22'
   openssh-server-8.2p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-server-8.2p1
     ports:
-      - '30004:22'
-  openssh-client-8.2p1:
-    extends:
-      file: images/openssh/compose.yml
-      service: openssh-client-8.2p1
+      - '30002:22'
   openssh-server-8.3p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-server-8.3p1
     ports:
-      - '30006:22'
-  openssh-client-8.3p1:
-    extends:
-      file: images/openssh/compose.yml
-      service: openssh-client-8.3p1
+      - '30003:22'
   openssh-server-8.4p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-server-8.4p1
     ports:
-      - '30008:22'
-  openssh-client-8.4p1:
-    extends:
-      file: images/openssh/compose.yml
-      service: openssh-client-8.4p1
+      - '30004:22'
   openssh-server-8.5p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-server-8.5p1
     ports:
-      - '30010:22'
-  openssh-client-8.5p1:
-    extends:
-      file: images/openssh/compose.yml
-      service: openssh-client-8.5p1
+      - '30005:22'
   openssh-server-8.6p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-server-8.6p1
     ports:
-      - '30012:22'
-  openssh-client-8.6p1:
-    extends:
-      file: images/openssh/compose.yml
-      service: openssh-client-8.6p1
+      - '30006:22'
   openssh-server-8.7p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-server-8.7p1
     ports:
-      - '30014:22'
-  openssh-client-8.7p1:
-    extends:
-      file: images/openssh/compose.yml
-      service: openssh-client-8.7p1
+      - '30007:22'
   openssh-server-8.8p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-server-8.8p1
     ports:
-      - '30016:22'
-  openssh-client-8.8p1:
-    extends:
-      file: images/openssh/compose.yml
-      service: openssh-client-8.8p1
+      - '30008:22'
   openssh-server-8.9p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-server-8.9p1
     ports:
-      - '30018:22'
-  openssh-client-8.9p1:
-    extends:
-      file: images/openssh/compose.yml
-      service: openssh-client-8.9p1
+      - '30009:22'
   openssh-server-9.0p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-server-9.0p1
     ports:
-      - '30020:22'
-  openssh-client-9.0p1:
-    extends:
-      file: images/openssh/compose.yml
-      service: openssh-client-9.0p1
+      - '30010:22'
   openssh-server-9.1p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-server-9.1p1
     ports:
-      - '30022:22'
-  openssh-client-9.1p1:
-    extends:
-      file: images/openssh/compose.yml
-      service: openssh-client-9.1p1
+      - '30011:22'
   openssh-server-9.2p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-server-9.2p1
     ports:
-      - '30024:22'
+      - '30012:22'
+  openssh-server-9.3p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-server-9.3p1
+    ports:
+      - '30013:22'
+  openssh-client-8.0p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-8.0p1
+  openssh-client-8.1p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-8.1p1
+  openssh-client-8.2p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-8.2p1
+  openssh-client-8.3p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-8.3p1
+  openssh-client-8.4p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-8.4p1
+  openssh-client-8.5p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-8.5p1
+  openssh-client-8.6p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-8.6p1
+  openssh-client-8.7p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-8.7p1
+  openssh-client-8.8p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-8.8p1
+  openssh-client-8.9p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-8.9p1
+  openssh-client-9.0p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-9.0p1
+  openssh-client-9.1p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-9.1p1
   openssh-client-9.2p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-9.2p1
+  openssh-client-9.3p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-9.3p1
+  openssh-client-automated-8.0p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-automated-8.0p1
+    ports:
+      - '30028:22'
+  openssh-client-automated-8.1p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-automated-8.1p1
+    ports:
+      - '30029:22'
+  openssh-client-automated-8.2p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-automated-8.2p1
+    ports:
+      - '30030:22'
+  openssh-client-automated-8.3p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-automated-8.3p1
+    ports:
+      - '30031:22'
+  openssh-client-automated-8.4p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-automated-8.4p1
+    ports:
+      - '30032:22'
+  openssh-client-automated-8.5p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-automated-8.5p1
+    ports:
+      - '30033:22'
+  openssh-client-automated-8.6p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-automated-8.6p1
+    ports:
+      - '30034:22'
+  openssh-client-automated-8.7p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-automated-8.7p1
+    ports:
+      - '30035:22'
+  openssh-client-automated-8.8p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-automated-8.8p1
+    ports:
+      - '30036:22'
+  openssh-client-automated-8.9p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-automated-8.9p1
+    ports:
+      - '30037:22'
+  openssh-client-automated-9.0p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-automated-9.0p1
+    ports:
+      - '30038:22'
+  openssh-client-automated-9.1p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-automated-9.1p1
+    ports:
+      - '30039:22'
+  openssh-client-automated-9.2p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-automated-9.2p1
+    ports:
+      - '30040:22'
+  openssh-client-automated-9.3p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-automated-9.3p1
+    ports:
+      - '30041:22'
+
+  paramiko-client-2.5.0:
+    extends:
+      file: images/paramiko/compose.yml
+      service: paramiko-client-2.5.0
+  paramiko-client-2.5.1:
+    extends:
+      file: images/paramiko/compose.yml
+      service: paramiko-client-2.5.1
+  paramiko-client-2.6.0:
+    extends:
+      file: images/paramiko/compose.yml
+      service: paramiko-client-2.6.0
+  paramiko-client-2.7.0:
+    extends:
+      file: images/paramiko/compose.yml
+      service: paramiko-client-2.7.0
+  paramiko-client-2.7.1:
+    extends:
+      file: images/paramiko/compose.yml
+      service: paramiko-client-2.7.1
+  paramiko-client-2.7.2:
+    extends:
+      file: images/paramiko/compose.yml
+      service: paramiko-client-2.7.2
+  paramiko-client-2.8.0:
+    extends:
+      file: images/paramiko/compose.yml
+      service: paramiko-client-2.8.0
+  paramiko-client-2.8.1:
+    extends:
+      file: images/paramiko/compose.yml
+      service: paramiko-client-2.8.1
+  paramiko-client-2.9.0:
+    extends:
+      file: images/paramiko/compose.yml
+      service: paramiko-client-2.9.0
+  paramiko-client-2.9.1:
+    extends:
+      file: images/paramiko/compose.yml
+      service: paramiko-client-2.9.1
+  paramiko-client-2.9.2:
+    extends:
+      file: images/paramiko/compose.yml
+      service: paramiko-client-2.9.2
+  paramiko-client-2.9.3:
+    extends:
+      file: images/paramiko/compose.yml
+      service: paramiko-client-2.9.3
+  paramiko-client-2.9.4:
+    extends:
+      file: images/paramiko/compose.yml
+      service: paramiko-client-2.9.4
+  paramiko-client-2.9.5:
+    extends:
+      file: images/paramiko/compose.yml
+      service: paramiko-client-2.9.5
+  paramiko-client-2.10.0:
+    extends:
+      file: images/paramiko/compose.yml
+      service: paramiko-client-2.10.0
+  paramiko-client-2.10.1:
+    extends:
+      file: images/paramiko/compose.yml
+      service: paramiko-client-2.10.1
+  paramiko-client-2.10.2:
+    extends:
+      file: images/paramiko/compose.yml
+      service: paramiko-client-2.10.2
+  paramiko-client-2.10.3:
+    extends:
+      file: images/paramiko/compose.yml
+      service: paramiko-client-2.10.3
+  paramiko-client-2.10.4:
+    extends:
+      file: images/paramiko/compose.yml
+      service: paramiko-client-2.10.4
+  paramiko-client-2.10.5:
+    extends:
+      file: images/paramiko/compose.yml
+      service: paramiko-client-2.10.5
+  paramiko-client-2.11.0:
+    extends:
+      file: images/paramiko/compose.yml
+      service: paramiko-client-2.11.0
+
+  putty-client-0.71:
+    extends:
+      file: images/putty/compose.yml
+      service: putty-client-0.71
+  putty-client-0.72:
+    extends:
+      file: images/putty/compose.yml
+      service: putty-client-0.72
+  putty-client-0.73:
+    extends:
+      file: images/putty/compose.yml
+      service: putty-client-0.73
+  putty-client-0.74:
+    extends:
+      file: images/putty/compose.yml
+      service: putty-client-0.74
+  putty-client-0.75:
+    extends:
+      file: images/putty/compose.yml
+      service: putty-client-0.75
+  putty-client-0.76:
+    extends:
+      file: images/putty/compose.yml
+      service: putty-client-0.76
+  putty-client-0.77:
+    extends:
+      file: images/putty/compose.yml
+      service: putty-client-0.77
+  putty-client-0.78:
+    extends:
+      file: images/putty/compose.yml
+      service: putty-client-0.78
+  putty-client-0.79:
+    extends:
+      file: images/putty/compose.yml
+      service: putty-client-0.79
 
   russh-server-0.34.0:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.34.0
     ports:
-      - '31000:22'
+      - '33000:22'
   russh-server-0.36.0:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.36.0
     ports:
-      - '31001:22'
+      - '33001:22'
   russh-server-0.36.1:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.36.1
     ports:
-      - '31002:22'
+      - '33002:22'
   russh-server-0.36.2:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.36.2
     ports:
-      - '31003:22'
+      - '33003:22'
   russh-server-0.37.0:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.37.0
     ports:
-      - '31004:22'
+      - '33004:22'
   russh-server-0.37.1:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.37.1
     ports:
-      - '31005:22'
+      - '33005:22'
+  russh-client-0.34.0:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-0.34.0
+  russh-client-0.36.0:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-0.36.0
+  russh-client-0.36.1:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-0.36.1
+  russh-client-0.36.2:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-0.36.2
+  russh-client-0.37.0:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-0.37.0
+  russh-client-0.37.1:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-0.37.1
 
   sshd-lite-server-1.2.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.2.0
     ports:
-      - '32000:22'
+      - '34000:22'
   sshd-lite-server-1.2.1:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.2.1
     ports:
-      - '32001:22'
+      - '34001:22'
   sshd-lite-server-1.2.2:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.2.2
     ports:
-      - '32002:22'
+      - '34002:22'
   sshd-lite-server-1.2.3:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.2.3
     ports:
-      - '32003:22'
+      - '34003:22'
   sshd-lite-server-1.3.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.3.0
     ports:
-      - '32004:22'
+      - '34004:22'
   sshd-lite-server-1.3.1:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.3.1
     ports:
-      - '32005:22'
+      - '34005:22'
   sshd-lite-server-1.4.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.4.0
     ports:
-      - '32006:22'
+      - '34006:22'
   sshd-lite-server-1.4.1:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.4.1
     ports:
-      - '32007:22'
+      - '34007:22'
   sshd-lite-server-1.4.2:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.4.2
     ports:
-      - '32008:22'
+      - '34008:22'
   sshd-lite-server-1.4.3:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.4.3
     ports:
-      - '32009:22'
+      - '34009:22'
   sshd-lite-server-1.5.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.5.0
     ports:
-      - '32010:22'
+      - '34010:22'
   sshd-lite-server-1.6.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.6.0
     ports:
-      - '32011:22'
+      - '34011:22'
 
   tinyssh-server-20150801:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20150801
     ports:
-      - '33000:22'
+      - '35000:22'
   tinyssh-server-20151001:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20151001
     ports:
-      - '33001:22'
+      - '35001:22'
   tinyssh-server-20160201:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20160201
     ports:
-      - '33002:22'
+      - '35002:22'
   tinyssh-server-20160318:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20160318
     ports:
-      - '33003:22'
+      - '35003:22'
   tinyssh-server-20160720:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20160720
     ports:
-      - '33004:22'
+      - '35004:22'
   tinyssh-server-20160726:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20160726
     ports:
-      - '33005:22'
+      - '35005:22'
   tinyssh-server-20160727:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20160727
     ports:
-      - '33006:22'
+      - '35006:22'
   tinyssh-server-20160809:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20160809
     ports:
-      - '33007:22'
+      - '35007:22'
   tinyssh-server-20160811:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20160811
     ports:
-      - '33008:22'
+      - '35008:22'
   tinyssh-server-20160812:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20160812
     ports:
-      - '33009:22'
+      - '35009:22'
   tinyssh-server-20161001:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20161001
     ports:
-      - '33010:22'
+      - '35010:22'
   tinyssh-server-20161101:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20161101
     ports:
-      - '33011:22'
+      - '35011:22'
   tinyssh-server-20180101:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20180101
     ports:
-      - '33012:22'
+      - '35012:22'
   tinyssh-server-20180110:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20180110
     ports:
-      - '33013:22'
+      - '35013:22'
   tinyssh-server-20180201:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20180201
     ports:
-      - '33014:22'
+      - '35014:22'
   tinyssh-server-20181206:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20181206
     ports:
-      - '33015:22'
+      - '35015:22'
   tinyssh-server-20190101:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20190101
     ports:
-      - '33016:22'
+      - '35016:22'
   tinyssh-server-20210319:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20210319
     ports:
-      - '33017:22'
+      - '35017:22'
   tinyssh-server-20210601:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20210601
     ports:
-      - '33018:22'
+      - '35018:22'
   tinyssh-server-20220101:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20220101
     ports:
-      - '33019:22'
+      - '35019:22'
   tinyssh-server-20220222:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20220222
     ports:
-      - '33020:22'
+      - '35020:22'
   tinyssh-server-20220305:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20220305
     ports:
-      - '33021:22'
+      - '35021:22'
   tinyssh-server-20220311:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20220311
     ports:
-      - '33022:22'
+      - '35022:22'
   tinyssh-server-20220801:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20220801
     ports:
-      - '33023:22'
+      - '35023:22'
   tinyssh-server-20230101:
     extends:
       file: images/tinyssh/compose.yml
       service: tinyssh-server-20230101
     ports:
-      - '33024:22'
+      - '35024:22'
 
-  wolfssh-server-1.4.13:
+  wolfssh-server-1.4.8:
     extends:
       file: images/wolfssh/compose.yml
-      service: wolfssh-server-1.4.13
+      service: wolfssh-server-1.4.8
     ports:
-      - '34000:22'
-  wolfssh-server-1.4.12:
+      - '36000:22'
+  wolfssh-server-1.4.10:
     extends:
       file: images/wolfssh/compose.yml
-      service: wolfssh-server-1.4.12
+      service: wolfssh-server-1.4.10
     ports:
-      - '34001:22'
+      - '36001:22'
   wolfssh-server-1.4.11:
     extends:
       file: images/wolfssh/compose.yml
       service: wolfssh-server-1.4.11
     ports:
-      - '34002:22'
+      - '36002:22'
+  wolfssh-server-1.4.12:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-server-1.4.12
+    ports:
+      - '36003:22'
+  wolfssh-server-1.4.13:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-server-1.4.13
+    ports:
+      - '36004:22'
+  wolfssh-server-1.4.14:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-server-1.4.14
+    ports:
+      - '36005:22'
+  wolfssh-client-1.4.8:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-1.4.8
+  wolfssh-client-1.4.10:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-1.4.10
+  wolfssh-client-1.4.11:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-1.4.11
+  wolfssh-client-1.4.12:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-1.4.12
+  wolfssh-client-1.4.13:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-1.4.13
+  wolfssh-client-1.4.14:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-1.4.14

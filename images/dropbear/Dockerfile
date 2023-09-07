@@ -1,4 +1,7 @@
-FROM alpine:3.16
+# `dropbear-builder` is just an intermediate image and does not require labels,
+# so we can disable that linter rule.
+# hadolint ignore=DL3049
+FROM alpine:3.16 as dropbear-builder
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 # linux-headers are required by versions 2013.62 - 2018.76
 RUN apk add --no-cache bzip2 build-base zlib-dev linux-headers
@@ -38,6 +41,9 @@ RUN if ! printf '%s\n%s\n' "0.31" "${VERSION}" | sort -c -g; then \
         patch -p1 < 0011-0.30-Remove-out-of-place-linebreak-in-string-literal.patch ; \
     fi
 
+# Server image
+FROM dropbear-builder as dropbear-server
+SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 # Configure, build and install dropbear, then add the pre-generated hostkeys.
 RUN ./configure && \
     make PROGRAMS="dropbear" -j "$(nproc)" && \
@@ -55,9 +61,27 @@ RUN adduser -D "${USERNAME}" && \
     echo "${USERNAME}:${PASSWORD}" | chpasswd && \
     chown -R "${USERNAME}:${USERNAME}" "/home/${USERNAME}" && \
     chmod -R g=,o= "/home/${USERNAME}/.ssh"
-
+ARG VERSION
 LABEL ssh.implementation.name="dropbear" \
       ssh.implementation.version="${VERSION}" \
       ssh.implementation.type="server"
 CMD ["dropbear", "-FEB"]
 EXPOSE 22
+
+# Client image
+FROM dropbear-builder AS dropbear-client
+
+# Configure, build and install dbclient
+RUN ./configure && \
+    make PROGRAMS="dbclient" -j "$(nproc)" && \
+    make PROGRAMS="dbclient" install
+ARG DOTSSH=dotssh-client
+COPY "${DOTSSH}" "/root/.ssh/"
+
+ARG VERSION
+LABEL ssh.implementation.name="dropbear" \
+      ssh.implementation.version="${VERSION}" \
+      ssh.implementation.type="client"
+ENTRYPOINT [ "dbclient" ]
+# dbclient [-Tt] [-p port] [-i id] [-L l:h:r] [-R l:h:r] [-l user] host [command]
+# include public key like the following -i /root/.ssh/id_rsa.db

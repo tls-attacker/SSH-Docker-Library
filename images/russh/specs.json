@@ -1,0 +1,26 @@
+{
+    "name": "russh",
+    "url": "https://github.com/warp-tech/russh",
+    "capabilities": {
+        "server": true,
+        "client": true,
+        "automatedClient": false
+    },
+    "multistage": true,
+    "serverVersions": [
+        "0.34.0",
+        "0.36.0",
+        "0.36.1",
+        "0.36.2",
+        "0.37.0",
+        "0.37.1"
+    ],
+    "clientVersions": [
+        "0.34.0",
+        "0.36.0",
+        "0.36.1",
+        "0.36.2",
+        "0.37.0",
+        "0.37.1"
+    ]
+}

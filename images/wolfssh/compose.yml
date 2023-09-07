@@ -1,23 +1,93 @@
 version: '3.2'
 services:
-  wolfssh-server-1.4.13:
-    image: rub-nds/wolfssh-server:1.4.13
+  wolfssh-server-1.4.8:
+    image: rub-nds/wolfssh-server:1.4.8
     build:
       context: .
+      target: wolfssh-server
       args:
-        VERSION: 1.4.13
-        VERSION_SSL: 5.5.4
-  wolfssh-server-1.4.12:
-    image: rub-nds/wolfssh-server:1.4.12
+        VERSION: 1.4.8
+  wolfssh-server-1.4.10:
+    image: rub-nds/wolfssh-server:1.4.10
     build:
       context: .
+      target: wolfssh-server
       args:
-        VERSION: 1.4.12
-        VERSION_SSL: 5.5.4
+        VERSION: 1.4.10
   wolfssh-server-1.4.11:
     image: rub-nds/wolfssh-server:1.4.11
     build:
       context: .
+      target: wolfssh-server
       args:
         VERSION: 1.4.11
-        VERSION_SSL: 5.4.0
+  wolfssh-server-1.4.12:
+    image: rub-nds/wolfssh-server:1.4.12
+    build:
+      context: .
+      target: wolfssh-server
+      args:
+        VERSION: 1.4.12
+  wolfssh-server-1.4.13:
+    image: rub-nds/wolfssh-server:1.4.13
+    build:
+      context: .
+      target: wolfssh-server
+      args:
+        VERSION: 1.4.13
+  wolfssh-server-1.4.14:
+    image: rub-nds/wolfssh-server:1.4.14
+    build:
+      context: .
+      target: wolfssh-server
+      args:
+        VERSION: 1.4.14
+
+  wolfssh-client-1.4.8:
+    image: rub-nds/wolfssh-client:1.4.8
+    build:
+      context: .
+      target: wolfssh-client
+      args:
+        VERSION: 1.4.8
+    profiles: [client]
+  wolfssh-client-1.4.10:
+    image: rub-nds/wolfssh-client:1.4.10
+    build:
+      context: .
+      target: wolfssh-client
+      args:
+        VERSION: 1.4.10
+    profiles: [client]
+  wolfssh-client-1.4.11:
+    image: rub-nds/wolfssh-client:1.4.11
+    build:
+      context: .
+      target: wolfssh-client
+      args:
+        VERSION: 1.4.11
+    profiles: [client]
+  wolfssh-client-1.4.12:
+    image: rub-nds/wolfssh-client:1.4.12
+    build:
+      context: .
+      target: wolfssh-client
+      args:
+        VERSION: 1.4.12
+    profiles: [client]
+  wolfssh-client-1.4.13:
+    image: rub-nds/wolfssh-client:1.4.13
+    build:
+      context: .
+      target: wolfssh-client
+      args:
+        VERSION: 1.4.13
+    profiles: [client]
+  wolfssh-client-1.4.14:
+    image: rub-nds/wolfssh-client:1.4.14
+    build:
+      context: .
+      target: wolfssh-client
+      args:
+        VERSION: 1.4.14
+    profiles: [client]

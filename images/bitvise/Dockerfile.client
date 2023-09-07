@@ -1,0 +1,23 @@
+# Separate Dockerfiles for client and server are required as BuildKit does not support building
+# Windows containers for now. As a result, both stages are being built when --target bitvise-client
+# is provided.
+
+# INFO: This container is Windows based and requires a Windows host to build and run
+# You may also need to switch your Docker daemon Linux to Windows containers
+FROM mcr.microsoft.com/windows:ltsc2019 as bitvise-client
+
+ARG VERSION
+
+SHELL [ "powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';" ]
+RUN New-Item -Path 'C:\' -Name 'docker' -ItemType 'directory'; \
+    $versionIdentifier = $env:VERSION -replace '\.',''; \
+    Invoke-WebRequest """https://dl.bitvise.com/BvSshClient-$versionIdentifier.exe""" -OutFile 'C:\docker\BvSshClient-Inst.exe'
+
+SHELL [ "cmd", "/S", "/C" ]
+RUN C:\docker\BvSshClient-Inst.exe -acceptEula & exit 0
+
+LABEL ssh.implementation.name="bitvise" \
+      ssh.implementation.version="${VERSION}" \
+      ssh.implementation.type="client"
+# stnlc.exe is internally called by the Bitvise GUI client, thus we can use it here directly
+ENTRYPOINT [ "stnlc.exe" ]
