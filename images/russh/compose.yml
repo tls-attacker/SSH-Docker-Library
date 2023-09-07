@@ -42,3 +42,52 @@ services:
       target: russh-server
       args:
         VERSION: 0.37.1
+
+  russh-client-0.34.0:
+    image: rub-nds/russh-client:0.34.0
+    build:
+      context: .
+      target: russh-client
+      args:
+        VERSION: 0.34.0
+    profiles: [client]
+  russh-client-0.36.0:
+    image: rub-nds/russh-client:0.36.0
+    build:
+      context: .
+      target: russh-client
+      args:
+        VERSION: 0.36.0
+    profiles: [client]
+  russh-client-0.36.1:
+    image: rub-nds/russh-client:0.36.1
+    build:
+      context: .
+      target: russh-client
+      args:
+        VERSION: 0.36.1
+    profiles: [client]
+  russh-client-0.36.2:
+    image: rub-nds/russh-client:0.36.2
+    build:
+      context: .
+      target: russh-client
+      args:
+        VERSION: 0.36.2
+    profiles: [client]
+  russh-client-0.37.0:
+    image: rub-nds/russh-client:0.37.0
+    build:
+      context: .
+      target: russh-client
+      args:
+        VERSION: 0.37.0
+    profiles: [client]
+  russh-client-0.37.1:
+    image: rub-nds/russh-client:0.37.1
+    build:
+      context: .
+      target: russh-client
+      args:
+        VERSION: 0.37.1
+    profiles: [client]

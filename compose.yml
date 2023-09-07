@@ -3703,6 +3703,30 @@ services:
       service: russh-server-0.37.1
     ports:
       - '33005:22'
+  russh-client-0.34.0:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-0.34.0
+  russh-client-0.36.0:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-0.36.0
+  russh-client-0.36.1:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-0.36.1
+  russh-client-0.36.2:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-0.36.2
+  russh-client-0.37.0:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-0.37.0
+  russh-client-0.37.1:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-0.37.1
 
   sshd-lite-server-1.2.0:
     extends:
