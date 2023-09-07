@@ -75,7 +75,8 @@ FROM dropbear-builder AS dropbear-client
 RUN ./configure && \
     make PROGRAMS="dbclient" -j "$(nproc)" && \
     make PROGRAMS="dbclient" install
-COPY "dotssh-client" "/root/.ssh/"
+ARG DOTSSH=dotssh-client
+COPY "${DOTSSH}" "/root/.ssh/"
 
 ARG VERSION
 LABEL ssh.implementation.name="dropbear" \
