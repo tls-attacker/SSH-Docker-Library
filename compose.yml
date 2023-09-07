@@ -3952,24 +3952,42 @@ services:
     ports:
       - '35024:22'
 
+  wolfssh-server-1.4.8:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-server-1.4.8
+    ports:
+      - '36000:22'
+  wolfssh-server-1.4.10:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-server-1.4.10
+    ports:
+      - '36001:22'
   wolfssh-server-1.4.11:
     extends:
       file: images/wolfssh/compose.yml
       service: wolfssh-server-1.4.11
     ports:
-      - '36000:22'
+      - '36002:22'
   wolfssh-server-1.4.12:
     extends:
       file: images/wolfssh/compose.yml
       service: wolfssh-server-1.4.12
     ports:
-      - '36001:22'
+      - '36003:22'
   wolfssh-server-1.4.13:
     extends:
       file: images/wolfssh/compose.yml
       service: wolfssh-server-1.4.13
     ports:
-      - '36002:22'
+      - '36004:22'
+  wolfssh-server-1.4.14:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-server-1.4.14
+    ports:
+      - '36005:22'
   wolfssh-client-1.4.8:
     extends:
       file: images/wolfssh/compose.yml
@@ -3990,3 +4008,7 @@ services:
     extends:
       file: images/wolfssh/compose.yml
       service: wolfssh-client-1.4.13
+  wolfssh-client-1.4.14:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-1.4.14

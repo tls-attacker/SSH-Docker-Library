@@ -1,5 +1,19 @@
 version: '3.2'
 services:
+  wolfssh-server-1.4.8:
+    image: rub-nds/wolfssh-server:1.4.8
+    build:
+      context: .
+      target: wolfssh-server
+      args:
+        VERSION: 1.4.8
+  wolfssh-server-1.4.10:
+    image: rub-nds/wolfssh-server:1.4.10
+    build:
+      context: .
+      target: wolfssh-server
+      args:
+        VERSION: 1.4.10
   wolfssh-server-1.4.11:
     image: rub-nds/wolfssh-server:1.4.11
     build:
@@ -21,6 +35,13 @@ services:
       target: wolfssh-server
       args:
         VERSION: 1.4.13
+  wolfssh-server-1.4.14:
+    image: rub-nds/wolfssh-server:1.4.14
+    build:
+      context: .
+      target: wolfssh-server
+      args:
+        VERSION: 1.4.14
 
   wolfssh-client-1.4.8:
     image: rub-nds/wolfssh-client:1.4.8
@@ -61,4 +82,12 @@ services:
       target: wolfssh-client
       args:
         VERSION: 1.4.13
+    profiles: [client]
+  wolfssh-client-1.4.14:
+    image: rub-nds/wolfssh-client:1.4.14
+    build:
+      context: .
+      target: wolfssh-client
+      args:
+        VERSION: 1.4.14
     profiles: [client]

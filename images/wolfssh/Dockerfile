@@ -5,16 +5,17 @@
 # hadolint ignore=DL3049
 FROM debian:bullseye AS wolfssh-builder
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    bsdextrautils \
-    autoconf  \
-    automake  \
-    ca-certificates \
-    curl \
-    g++ \
-    libtool  \
-    make \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        bsdextrautils \
+        autoconf  \
+        automake  \
+        ca-certificates \
+        curl \
+        g++ \
+        libtool  \
+        make && \
+    rm -rf /var/lib/apt/lists/*
 
 ARG VERSION_SSL="5.6.3"
 RUN mkdir  /src && \
@@ -37,7 +38,6 @@ RUN ./autogen.sh && \
 # Server image
 FROM debian:bullseye AS wolfssh-server
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-ARG VERSION
 
 COPY authorized_keys /install/authorized_keys
 COPY sshd_config /install/sshd_config
@@ -45,9 +45,6 @@ COPY --from=wolfssh-builder /install/wolfSSL/lib* /lib/
 COPY --from=wolfssh-builder /install/wolfSSH/lib* /lib/
 COPY --from=wolfssh-builder /src/wolfssh/apps /install/apps/
 COPY --from=wolfssh-builder /src/wolfssh/keys /keys
-LABEL "ssh.implementation.name"="wolfssh" \
-    "ssh.implementation.version"="${VERSION}" \
-    "ssh.implementation.type"="server"
 
 RUN useradd --system --no-create-home sshd && mkdir -p "/var/empty"
 
@@ -55,9 +52,13 @@ ARG USERNAME=sshattacker
 ARG PASSWORD=secret
 RUN useradd --create-home --groups users "${USERNAME}" && \
     echo "${USERNAME}:${PASSWORD}" | chpasswd
-
 COPY --chown="${USERNAME}:${USERNAME}" "authorized_keys" "/home/${USERNAME}/.ssh/"
 RUN chmod -R g=,o= "/home/${USERNAME}/.ssh"
+
+ARG VERSION
+LABEL "ssh.implementation.name"="wolfssh" \
+    "ssh.implementation.version"="${VERSION}" \
+    "ssh.implementation.type"="server"
 
 ENTRYPOINT [ "/install/apps/wolfsshd/wolfsshd", \
     "-f", "/install/sshd_config",\
@@ -68,8 +69,8 @@ EXPOSE 22
 # Currently based on wolfssh-builder as client will fail to start otherwise
 FROM wolfssh-builder AS wolfssh-client
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-ARG VERSION
 
+ARG VERSION
 LABEL "ssh.implementation.name"="wolfssh" \
     "ssh.implementation.version"="${VERSION}" \
     "ssh.implementation.type"="client"
