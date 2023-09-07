@@ -47,7 +47,5 @@ then
       parameter+=" -e"
 fi
 
-
 expect /usr/local/bin/login.exp $host $ip $port $user $password $command
-
 exit 0
