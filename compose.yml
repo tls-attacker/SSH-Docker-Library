@@ -3630,18 +3630,42 @@ services:
       file: images/paramiko/compose.yml
       service: paramiko-client-2.11.0
 
-  putty-client-0.70:
+  putty-client-0.71:
     extends:
-      file: images/puttyLinux/compose.yml
-      service: putty-client-0.70
+      file: images/putty/compose.yml
+      service: putty-client-0.71
+  putty-client-0.72:
+    extends:
+      file: images/putty/compose.yml
+      service: putty-client-0.72
   putty-client-0.73:
     extends:
-      file: images/puttyLinux/compose.yml
+      file: images/putty/compose.yml
       service: putty-client-0.73
+  putty-client-0.74:
+    extends:
+      file: images/putty/compose.yml
+      service: putty-client-0.74
+  putty-client-0.75:
+    extends:
+      file: images/putty/compose.yml
+      service: putty-client-0.75
   putty-client-0.76:
     extends:
-      file: images/puttyLinux/compose.yml
+      file: images/putty/compose.yml
       service: putty-client-0.76
+  putty-client-0.77:
+    extends:
+      file: images/putty/compose.yml
+      service: putty-client-0.77
+  putty-client-0.78:
+    extends:
+      file: images/putty/compose.yml
+      service: putty-client-0.78
+  putty-client-0.79:
+    extends:
+      file: images/putty/compose.yml
+      service: putty-client-0.79
 
   russh-server-0.34.0:
     extends:

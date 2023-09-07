@@ -1,0 +1,65 @@
+version: '3.2'
+services:
+  putty-client-0.71:
+    image: rub-nds/putty-client:0.71
+    build:
+      context: .
+      args:
+        VERSION: 0.71
+    profiles: [client]
+  putty-client-0.72:
+    image: rub-nds/putty-client:0.72
+    build:
+      context: .
+      args:
+        VERSION: 0.72
+    profiles: [client]
+  putty-client-0.73:
+    image: rub-nds/putty-client:0.73
+    build:
+      context: .
+      args:
+        VERSION: 0.73
+    profiles: [client]
+  putty-client-0.74:
+    image: rub-nds/putty-client:0.74
+    build:
+      context: .
+      args:
+        VERSION: 0.74
+    profiles: [client]
+  putty-client-0.75:
+    image: rub-nds/putty-client:0.75
+    build:
+      context: .
+      args:
+        VERSION: 0.75
+    profiles: [client]
+  putty-client-0.76:
+    image: rub-nds/putty-client:0.76
+    build:
+      context: .
+      args:
+        VERSION: 0.76
+    profiles: [client]
+  putty-client-0.77:
+    image: rub-nds/putty-client:0.77
+    build:
+      context: .
+      args:
+        VERSION: 0.77
+    profiles: [client]
+  putty-client-0.78:
+    image: rub-nds/putty-client:0.78
+    build:
+      context: .
+      args:
+        VERSION: 0.78
+    profiles: [client]
+  putty-client-0.79:
+    image: rub-nds/putty-client:0.79
+    build:
+      context: .
+      args:
+        VERSION: 0.79
+    profiles: [client]
