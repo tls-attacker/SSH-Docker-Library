@@ -1,18 +1,17 @@
 #!/usr/bin/env python
-
 import paramiko
 import click
 
 
 def load_pubkeys(key_file):
     if key_file == "id_rsa":
-        key = paramiko.RSAKey.from_private_key_file("dotssh-client/" + key_file)
+        key = paramiko.RSAKey.from_private_key_file(".ssh/id_rsa")
     elif key_file == "id_dsa":
-        key = paramiko.DSSKey.from_private_key_file("dotssh-client/" + key_file)
+        key = paramiko.DSSKey.from_private_key_file(".ssh/id_dsa")
     elif key_file == "id_ecdsa":
-        key = paramiko.ECDSAKey.from_private_key_file("dotssh-client/" + key_file)
+        key = paramiko.ECDSAKey.from_private_key_file(".ssh/id_ecdsa")
     else:
-        key = paramiko.Ed25519Key.from_private_key_file("dotssh-client/id_ed25519")
+        key = paramiko.Ed25519Key.from_private_key_file(".ssh/id_ed25519")
     return key
 
 
@@ -35,7 +34,6 @@ def load_pubkeys(key_file):
     "-e", "--error", is_flag=True, show_default=True, default=False, help="print error"
 )
 def client_start(host, port, username, password, command, key_file, output, error):
-
     if output:
         print("init Client")
     client = paramiko.SSHClient()
@@ -58,7 +56,7 @@ def client_start(host, port, username, password, command, key_file, output, erro
         key = load_pubkeys(key_file)
         client.connect(host, port=port, username=username, password=password, pkey=key)
     except Exception as e:
-        print("Loading pubkeys failed, may need to use a newer version of parmiko")
+        print("Loading pubkeys failed, may need to use a newer version of paramiko")
         client.connect(host, port=port, username=username, password=password)
 
     if output:

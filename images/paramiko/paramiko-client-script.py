@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import paramiko
 import click
 
@@ -22,7 +21,6 @@ import click
     "-e", "--error", is_flag=True, show_default=True, default=False, help="print error"
 )
 def client_start(host, port, username, password, command, output, error):
-
     if output:
         print("init Client")
     client = paramiko.SSHClient()
