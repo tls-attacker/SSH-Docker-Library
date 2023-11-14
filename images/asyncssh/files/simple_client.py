@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# pyright: reportGeneralTypeIssues=false
 
 import click
 import asyncio
@@ -43,4 +44,4 @@ async def run_client(host, port, username, password, command, output, error):
 
 
 if __name__ == "__main__":
-    client_start()  # pyright: reportGeneralTypeIssues=false
+    client_start()

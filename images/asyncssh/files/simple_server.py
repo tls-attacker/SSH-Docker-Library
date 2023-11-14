@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# pyright: reportGeneralTypeIssues=false
+
 """
 Server code from example of AsyncSSH, see:
 https://asyncssh.readthedocs.io/en/stable/#server-examples
@@ -168,4 +170,4 @@ def main(username, password, authorized_keys_file, port, host_key):
 
 
 if __name__ == "__main__":
-    sys.exit(main(auto_envvar_prefix="SSH"))  # pyright: reportGeneralTypeIssues=false
+    sys.exit(main(auto_envvar_prefix="SSH"))
