@@ -1,4 +1,4 @@
-# Builds an asyncssh 2.8.1 server patched to re-use the transient public key used in the RSA key-exchange
+# Builds an asyncssh 2.8.1 server patched to reuse the transient public key used in the RSA key-exchange
 FROM python:3.9-slim-bullseye
 
 WORKDIR /usr/src/app
