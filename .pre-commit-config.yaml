@@ -2,7 +2,7 @@ default_language_version:
   python: python3
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.3.0
+    rev: v4.5.0
     hooks:
       - id: check-case-conflict
       - id: check-json
@@ -18,7 +18,7 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.1.0
+    rev: v2.2.6
     hooks:
       - id: codespell
         args:
@@ -30,12 +30,12 @@ repos:
         # words.
         exclude: /id_(rsa|(?:ec)?dsa|ed25519)(?:\.pub)?$
   - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.5.0
+    rev: v0.10.0
     hooks:
       - id: markdownlint-cli2-config
         args: [.markdownlint-cli2.yaml]
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v2.7.1
+    rev: v3.1.0
     hooks:
       - id: prettier
         # Restrict prettier to the commit stage to avoid the following error
@@ -44,17 +44,17 @@ repos:
         #     [error] No matching files. Patterns: .git/COMMIT_EDITMSG
         stages: [commit]
   - repo: https://github.com/hadolint/hadolint.git
-    rev: v2.10.0
+    rev: v2.12.0
     hooks:
       - id: hadolint-docker
   - repo: https://github.com/kumaraditya303/mirrors-pyright
-    rev: v1.1.239
+    rev: v1.1.335
     hooks:
       - id: pyright
         # TODO: Clean up Python code for manger image.
         exclude: ^targets/.*$
   - repo: https://github.com/psf/black
-    rev: 22.3.0
+    rev: 23.11.0
     hooks:
       - id: black
   - repo: local
@@ -65,4 +65,4 @@ repos:
         pass_filenames: false
         language: python
         entry: tools/generate_compose_config.py
-        additional_dependencies: ['PyYAML==6.0', 'jinja2==3.1.2']
+        additional_dependencies: ['PyYAML==6.0.1', 'jinja2==3.1.2']
