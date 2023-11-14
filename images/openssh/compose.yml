@@ -98,6 +98,20 @@ services:
       target: openssh-server
       args:
         VERSION: 9.3p1
+  openssh-server-9.4p1:
+    image: rub-nds/openssh-server:9.4p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 9.4p1
+  openssh-server-9.5p1:
+    image: rub-nds/openssh-server:9.5p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 9.5p1
 
   openssh-client-8.0p1:
     image: rub-nds/openssh-client:8.0p1
@@ -211,6 +225,22 @@ services:
       args:
         VERSION: 9.3p1
     profiles: [client]
+  openssh-client-9.4p1:
+    image: rub-nds/openssh-client:9.4p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 9.4p1
+    profiles: [client]
+  openssh-client-9.5p1:
+    image: rub-nds/openssh-client:9.5p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 9.5p1
+    profiles: [client]
 
   openssh-client-automated-8.0p1:
     image: rub-nds/openssh-client-automated:8.0p1
@@ -323,4 +353,20 @@ services:
       target: openssh-client-automated
       args:
         VERSION: 9.3p1
+    profiles: [client-automated]
+  openssh-client-automated-9.4p1:
+    image: rub-nds/openssh-client-automated:9.4p1
+    build:
+      context: .
+      target: openssh-client-automated
+      args:
+        VERSION: 9.4p1
+    profiles: [client-automated]
+  openssh-client-automated-9.5p1:
+    image: rub-nds/openssh-client-automated:9.5p1
+    build:
+      context: .
+      target: openssh-client-automated
+      args:
+        VERSION: 9.5p1
     profiles: [client-automated]
