@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="target">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Downloads/archive/SSH-Server-Scanner/target" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Downloads/archive/SSH-Server-Scanner/target" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/Downloads/archive/SSH-Server-Scanner/target" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Downloads/archive/SSH-Server-Scanner/target" recursive="false" type="SOURCES" />
+  </library>
+</component>

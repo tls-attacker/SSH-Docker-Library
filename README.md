@@ -16,7 +16,7 @@ You can get a list of supported services using the following command:
 
 Now, you can start start a service:
 
-    $ docker compose up openssh-7.2p1 --build --detach
+    $ docker compose up openssh-server-7.2p2--build --detach
     [+] Running 1/1
     ⠿ Container ssh-docker-library-openssh-7.2p1-1  Started
 
