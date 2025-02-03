@@ -14,7 +14,7 @@ FROM alpine:3.16 AS openssh-downloader
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 RUN apk add --no-cache curl tar
 ARG VERSION
-RUN curl -s https://cloudflare.cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-${VERSION}.tar.gz | tar xzf -
+RUN curl -s https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-${VERSION}.tar.gz | tar xzf -
 
 # After download, we can continue on debian stretch and start the build.
 #
