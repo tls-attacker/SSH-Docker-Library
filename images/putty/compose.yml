@@ -1,4 +1,3 @@
-version: '3.2'
 services:
   putty-client-0.71:
     image: rub-nds/putty-client:0.71

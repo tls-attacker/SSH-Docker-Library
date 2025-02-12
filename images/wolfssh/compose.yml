@@ -1,4 +1,3 @@
-version: '3.2'
 services:
   wolfssh-server-1.4.8:
     image: rub-nds/wolfssh-server:1.4.8
@@ -42,7 +41,6 @@ services:
       target: wolfssh-server
       args:
         VERSION: 1.4.14
-
   wolfssh-client-1.4.8:
     image: rub-nds/wolfssh-client:1.4.8
     build:

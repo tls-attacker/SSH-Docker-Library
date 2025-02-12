@@ -1,4 +1,3 @@
-version: '3.2'
 services:
   asyncssh-server-1.10.0:
     extends:
@@ -344,7 +343,6 @@ services:
     extends:
       file: images/asyncssh/compose.yml
       service: asyncssh-client-2.13.1
-
   bitvise-server-8.15:
     extends:
       file: images/bitvise/compose.yml
@@ -785,7 +783,6 @@ services:
     extends:
       file: images/bitvise/compose.yml
       service: bitvise-client-9.28
-
   dropbear-server-0.23:
     extends:
       file: images/dropbear/compose.yml
@@ -1366,7 +1363,6 @@ services:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-client-2022.83
-
   erlang-ssh-server-17.5:
     extends:
       file: images/erlang-ssh/compose.yml
@@ -2967,7 +2963,6 @@ services:
       service: erlang-ssh-client-automated-25.3.0
     ports:
       - '25299:22'
-
   libssh-server-0.7.0:
     extends:
       file: images/libssh-0.7.x-0.8.x/compose.yml
@@ -3076,7 +3071,6 @@ services:
       service: libssh-server-0.8.9
     ports:
       - '26017:22'
-
   libssh-server-0.9.0:
     extends:
       file: images/libssh/compose.yml
@@ -3187,7 +3181,6 @@ services:
     extends:
       file: images/libssh/compose.yml
       service: libssh-client-0.10.4
-
   libssh-mbedtls-server-0.10.0:
     extends:
       file: images/libssh_mbedTLS/compose.yml
@@ -3218,7 +3211,6 @@ services:
       service: libssh-mbedtls-server-0.10.5
     ports:
       - '28004:22'
-
   openssh-server-7.0p1:
     extends:
       file: images/openssh-7.x/compose.yml
@@ -3319,7 +3311,6 @@ services:
     extends:
       file: images/openssh-7.x/compose.yml
       service: openssh-client-7.9p1
-
   openssh-server-8.0p1:
     extends:
       file: images/openssh/compose.yml
@@ -3576,7 +3567,6 @@ services:
       service: openssh-client-automated-9.5p1
     ports:
       - '30047:22'
-
   paramiko-client-2.5.0:
     extends:
       file: images/paramiko/compose.yml
@@ -3661,7 +3651,6 @@ services:
     extends:
       file: images/paramiko/compose.yml
       service: paramiko-client-2.11.0
-
   putty-client-0.71:
     extends:
       file: images/putty/compose.yml
@@ -3698,7 +3687,6 @@ services:
     extends:
       file: images/putty/compose.yml
       service: putty-client-0.79
-
   russh-server-0.34.0:
     extends:
       file: images/russh/compose.yml
@@ -3759,7 +3747,6 @@ services:
     extends:
       file: images/russh/compose.yml
       service: russh-client-0.37.1
-
   sshd-lite-server-1.2.0:
     extends:
       file: images/sshd-lite/compose.yml
@@ -3832,7 +3819,6 @@ services:
       service: sshd-lite-server-1.6.0
     ports:
       - '34011:22'
-
   tinyssh-server-20150801:
     extends:
       file: images/tinyssh/compose.yml
@@ -3983,7 +3969,6 @@ services:
       service: tinyssh-server-20230101
     ports:
       - '35024:22'
-
   wolfssh-server-1.4.8:
     extends:
       file: images/wolfssh/compose.yml

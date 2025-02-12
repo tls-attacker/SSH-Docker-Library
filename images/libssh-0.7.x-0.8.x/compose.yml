@@ -1,4 +1,3 @@
-version: '3.2'
 services:
   libssh-server-0.7.0:
     image: rub-nds/libssh-server:0.7.0

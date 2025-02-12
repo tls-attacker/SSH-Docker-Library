@@ -1,4 +1,3 @@
-version: '3.2'
 services:
   erlang-ssh-server-17.5:
     image: rub-nds/erlang-ssh-server:17.5
@@ -700,7 +699,6 @@ services:
       target: erlang-ssh-server
       args:
         VERSION: 25.3.0
-
   erlang-ssh-client-17.5:
     image: rub-nds/erlang-ssh-client:17.5
     build:
@@ -1501,7 +1499,6 @@ services:
       args:
         VERSION: 25.3.0
     profiles: [client]
-
   erlang-ssh-client-automated-17.5:
     image: rub-nds/erlang-ssh-client-automated:17.5
     build:

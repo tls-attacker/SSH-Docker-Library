@@ -1,4 +1,3 @@
-version: '3.2'
 services:
   russh-server-0.34.0:
     image: rub-nds/russh-server:0.34.0
@@ -42,7 +41,6 @@ services:
       target: russh-server
       args:
         VERSION: 0.37.1
-
   russh-client-0.34.0:
     image: rub-nds/russh-client:0.34.0
     build:

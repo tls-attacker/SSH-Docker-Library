@@ -1,4 +1,3 @@
-version: '3.2'
 services:
   sshd-lite-server-1.2.0:
     image: rub-nds/sshd-lite-server:1.2.0

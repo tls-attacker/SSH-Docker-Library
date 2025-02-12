@@ -1,4 +1,3 @@
-version: '3.2'
 services:
   paramiko-client-2.5.0:
     image: rub-nds/paramiko-client:2.5.0

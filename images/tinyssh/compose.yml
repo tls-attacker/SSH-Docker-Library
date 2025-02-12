@@ -1,4 +1,3 @@
-version: '3.2'
 services:
   tinyssh-server-20150801:
     image: rub-nds/tinyssh-server:20150801

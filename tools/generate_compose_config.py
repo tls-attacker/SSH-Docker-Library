@@ -15,6 +15,8 @@ jinja_env = jinja2.Environment(
         followlinks=True,
     ),
     autoescape=False,
+    trim_blocks=True,
+    lstrip_blocks=True,
 )
 
 
