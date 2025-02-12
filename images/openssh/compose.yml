@@ -111,6 +111,34 @@ services:
       target: openssh-server
       args:
         VERSION: 9.5p1
+  openssh-server-9.6p1:
+    image: rub-nds/openssh-server:9.6p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 9.6p1
+  openssh-server-9.7p1:
+    image: rub-nds/openssh-server:9.7p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 9.7p1
+  openssh-server-9.8p1:
+    image: rub-nds/openssh-server:9.8p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 9.8p1
+  openssh-server-9.9p1:
+    image: rub-nds/openssh-server:9.9p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 9.9p1
   openssh-client-8.0p1:
     image: rub-nds/openssh-client:8.0p1
     build:
@@ -239,6 +267,38 @@ services:
       args:
         VERSION: 9.5p1
     profiles: [client]
+  openssh-client-9.6p1:
+    image: rub-nds/openssh-client:9.6p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 9.6p1
+    profiles: [client]
+  openssh-client-9.7p1:
+    image: rub-nds/openssh-client:9.7p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 9.7p1
+    profiles: [client]
+  openssh-client-9.8p1:
+    image: rub-nds/openssh-client:9.8p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 9.8p1
+    profiles: [client]
+  openssh-client-9.9p1:
+    image: rub-nds/openssh-client:9.9p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 9.9p1
+    profiles: [client]
   openssh-client-automated-8.0p1:
     image: rub-nds/openssh-client-automated:8.0p1
     build:
@@ -366,4 +426,36 @@ services:
       target: openssh-client-automated
       args:
         VERSION: 9.5p1
+    profiles: [client-automated]
+  openssh-client-automated-9.6p1:
+    image: rub-nds/openssh-client-automated:9.6p1
+    build:
+      context: .
+      target: openssh-client-automated
+      args:
+        VERSION: 9.6p1
+    profiles: [client-automated]
+  openssh-client-automated-9.7p1:
+    image: rub-nds/openssh-client-automated:9.7p1
+    build:
+      context: .
+      target: openssh-client-automated
+      args:
+        VERSION: 9.7p1
+    profiles: [client-automated]
+  openssh-client-automated-9.8p1:
+    image: rub-nds/openssh-client-automated:9.8p1
+    build:
+      context: .
+      target: openssh-client-automated
+      args:
+        VERSION: 9.8p1
+    profiles: [client-automated]
+  openssh-client-automated-9.9p1:
+    image: rub-nds/openssh-client-automated:9.9p1
+    build:
+      context: .
+      target: openssh-client-automated
+      args:
+        VERSION: 9.9p1
     profiles: [client-automated]
