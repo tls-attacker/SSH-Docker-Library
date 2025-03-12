@@ -1131,6 +1131,30 @@ services:
       service: dropbear-server-2022.83
     ports:
       - '24057:22'
+  dropbear-server-2024.84:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-server-2024.84
+    ports:
+      - '24058:22'
+  dropbear-server-2024.85:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-server-2024.85
+    ports:
+      - '24059:22'
+  dropbear-server-2024.86:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-server-2024.86
+    ports:
+      - '24060:22'
+  dropbear-server-2025.87:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-server-2025.87
+    ports:
+      - '24061:22'
   dropbear-client-0.23:
     extends:
       file: images/dropbear/compose.yml
@@ -1363,6 +1387,22 @@ services:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-client-2022.83
+  dropbear-client-2024.84:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2024.84
+  dropbear-client-2024.85:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2024.85
+  dropbear-client-2024.86:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2024.86
+  dropbear-client-2025.87:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-2025.87
   erlang-ssh-server-17.5:
     extends:
       file: images/erlang-ssh/compose.yml

@@ -405,6 +405,34 @@ services:
       target: dropbear-server
       args:
         VERSION: 2022.83
+  dropbear-server-2024.84:
+    image: rub-nds/dropbear-server:2024.84
+    build:
+      context: .
+      target: dropbear-server
+      args:
+        VERSION: 2024.84
+  dropbear-server-2024.85:
+    image: rub-nds/dropbear-server:2024.85
+    build:
+      context: .
+      target: dropbear-server
+      args:
+        VERSION: 2024.85
+  dropbear-server-2024.86:
+    image: rub-nds/dropbear-server:2024.86
+    build:
+      context: .
+      target: dropbear-server
+      args:
+        VERSION: 2024.86
+  dropbear-server-2025.87:
+    image: rub-nds/dropbear-server:2025.87
+    build:
+      context: .
+      target: dropbear-server
+      args:
+        VERSION: 2025.87
   dropbear-client-0.23:
     image: rub-nds/dropbear-client:0.23
     build:
@@ -868,4 +896,36 @@ services:
       target: dropbear-client
       args:
         VERSION: 2022.83
+    profiles: [client]
+  dropbear-client-2024.84:
+    image: rub-nds/dropbear-client:2024.84
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: 2024.84
+    profiles: [client]
+  dropbear-client-2024.85:
+    image: rub-nds/dropbear-client:2024.85
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: 2024.85
+    profiles: [client]
+  dropbear-client-2024.86:
+    image: rub-nds/dropbear-client:2024.86
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: 2024.86
+    profiles: [client]
+  dropbear-client-2025.87:
+    image: rub-nds/dropbear-client:2025.87
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: 2025.87
     profiles: [client]
