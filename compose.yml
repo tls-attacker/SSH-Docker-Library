@@ -697,6 +697,66 @@ services:
       service: bitvise-server-9.28
     ports:
       - '23043:22'
+  bitvise-server-9.31:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-server-9.31
+    ports:
+      - '23044:22'
+  bitvise-server-9.33:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-server-9.33
+    ports:
+      - '23045:22'
+  bitvise-server-9.34:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-server-9.34
+    ports:
+      - '23046:22'
+  bitvise-server-9.35:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-server-9.35
+    ports:
+      - '23047:22'
+  bitvise-server-9.37:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-server-9.37
+    ports:
+      - '23048:22'
+  bitvise-server-9.38:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-server-9.38
+    ports:
+      - '23049:22'
+  bitvise-server-9.39:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-server-9.39
+    ports:
+      - '23050:22'
+  bitvise-server-9.41:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-server-9.41
+    ports:
+      - '23051:22'
+  bitvise-server-9.42:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-server-9.42
+    ports:
+      - '23052:22'
+  bitvise-server-9.43:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-server-9.43
+    ports:
+      - '23053:22'
   bitvise-client-8.15:
     extends:
       file: images/bitvise/compose.yml
@@ -873,6 +933,46 @@ services:
     extends:
       file: images/bitvise/compose.yml
       service: bitvise-client-9.28
+  bitvise-client-9.31:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.31
+  bitvise-client-9.33:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.33
+  bitvise-client-9.34:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.34
+  bitvise-client-9.35:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.35
+  bitvise-client-9.37:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.37
+  bitvise-client-9.38:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.38
+  bitvise-client-9.39:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.39
+  bitvise-client-9.41:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.41
+  bitvise-client-9.42:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.42
+  bitvise-client-9.43:
+    extends:
+      file: images/bitvise/compose.yml
+      service: bitvise-client-9.43
   dropbear-server-0.23:
     extends:
       file: images/dropbear/compose.yml

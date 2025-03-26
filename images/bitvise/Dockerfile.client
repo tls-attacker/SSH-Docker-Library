@@ -4,7 +4,7 @@
 
 # INFO: This container is Windows based and requires a Windows host to build and run
 # You may also need to switch your Docker daemon Linux to Windows containers
-FROM mcr.microsoft.com/windows:ltsc2019 as bitvise-client
+FROM mcr.microsoft.com/windows/servercore:ltsc2025-amd64 as bitvise-client
 
 ARG VERSION
 
