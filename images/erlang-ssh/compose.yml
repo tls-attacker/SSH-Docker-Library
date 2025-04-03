@@ -699,6 +699,13 @@ services:
       target: erlang-ssh-server
       args:
         VERSION: 25.3.0
+  erlang-ssh-server-27.3.0.0:
+    image: rub-nds/erlang-ssh-server:27.3.0.0
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 27.3.0.0
   erlang-ssh-client-17.5:
     image: rub-nds/erlang-ssh-client:17.5
     build:
@@ -1499,6 +1506,14 @@ services:
       args:
         VERSION: 25.3.0
     profiles: [client]
+  erlang-ssh-client-27.3.0.0:
+    image: rub-nds/erlang-ssh-client:27.3.0.0
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 27.3.0.0
+    profiles: [client]
   erlang-ssh-client-automated-17.5:
     image: rub-nds/erlang-ssh-client-automated:17.5
     build:
@@ -2298,4 +2313,12 @@ services:
       target: erlang-ssh-client-automated
       args:
         VERSION: 25.3.0
+    profiles: [client-automated]
+  erlang-ssh-client-automated-27.3.0.0:
+    image: rub-nds/erlang-ssh-client-automated:27.3.0.0
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 27.3.0.0
     profiles: [client-automated]

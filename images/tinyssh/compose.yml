@@ -149,3 +149,33 @@ services:
       context: .
       args:
         VERSION: 20230101
+  tinyssh-server-20240101:
+    image: rub-nds/tinyssh-server:20240101
+    build:
+      context: .
+      args:
+        VERSION: 20240101
+  tinyssh-server-20241111:
+    image: rub-nds/tinyssh-server:20241111
+    build:
+      context: .
+      args:
+        VERSION: 20241111
+  tinyssh-server-20241201:
+    image: rub-nds/tinyssh-server:20241201
+    build:
+      context: .
+      args:
+        VERSION: 20241201
+  tinyssh-server-20250126:
+    image: rub-nds/tinyssh-server:20250126
+    build:
+      context: .
+      args:
+        VERSION: 20250126
+  tinyssh-server-20250201:
+    image: rub-nds/tinyssh-server:20250201
+    build:
+      context: .
+      args:
+        VERSION: 20250201

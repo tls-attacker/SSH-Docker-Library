@@ -50,7 +50,7 @@ RUN gunzip < ${VERSION}.tar.gz | tar -xf - && \
     echo "tinyssh (${VERSION})" > "tinyssh-${VERSION}/debian/changelog" && \
     make -C "tinyssh-${VERSION}" -j "$(nproc)" && \
     mkdir -p /usr/share/man/man1 /usr/share/man/man8 && \
-    make -C "tinyssh-${VERSION}" install && \
+    PREFIX=/usr make -C "tinyssh-${VERSION}" install && \
     mkdir -p /etc/tinyssh && tinysshd-makekey /etc/tinyssh/sshkeydir
 
 # Set up SSH user, add authorized keys and fix `.ssh` dir permissions.
