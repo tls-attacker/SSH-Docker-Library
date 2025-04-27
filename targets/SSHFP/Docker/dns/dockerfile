@@ -1,0 +1,14 @@
+# ~/docker-test/dns/Dockerfile
+FROM ubuntu:latest
+
+RUN apt-get update && apt-get install -y bind9 dnsutils gettext-base
+
+# Kopiere die Konfigurationsdateien
+COPY named.conf.template /etc/bind/named.conf.template
+COPY dnssec /etc/bind/dnssec
+COPY zones /etc/bind/zones
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+EXPOSE 53/udp 53/tcp
+CMD ["/entrypoint.sh"]

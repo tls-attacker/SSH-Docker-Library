@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  dns-server:
+    build: ./dns
+    container_name: dns-server
+    network_mode: "host"
+    volumes:
+      - ./dns/named.conf:/etc/bind/named.conf
+      - ./dns/dnssec/:/etc/bind/dnssec/
+      - ./dns/zones/:/etc/bind/zones/
+    environment:
+      - DNS_ZONE_FILE=gianlucaonlineT2.com.signed
+      - named_conf_options_file=namedDNSSEC.conf.options

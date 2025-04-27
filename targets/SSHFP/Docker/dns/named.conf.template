@@ -1,0 +1,4 @@
+zone "gianlucaonline.com"{
+	type master;
+	file "/etc/bind/zones/$DNS_ZONE_FILE";	
+};
