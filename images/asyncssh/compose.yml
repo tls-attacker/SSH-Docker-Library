@@ -375,6 +375,13 @@ services:
       target: asyncssh-server
       args:
         VERSION: 2.20.0
+  asyncssh-server-2.21.0:
+    image: rub-nds/asyncssh-server:2.21.0
+    build:
+      context: .
+      target: asyncssh-server
+      args:
+        VERSION: 2.21.0
   asyncssh-client-2.0.0:
     image: rub-nds/asyncssh-client:2.0.0
     build:
@@ -630,4 +637,12 @@ services:
       target: asyncssh-client
       args:
         VERSION: 2.20.0
+    profiles: [client]
+  asyncssh-client-2.21.0:
+    image: rub-nds/asyncssh-client:2.21.0
+    build:
+      context: .
+      target: asyncssh-client
+      args:
+        VERSION: 2.21.0
     profiles: [client]

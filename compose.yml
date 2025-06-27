@@ -305,6 +305,12 @@ services:
       service: asyncssh-server-2.20.0
     ports:
       - '22050:22'
+  asyncssh-server-2.21.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-server-2.21.0
+    ports:
+      - '22051:22'
   asyncssh-client-2.0.0:
     extends:
       file: images/asyncssh/compose.yml
@@ -433,6 +439,10 @@ services:
     extends:
       file: images/asyncssh/compose.yml
       service: asyncssh-client-2.20.0
+  asyncssh-client-2.21.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-2.21.0
   bitvise-server-8.15:
     extends:
       file: images/bitvise/compose.yml
