@@ -3359,30 +3359,72 @@ services:
       service: libssh-server-0.9.6
     ports:
       - '27006:22'
+  libssh-server-0.9.7:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-server-0.9.7
+    ports:
+      - '27007:22'
+  libssh-server-0.9.8:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-server-0.9.8
+    ports:
+      - '27008:22'
   libssh-server-0.10.0:
     extends:
       file: images/libssh/compose.yml
       service: libssh-server-0.10.0
     ports:
-      - '27007:22'
+      - '27009:22'
   libssh-server-0.10.2:
     extends:
       file: images/libssh/compose.yml
       service: libssh-server-0.10.2
     ports:
-      - '27008:22'
+      - '27010:22'
   libssh-server-0.10.3:
     extends:
       file: images/libssh/compose.yml
       service: libssh-server-0.10.3
     ports:
-      - '27009:22'
+      - '27011:22'
   libssh-server-0.10.4:
     extends:
       file: images/libssh/compose.yml
       service: libssh-server-0.10.4
     ports:
-      - '27010:22'
+      - '27012:22'
+  libssh-server-0.10.5:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-server-0.10.5
+    ports:
+      - '27013:22'
+  libssh-server-0.10.6:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-server-0.10.6
+    ports:
+      - '27014:22'
+  libssh-server-0.11.0:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-server-0.11.0
+    ports:
+      - '27015:22'
+  libssh-server-0.11.1:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-server-0.11.1
+    ports:
+      - '27016:22'
+  libssh-server-0.11.2:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-server-0.11.2
+    ports:
+      - '27017:22'
   libssh-client-0.9.0:
     extends:
       file: images/libssh/compose.yml
@@ -3411,6 +3453,14 @@ services:
     extends:
       file: images/libssh/compose.yml
       service: libssh-client-0.9.6
+  libssh-client-0.9.7:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-0.9.7
+  libssh-client-0.9.8:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-0.9.8
   libssh-client-0.10.0:
     extends:
       file: images/libssh/compose.yml
@@ -3427,6 +3477,26 @@ services:
     extends:
       file: images/libssh/compose.yml
       service: libssh-client-0.10.4
+  libssh-client-0.10.5:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-0.10.5
+  libssh-client-0.10.6:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-0.10.6
+  libssh-client-0.11.0:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-0.11.0
+  libssh-client-0.11.1:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-0.11.1
+  libssh-client-0.11.2:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-0.11.2
   libssh-mbedtls-server-0.10.0:
     extends:
       file: images/libssh_mbedTLS/compose.yml
@@ -3683,6 +3753,18 @@ services:
       service: openssh-server-9.9p2
     ports:
       - '30020:22'
+  openssh-server-10.0p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-server-10.0p1
+    ports:
+      - '30021:22'
+  openssh-server-10.0p2:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-server-10.0p2
+    ports:
+      - '30022:22'
   openssh-client-8.0p1:
     extends:
       file: images/openssh/compose.yml
@@ -3767,132 +3849,152 @@ services:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-9.9p2
+  openssh-client-10.0p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-10.0p1
+  openssh-client-10.0p2:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-10.0p2
   openssh-client-automated-8.0p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-automated-8.0p1
     ports:
-      - '30042:22'
+      - '30046:22'
   openssh-client-automated-8.1p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-automated-8.1p1
     ports:
-      - '30043:22'
+      - '30047:22'
   openssh-client-automated-8.2p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-automated-8.2p1
     ports:
-      - '30044:22'
+      - '30048:22'
   openssh-client-automated-8.3p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-automated-8.3p1
     ports:
-      - '30045:22'
+      - '30049:22'
   openssh-client-automated-8.4p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-automated-8.4p1
     ports:
-      - '30046:22'
+      - '30050:22'
   openssh-client-automated-8.5p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-automated-8.5p1
     ports:
-      - '30047:22'
+      - '30051:22'
   openssh-client-automated-8.6p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-automated-8.6p1
     ports:
-      - '30048:22'
+      - '30052:22'
   openssh-client-automated-8.7p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-automated-8.7p1
     ports:
-      - '30049:22'
+      - '30053:22'
   openssh-client-automated-8.8p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-automated-8.8p1
     ports:
-      - '30050:22'
+      - '30054:22'
   openssh-client-automated-8.9p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-automated-8.9p1
     ports:
-      - '30051:22'
+      - '30055:22'
   openssh-client-automated-9.0p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-automated-9.0p1
     ports:
-      - '30052:22'
+      - '30056:22'
   openssh-client-automated-9.1p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-automated-9.1p1
     ports:
-      - '30053:22'
+      - '30057:22'
   openssh-client-automated-9.2p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-automated-9.2p1
     ports:
-      - '30054:22'
+      - '30058:22'
   openssh-client-automated-9.3p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-automated-9.3p1
     ports:
-      - '30055:22'
+      - '30059:22'
   openssh-client-automated-9.4p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-automated-9.4p1
     ports:
-      - '30056:22'
+      - '30060:22'
   openssh-client-automated-9.5p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-automated-9.5p1
     ports:
-      - '30057:22'
+      - '30061:22'
   openssh-client-automated-9.6p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-automated-9.6p1
     ports:
-      - '30058:22'
+      - '30062:22'
   openssh-client-automated-9.7p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-automated-9.7p1
     ports:
-      - '30059:22'
+      - '30063:22'
   openssh-client-automated-9.8p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-automated-9.8p1
     ports:
-      - '30060:22'
+      - '30064:22'
   openssh-client-automated-9.9p1:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-automated-9.9p1
     ports:
-      - '30061:22'
+      - '30065:22'
   openssh-client-automated-9.9p2:
     extends:
       file: images/openssh/compose.yml
       service: openssh-client-automated-9.9p2
     ports:
-      - '30062:22'
+      - '30066:22'
+  openssh-client-automated-10.0p1:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-automated-10.0p1
+    ports:
+      - '30067:22'
+  openssh-client-automated-10.0p2:
+    extends:
+      file: images/openssh/compose.yml
+      service: openssh-client-automated-10.0p2
+    ports:
+      - '30068:22'
   paramiko-client-2.5.0:
     extends:
       file: images/paramiko/compose.yml
