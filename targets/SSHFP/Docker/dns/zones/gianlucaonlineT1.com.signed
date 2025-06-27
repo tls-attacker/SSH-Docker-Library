@@ -1,0 +1,208 @@
+; File written on Sun Mar 23 19:13:49 2025
+; dnssec_signzone version 9.18.30-0ubuntu0.24.04.2-Ubuntu
+gianlucaonline.com.	86400	IN SOA	ns1.gianlucaonline.com. admin.gianlucaonline.com. (
+					20250321   ; serial
+					3600       ; refresh (1 hour)
+					1800       ; retry (30 minutes)
+					604800     ; expire (1 week)
+					86400      ; minimum (1 day)
+					)
+			86400	RRSIG	SOA 8 2 86400 (
+					20250422181349 20250323181349 33529 gianlucaonline.com.
+					KvrAny9JSX4lBvV0ZdgeqWIjL1sBtlA4FTZ8
+					ZpQnwx/8SOVKzdHMuLiWE9JkFrCxDJh/ISun
+					0x08bwSZBex6xfotMhylcnDSQR8fIrVgMLpF
+					joeKg4VZEzze5gaWzk6q5h56e7iWYN/E3PHD
+					WwPWRnxIGEpDjSGiB9ZoB/TtJHRO8L37/WYD
+					8wlG424mJ3IT/Wr/j3VB4dex/W9WeU88sNx1
+					shChuvm+FRNXMQz0kTMGriwH1liRY7ldXn81
+					tevL6/SOr/us5VmjS9Haof3oCRvHa+MfJTLU
+					j5LzLnBYvMMkSmmSAZlDls20mov2YgtpL3Qy
+					APsE4JhYnae36y5OXA== )
+			86400	NS	ns1.gianlucaonline.com.
+			86400	NS	ns2.gianlucaonline.com.
+			86400	RRSIG	NS 8 2 86400 (
+					20250422181349 20250323181349 33529 gianlucaonline.com.
+					KCOFqP1hOJBXs9hkyBbY4MXPvJrh5N8Wi558
+					RLEcsM8reYrLtq2FLGRQbrCoQeVonLcMAZF6
+					nF5JNR9cEwXTberSFng2I1hl4guXzJYcU+N2
+					b9XrJ/p+os62ikClaqWpy1OJkcCxjnHtgjTj
+					s96jLFW0+iy4ayoZiezo8XNTgQSB3OTL7c3c
+					WxyI9CzC0Ifkt0o4DOcj+vXW6ZNjqbDOB2lQ
+					iWLZcFID0Z2EwVAK01SytrwMsKgPwQSwTB+h
+					YhtXksIu/nA/NsoruZYferUPgU6Rld1yasy/
+					eE6QsQ/Xle2Z/v2smgbdoSsB+y1WcXYbTDFP
+					wFu+mE1OKuE+khD2+w== )
+			86400	NSEC	ns1.gianlucaonline.com. NS SOA RRSIG NSEC DNSKEY
+			86400	RRSIG	NSEC 8 2 86400 (
+					20250422181349 20250323181349 33529 gianlucaonline.com.
+					jF8MDSJgGP+1UMGf9/pt8V8MP8PwnQP+udvJ
+					JITlTWUyThPODI4xH8sOrDXW4tXeqhn7MDD0
+					Yeb+JXcmmNA27qNT7rTlnS+kts8lYbP1IxJC
+					01Z/tGk95qFbx1RsfaJ73p7eB6ix6OUCkKi4
+					e3FBJxO4nR4XXpzFAtgyBDeqPzjsOK1g7EPw
+					tmkMtzo3DiDuErmVE6ZGtbXOrbgcPUh1Jirw
+					Yc67Mvq9bY4xwig4uylFeh/3VkYwfnAm94Su
+					f7r9Xps3eO0i6D/I5xW/0e0/ukwDukvOogxH
+					OIlqnniqefa7FlHXm/1KBHckEAooEJhDML5n
+					joC0gMJFO/pPEJaeSw== )
+			86400	DNSKEY	256 3 8 (
+					AwEAAZ7r45xjbG7iqMgit7tcnsOngWVSpig0
+					PjVwxN6CgC11tkgrKYeBu212sprbY9gZQWo4
+					ViibxefsNR3MMY7OmWzIndi3s2yeKTrHr+bV
+					h0/eCb+afa1iVyOJHRVffunsrPc5PDYIZlme
+					iMRtSVkxBzjSgUJJaSE8TxGc8GPAnUic0jah
+					K/wYzeVUjfjtT35KDVI30R09QY8jEXF1nO6C
+					lkYVHeSipqeNXKfovtQS8xt8HyG8d/TVz8ru
+					RYq4iT64VrU97dj+3vrICowZQTIdWhkqez0J
+					se2xYoC7cBlzUxzip8hiCxTUjWZBQm6rTeTC
+					rkKk3xcp87ioG4SpK1ORiJk=
+					) ; ZSK; alg = RSASHA256 ; key id = 33529
+			86400	DNSKEY	257 3 8 (
+					AwEAAZ2dVRSjfxacxPe11PAtYIeiRZtW6fwc
+					nmpNmvCKJaZ+nq5kTCIZOpxTS05RntxivwPH
+					jl/28UB6nCjwmYVkASQgaKn9SMKJ/aoQRSVD
+					rhMDio31z9Uv6Ef+UHYaf1+l+2duo9E8/edP
+					ep/ttE77L2HKTgCiBl5qAXSYEQ48tIVXm2PA
+					YIeZVxqXiN6vEcU1raLI//0vlyHtDjY3fC8S
+					UVKG3Tj9cqg5X2u+68s9L6xI3qnUbO+co1ye
+					+fe44cgh5eLylJbyzn8x2C/41tCBFys5j3Fj
+					OrNdN/cysb5oy6CyH4EBOWQwhjLVvkDkRwXI
+					g3TQieylrFgXnuuSa94+FGKDyHHcAExnPlS5
+					U1kewHC9kvP9IUDt5t5wa7gtZgR49zxS3EB9
+					ij6zcYKad3Kbb1t9MVLGLhzTNuBkXIks/Exn
+					DNEfPiS4Jv6/fHfxD1WnwMbFr3k09D94+ane
+					exvxII9jYllcRjd+UxInlOKwOMRCf4b7gCEA
+					nhyzAae2/sfxkH3cBTSbtXGqyHbgw4yALtUR
+					6OTqNszC7k9HtKGc8jFdm88Rn/3S3/f1rkbr
+					RChmAIWAsbpiFWnQNwOvh3vJIgU6BFzKDHFN
+					KR1Qo6DPApuYXTQYlyPXM5Pi3ejRPRjKf2ox
+					KT1ElL8o+3EcKCyf35+bEo/x2v1PEEhu5qcD
+					7aSl
+					) ; KSK; alg = RSASHA256 ; key id = 53744
+			86400	RRSIG	DNSKEY 8 2 86400 (
+					20250422181349 20250323181349 33529 gianlucaonline.com.
+					l+NVuavI9FKnie/EGgl1hBMJ2grO3uG9mbqr
+					403UiiXTSsm/qzne0NTP2u1JklwoutChIdW6
+					2gN5hhEfvtzitriHlJpoAsQDsToaegC6DI8j
+					cfrcfHCFYnn03mYK47t3FMSjmW2plwovOakj
+					+HAiPriKVVqwCjaxixUj/iLb619rsU0+eMZG
+					k66z8g3RyKQsPIfe0Qf8e/YPmkGkC26DGtS8
+					k3mjraWj2Flvz3oVafr8qnXo8zg1I41n/xE4
+					c//bDpaFqbRRWbKlZm+B9C7/+YewZxrtrnGf
+					9yY/MFrkKiwOQhFlJ/gLfOLdw/DAuwkKYbJT
+					5XbeDMDiHDLNF5fwmg== )
+			86400	RRSIG	DNSKEY 8 2 86400 (
+					20250422181349 20250323181349 53744 gianlucaonline.com.
+					LMLiRVEYQRnDdyagPRU0BHEE306fmW9/Pe/I
+					kfzc8//WXsPA7pKAbibcgSBcEuespvUP7WKa
+					LsQnjL+YDnhXMVnGibFAAE1MnEHmGqWUCwc0
+					4ti3lwAvBkMCn9UB/XXXaTdTFxXV7OPXBATQ
+					j46QnxGrCACh9b+o2xlfzTcf5Obufrn/WDPw
+					LpD7d8v8hR5/rPsUDBhpE73JWSYUULjyg3B8
+					LL17SzY5dqdhsJtm3Z/8TjCQu/rzHMV+doTw
+					e4zQFNzFWp/de7khpYnh11GBo/8FJwjGFPPD
+					zBoZtbu+rjxNvOQyPPyqjgswIEZPPxp9Jz0n
+					DDjh/egrAYj/KU4uoZ7e84+rvayPEIwWemEl
+					YUbKbYs/VhK3194S1yvxWeQz9SUhA1nnWs5v
+					eXXBYVaLqi1Yn4NqlndlzkWz1dG/a+LBoVwq
+					qHbCBnRjHGeKt1NZ5GdybZuTnSeXWSYXR3lH
+					pTTpkR+GVLdlw2T0wQhqS5wGudYVlHylo14B
+					xLTxkRz7ZVtwCXi+6u0X4FEA9Ex60L6lUIL5
+					mVtMPyxdT+O08LLKfr/B8R73arOCp6PYVlZd
+					cNFCunvzpiyxagFRXsN0qefY9LX2DLNDmtVK
+					KBfefGDvsjh+wS1g13P8ZuXbYyWRyuQtvb9y
+					zQ4IZ9ZFAxUw7u/TsQnm6XF0BpNnc5ZZPZo= )
+ns2.gianlucaonline.com.	86400	IN A	195.201.43.124
+			86400	RRSIG	A 8 3 86400 (
+					20250422181349 20250323181349 33529 gianlucaonline.com.
+					TGCjxP3F9r755xA5JI7I1/9iZ34OF569sTJc
+					pguJByaFmuHxnsPmRoQePsMxah2NGcOoINeN
+					VGnkha2oVqyXi+yc55MbQtXuCd4tm34kj0ZF
+					WklkXov3NXPTMAC8blDMQ364x28qidwtxSam
+					UEZ/GESnni9cfv7Ia/reX3YG6jJLdanmoXh3
+					Lv7rNHkDXG9w9LzJhMVeGbgLuQYvZceXQUg8
+					eqPYmfR+NmF5XMgQTfJZl/Jw2lnp6srLNFSN
+					IoST6FiZiG7eKLJZ0QBt40tcAiFKIflVmXsE
+					MMRACGVDcJs+qAgYpDkKm/r/7RUwvBYOmX71
+					Wc2lpO8rKbsxnEeFQA== )
+			86400	NSEC	ssh.gianlucaonline.com. A RRSIG NSEC
+			86400	RRSIG	NSEC 8 3 86400 (
+					20250422181349 20250323181349 33529 gianlucaonline.com.
+					WRg0fXllsUJGJmv9vCr68CPkzCLo03g57uH8
+					T9HTXy/EkjDgmh1Tq+g4D7tAlkZkX12eckJp
+					wCQXBMr7ekpt6vf72JnQ2I+nD04w5Ue88Fk1
+					j+oQaOuFvNCTzyBPN5vfpAwENpVikSXkBtOS
+					snYD5uDzqH2jcBGUIT5M8Uol1Kh5J6QgJpWw
+					cU/71XzapKOw4Ypp/yd+/fjl9eNMe6CruDKW
+					9PYLw1NPeg8H43pDbva0E4g1TBlN5bzQvcsY
+					zNgYG/5Cc7mvVsZ/zTA6WhB5KfCXojK3zd4x
+					/Lujr6w8qndSA204SGfHDxeBf2/T9B0r5U4l
+					KuWQlO41mXFIv0/cmw== )
+ns1.gianlucaonline.com.	86400	IN A	138.199.222.42
+			86400	RRSIG	A 8 3 86400 (
+					20250422181349 20250323181349 33529 gianlucaonline.com.
+					VO94Fe+9E6Y3q2keoqRPv5JySKQ4MKzFlHTe
+					EtXKhQCyYVk0QVsKV997NIek/jIBtX+mf1xv
+					jxquOHsBa8aAJSBTtWee2L9XfsgZJ3763dMg
+					3MbYAD/7Kk+EeZFrN4xYizHQ5TmHSJbikwOA
+					p5b0UEmrqFaVKaTILkGkPuAIuhSSh1sSzci5
+					TikRXuvhsjGXTEHNWIoM+VYhYhft6VFIs4q+
+					lUGJOkUYoB3wxNZ73jgnJbOmtr8vFJqL1LlA
+					sr0JPqcqiu+iuf55lxXZJon9Th80dZeLgiY7
+					jx3LGncMFKz27u+x8i5U9DaKHPRGFiyEd/I9
+					mgqLfFy/grckt6Y1tA== )
+			86400	NSEC	ns2.gianlucaonline.com. A RRSIG NSEC
+			86400	RRSIG	NSEC 8 3 86400 (
+					20250422181349 20250323181349 33529 gianlucaonline.com.
+					GxDDLVEwUT8lYo5dI9krxLEUFz5p+0stg6L5
+					Tyg8qRl99k4ga9Gk2QspNwymWp2DMSxtYR6F
+					jQHZLNMJVtHZ0za7Qu81DZsXiTPsa5vk/nPx
+					dF3Nv+YV+OsyN4LafeKBEgIT3IxxRkb3Aovr
+					QlUgyGKLnGxViOv780uPFdIYxqSWsMqIgVFw
+					MWa4J8CPGgaMf4f7qd2T4/OuExSHgITDRIh2
+					rsqPEcGzcqNiAytfNcEEDx1qfD8G1Zk46xPY
+					6Vs4jaRvAK8mZQm0qBAAObxzdn8rEKA+qKPw
+					U6hUScDBwoNxJcZ3udiHJpqd6sLmhXExRHZ+
+					b9zEdF8Y9Kms6CDoug== )
+ssh.gianlucaonline.com.	86400	IN A	138.199.222.42
+			86400	RRSIG	A 8 3 86400 (
+					20250422181349 20250323181349 33529 gianlucaonline.com.
+					Wm2GR/tqNU/HywsXs/gvquo4zXJHURrbiBBq
+					H/a46TjsHfQlRRTNca517aoaO7vYrdOwW7eQ
+					0dpvIiZnpBo8OrcDRgZn9bEth+U5kEEbGbt0
+					DIJ359HF2YPWAnQei1LfiD3a9JVukaRipuZ7
+					cR/g6L3tXFwPkwYsXv81ZdpzIVMrtqcPgYtF
+					9ERXpwvwHHKOW9d1h8CyxpkYPukek5SFeiRF
+					2P4kJtAiTq5rSV9OXiNOVZ4j0VPbBH150re6
+					ZQY4W9erk4rw4AfurhBuC+OGbtqRyffbl+xA
+					atB/2fBd1zyE7stOcFL8NNEs7XA5UwTPODU5
+					WmOTEU66NaygX/VLmw== )
+			30	SSHFP	4 2 (
+					ED270ED53A6CEEE16AA6280093E1D573887A
+					FF00BE5B614D02D8D0B6023A00B0 )
+			30	RRSIG	SSHFP 8 3 30 (
+					20250422181349 20250323181349 33529 gianlucaonline.com.
+					S8s+i2MRorCCwAEqyqJGJlvNoZcB4DYF3rvf
+					RJzGtrhUM5pNnmXbR4dPvL/UoGP32tqCu+Q/
+					KH/aFRBOOiss4SRKlLzGNHP7hbgjZTFTAPdv
+					AkQlET18WQz7baioyCEwhjBP/BZUK0DjTO5D
+					wW6Y4LrRKIAYvBvTF7ps3fMTMBNr62GUKPHB
+					5Ng8eD952eWhBp7pntVT6vLDURh7IwIwJYN1
+					c4cgpX+tAXqzZO82IxfS609QkePCuM075D9Q
+					3yoQnEMTgIbNJZGtgx2aGXDFkdgdX5pOee3J
+					VqcF/zFu+0NGHlDJTMIlqe+/ANaZIV3DlSay
+					zU6wDMCTX1nOTpSpPw== )
+			86400	NSEC	gianlucaonline.com. A SSHFP RRSIG NSEC
+			86400	RRSIG	NSEC 8 3 86400 (
+					20250422181349 20250323181349 33529 gianlucaonline.com.
+					A4NAydlIsxrmlGbLNNxzUGmWrWbYLNEIHcM9
+					1Qie5Ouqip33048zGE8Fkcq8tV7/k643SE77
+					qcSc46sKtfChRnIOPurjtWSMu4ejUHmmVJ9h
+					OmWI/zakC8iHsuJW8sB5FJulTusF+nD9KHl5
+					lsyfpEoJ7bDrXzj3+LDmYxTBb0zGSpbQUf+r
+					8l7oO1s+JhmrTQrPJFWvaPbIyEc2DsGPgPml
+					P/dzZjVkUt/Khxgvyr95kdjjxgdPvJrobCb8
+					VFmCI/eAzJcpyKI92zL3Sy7/jMeiCcGFJ5A3
+					caDH+lGzIQnACXSyhw70KD8kqeIRBHa5HdNm
+					334aiL6uuzD1PXwvoA== )

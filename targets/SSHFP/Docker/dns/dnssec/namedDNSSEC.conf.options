@@ -1,0 +1,7 @@
+options {
+    directory "/var/cache/bind";
+    dnssec-enable yes;
+    dnssec-validation auto;
+    dnssec-lookaside auto;
+    dnssec-allow-downgrade no;
+};
