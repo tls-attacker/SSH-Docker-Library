@@ -433,6 +433,13 @@ services:
       target: dropbear-server
       args:
         VERSION: 2025.87
+  dropbear-server-2025.88:
+    image: rub-nds/dropbear-server:2025.88
+    build:
+      context: .
+      target: dropbear-server
+      args:
+        VERSION: 2025.88
   dropbear-client-0.23:
     image: rub-nds/dropbear-client:0.23
     build:
@@ -928,4 +935,12 @@ services:
       target: dropbear-client
       args:
         VERSION: 2025.87
+    profiles: [client]
+  dropbear-client-2025.88:
+    image: rub-nds/dropbear-client:2025.88
+    build:
+      context: .
+      target: dropbear-client
+      args:
+        VERSION: 2025.88
     profiles: [client]

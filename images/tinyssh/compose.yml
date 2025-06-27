@@ -179,3 +179,15 @@ services:
       context: .
       args:
         VERSION: 20250201
+  tinyssh-server-20250411:
+    image: rub-nds/tinyssh-server:20250411
+    build:
+      context: .
+      args:
+        VERSION: 20250411
+  tinyssh-server-20250501:
+    image: rub-nds/tinyssh-server:20250501
+    build:
+      context: .
+      args:
+        VERSION: 20250501
