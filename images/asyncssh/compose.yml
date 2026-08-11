@@ -382,6 +382,7 @@ services:
       target: asyncssh-server
       args:
         VERSION: 2.21.0
+
   asyncssh-client-2.0.0:
     image: rub-nds/asyncssh-client:2.0.0
     build:
@@ -627,6 +628,7 @@ services:
     build:
       context: .
       target: asyncssh-client
+      dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.19.0
     profiles: [client]
@@ -646,3 +648,4 @@ services:
       args:
         VERSION: 2.21.0
     profiles: [client]
+
