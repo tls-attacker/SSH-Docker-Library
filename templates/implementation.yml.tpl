@@ -22,10 +22,8 @@ services:
       context: .
       {% if version.target is defined %}
       target: {{ version.target }}
-      {% else %}
-      {% if specs.multistage %}
+      {% elif specs.multistage %}
       target: {{ specs.name }}-server
-      {% endif %}
       {% endif %}
       {% if version.dockerfile is defined %}
       dockerfile: {{ version.dockerfile }}
@@ -40,11 +38,13 @@ services:
         {% else %}
         VERSION: {{ version.version }}
         {% endif %}
-    {% endif %}
+  {% endif %}
   {% endfor %}
 {% endif %}
+
 {% if specs.capabilities.client %}
   {% for version in specs.clientVersions %}
+  {% if version is string %}
   {{ specs.name }}-client-{{ version }}:
     image: rub-nds/{{ specs.name }}-client:{{ version }}
     build:
@@ -58,10 +58,38 @@ services:
       args:
         VERSION: {{ version }}
     profiles: [client]
+  {% endif %}
+  {% if version is mapping %}
+  {{ specs.name }}-client-{{ version.version }}:
+    image: rub-nds/{{ specs.name }}-client:{{ version.version }}
+    build:
+      context: .
+      {% if version.target is defined %}
+      target: {{ version.target }}
+      {% elif specs.multistage %}
+      target: {{ specs.name }}-client
+      {% endif %}
+      {% if version.dockerfile is defined %}
+      dockerfile: {{ version.dockerfile }}
+      {% elif specs.defaultClientDockerfile is defined %}
+      dockerfile: {{ specs.defaultClientDockerfile }}
+      {% endif %}
+      args:
+        {% if version.args is defined %}
+        {% for arg in version.args %}
+        {{ arg.name }}: {{ arg.value }}
+        {% endfor %}
+        {% else %}
+        VERSION: {{ version.version }}
+        {% endif %}
+    profiles: [client]
+  {% endif %}
   {% endfor %}
 {% endif %}
+
 {% if specs.capabilities.automatedClient %}
   {% for version in specs.clientVersions %}
+  {% if version is string %}
   {{ specs.name }}-client-automated-{{ version }}:
     image: rub-nds/{{ specs.name }}-client-automated:{{ version }}
     build:
@@ -75,5 +103,31 @@ services:
       args:
         VERSION: {{ version }}
     profiles: [client-automated]
+  {% endif %}
+  {% if version is mapping %}
+  {{ specs.name }}-client-automated-{{ version.version }}:
+    image: rub-nds/{{ specs.name }}-client-automated:{{ version.version }}
+    build:
+      context: .
+      {% if version.target is defined %}
+      target: {{ version.target }}
+      {% elif specs.multistage %}
+      target: {{ specs.name }}-client-automated
+      {% endif %}
+      {% if version.dockerfile is defined %}
+      dockerfile: {{ version.dockerfile }}
+      {% elif specs.defaultClientAutomatedDockerfile is defined %}
+      dockerfile: {{ specs.defaultClientAutomatedDockerfile }}
+      {% endif %}
+      args:
+        {% if version.args is defined %}
+        {% for arg in version.args %}
+        {{ arg.name }}: {{ arg.value }}
+        {% endfor %}
+        {% else %}
+        VERSION: {{ version.version }}
+        {% endif %}
+    profiles: [client-automated]
+  {% endif %}
   {% endfor %}
 {% endif %}
