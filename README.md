@@ -90,6 +90,9 @@ Note that the client containers are put into the profile `client` and not starte
 | russh                     | host:port --username username --password password                                                                                  |
 | wolfssh                   | [-h host] [-p port] [-u username] [-p &lt;password&gt;] [-i filename filename for the user's private key]                          |
 
+Some of the client implementations have an automated variant that is non-interactive and can be used in scripts.
+Automated clients will attempt to login with the provided credentials and execute a command on the server.
+
 ## Label
 
 Each image is labeled with the following metadata:
@@ -98,6 +101,6 @@ Each image is labeled with the following metadata:
 | ---------------------------- | --------- | --------------------------------------------------- |
 | `ssh.implementation.name`    | `openssh` | Name of the SSH implementation                      |
 | `ssh.implementation.version` | `9.0p1`   | Upstream version of the SSH implementation          |
-| `ssh.implementation.type`    | `server`  | `server` for SSH server and `client` for SSH client |
+| `ssh.implementation.type`    | `server`  | `server` for SSH server and `client` or `client-automated` for SSH client |
 
 You can filter the docker images with `docker images -f label=ssh.implementation.name` or `docker images -f label=ssh.implementation.type=server`, for example.
