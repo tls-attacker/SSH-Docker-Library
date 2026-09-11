@@ -388,7 +388,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.0.0
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.0.0
@@ -397,7 +397,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.0.1
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.0.1
@@ -406,7 +406,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.1.0
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.1.0
@@ -415,7 +415,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.2.0
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.2.0
@@ -424,7 +424,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.2.1
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.2.1
@@ -433,7 +433,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.3.0
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.3.0
@@ -442,7 +442,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.4.0
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.4.0
@@ -451,7 +451,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.4.1
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.4.1
@@ -460,7 +460,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.4.2
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.4.2
@@ -469,7 +469,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.5.0
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.5.0
@@ -478,7 +478,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.6.0
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.6.0
@@ -487,7 +487,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.7.0
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.7.0
@@ -496,7 +496,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.7.1
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.7.1
@@ -505,7 +505,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.7.2
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.7.2
@@ -514,7 +514,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.8.0
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.8.0
@@ -523,7 +523,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.8.1
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.8.1
@@ -532,7 +532,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.9.0
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.9.0
@@ -541,7 +541,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.10.0
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.10.0
@@ -550,7 +550,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.10.1
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.10.1
@@ -559,7 +559,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.11.0
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.11.0
@@ -568,7 +568,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.12.0
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.12.0
@@ -577,7 +577,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.13.0
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.13.0
@@ -586,7 +586,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.13.1
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.13.1
@@ -595,7 +595,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.14.0
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.14.0
@@ -604,7 +604,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.14.1
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.14.1
@@ -613,7 +613,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.14.2
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.14.2
@@ -622,7 +622,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.15.0
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.15.0
@@ -631,7 +631,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.16.0
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.16.0
@@ -640,7 +640,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.17.0
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.17.0
@@ -649,7 +649,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.18.0
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.18.0
@@ -658,7 +658,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.19.0
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       dockerfile: Dockerfile.pre_python_314
       args:
         VERSION: 2.19.0
@@ -667,7 +667,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.20.0
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       args:
         VERSION: 2.20.0
     profiles: [client-automated]
@@ -675,7 +675,7 @@ services:
     image: rub-nds/asyncssh-client-automated:2.21.0
     build:
       context: .
-      target: asyncssh-client-automated
+      target: asyncssh-client
       args:
         VERSION: 2.21.0
     profiles: [client-automated]
