@@ -69,6 +69,7 @@ services:
       target: openssh-server
       args:
         VERSION: 7.9p1
+
   openssh-client-7.0p1:
     image: rub-nds/openssh-client:7.0p1
     build:
@@ -149,3 +150,4 @@ services:
       args:
         VERSION: 7.9p1
     profiles: [client]
+

@@ -125,6 +125,7 @@ services:
       target: libssh-server
       args:
         VERSION: 0.11.2
+
   libssh-client-0.9.0:
     image: rub-nds/libssh-client:0.9.0
     build:
@@ -269,3 +270,4 @@ services:
       args:
         VERSION: 0.11.2
     profiles: [client]
+

@@ -160,6 +160,7 @@ services:
       target: openssh-server
       args:
         VERSION: 10.0p2
+
   openssh-client-8.0p1:
     image: rub-nds/openssh-client:8.0p1
     build:
@@ -344,6 +345,7 @@ services:
       args:
         VERSION: 10.0p2
     profiles: [client]
+
   openssh-client-automated-8.0p1:
     image: rub-nds/openssh-client-automated:8.0p1
     build:

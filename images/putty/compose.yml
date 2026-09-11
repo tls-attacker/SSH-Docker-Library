@@ -1,4 +1,5 @@
 services:
+
   putty-client-0.71:
     image: rub-nds/putty-client:0.71
     build:
@@ -62,3 +63,4 @@ services:
       args:
         VERSION: 0.79
     profiles: [client]
+

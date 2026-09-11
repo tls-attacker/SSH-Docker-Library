@@ -440,6 +440,7 @@ services:
       target: dropbear-server
       args:
         VERSION: 2025.88
+
   dropbear-client-0.23:
     image: rub-nds/dropbear-client:0.23
     build:
@@ -944,6 +945,7 @@ services:
       args:
         VERSION: 2025.88
     profiles: [client]
+
   dropbear-client-automated-0.23:
     image: rub-nds/dropbear-client-automated:0.23
     build:

@@ -377,6 +377,7 @@ services:
       dockerfile: Dockerfile.server
       args:
         VERSION: 9.43
+
   bitvise-client-8.15:
     image: rub-nds/bitvise-client:8.15
     build:
@@ -809,3 +810,4 @@ services:
       args:
         VERSION: 9.43
     profiles: [client]
+
