@@ -5,6 +5,10 @@
 # hadolint ignore=DL3049
 FROM debian:bullseye AS libssh-builder
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+# bullseye is EOL; its security repo mirror serves a stale/expired Release
+# file that apt refuses by default.
+RUN sed -i -e 's|^# deb http://snapshot|deb http://snapshot|' -e 's|^deb http://deb.debian.org|# deb http://deb.debian.org|' /etc/apt/sources.list && \
+    echo 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99no-check-valid-until
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     cmake \
@@ -35,6 +39,10 @@ RUN cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/install .. && \
 
 FROM debian:bullseye AS libssh-server
 ARG VERSION
+# bullseye is EOL; its security repo mirror serves a stale/expired Release
+# file that apt refuses by default.
+RUN sed -i -e 's|^# deb http://snapshot|deb http://snapshot|' -e 's|^deb http://deb.debian.org|# deb http://deb.debian.org|' /etc/apt/sources.list && \
+    echo 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99no-check-valid-until
 RUN apt-get update && apt-get install -y --no-install-recommends \
   libssl-dev \
   zlib1g-dev \
@@ -60,6 +68,10 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ARG DOTSSH=dotssh-client
 COPY "${DOTSSH}" "/root/.ssh/"
 
+# bullseye is EOL; its security repo mirror serves a stale/expired Release
+# file that apt refuses by default.
+RUN sed -i -e 's|^# deb http://snapshot|deb http://snapshot|' -e 's|^deb http://deb.debian.org|# deb http://deb.debian.org|' /etc/apt/sources.list && \
+    echo 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99no-check-valid-until
 RUN apt-get update && apt-get install -y --no-install-recommends \
   libssl-dev \
   zlib1g-dev \
