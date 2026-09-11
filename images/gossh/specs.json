@@ -1,10 +1,10 @@
 {
-    "name": "paramiko",
+    "name": "golang-ssh",
     "url": "https://pkg.go.dev/golang.org/x/crypto/ssh",
     "capabilities": {
         "server": false,
-        "client": true,
-        "automatedClient": false
+        "client": false,
+        "automatedClient": true
     },
     "multistage": false,
     "clientVersions": [
