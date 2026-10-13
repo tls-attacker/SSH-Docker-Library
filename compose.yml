@@ -3967,6 +3967,114 @@ services:
     extends:
       file: images/libssh/compose.yml
       service: libssh-client-0.11.2
+  libssh-client-automated-0.9.0:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.9.0
+    ports:
+      - '28036:22'
+  libssh-client-automated-0.9.1:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.9.1
+    ports:
+      - '28037:22'
+  libssh-client-automated-0.9.2:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.9.2
+    ports:
+      - '28038:22'
+  libssh-client-automated-0.9.3:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.9.3
+    ports:
+      - '28039:22'
+  libssh-client-automated-0.9.4:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.9.4
+    ports:
+      - '28040:22'
+  libssh-client-automated-0.9.5:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.9.5
+    ports:
+      - '28041:22'
+  libssh-client-automated-0.9.6:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.9.6
+    ports:
+      - '28042:22'
+  libssh-client-automated-0.9.7:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.9.7
+    ports:
+      - '28043:22'
+  libssh-client-automated-0.9.8:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.9.8
+    ports:
+      - '28044:22'
+  libssh-client-automated-0.10.0:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.10.0
+    ports:
+      - '28045:22'
+  libssh-client-automated-0.10.2:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.10.2
+    ports:
+      - '28046:22'
+  libssh-client-automated-0.10.3:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.10.3
+    ports:
+      - '28047:22'
+  libssh-client-automated-0.10.4:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.10.4
+    ports:
+      - '28048:22'
+  libssh-client-automated-0.10.5:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.10.5
+    ports:
+      - '28049:22'
+  libssh-client-automated-0.10.6:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.10.6
+    ports:
+      - '28050:22'
+  libssh-client-automated-0.11.0:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.11.0
+    ports:
+      - '28051:22'
+  libssh-client-automated-0.11.1:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.11.1
+    ports:
+      - '28052:22'
+  libssh-client-automated-0.11.2:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.11.2
+    ports:
+      - '28053:22'
   libssh-mbedtls-server-0.10.0:
     extends:
       file: images/libssh_mbedTLS/compose.yml
@@ -4913,3 +5021,55 @@ services:
     extends:
       file: images/wolfssh/compose.yml
       service: wolfssh-client-1.4.14
+  wolfssh-client-automated-1.4.8:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.4.8
+    ports:
+      - '37012:22'
+  wolfssh-client-automated-1.4.10:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.4.10
+    ports:
+      - '37013:22'
+  wolfssh-client-automated-1.4.11:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.4.11
+    ports:
+      - '37014:22'
+  wolfssh-client-automated-1.4.12:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.4.12
+    ports:
+      - '37015:22'
+  wolfssh-client-automated-1.4.13:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.4.13
+    ports:
+      - '37016:22'
+  wolfssh-client-automated-1.4.14:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.4.14
+    ports:
+      - '37017:22'
+  wolfssh-server-latest:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-server-latest
+    ports:
+      - '37006:22'
+  wolfssh-client-latest:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-latest
+  wolfssh-client-automated-latest:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-latest
+    ports:
+      - '37018:22'

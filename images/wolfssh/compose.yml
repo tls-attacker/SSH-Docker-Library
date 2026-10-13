@@ -91,3 +91,91 @@ services:
         VERSION: 1.4.14
     profiles: [client]
 
+  wolfssh-client-automated-1.4.8:
+    image: rub-nds/wolfssh-client-automated:1.4.8
+    build:
+      context: .
+      target: wolfssh-client-automated
+      args:
+        VERSION: 1.4.8
+    profiles: [client-automated]
+  wolfssh-client-automated-1.4.10:
+    image: rub-nds/wolfssh-client-automated:1.4.10
+    build:
+      context: .
+      target: wolfssh-client-automated
+      args:
+        VERSION: 1.4.10
+    profiles: [client-automated]
+  wolfssh-client-automated-1.4.11:
+    image: rub-nds/wolfssh-client-automated:1.4.11
+    build:
+      context: .
+      target: wolfssh-client-automated
+      args:
+        VERSION: 1.4.11
+    profiles: [client-automated]
+  wolfssh-client-automated-1.4.12:
+    image: rub-nds/wolfssh-client-automated:1.4.12
+    build:
+      context: .
+      target: wolfssh-client-automated
+      args:
+        VERSION: 1.4.12
+    profiles: [client-automated]
+  wolfssh-client-automated-1.4.13:
+    image: rub-nds/wolfssh-client-automated:1.4.13
+    build:
+      context: .
+      target: wolfssh-client-automated
+      args:
+        VERSION: 1.4.13
+    profiles: [client-automated]
+  wolfssh-client-automated-1.4.14:
+    image: rub-nds/wolfssh-client-automated:1.4.14
+    build:
+      context: .
+      target: wolfssh-client-automated
+      args:
+        VERSION: 1.4.14
+    profiles: [client-automated]
+
+  # Development checkouts (see Dockerfile.latest); override sources with
+  # WOLFSSL_SRC / WOLFSSH_SRC.
+  wolfssh-server-latest:
+    image: rub-nds/wolfssh-server:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.latest
+      target: wolfssh-server
+      additional_contexts:
+        wolfssl-src: ${WOLFSSL_SRC:-../../../experiments/vulns/wolfssl}
+        wolfssh-src: ${WOLFSSH_SRC:-../../../experiments/vulns/wolfssh}
+      args:
+        VERSION: latest
+
+  wolfssh-client-latest:
+    image: rub-nds/wolfssh-client:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.latest
+      target: wolfssh-client
+      additional_contexts:
+        wolfssl-src: ${WOLFSSL_SRC:-../../../experiments/vulns/wolfssl}
+        wolfssh-src: ${WOLFSSH_SRC:-../../../experiments/vulns/wolfssh}
+      args:
+        VERSION: latest
+    profiles: [client]
+
+  wolfssh-client-automated-latest:
+    image: rub-nds/wolfssh-client-automated:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.latest
+      target: wolfssh-client-automated
+      additional_contexts:
+        wolfssl-src: ${WOLFSSL_SRC:-../../../experiments/vulns/wolfssl}
+        wolfssh-src: ${WOLFSSH_SRC:-../../../experiments/vulns/wolfssh}
+      args:
+        VERSION: latest
+    profiles: [client-automated]

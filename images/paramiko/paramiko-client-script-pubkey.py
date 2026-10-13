@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+import time
+
 import paramiko
 import click
 
@@ -75,6 +77,14 @@ def client_start(host, port, username, password, command, key_file, output, erro
     stdin.close()
     stdout.close()
     stderr.close()
+    # Close the channel and connection explicitly. Otherwise CHANNEL_CLOSE is only sent by Channel.__del__ during
+    # interpreter shutdown, racing the transport thread's death, so it is sometimes sent and sometimes not.
+    stdout.channel.close()
+    # If a message of the peer closed the channel (e.g. CHANNEL_CLOSE or CHANNEL_FAILURE), paramiko's transport thread
+    # sends EOF and CLOSE itself, but only after marking the channel closed, which already woke us up. Give it time to
+    # send them before closing the socket underneath it; short enough to stay within the learner's retrieve delay.
+    time.sleep(0.05)
+    client.close()
 
 
 if __name__ == "__main__":

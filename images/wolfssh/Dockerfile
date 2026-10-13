@@ -5,6 +5,10 @@
 # hadolint ignore=DL3049
 FROM debian:bullseye AS wolfssh-builder
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+# bullseye is EOL; its security repo mirror serves a stale/expired Release
+# file that apt refuses by default.
+RUN sed -i -e 's|^# deb http://snapshot|deb http://snapshot|' -e 's|^deb http://deb.debian.org|# deb http://deb.debian.org|' /etc/apt/sources.list && \
+    echo 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99no-check-valid-until
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         bsdextrautils \
@@ -22,8 +26,13 @@ RUN mkdir  /src && \
     curl -LS "https://github.com/wolfSSL/wolfssl/archive/refs/tags/v${VERSION_SSL}-stable.tar.gz" | tar xzf - && \
     mv "wolfssl-${VERSION_SSL}-stable" /src/wolfssl
 WORKDIR /src/wolfssl
+# HAVE_ECC384/HAVE_ECC521 are not exposed as ./configure flags but gate
+# wolfSSH's nistp384/nistp521 KEX and host-key algorithms (see
+# wolfssh/internal.h); without them the client/server only ever offer
+# nistp256, so they can't negotiate with a peer restricted to P-521 (e.g.
+# SSH-State-Learner's default server config).
 RUN ./autogen.sh && \
-    ./configure --enable-ssh --prefix=/install/wolfSSL --enable-cryptonly && \
+    CFLAGS="-DHAVE_ECC384 -DHAVE_ECC521" ./configure --enable-ssh --prefix=/install/wolfSSL --enable-cryptonly && \
     make && \
     make install
 
@@ -76,3 +85,20 @@ LABEL "ssh.implementation.name"="wolfssh" \
     "ssh.implementation.type"="client"
 
 ENTRYPOINT [ "/src/wolfssh/examples/client/client" ]
+
+# Automated client image
+# The example client accepts host keys automatically and takes -u/-P/-c
+# flags for non-interactive login and command execution, so no
+# expect-driven wrapper is needed here, just argument translation.
+FROM wolfssh-client AS wolfssh-client-automated
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+COPY run-client.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/run-client.sh
+
+ARG VERSION
+LABEL "ssh.implementation.name"="wolfssh" \
+    "ssh.implementation.version"="${VERSION}" \
+    "ssh.implementation.type"="client-automated"
+
+ENTRYPOINT [ "/usr/local/bin/run-client.sh" ]

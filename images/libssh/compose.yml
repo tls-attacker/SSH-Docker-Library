@@ -271,3 +271,147 @@ services:
         VERSION: 0.11.2
     profiles: [client]
 
+  libssh-client-automated-0.9.0:
+    image: rub-nds/libssh-client-automated:0.9.0
+    build:
+      context: .
+      target: libssh-client-automated
+      args:
+        VERSION: 0.9.0
+    profiles: [client-automated]
+  libssh-client-automated-0.9.1:
+    image: rub-nds/libssh-client-automated:0.9.1
+    build:
+      context: .
+      target: libssh-client-automated
+      args:
+        VERSION: 0.9.1
+    profiles: [client-automated]
+  libssh-client-automated-0.9.2:
+    image: rub-nds/libssh-client-automated:0.9.2
+    build:
+      context: .
+      target: libssh-client-automated
+      args:
+        VERSION: 0.9.2
+    profiles: [client-automated]
+  libssh-client-automated-0.9.3:
+    image: rub-nds/libssh-client-automated:0.9.3
+    build:
+      context: .
+      target: libssh-client-automated
+      args:
+        VERSION: 0.9.3
+    profiles: [client-automated]
+  libssh-client-automated-0.9.4:
+    image: rub-nds/libssh-client-automated:0.9.4
+    build:
+      context: .
+      target: libssh-client-automated
+      args:
+        VERSION: 0.9.4
+    profiles: [client-automated]
+  libssh-client-automated-0.9.5:
+    image: rub-nds/libssh-client-automated:0.9.5
+    build:
+      context: .
+      target: libssh-client-automated
+      args:
+        VERSION: 0.9.5
+    profiles: [client-automated]
+  libssh-client-automated-0.9.6:
+    image: rub-nds/libssh-client-automated:0.9.6
+    build:
+      context: .
+      target: libssh-client-automated
+      args:
+        VERSION: 0.9.6
+    profiles: [client-automated]
+  libssh-client-automated-0.9.7:
+    image: rub-nds/libssh-client-automated:0.9.7
+    build:
+      context: .
+      target: libssh-client-automated
+      args:
+        VERSION: 0.9.7
+    profiles: [client-automated]
+  libssh-client-automated-0.9.8:
+    image: rub-nds/libssh-client-automated:0.9.8
+    build:
+      context: .
+      target: libssh-client-automated
+      args:
+        VERSION: 0.9.8
+    profiles: [client-automated]
+  libssh-client-automated-0.10.0:
+    image: rub-nds/libssh-client-automated:0.10.0
+    build:
+      context: .
+      target: libssh-client-automated
+      args:
+        VERSION: 0.10.0
+    profiles: [client-automated]
+  libssh-client-automated-0.10.2:
+    image: rub-nds/libssh-client-automated:0.10.2
+    build:
+      context: .
+      target: libssh-client-automated
+      args:
+        VERSION: 0.10.2
+    profiles: [client-automated]
+  libssh-client-automated-0.10.3:
+    image: rub-nds/libssh-client-automated:0.10.3
+    build:
+      context: .
+      target: libssh-client-automated
+      args:
+        VERSION: 0.10.3
+    profiles: [client-automated]
+  libssh-client-automated-0.10.4:
+    image: rub-nds/libssh-client-automated:0.10.4
+    build:
+      context: .
+      target: libssh-client-automated
+      args:
+        VERSION: 0.10.4
+    profiles: [client-automated]
+  libssh-client-automated-0.10.5:
+    image: rub-nds/libssh-client-automated:0.10.5
+    build:
+      context: .
+      target: libssh-client-automated
+      args:
+        VERSION: 0.10.5
+    profiles: [client-automated]
+  libssh-client-automated-0.10.6:
+    image: rub-nds/libssh-client-automated:0.10.6
+    build:
+      context: .
+      target: libssh-client-automated
+      args:
+        VERSION: 0.10.6
+    profiles: [client-automated]
+  libssh-client-automated-0.11.0:
+    image: rub-nds/libssh-client-automated:0.11.0
+    build:
+      context: .
+      target: libssh-client-automated
+      args:
+        VERSION: 0.11.0
+    profiles: [client-automated]
+  libssh-client-automated-0.11.1:
+    image: rub-nds/libssh-client-automated:0.11.1
+    build:
+      context: .
+      target: libssh-client-automated
+      args:
+        VERSION: 0.11.1
+    profiles: [client-automated]
+  libssh-client-automated-0.11.2:
+    image: rub-nds/libssh-client-automated:0.11.2
+    build:
+      context: .
+      target: libssh-client-automated
+      args:
+        VERSION: 0.11.2
+    profiles: [client-automated]

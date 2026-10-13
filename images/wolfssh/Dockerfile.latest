@@ -1,0 +1,120 @@
+# syntax=docker/dockerfile:1.7
+# Dockerfile for wolfssh "latest", i.e. a development checkout instead of a
+# tagged release (based on Debian Bookworm, as master no longer builds
+# warning-free on Bullseye's toolchain).
+#
+# Sources come from the named build contexts `wolfssl-src` and `wolfssh-src`.
+# By default they are the upstream master branches; compose.yml overrides them
+# with local git checkouts via `additional_contexts`. Only the committed HEAD
+# of a checkout is built (it is re-cloned below), so local build artifacts or
+# uncommitted changes in it do not leak into the image.
+
+FROM scratch AS wolfssl-src
+ADD --keep-git-dir=true https://github.com/wolfSSL/wolfssl.git#master /
+
+FROM scratch AS wolfssh-src
+ADD --keep-git-dir=true https://github.com/wolfSSL/wolfssh.git#master /
+
+# `wolfssh-builder` is just an intermediate image used for building and does
+# not require labels, so we can disable that linter rule.
+# hadolint ignore=DL3049
+FROM debian:bookworm AS wolfssh-builder
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        bsdextrautils \
+        autoconf  \
+        automake  \
+        ca-certificates \
+        g++ \
+        git \
+        libtool  \
+        make && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY --from=wolfssl-src / /ctx/wolfssl
+COPY --from=wolfssh-src / /ctx/wolfssh
+RUN git clone --quiet /ctx/wolfssl /src/wolfssl && \
+    git clone --quiet /ctx/wolfssh /src/wolfssh && \
+    rm -rf /ctx && \
+    git -C /src/wolfssl describe --tags --always > /src/wolfssl.version && \
+    git -C /src/wolfssh describe --tags --always > /src/wolfssh.version
+
+WORKDIR /src/wolfssl
+# HAVE_ECC384/HAVE_ECC521 are not exposed as ./configure flags but gate
+# wolfSSH's nistp384/nistp521 KEX and host-key algorithms (see
+# wolfssh/internal.h); without them the client/server only ever offer
+# nistp256, so they can't negotiate with a peer restricted to P-521 (e.g.
+# SSH-State-Learner's default server config).
+RUN ./autogen.sh && \
+    CFLAGS="-DHAVE_ECC384 -DHAVE_ECC521" ./configure --enable-ssh --enable-keygen --prefix=/install/wolfSSL && \
+    make -j"$(nproc)" && \
+    make install
+
+WORKDIR /src/wolfssh
+# --enable-fwd: TCP/IP port forwarding (direct-tcpip / tcpip-forward).
+RUN ./autogen.sh && \
+    ./configure --with-wolfssl=/install/wolfSSL --prefix=/install/wolfSSH --libdir=/install/wolfSSL/lib --includedir=/install/wolfSSL/include --enable-debug --enable-sshd --enable-fwd && \
+    LD_LIBRARY_PATH="/install/wolfSSL/lib" make -j"$(nproc)" && make install
+
+# Server image
+FROM debian:bookworm AS wolfssh-server
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+COPY authorized_keys /install/authorized_keys
+COPY sshd_config /install/sshd_config
+COPY --from=wolfssh-builder /install/wolfSSL/lib* /lib/
+COPY --from=wolfssh-builder /install/wolfSSH/lib* /lib/
+COPY --from=wolfssh-builder /src/wolfssh/apps /install/apps/
+COPY --from=wolfssh-builder /src/wolfssh/keys /keys
+COPY --from=wolfssh-builder /src/wolfssl.version /src/wolfssh.version /install/
+
+# Newer wolfsshd refuses group/world-readable host keys.
+RUN chmod 600 /keys/*.pem && \
+    useradd --system --no-create-home sshd && mkdir -p "/var/empty"
+
+ARG USERNAME=sshattacker
+ARG PASSWORD=secret
+RUN useradd --create-home --groups users "${USERNAME}" && \
+    echo "${USERNAME}:${PASSWORD}" | chpasswd
+COPY --chown="${USERNAME}:${USERNAME}" "authorized_keys" "/home/${USERNAME}/.ssh/"
+RUN chmod -R g=,o= "/home/${USERNAME}/.ssh"
+
+ARG VERSION=latest
+LABEL "ssh.implementation.name"="wolfssh" \
+    "ssh.implementation.version"="${VERSION}" \
+    "ssh.implementation.type"="server"
+
+ENTRYPOINT [ "/install/apps/wolfsshd/wolfsshd", \
+    "-f", "/install/sshd_config",\
+    "-d", "-D"]
+EXPOSE 22
+
+# Client image
+# Currently based on wolfssh-builder as client will fail to start otherwise
+FROM wolfssh-builder AS wolfssh-client
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+ARG VERSION=latest
+LABEL "ssh.implementation.name"="wolfssh" \
+    "ssh.implementation.version"="${VERSION}" \
+    "ssh.implementation.type"="client"
+
+ENTRYPOINT [ "/src/wolfssh/examples/client/client" ]
+
+# Automated client image
+# The example client accepts host keys automatically and takes -u/-P/-c
+# flags for non-interactive login and command execution, so no
+# expect-driven wrapper is needed here, just argument translation.
+FROM wolfssh-client AS wolfssh-client-automated
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+COPY run-client.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/run-client.sh
+
+ARG VERSION=latest
+LABEL "ssh.implementation.name"="wolfssh" \
+    "ssh.implementation.version"="${VERSION}" \
+    "ssh.implementation.type"="client-automated"
+
+ENTRYPOINT [ "/usr/local/bin/run-client.sh" ]
