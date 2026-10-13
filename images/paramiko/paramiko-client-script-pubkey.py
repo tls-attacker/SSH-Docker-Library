@@ -1,8 +1,42 @@
 #!/usr/bin/env python
+import os
+import sys
 import time
 
 import paramiko
 import click
+
+
+# How to treat a host key that is not in ~/.ssh/known_hosts, from SSLC_HOSTKEY_PROMPT: accept (and store it there),
+# accept_once (for this connection only) or reject
+class HostKeyRejected(paramiko.SSHException):
+    """The host key is unknown and SSLC_HOSTKEY_PROMPT says to reject it."""
+
+
+class RejectUnknownHostKey(paramiko.MissingHostKeyPolicy):
+    def missing_host_key(self, client, hostname, key):
+        raise HostKeyRejected("Host key of %s is not in known_hosts" % hostname)
+
+
+HOSTKEY_POLICIES = {
+    "accept": paramiko.AutoAddPolicy,
+    "accept_once": paramiko.WarningPolicy,
+    "reject": RejectUnknownHostKey,
+}
+KNOWN_HOSTS = os.path.expanduser("~/.ssh/known_hosts")
+
+
+def configure_host_keys(client):
+    prompt = os.environ.get("SSLC_HOSTKEY_PROMPT", "accept")
+    if prompt not in HOSTKEY_POLICIES:
+        sys.exit("SSLC_HOSTKEY_PROMPT=%s is not supported by paramiko" % prompt)
+    if prompt == "accept" and not os.path.exists(KNOWN_HOSTS):
+        # AutoAddPolicy only stores accepted keys in a file loaded with load_host_keys
+        os.makedirs(os.path.dirname(KNOWN_HOSTS), exist_ok=True)
+        open(KNOWN_HOSTS, "a").close()
+    if os.path.exists(KNOWN_HOSTS):
+        client.load_host_keys(KNOWN_HOSTS)
+    client.set_missing_host_key_policy(HOSTKEY_POLICIES[prompt]())
 
 
 def load_pubkeys(key_file):
@@ -39,7 +73,7 @@ def client_start(host, port, username, password, command, key_file, output, erro
     if output:
         print("init Client")
     client = paramiko.SSHClient()
-    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    configure_host_keys(client)
 
     if output:
         print("start connection")
@@ -57,6 +91,9 @@ def client_start(host, port, username, password, command, key_file, output, erro
     try:
         key = load_pubkeys(key_file)
         client.connect(host, port=port, username=username, password=password, pkey=key)
+    except (HostKeyRejected, paramiko.BadHostKeyException):
+        # retrying without the key would only open a second connection to the server
+        raise
     except Exception as e:
         print("Loading pubkeys failed, may need to use a newer version of paramiko")
         client.connect(host, port=port, username=username, password=password)

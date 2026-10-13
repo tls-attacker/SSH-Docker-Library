@@ -113,4 +113,6 @@ COPY --from=openssh-builder /install /install
 LABEL ssh.implementation.name="openssh" \
       ssh.implementation.version="${VERSION}" \
       ssh.implementation.type="client-automated"
+# reads SSLC_HOSTKEY_PROMPT and honors /root/.ssh/known_hosts, see SSH-State-Learner's host key handling
+LABEL de.rub.nds.sslc.hostkey-policy="1"
 ENTRYPOINT [ "/usr/local/bin/start.sh" ]

@@ -101,4 +101,11 @@ LABEL "ssh.implementation.name"="wolfssh" \
     "ssh.implementation.version"="${VERSION}" \
     "ssh.implementation.type"="client-automated"
 
+# the example client accepts every host key; SSLC_HOSTKEY_PROMPT=reject makes it reject them
+RUN apt-get update && apt-get install -y --no-install-recommends patch && rm -rf /var/lib/apt/lists/*
+COPY hostkey-policy.patch /src/
+WORKDIR /src/wolfssh
+RUN patch -p1 < /src/hostkey-policy.patch && LD_LIBRARY_PATH="/install/wolfSSL/lib" make
+# reads SSLC_HOSTKEY_PROMPT (wolfSSH keeps no known hosts), see SSH-State-Learner's host key handling
+LABEL de.rub.nds.sslc.hostkey-policy="1"
 ENTRYPOINT [ "/usr/local/bin/run-client.sh" ]

@@ -6,17 +6,39 @@ set user [lindex $argv 2]
 set password [lindex $argv 3]
 set command [lindex $argv 4]
 
+# How to answer the host key prompt: accept (and store) or reject; OpenSSH cannot trust a key once without storing it
+set hostkey_prompt "accept"
+if {[info exists env(SSLC_HOSTKEY_PROMPT)]} {
+    set hostkey_prompt $env(SSLC_HOSTKEY_PROMPT)
+}
+switch -- $hostkey_prompt {
+    accept { set hostkey_answer "yes" }
+    reject { set hostkey_answer "no" }
+    default {
+        puts stderr "SSLC_HOSTKEY_PROMPT=$hostkey_prompt is not supported by OpenSSH"
+        exit 1
+    }
+}
+
 spawn /install/bin/ssh "$ip" "-p" "$port" "-l" "$user"
 
 set timeout 5
+# if the host key is known, there is no prompt and the password prompt comes first
+set password_sent 0
 expect {
     "yes/no" {
-        send "yes\r"
+        send "$hostkey_answer\r"
+    }
+    "password:" {
+        send "$password\r"
+        set password_sent 1
     }
 }
-expect {
-	"password:" {
-         send "$password\r"
+if {!$password_sent} {
+    expect {
+        "password:" {
+            send "$password\r"
+        }
     }
 }
 expect {

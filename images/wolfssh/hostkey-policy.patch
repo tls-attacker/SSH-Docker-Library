@@ -1,0 +1,18 @@
+--- a/examples/client/common.c
++++ b/examples/client/common.c
+@@ -429,6 +429,15 @@
+ #endif
+ #endif
+ 
++    /* SSH-State-Learner: the example client keeps no known hosts and accepts every key; reject them if asked to */
++    if (ret == 0) {
++        const char* prompt = getenv("SSLC_HOSTKEY_PROMPT");
++        if (prompt != NULL && strcmp(prompt, "reject") == 0) {
++            printf("Rejecting the host key (SSLC_HOSTKEY_PROMPT=reject)\n");
++            ret = -1;
++        }
++    }
++
+     return ret;
+ }
+ 

@@ -40,4 +40,6 @@ LABEL ssh.implementation.name="asyncssh" \
       ssh.implementation.version="${VERSION}" \
       ssh.implementation.type="client"
 
+# reads SSLC_HOSTKEY_PROMPT and honors /root/.ssh/known_hosts, see SSH-State-Learner's host key handling
+LABEL de.rub.nds.sslc.hostkey-policy="1"
 ENTRYPOINT [ "python", "/app/simple_client.py" ]

@@ -6,17 +6,39 @@ set user [lindex $argv 2]
 set password [lindex $argv 3]
 set command [lindex $argv 4]
 
+# How to answer the host key prompt: accept (and store) or reject; Dropbear cannot trust a key once without storing it
+set hostkey_prompt "accept"
+if {[info exists env(SSLC_HOSTKEY_PROMPT)]} {
+    set hostkey_prompt $env(SSLC_HOSTKEY_PROMPT)
+}
+switch -- $hostkey_prompt {
+    accept { set hostkey_answer "y" }
+    reject { set hostkey_answer "n" }
+    default {
+        puts stderr "SSLC_HOSTKEY_PROMPT=$hostkey_prompt is not supported by Dropbear"
+        exit 1
+    }
+}
+
 spawn /usr/local/bin/dbclient "$ip" "-p" "$port" "-l" "$user"
 
 set timeout 5
+# if the host key is known, there is no prompt and the password prompt comes first
+set password_sent 0
 expect {
     "y/n" {
-        send "y\r"
+        send "$hostkey_answer\r"
+    }
+    "$user@$ip's password:" {
+        send "$password\r"
+        set password_sent 1
     }
 }
-expect {
-	"$user@$ip's password:" {
-         send "$password\r"
+if {!$password_sent} {
+    expect {
+        "$user@$ip's password:" {
+            send "$password\r"
+        }
     }
 }
 expect {

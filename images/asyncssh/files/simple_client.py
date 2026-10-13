@@ -4,7 +4,34 @@
 import click
 import asyncio
 import asyncssh
+import os
 import sys
+
+
+class HostKeyPolicyClient(asyncssh.SSHClient):
+    """Decides on host keys that are not in ~/.ssh/known_hosts as SSLC_HOSTKEY_PROMPT says."""
+
+    def __init__(self, accept):
+        self._accept = accept
+
+    def validate_host_public_key(self, host, addr, port, key):
+        return self._accept
+
+
+def host_key_options():
+    """
+    The connect options for SSLC_HOSTKEY_PROMPT: accept_once or reject a key that is not in ~/.ssh/known_hosts.
+    asyncssh never writes known_hosts, so it cannot accept and store a key. Without SSLC_HOSTKEY_PROMPT, host keys
+    are not checked at all, as before.
+    """
+    prompt = os.environ.get("SSLC_HOSTKEY_PROMPT")
+    if prompt is None:
+        return {"known_hosts": None}
+    if prompt not in ("accept_once", "reject"):
+        sys.exit("SSLC_HOSTKEY_PROMPT=%s is not supported by asyncssh" % prompt)
+    accept = prompt == "accept_once"
+    # known_hosts left at its default: ~/.ssh/known_hosts, if it exists
+    return {"client_factory": lambda: HostKeyPolicyClient(accept)}
 
 
 @click.command()
@@ -37,7 +64,7 @@ def client_start(host, port, username, password, command, output, error):
 
 async def run_client(host, port, username, password, command, output, error):
     async with asyncssh.connect(
-        host=host, port=port, username=username, password=password, known_hosts=None
+        host=host, port=port, username=username, password=password, **host_key_options()
     ) as conn:
         try:
             result = await conn.run(command, check=True)

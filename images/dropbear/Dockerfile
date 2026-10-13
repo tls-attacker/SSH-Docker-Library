@@ -97,4 +97,6 @@ RUN chmod +x /usr/local/bin/start.sh
 LABEL ssh.implementation.name="dropbear" \
       ssh.implementation.version="${VERSION}" \
       ssh.implementation.type="client-automated"
+# reads SSLC_HOSTKEY_PROMPT and honors /root/.ssh/known_hosts, see SSH-State-Learner's host key handling
+LABEL de.rub.nds.sslc.hostkey-policy="1"
 ENTRYPOINT [ "/usr/local/bin/start.sh" ]

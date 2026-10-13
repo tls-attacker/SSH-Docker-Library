@@ -19,6 +19,8 @@ ARG VERSION=0.54.4
 
 RUN mkdir /app
 COPY password-client.patch /app/
+# optional, to bound the memory of the build
+ARG CARGO_BUILD_JOBS
 RUN git clone https://github.com/Eugeny/russh.git /app/russh && \
     cd /app/russh && \
     git checkout "v${VERSION}" && \
@@ -46,4 +48,6 @@ RUN cp /app/russh/target/debug/examples/client_exec_simple /install/bin/russh-cl
 LABEL ssh.implementation.name="russh" \
       ssh.implementation.version="${VERSION}" \
       ssh.implementation.type="client"
+# reads SSLC_HOSTKEY_PROMPT and honors /root/.ssh/known_hosts, see SSH-State-Learner's host key handling
+LABEL de.rub.nds.sslc.hostkey-policy="1"
 ENTRYPOINT [ "/install/bin/russh-client" ]
