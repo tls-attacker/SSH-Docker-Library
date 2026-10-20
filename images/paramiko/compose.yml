@@ -147,4 +147,11 @@ services:
       args:
         VERSION: 2.11.0
     profiles: [client]
+  paramiko-client-5.1.0:
+    image: rub-nds/paramiko-client:5.1.0
+    build:
+      context: .
+      args:
+        VERSION: 5.1.0
+    profiles: [client]
 

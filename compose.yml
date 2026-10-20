@@ -4657,6 +4657,10 @@ services:
     extends:
       file: images/paramiko/compose.yml
       service: paramiko-client-2.11.0
+  paramiko-client-5.1.0:
+    extends:
+      file: images/paramiko/compose.yml
+      service: paramiko-client-5.1.0
   putty-client-0.71:
     extends:
       file: images/putty/compose.yml
@@ -4997,6 +5001,12 @@ services:
       service: wolfssh-server-1.4.14
     ports:
       - '37005:22'
+  wolfssh-server-1.6.0:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-server-1.6.0
+    ports:
+      - '37007:22'
   wolfssh-client-1.4.8:
     extends:
       file: images/wolfssh/compose.yml
@@ -5021,6 +5031,10 @@ services:
     extends:
       file: images/wolfssh/compose.yml
       service: wolfssh-client-1.4.14
+  wolfssh-client-1.6.0:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-1.6.0
   wolfssh-client-automated-1.4.8:
     extends:
       file: images/wolfssh/compose.yml
@@ -5057,6 +5071,12 @@ services:
       service: wolfssh-client-automated-1.4.14
     ports:
       - '37017:22'
+  wolfssh-client-automated-1.6.0:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.6.0
+    ports:
+      - '37019:22'
   wolfssh-server-latest:
     extends:
       file: images/wolfssh/compose.yml

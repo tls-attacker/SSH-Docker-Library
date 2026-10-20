@@ -41,6 +41,15 @@ services:
       target: wolfssh-server
       args:
         VERSION: 1.4.14
+  wolfssh-server-1.6.0:
+    image: rub-nds/wolfssh-server:1.6.0
+    build:
+      context: .
+      target: wolfssh-server
+      args:
+        VERSION: 1.6.0
+        # wolfSSH 1.6.0 needs wolfSSL built with WOLFSSL_WOLFSSH; 5.9.1 is the release its CI tests against
+        VERSION_SSL: 5.9.1
 
   wolfssh-client-1.4.8:
     image: rub-nds/wolfssh-client:1.4.8
@@ -90,6 +99,16 @@ services:
       args:
         VERSION: 1.4.14
     profiles: [client]
+  wolfssh-client-1.6.0:
+    image: rub-nds/wolfssh-client:1.6.0
+    build:
+      context: .
+      target: wolfssh-client
+      args:
+        VERSION: 1.6.0
+        # wolfSSH 1.6.0 needs wolfSSL built with WOLFSSL_WOLFSSH; 5.9.1 is the release its CI tests against
+        VERSION_SSL: 5.9.1
+    profiles: [client]
 
   wolfssh-client-automated-1.4.8:
     image: rub-nds/wolfssh-client-automated:1.4.8
@@ -138,6 +157,16 @@ services:
       target: wolfssh-client-automated
       args:
         VERSION: 1.4.14
+    profiles: [client-automated]
+  wolfssh-client-automated-1.6.0:
+    image: rub-nds/wolfssh-client-automated:1.6.0
+    build:
+      context: .
+      target: wolfssh-client-automated
+      args:
+        VERSION: 1.6.0
+        # wolfSSH 1.6.0 needs wolfSSL built with WOLFSSL_WOLFSSH; 5.9.1 is the release its CI tests against
+        VERSION_SSL: 5.9.1
     profiles: [client-automated]
 
   # Development checkouts (see Dockerfile.latest); override sources with

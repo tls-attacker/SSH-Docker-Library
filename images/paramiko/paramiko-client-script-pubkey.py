@@ -43,6 +43,9 @@ def load_pubkeys(key_file):
     if key_file == "id_rsa":
         key = paramiko.RSAKey.from_private_key_file(".ssh/id_rsa")
     elif key_file == "id_dsa":
+        # paramiko 4.0 removed DSA (DSSKey); without it this raises and the client falls back to password auth
+        if not hasattr(paramiko, "DSSKey"):
+            raise paramiko.SSHException("DSA keys are not supported by this paramiko version")
         key = paramiko.DSSKey.from_private_key_file(".ssh/id_dsa")
     elif key_file == "id_ecdsa":
         key = paramiko.ECDSAKey.from_private_key_file(".ssh/id_ecdsa")
