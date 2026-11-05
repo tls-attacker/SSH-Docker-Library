@@ -4,6 +4,7 @@
 # not require labels, so we can disable that linter rule.
 # hadolint ignore=DL3049
 FROM debian:bullseye AS libssh-builder
+RUN sed -i -e "s|deb.debian.org/debian-security|archive.debian.org/debian-security|g" -e "s|security.debian.org|archive.debian.org|g" /etc/apt/sources.list && printf "Acquire::Check-Valid-Until \"false\";\n" > /etc/apt/apt.conf.d/99archive
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
@@ -34,6 +35,7 @@ RUN cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/install .. && \
     make install
 
 FROM debian:bullseye AS libssh-server
+RUN sed -i -e "s|deb.debian.org/debian-security|archive.debian.org/debian-security|g" -e "s|security.debian.org|archive.debian.org|g" /etc/apt/sources.list && printf "Acquire::Check-Valid-Until \"false\";\n" > /etc/apt/apt.conf.d/99archive
 ARG VERSION
 RUN apt-get update && apt-get install -y --no-install-recommends \
   libssl-dev \
@@ -55,6 +57,7 @@ CMD [ "-p", "22", \
 EXPOSE 22
 
 FROM debian:bullseye AS libssh-client
+RUN sed -i -e "s|deb.debian.org/debian-security|archive.debian.org/debian-security|g" -e "s|security.debian.org|archive.debian.org|g" /etc/apt/sources.list && printf "Acquire::Check-Valid-Until \"false\";\n" > /etc/apt/apt.conf.d/99archive
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 ARG DOTSSH=dotssh-client

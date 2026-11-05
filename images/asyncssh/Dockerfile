@@ -1,5 +1,5 @@
 # hadolint ignore=DL3049
-FROM python:3 AS asyncssh-base
+FROM python:3.11 AS asyncssh-base
 
 WORKDIR /app
 COPY files/requirements.txt ./
