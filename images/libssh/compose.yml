@@ -125,6 +125,48 @@ services:
       target: libssh-server
       args:
         VERSION: 0.11.2
+  libssh-server-0.11.3:
+    image: rub-nds/libssh-server:0.11.3
+    build:
+      context: .
+      target: libssh-server
+      args:
+        VERSION: 0.11.3
+  libssh-server-0.11.4:
+    image: rub-nds/libssh-server:0.11.4
+    build:
+      context: .
+      target: libssh-server
+      args:
+        VERSION: 0.11.4
+  libssh-server-0.11.5:
+    image: rub-nds/libssh-server:0.11.5
+    build:
+      context: .
+      target: libssh-server
+      args:
+        VERSION: 0.11.5
+  libssh-server-0.12.0:
+    image: rub-nds/libssh-server:0.12.0
+    build:
+      context: .
+      target: libssh-server
+      args:
+        VERSION: 0.12.0
+  libssh-server-0.12.1:
+    image: rub-nds/libssh-server:0.12.1
+    build:
+      context: .
+      target: libssh-server
+      args:
+        VERSION: 0.12.1
+  libssh-server-0.12.2:
+    image: rub-nds/libssh-server:0.12.2
+    build:
+      context: .
+      target: libssh-server
+      args:
+        VERSION: 0.12.2
   libssh-client-0.9.0:
     image: rub-nds/libssh-client:0.9.0
     build:
@@ -268,4 +310,52 @@ services:
       target: libssh-client
       args:
         VERSION: 0.11.2
+    profiles: [client]
+  libssh-client-0.11.3:
+    image: rub-nds/libssh-client:0.11.3
+    build:
+      context: .
+      target: libssh-client
+      args:
+        VERSION: 0.11.3
+    profiles: [client]
+  libssh-client-0.11.4:
+    image: rub-nds/libssh-client:0.11.4
+    build:
+      context: .
+      target: libssh-client
+      args:
+        VERSION: 0.11.4
+    profiles: [client]
+  libssh-client-0.11.5:
+    image: rub-nds/libssh-client:0.11.5
+    build:
+      context: .
+      target: libssh-client
+      args:
+        VERSION: 0.11.5
+    profiles: [client]
+  libssh-client-0.12.0:
+    image: rub-nds/libssh-client:0.12.0
+    build:
+      context: .
+      target: libssh-client
+      args:
+        VERSION: 0.12.0
+    profiles: [client]
+  libssh-client-0.12.1:
+    image: rub-nds/libssh-client:0.12.1
+    build:
+      context: .
+      target: libssh-client
+      args:
+        VERSION: 0.12.1
+    profiles: [client]
+  libssh-client-0.12.2:
+    image: rub-nds/libssh-client:0.12.2
+    build:
+      context: .
+      target: libssh-client
+      args:
+        VERSION: 0.12.2
     profiles: [client]

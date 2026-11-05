@@ -706,6 +706,363 @@ services:
       target: erlang-ssh-server
       args:
         VERSION: 27.3.0.0
+  erlang-ssh-server-27.3.2:
+    image: rub-nds/erlang-ssh-server:27.3.2
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 27.3.2
+  erlang-ssh-server-27.3.3:
+    image: rub-nds/erlang-ssh-server:27.3.3
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 27.3.3
+  erlang-ssh-server-27.3.4:
+    image: rub-nds/erlang-ssh-server:27.3.4
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 27.3.4
+  erlang-ssh-server-27.3.4.1:
+    image: rub-nds/erlang-ssh-server:27.3.4.1
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 27.3.4.1
+  erlang-ssh-server-27.3.4.2:
+    image: rub-nds/erlang-ssh-server:27.3.4.2
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 27.3.4.2
+  erlang-ssh-server-27.3.4.3:
+    image: rub-nds/erlang-ssh-server:27.3.4.3
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 27.3.4.3
+  erlang-ssh-server-27.3.4.6:
+    image: rub-nds/erlang-ssh-server:27.3.4.6
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 27.3.4.6
+  erlang-ssh-server-27.3.4.8:
+    image: rub-nds/erlang-ssh-server:27.3.4.8
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 27.3.4.8
+  erlang-ssh-server-27.3.4.9:
+    image: rub-nds/erlang-ssh-server:27.3.4.9
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 27.3.4.9
+  erlang-ssh-server-27.3.4.10:
+    image: rub-nds/erlang-ssh-server:27.3.4.10
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 27.3.4.10
+  erlang-ssh-server-27.3.4.11:
+    image: rub-nds/erlang-ssh-server:27.3.4.11
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 27.3.4.11
+  erlang-ssh-server-27.3.4.12:
+    image: rub-nds/erlang-ssh-server:27.3.4.12
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 27.3.4.12
+  erlang-ssh-server-27.3.4.13:
+    image: rub-nds/erlang-ssh-server:27.3.4.13
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 27.3.4.13
+  erlang-ssh-server-27.3.4.14:
+    image: rub-nds/erlang-ssh-server:27.3.4.14
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 27.3.4.14
+  erlang-ssh-server-27.3.4.15:
+    image: rub-nds/erlang-ssh-server:27.3.4.15
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 27.3.4.15
+  erlang-ssh-server-27.3.4.16:
+    image: rub-nds/erlang-ssh-server:27.3.4.16
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 27.3.4.16
+  erlang-ssh-server-27.3.4.17:
+    image: rub-nds/erlang-ssh-server:27.3.4.17
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 27.3.4.17
+  erlang-ssh-server-27.3.4.18:
+    image: rub-nds/erlang-ssh-server:27.3.4.18
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 27.3.4.18
+  erlang-ssh-server-27.3.4.19:
+    image: rub-nds/erlang-ssh-server:27.3.4.19
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 27.3.4.19
+  erlang-ssh-server-28:
+    image: rub-nds/erlang-ssh-server:28
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 28
+  erlang-ssh-server-28.0.1:
+    image: rub-nds/erlang-ssh-server:28.0.1
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 28.0.1
+  erlang-ssh-server-28.0.2:
+    image: rub-nds/erlang-ssh-server:28.0.2
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 28.0.2
+  erlang-ssh-server-28.0.4:
+    image: rub-nds/erlang-ssh-server:28.0.4
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 28.0.4
+  erlang-ssh-server-28.1:
+    image: rub-nds/erlang-ssh-server:28.1
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 28.1
+  erlang-ssh-server-28.2:
+    image: rub-nds/erlang-ssh-server:28.2
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 28.2
+  erlang-ssh-server-28.3:
+    image: rub-nds/erlang-ssh-server:28.3
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 28.3
+  erlang-ssh-server-28.3.1:
+    image: rub-nds/erlang-ssh-server:28.3.1
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 28.3.1
+  erlang-ssh-server-28.3.2:
+    image: rub-nds/erlang-ssh-server:28.3.2
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 28.3.2
+  erlang-ssh-server-28.3.3:
+    image: rub-nds/erlang-ssh-server:28.3.3
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 28.3.3
+  erlang-ssh-server-28.4:
+    image: rub-nds/erlang-ssh-server:28.4
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 28.4
+  erlang-ssh-server-28.4.1:
+    image: rub-nds/erlang-ssh-server:28.4.1
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 28.4.1
+  erlang-ssh-server-28.4.2:
+    image: rub-nds/erlang-ssh-server:28.4.2
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 28.4.2
+  erlang-ssh-server-28.5:
+    image: rub-nds/erlang-ssh-server:28.5
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 28.5
+  erlang-ssh-server-28.5.0.1:
+    image: rub-nds/erlang-ssh-server:28.5.0.1
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 28.5.0.1
+  erlang-ssh-server-28.5.0.2:
+    image: rub-nds/erlang-ssh-server:28.5.0.2
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 28.5.0.2
+  erlang-ssh-server-28.5.0.3:
+    image: rub-nds/erlang-ssh-server:28.5.0.3
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 28.5.0.3
+  erlang-ssh-server-28.5.0.4:
+    image: rub-nds/erlang-ssh-server:28.5.0.4
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 28.5.0.4
+  erlang-ssh-server-28.5.0.5:
+    image: rub-nds/erlang-ssh-server:28.5.0.5
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 28.5.0.5
+  erlang-ssh-server-28.5.0.6:
+    image: rub-nds/erlang-ssh-server:28.5.0.6
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 28.5.0.6
+  erlang-ssh-server-28.5.0.7:
+    image: rub-nds/erlang-ssh-server:28.5.0.7
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 28.5.0.7
+  erlang-ssh-server-28.5.0.8:
+    image: rub-nds/erlang-ssh-server:28.5.0.8
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 28.5.0.8
+  erlang-ssh-server-29:
+    image: rub-nds/erlang-ssh-server:29
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 29
+  erlang-ssh-server-29.0.1:
+    image: rub-nds/erlang-ssh-server:29.0.1
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 29.0.1
+  erlang-ssh-server-29.0.2:
+    image: rub-nds/erlang-ssh-server:29.0.2
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 29.0.2
+  erlang-ssh-server-29.0.3:
+    image: rub-nds/erlang-ssh-server:29.0.3
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 29.0.3
+  erlang-ssh-server-29.0.4:
+    image: rub-nds/erlang-ssh-server:29.0.4
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 29.0.4
+  erlang-ssh-server-29.0.5:
+    image: rub-nds/erlang-ssh-server:29.0.5
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 29.0.5
+  erlang-ssh-server-29.0.6:
+    image: rub-nds/erlang-ssh-server:29.0.6
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 29.0.6
+  erlang-ssh-server-29.1:
+    image: rub-nds/erlang-ssh-server:29.1
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 29.1
+  erlang-ssh-server-29.1.1:
+    image: rub-nds/erlang-ssh-server:29.1.1
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 29.1.1
+  erlang-ssh-server-29.1.2:
+    image: rub-nds/erlang-ssh-server:29.1.2
+    build:
+      context: .
+      target: erlang-ssh-server
+      args:
+        VERSION: 29.1.2
   erlang-ssh-client-17.5:
     image: rub-nds/erlang-ssh-client:17.5
     build:
@@ -1514,6 +1871,414 @@ services:
       args:
         VERSION: 27.3.0.0
     profiles: [client]
+  erlang-ssh-client-27.3.2:
+    image: rub-nds/erlang-ssh-client:27.3.2
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 27.3.2
+    profiles: [client]
+  erlang-ssh-client-27.3.3:
+    image: rub-nds/erlang-ssh-client:27.3.3
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 27.3.3
+    profiles: [client]
+  erlang-ssh-client-27.3.4:
+    image: rub-nds/erlang-ssh-client:27.3.4
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 27.3.4
+    profiles: [client]
+  erlang-ssh-client-27.3.4.1:
+    image: rub-nds/erlang-ssh-client:27.3.4.1
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 27.3.4.1
+    profiles: [client]
+  erlang-ssh-client-27.3.4.2:
+    image: rub-nds/erlang-ssh-client:27.3.4.2
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 27.3.4.2
+    profiles: [client]
+  erlang-ssh-client-27.3.4.3:
+    image: rub-nds/erlang-ssh-client:27.3.4.3
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 27.3.4.3
+    profiles: [client]
+  erlang-ssh-client-27.3.4.6:
+    image: rub-nds/erlang-ssh-client:27.3.4.6
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 27.3.4.6
+    profiles: [client]
+  erlang-ssh-client-27.3.4.8:
+    image: rub-nds/erlang-ssh-client:27.3.4.8
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 27.3.4.8
+    profiles: [client]
+  erlang-ssh-client-27.3.4.9:
+    image: rub-nds/erlang-ssh-client:27.3.4.9
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 27.3.4.9
+    profiles: [client]
+  erlang-ssh-client-27.3.4.10:
+    image: rub-nds/erlang-ssh-client:27.3.4.10
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 27.3.4.10
+    profiles: [client]
+  erlang-ssh-client-27.3.4.11:
+    image: rub-nds/erlang-ssh-client:27.3.4.11
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 27.3.4.11
+    profiles: [client]
+  erlang-ssh-client-27.3.4.12:
+    image: rub-nds/erlang-ssh-client:27.3.4.12
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 27.3.4.12
+    profiles: [client]
+  erlang-ssh-client-27.3.4.13:
+    image: rub-nds/erlang-ssh-client:27.3.4.13
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 27.3.4.13
+    profiles: [client]
+  erlang-ssh-client-27.3.4.14:
+    image: rub-nds/erlang-ssh-client:27.3.4.14
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 27.3.4.14
+    profiles: [client]
+  erlang-ssh-client-27.3.4.15:
+    image: rub-nds/erlang-ssh-client:27.3.4.15
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 27.3.4.15
+    profiles: [client]
+  erlang-ssh-client-27.3.4.16:
+    image: rub-nds/erlang-ssh-client:27.3.4.16
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 27.3.4.16
+    profiles: [client]
+  erlang-ssh-client-27.3.4.17:
+    image: rub-nds/erlang-ssh-client:27.3.4.17
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 27.3.4.17
+    profiles: [client]
+  erlang-ssh-client-27.3.4.18:
+    image: rub-nds/erlang-ssh-client:27.3.4.18
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 27.3.4.18
+    profiles: [client]
+  erlang-ssh-client-27.3.4.19:
+    image: rub-nds/erlang-ssh-client:27.3.4.19
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 27.3.4.19
+    profiles: [client]
+  erlang-ssh-client-28:
+    image: rub-nds/erlang-ssh-client:28
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 28
+    profiles: [client]
+  erlang-ssh-client-28.0.1:
+    image: rub-nds/erlang-ssh-client:28.0.1
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 28.0.1
+    profiles: [client]
+  erlang-ssh-client-28.0.2:
+    image: rub-nds/erlang-ssh-client:28.0.2
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 28.0.2
+    profiles: [client]
+  erlang-ssh-client-28.0.4:
+    image: rub-nds/erlang-ssh-client:28.0.4
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 28.0.4
+    profiles: [client]
+  erlang-ssh-client-28.1:
+    image: rub-nds/erlang-ssh-client:28.1
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 28.1
+    profiles: [client]
+  erlang-ssh-client-28.2:
+    image: rub-nds/erlang-ssh-client:28.2
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 28.2
+    profiles: [client]
+  erlang-ssh-client-28.3:
+    image: rub-nds/erlang-ssh-client:28.3
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 28.3
+    profiles: [client]
+  erlang-ssh-client-28.3.1:
+    image: rub-nds/erlang-ssh-client:28.3.1
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 28.3.1
+    profiles: [client]
+  erlang-ssh-client-28.3.2:
+    image: rub-nds/erlang-ssh-client:28.3.2
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 28.3.2
+    profiles: [client]
+  erlang-ssh-client-28.3.3:
+    image: rub-nds/erlang-ssh-client:28.3.3
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 28.3.3
+    profiles: [client]
+  erlang-ssh-client-28.4:
+    image: rub-nds/erlang-ssh-client:28.4
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 28.4
+    profiles: [client]
+  erlang-ssh-client-28.4.1:
+    image: rub-nds/erlang-ssh-client:28.4.1
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 28.4.1
+    profiles: [client]
+  erlang-ssh-client-28.4.2:
+    image: rub-nds/erlang-ssh-client:28.4.2
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 28.4.2
+    profiles: [client]
+  erlang-ssh-client-28.5:
+    image: rub-nds/erlang-ssh-client:28.5
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 28.5
+    profiles: [client]
+  erlang-ssh-client-28.5.0.1:
+    image: rub-nds/erlang-ssh-client:28.5.0.1
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 28.5.0.1
+    profiles: [client]
+  erlang-ssh-client-28.5.0.2:
+    image: rub-nds/erlang-ssh-client:28.5.0.2
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 28.5.0.2
+    profiles: [client]
+  erlang-ssh-client-28.5.0.3:
+    image: rub-nds/erlang-ssh-client:28.5.0.3
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 28.5.0.3
+    profiles: [client]
+  erlang-ssh-client-28.5.0.4:
+    image: rub-nds/erlang-ssh-client:28.5.0.4
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 28.5.0.4
+    profiles: [client]
+  erlang-ssh-client-28.5.0.5:
+    image: rub-nds/erlang-ssh-client:28.5.0.5
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 28.5.0.5
+    profiles: [client]
+  erlang-ssh-client-28.5.0.6:
+    image: rub-nds/erlang-ssh-client:28.5.0.6
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 28.5.0.6
+    profiles: [client]
+  erlang-ssh-client-28.5.0.7:
+    image: rub-nds/erlang-ssh-client:28.5.0.7
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 28.5.0.7
+    profiles: [client]
+  erlang-ssh-client-28.5.0.8:
+    image: rub-nds/erlang-ssh-client:28.5.0.8
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 28.5.0.8
+    profiles: [client]
+  erlang-ssh-client-29:
+    image: rub-nds/erlang-ssh-client:29
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 29
+    profiles: [client]
+  erlang-ssh-client-29.0.1:
+    image: rub-nds/erlang-ssh-client:29.0.1
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 29.0.1
+    profiles: [client]
+  erlang-ssh-client-29.0.2:
+    image: rub-nds/erlang-ssh-client:29.0.2
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 29.0.2
+    profiles: [client]
+  erlang-ssh-client-29.0.3:
+    image: rub-nds/erlang-ssh-client:29.0.3
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 29.0.3
+    profiles: [client]
+  erlang-ssh-client-29.0.4:
+    image: rub-nds/erlang-ssh-client:29.0.4
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 29.0.4
+    profiles: [client]
+  erlang-ssh-client-29.0.5:
+    image: rub-nds/erlang-ssh-client:29.0.5
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 29.0.5
+    profiles: [client]
+  erlang-ssh-client-29.0.6:
+    image: rub-nds/erlang-ssh-client:29.0.6
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 29.0.6
+    profiles: [client]
+  erlang-ssh-client-29.1:
+    image: rub-nds/erlang-ssh-client:29.1
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 29.1
+    profiles: [client]
+  erlang-ssh-client-29.1.1:
+    image: rub-nds/erlang-ssh-client:29.1.1
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 29.1.1
+    profiles: [client]
+  erlang-ssh-client-29.1.2:
+    image: rub-nds/erlang-ssh-client:29.1.2
+    build:
+      context: .
+      target: erlang-ssh-client
+      args:
+        VERSION: 29.1.2
+    profiles: [client]
   erlang-ssh-client-automated-17.5:
     image: rub-nds/erlang-ssh-client-automated:17.5
     build:
@@ -2321,4 +3086,412 @@ services:
       target: erlang-ssh-client-automated
       args:
         VERSION: 27.3.0.0
+    profiles: [client-automated]
+  erlang-ssh-client-automated-27.3.2:
+    image: rub-nds/erlang-ssh-client-automated:27.3.2
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 27.3.2
+    profiles: [client-automated]
+  erlang-ssh-client-automated-27.3.3:
+    image: rub-nds/erlang-ssh-client-automated:27.3.3
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 27.3.3
+    profiles: [client-automated]
+  erlang-ssh-client-automated-27.3.4:
+    image: rub-nds/erlang-ssh-client-automated:27.3.4
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 27.3.4
+    profiles: [client-automated]
+  erlang-ssh-client-automated-27.3.4.1:
+    image: rub-nds/erlang-ssh-client-automated:27.3.4.1
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 27.3.4.1
+    profiles: [client-automated]
+  erlang-ssh-client-automated-27.3.4.2:
+    image: rub-nds/erlang-ssh-client-automated:27.3.4.2
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 27.3.4.2
+    profiles: [client-automated]
+  erlang-ssh-client-automated-27.3.4.3:
+    image: rub-nds/erlang-ssh-client-automated:27.3.4.3
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 27.3.4.3
+    profiles: [client-automated]
+  erlang-ssh-client-automated-27.3.4.6:
+    image: rub-nds/erlang-ssh-client-automated:27.3.4.6
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 27.3.4.6
+    profiles: [client-automated]
+  erlang-ssh-client-automated-27.3.4.8:
+    image: rub-nds/erlang-ssh-client-automated:27.3.4.8
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 27.3.4.8
+    profiles: [client-automated]
+  erlang-ssh-client-automated-27.3.4.9:
+    image: rub-nds/erlang-ssh-client-automated:27.3.4.9
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 27.3.4.9
+    profiles: [client-automated]
+  erlang-ssh-client-automated-27.3.4.10:
+    image: rub-nds/erlang-ssh-client-automated:27.3.4.10
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 27.3.4.10
+    profiles: [client-automated]
+  erlang-ssh-client-automated-27.3.4.11:
+    image: rub-nds/erlang-ssh-client-automated:27.3.4.11
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 27.3.4.11
+    profiles: [client-automated]
+  erlang-ssh-client-automated-27.3.4.12:
+    image: rub-nds/erlang-ssh-client-automated:27.3.4.12
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 27.3.4.12
+    profiles: [client-automated]
+  erlang-ssh-client-automated-27.3.4.13:
+    image: rub-nds/erlang-ssh-client-automated:27.3.4.13
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 27.3.4.13
+    profiles: [client-automated]
+  erlang-ssh-client-automated-27.3.4.14:
+    image: rub-nds/erlang-ssh-client-automated:27.3.4.14
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 27.3.4.14
+    profiles: [client-automated]
+  erlang-ssh-client-automated-27.3.4.15:
+    image: rub-nds/erlang-ssh-client-automated:27.3.4.15
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 27.3.4.15
+    profiles: [client-automated]
+  erlang-ssh-client-automated-27.3.4.16:
+    image: rub-nds/erlang-ssh-client-automated:27.3.4.16
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 27.3.4.16
+    profiles: [client-automated]
+  erlang-ssh-client-automated-27.3.4.17:
+    image: rub-nds/erlang-ssh-client-automated:27.3.4.17
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 27.3.4.17
+    profiles: [client-automated]
+  erlang-ssh-client-automated-27.3.4.18:
+    image: rub-nds/erlang-ssh-client-automated:27.3.4.18
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 27.3.4.18
+    profiles: [client-automated]
+  erlang-ssh-client-automated-27.3.4.19:
+    image: rub-nds/erlang-ssh-client-automated:27.3.4.19
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 27.3.4.19
+    profiles: [client-automated]
+  erlang-ssh-client-automated-28:
+    image: rub-nds/erlang-ssh-client-automated:28
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 28
+    profiles: [client-automated]
+  erlang-ssh-client-automated-28.0.1:
+    image: rub-nds/erlang-ssh-client-automated:28.0.1
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 28.0.1
+    profiles: [client-automated]
+  erlang-ssh-client-automated-28.0.2:
+    image: rub-nds/erlang-ssh-client-automated:28.0.2
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 28.0.2
+    profiles: [client-automated]
+  erlang-ssh-client-automated-28.0.4:
+    image: rub-nds/erlang-ssh-client-automated:28.0.4
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 28.0.4
+    profiles: [client-automated]
+  erlang-ssh-client-automated-28.1:
+    image: rub-nds/erlang-ssh-client-automated:28.1
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 28.1
+    profiles: [client-automated]
+  erlang-ssh-client-automated-28.2:
+    image: rub-nds/erlang-ssh-client-automated:28.2
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 28.2
+    profiles: [client-automated]
+  erlang-ssh-client-automated-28.3:
+    image: rub-nds/erlang-ssh-client-automated:28.3
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 28.3
+    profiles: [client-automated]
+  erlang-ssh-client-automated-28.3.1:
+    image: rub-nds/erlang-ssh-client-automated:28.3.1
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 28.3.1
+    profiles: [client-automated]
+  erlang-ssh-client-automated-28.3.2:
+    image: rub-nds/erlang-ssh-client-automated:28.3.2
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 28.3.2
+    profiles: [client-automated]
+  erlang-ssh-client-automated-28.3.3:
+    image: rub-nds/erlang-ssh-client-automated:28.3.3
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 28.3.3
+    profiles: [client-automated]
+  erlang-ssh-client-automated-28.4:
+    image: rub-nds/erlang-ssh-client-automated:28.4
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 28.4
+    profiles: [client-automated]
+  erlang-ssh-client-automated-28.4.1:
+    image: rub-nds/erlang-ssh-client-automated:28.4.1
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 28.4.1
+    profiles: [client-automated]
+  erlang-ssh-client-automated-28.4.2:
+    image: rub-nds/erlang-ssh-client-automated:28.4.2
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 28.4.2
+    profiles: [client-automated]
+  erlang-ssh-client-automated-28.5:
+    image: rub-nds/erlang-ssh-client-automated:28.5
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 28.5
+    profiles: [client-automated]
+  erlang-ssh-client-automated-28.5.0.1:
+    image: rub-nds/erlang-ssh-client-automated:28.5.0.1
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 28.5.0.1
+    profiles: [client-automated]
+  erlang-ssh-client-automated-28.5.0.2:
+    image: rub-nds/erlang-ssh-client-automated:28.5.0.2
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 28.5.0.2
+    profiles: [client-automated]
+  erlang-ssh-client-automated-28.5.0.3:
+    image: rub-nds/erlang-ssh-client-automated:28.5.0.3
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 28.5.0.3
+    profiles: [client-automated]
+  erlang-ssh-client-automated-28.5.0.4:
+    image: rub-nds/erlang-ssh-client-automated:28.5.0.4
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 28.5.0.4
+    profiles: [client-automated]
+  erlang-ssh-client-automated-28.5.0.5:
+    image: rub-nds/erlang-ssh-client-automated:28.5.0.5
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 28.5.0.5
+    profiles: [client-automated]
+  erlang-ssh-client-automated-28.5.0.6:
+    image: rub-nds/erlang-ssh-client-automated:28.5.0.6
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 28.5.0.6
+    profiles: [client-automated]
+  erlang-ssh-client-automated-28.5.0.7:
+    image: rub-nds/erlang-ssh-client-automated:28.5.0.7
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 28.5.0.7
+    profiles: [client-automated]
+  erlang-ssh-client-automated-28.5.0.8:
+    image: rub-nds/erlang-ssh-client-automated:28.5.0.8
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 28.5.0.8
+    profiles: [client-automated]
+  erlang-ssh-client-automated-29:
+    image: rub-nds/erlang-ssh-client-automated:29
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 29
+    profiles: [client-automated]
+  erlang-ssh-client-automated-29.0.1:
+    image: rub-nds/erlang-ssh-client-automated:29.0.1
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 29.0.1
+    profiles: [client-automated]
+  erlang-ssh-client-automated-29.0.2:
+    image: rub-nds/erlang-ssh-client-automated:29.0.2
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 29.0.2
+    profiles: [client-automated]
+  erlang-ssh-client-automated-29.0.3:
+    image: rub-nds/erlang-ssh-client-automated:29.0.3
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 29.0.3
+    profiles: [client-automated]
+  erlang-ssh-client-automated-29.0.4:
+    image: rub-nds/erlang-ssh-client-automated:29.0.4
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 29.0.4
+    profiles: [client-automated]
+  erlang-ssh-client-automated-29.0.5:
+    image: rub-nds/erlang-ssh-client-automated:29.0.5
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 29.0.5
+    profiles: [client-automated]
+  erlang-ssh-client-automated-29.0.6:
+    image: rub-nds/erlang-ssh-client-automated:29.0.6
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 29.0.6
+    profiles: [client-automated]
+  erlang-ssh-client-automated-29.1:
+    image: rub-nds/erlang-ssh-client-automated:29.1
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 29.1
+    profiles: [client-automated]
+  erlang-ssh-client-automated-29.1.1:
+    image: rub-nds/erlang-ssh-client-automated:29.1.1
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 29.1.1
+    profiles: [client-automated]
+  erlang-ssh-client-automated-29.1.2:
+    image: rub-nds/erlang-ssh-client-automated:29.1.2
+    build:
+      context: .
+      target: erlang-ssh-client-automated
+      args:
+        VERSION: 29.1.2
     profiles: [client-automated]

@@ -382,6 +382,48 @@ services:
       target: asyncssh-server
       args:
         VERSION: 2.21.0
+  asyncssh-server-2.21.1:
+    image: rub-nds/asyncssh-server:2.21.1
+    build:
+      context: .
+      target: asyncssh-server
+      args:
+        VERSION: 2.21.1
+  asyncssh-server-2.22.0:
+    image: rub-nds/asyncssh-server:2.22.0
+    build:
+      context: .
+      target: asyncssh-server
+      args:
+        VERSION: 2.22.0
+  asyncssh-server-2.23.0:
+    image: rub-nds/asyncssh-server:2.23.0
+    build:
+      context: .
+      target: asyncssh-server
+      args:
+        VERSION: 2.23.0
+  asyncssh-server-2.23.1:
+    image: rub-nds/asyncssh-server:2.23.1
+    build:
+      context: .
+      target: asyncssh-server
+      args:
+        VERSION: 2.23.1
+  asyncssh-server-2.24.0:
+    image: rub-nds/asyncssh-server:2.24.0
+    build:
+      context: .
+      target: asyncssh-server
+      args:
+        VERSION: 2.24.0
+  asyncssh-server-2.24.1:
+    image: rub-nds/asyncssh-server:2.24.1
+    build:
+      context: .
+      target: asyncssh-server
+      args:
+        VERSION: 2.24.1
   asyncssh-client-2.0.0:
     image: rub-nds/asyncssh-client:2.0.0
     build:
@@ -645,4 +687,52 @@ services:
       target: asyncssh-client
       args:
         VERSION: 2.21.0
+    profiles: [client]
+  asyncssh-client-2.21.1:
+    image: rub-nds/asyncssh-client:2.21.1
+    build:
+      context: .
+      target: asyncssh-client
+      args:
+        VERSION: 2.21.1
+    profiles: [client]
+  asyncssh-client-2.22.0:
+    image: rub-nds/asyncssh-client:2.22.0
+    build:
+      context: .
+      target: asyncssh-client
+      args:
+        VERSION: 2.22.0
+    profiles: [client]
+  asyncssh-client-2.23.0:
+    image: rub-nds/asyncssh-client:2.23.0
+    build:
+      context: .
+      target: asyncssh-client
+      args:
+        VERSION: 2.23.0
+    profiles: [client]
+  asyncssh-client-2.23.1:
+    image: rub-nds/asyncssh-client:2.23.1
+    build:
+      context: .
+      target: asyncssh-client
+      args:
+        VERSION: 2.23.1
+    profiles: [client]
+  asyncssh-client-2.24.0:
+    image: rub-nds/asyncssh-client:2.24.0
+    build:
+      context: .
+      target: asyncssh-client
+      args:
+        VERSION: 2.24.0
+    profiles: [client]
+  asyncssh-client-2.24.1:
+    image: rub-nds/asyncssh-client:2.24.1
+    build:
+      context: .
+      target: asyncssh-client
+      args:
+        VERSION: 2.24.1
     profiles: [client]

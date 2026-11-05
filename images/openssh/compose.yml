@@ -160,6 +160,48 @@ services:
       target: openssh-server
       args:
         VERSION: 10.0p2
+  openssh-server-10.1p1:
+    image: rub-nds/openssh-server:10.1p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 10.1p1
+  openssh-server-10.2p1:
+    image: rub-nds/openssh-server:10.2p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 10.2p1
+  openssh-server-10.3p1:
+    image: rub-nds/openssh-server:10.3p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 10.3p1
+  openssh-server-10.4p1:
+    image: rub-nds/openssh-server:10.4p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 10.4p1
+  openssh-server-10.5p1:
+    image: rub-nds/openssh-server:10.5p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 10.5p1
+  openssh-server-10.6p1:
+    image: rub-nds/openssh-server:10.6p1
+    build:
+      context: .
+      target: openssh-server
+      args:
+        VERSION: 10.6p1
   openssh-client-8.0p1:
     image: rub-nds/openssh-client:8.0p1
     build:
@@ -344,6 +386,54 @@ services:
       args:
         VERSION: 10.0p2
     profiles: [client]
+  openssh-client-10.1p1:
+    image: rub-nds/openssh-client:10.1p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 10.1p1
+    profiles: [client]
+  openssh-client-10.2p1:
+    image: rub-nds/openssh-client:10.2p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 10.2p1
+    profiles: [client]
+  openssh-client-10.3p1:
+    image: rub-nds/openssh-client:10.3p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 10.3p1
+    profiles: [client]
+  openssh-client-10.4p1:
+    image: rub-nds/openssh-client:10.4p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 10.4p1
+    profiles: [client]
+  openssh-client-10.5p1:
+    image: rub-nds/openssh-client:10.5p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 10.5p1
+    profiles: [client]
+  openssh-client-10.6p1:
+    image: rub-nds/openssh-client:10.6p1
+    build:
+      context: .
+      target: openssh-client
+      args:
+        VERSION: 10.6p1
+    profiles: [client]
   openssh-client-automated-8.0p1:
     image: rub-nds/openssh-client-automated:8.0p1
     build:
@@ -527,4 +617,52 @@ services:
       target: openssh-client-automated
       args:
         VERSION: 10.0p2
+    profiles: [client-automated]
+  openssh-client-automated-10.1p1:
+    image: rub-nds/openssh-client-automated:10.1p1
+    build:
+      context: .
+      target: openssh-client-automated
+      args:
+        VERSION: 10.1p1
+    profiles: [client-automated]
+  openssh-client-automated-10.2p1:
+    image: rub-nds/openssh-client-automated:10.2p1
+    build:
+      context: .
+      target: openssh-client-automated
+      args:
+        VERSION: 10.2p1
+    profiles: [client-automated]
+  openssh-client-automated-10.3p1:
+    image: rub-nds/openssh-client-automated:10.3p1
+    build:
+      context: .
+      target: openssh-client-automated
+      args:
+        VERSION: 10.3p1
+    profiles: [client-automated]
+  openssh-client-automated-10.4p1:
+    image: rub-nds/openssh-client-automated:10.4p1
+    build:
+      context: .
+      target: openssh-client-automated
+      args:
+        VERSION: 10.4p1
+    profiles: [client-automated]
+  openssh-client-automated-10.5p1:
+    image: rub-nds/openssh-client-automated:10.5p1
+    build:
+      context: .
+      target: openssh-client-automated
+      args:
+        VERSION: 10.5p1
+    profiles: [client-automated]
+  openssh-client-automated-10.6p1:
+    image: rub-nds/openssh-client-automated:10.6p1
+    build:
+      context: .
+      target: openssh-client-automated
+      args:
+        VERSION: 10.6p1
     profiles: [client-automated]

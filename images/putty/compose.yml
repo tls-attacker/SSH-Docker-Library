@@ -62,3 +62,45 @@ services:
       args:
         VERSION: 0.79
     profiles: [client]
+  putty-client-0.80:
+    image: rub-nds/putty-client:0.80
+    build:
+      context: .
+      args:
+        VERSION: 0.80
+    profiles: [client]
+  putty-client-0.81:
+    image: rub-nds/putty-client:0.81
+    build:
+      context: .
+      args:
+        VERSION: 0.81
+    profiles: [client]
+  putty-client-0.82:
+    image: rub-nds/putty-client:0.82
+    build:
+      context: .
+      args:
+        VERSION: 0.82
+    profiles: [client]
+  putty-client-0.83:
+    image: rub-nds/putty-client:0.83
+    build:
+      context: .
+      args:
+        VERSION: 0.83
+    profiles: [client]
+  putty-client-0.84:
+    image: rub-nds/putty-client:0.84
+    build:
+      context: .
+      args:
+        VERSION: 0.84
+    profiles: [client]
+  putty-client-0.85:
+    image: rub-nds/putty-client:0.85
+    build:
+      context: .
+      args:
+        VERSION: 0.85
+    profiles: [client]
