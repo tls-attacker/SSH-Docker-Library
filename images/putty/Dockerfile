@@ -1,4 +1,7 @@
 FROM debian:bullseye AS putty-client
+# Bullseye has moved to the archive mirrors; without this the security pool
+# 404s and the image cannot be built. Same fix as the openssh/libssh images.
+RUN sed -i -e "s|deb.debian.org/debian-security|archive.debian.org/debian-security|g" -e "s|security.debian.org|archive.debian.org|g" /etc/apt/sources.list && printf "Acquire::Check-Valid-Until \"false\";\n" > /etc/apt/apt.conf.d/99archive
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 RUN apt-get update && \

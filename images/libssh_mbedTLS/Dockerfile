@@ -4,6 +4,7 @@
 # not require labels, so we can disable that linter rule.
 # hadolint ignore=DL3049
 FROM debian:bullseye AS libssh-mbedtls-builder
+RUN sed -i -e "s|deb.debian.org/debian-security|archive.debian.org/debian-security|g" -e "s|security.debian.org|archive.debian.org|g" /etc/apt/sources.list && printf "Acquire::Check-Valid-Until \"false\";\n" > /etc/apt/apt.conf.d/99archive
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
@@ -40,10 +41,14 @@ RUN if [ ! -e  examples/ssh_server_fork.c ]; then sed -i "s/myuser/${USERNAME}/g
     sed -i "s/mypassword/${PASSWORD}/g" examples/ssh_server_fork.c; fi
 
 WORKDIR /src/libssh/build
-RUN cmake -DWITH_MBEDTLS=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/install /src/libssh && \
+# libssh 0.12's example programs do not pull in pthread themselves, so the
+# X11 example fails to link; the server examples this image runs are fine.
+RUN cmake -DWITH_MBEDTLS=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/install \
+      -DCMAKE_EXE_LINKER_FLAGS=-pthread /src/libssh && \
     make -j "$(nproc)" && make install
 
 FROM debian:bullseye AS libssh-mbedtls-server
+RUN sed -i -e "s|deb.debian.org/debian-security|archive.debian.org/debian-security|g" -e "s|security.debian.org|archive.debian.org|g" /etc/apt/sources.list && printf "Acquire::Check-Valid-Until \"false\";\n" > /etc/apt/apt.conf.d/99archive
 ARG VERSION
 RUN apt-get update && apt-get install -y --no-install-recommends \
     zlib1g-dev \

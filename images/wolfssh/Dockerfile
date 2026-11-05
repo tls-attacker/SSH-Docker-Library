@@ -4,6 +4,7 @@
 # not require labels, so we can disable that linter rule.
 # hadolint ignore=DL3049
 FROM debian:bullseye AS wolfssh-builder
+RUN sed -i -e "s|deb.debian.org/debian-security|archive.debian.org/debian-security|g" -e "s|security.debian.org|archive.debian.org|g" /etc/apt/sources.list && printf "Acquire::Check-Valid-Until \"false\";\n" > /etc/apt/apt.conf.d/99archive
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -17,8 +18,20 @@ RUN apt-get update && \
         make && \
     rm -rf /var/lib/apt/lists/*
 
-ARG VERSION_SSL="5.6.3"
-RUN mkdir  /src && \
+# The two libraries must be matched: wolfSSH 1.4.15+ needs symbols
+# (wc_ForceZero) that wolfSSL 5.6.3 does not export, while wolfSSH <= 1.4.14
+# does not compile against wolfSSL 5.8.x at all ('heap' undeclared). Pick the
+# wolfSSL release by the wolfSSH version unless VERSION_SSL is given.
+ARG VERSION
+ARG VERSION_SSL=""
+RUN if [ -z "${VERSION_SSL}" ]; then \
+      if printf '%s\n%s\n' "${VERSION}" "1.4.14" | sort -V -C; then \
+        VERSION_SSL="5.6.3"; \
+      else \
+        VERSION_SSL="5.8.4"; \
+      fi; \
+    fi && \
+    mkdir /src && \
     curl -LS "https://github.com/wolfSSL/wolfssl/archive/refs/tags/v${VERSION_SSL}-stable.tar.gz" | tar xzf - && \
     mv "wolfssl-${VERSION_SSL}-stable" /src/wolfssl
 WORKDIR /src/wolfssl
@@ -27,7 +40,6 @@ RUN ./autogen.sh && \
     make && \
     make install
 
-ARG VERSION
 RUN curl -LS "https://github.com/wolfSSL/wolfssh/archive/refs/tags/v${VERSION}-stable.tar.gz" | tar xzf - &&\
     mv "wolfssh-${VERSION}-stable" /src/wolfssh
 WORKDIR /src/wolfssh
@@ -37,12 +49,12 @@ RUN ./autogen.sh && \
 
 # Server image
 FROM debian:bullseye AS wolfssh-server
+RUN sed -i -e "s|deb.debian.org/debian-security|archive.debian.org/debian-security|g" -e "s|security.debian.org|archive.debian.org|g" /etc/apt/sources.list && printf "Acquire::Check-Valid-Until \"false\";\n" > /etc/apt/apt.conf.d/99archive
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 COPY authorized_keys /install/authorized_keys
 COPY sshd_config /install/sshd_config
 COPY --from=wolfssh-builder /install/wolfSSL/lib* /lib/
-COPY --from=wolfssh-builder /install/wolfSSH/lib* /lib/
 COPY --from=wolfssh-builder /src/wolfssh/apps /install/apps/
 COPY --from=wolfssh-builder /src/wolfssh/keys /keys
 

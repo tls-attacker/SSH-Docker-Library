@@ -1,6 +1,6 @@
 {
     "name": "tinyssh",
-    "url": "https://github.com/jpillora/sshd-lite",
+    "url": "https://github.com/janmojzis/tinyssh",
     "capabilities": {
         "server": true,
         "client": false,
@@ -39,6 +39,12 @@
         "20250126",
         "20250201",
         "20250411",
-        "20250501"
+        "20250501",
+        "20260301",
+        "20260401",
+        "20260601",
+        "20260906",
+        "20261001",
+        "20261101"
     ]
 }
