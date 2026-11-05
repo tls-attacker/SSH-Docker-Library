@@ -1,0 +1,22 @@
+{
+    "name": "phpseclib",
+    "url": "https://github.com/phpseclib/phpseclib",
+    "capabilities": {
+        "server": false,
+        "client": true,
+        "automatedClient": false
+    },
+    "multistage": true,
+    "clientVersions": [
+        "3.0.53",
+        "3.0.54",
+        "3.0.55",
+        "3.0.56",
+        "3.0.57",
+        "3.0.58",
+        "4.0.0",
+        "4.0.1",
+        "4.0.2",
+        "4.0.3"
+    ]
+}

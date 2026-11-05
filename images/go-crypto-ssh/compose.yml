@@ -1,0 +1,151 @@
+services:
+  go-crypto-ssh-server-0.49.0:
+    image: rub-nds/go-crypto-ssh-server:0.49.0
+    build:
+      context: .
+      target: go-crypto-ssh-server
+      args:
+        VERSION: 0.49.0
+  go-crypto-ssh-server-0.50.0:
+    image: rub-nds/go-crypto-ssh-server:0.50.0
+    build:
+      context: .
+      target: go-crypto-ssh-server
+      args:
+        VERSION: 0.50.0
+  go-crypto-ssh-server-0.51.0:
+    image: rub-nds/go-crypto-ssh-server:0.51.0
+    build:
+      context: .
+      target: go-crypto-ssh-server
+      args:
+        VERSION: 0.51.0
+  go-crypto-ssh-server-0.52.0:
+    image: rub-nds/go-crypto-ssh-server:0.52.0
+    build:
+      context: .
+      target: go-crypto-ssh-server
+      args:
+        VERSION: 0.52.0
+  go-crypto-ssh-server-0.53.0:
+    image: rub-nds/go-crypto-ssh-server:0.53.0
+    build:
+      context: .
+      target: go-crypto-ssh-server
+      args:
+        VERSION: 0.53.0
+  go-crypto-ssh-server-0.54.0:
+    image: rub-nds/go-crypto-ssh-server:0.54.0
+    build:
+      context: .
+      target: go-crypto-ssh-server
+      args:
+        VERSION: 0.54.0
+  go-crypto-ssh-server-0.55.0:
+    image: rub-nds/go-crypto-ssh-server:0.55.0
+    build:
+      context: .
+      target: go-crypto-ssh-server
+      args:
+        VERSION: 0.55.0
+  go-crypto-ssh-server-0.56.0:
+    image: rub-nds/go-crypto-ssh-server:0.56.0
+    build:
+      context: .
+      target: go-crypto-ssh-server
+      args:
+        VERSION: 0.56.0
+  go-crypto-ssh-server-0.57.0:
+    image: rub-nds/go-crypto-ssh-server:0.57.0
+    build:
+      context: .
+      target: go-crypto-ssh-server
+      args:
+        VERSION: 0.57.0
+  go-crypto-ssh-server-0.58.0:
+    image: rub-nds/go-crypto-ssh-server:0.58.0
+    build:
+      context: .
+      target: go-crypto-ssh-server
+      args:
+        VERSION: 0.58.0
+  go-crypto-ssh-client-0.49.0:
+    image: rub-nds/go-crypto-ssh-client:0.49.0
+    build:
+      context: .
+      target: go-crypto-ssh-client
+      args:
+        VERSION: 0.49.0
+    profiles: [client]
+  go-crypto-ssh-client-0.50.0:
+    image: rub-nds/go-crypto-ssh-client:0.50.0
+    build:
+      context: .
+      target: go-crypto-ssh-client
+      args:
+        VERSION: 0.50.0
+    profiles: [client]
+  go-crypto-ssh-client-0.51.0:
+    image: rub-nds/go-crypto-ssh-client:0.51.0
+    build:
+      context: .
+      target: go-crypto-ssh-client
+      args:
+        VERSION: 0.51.0
+    profiles: [client]
+  go-crypto-ssh-client-0.52.0:
+    image: rub-nds/go-crypto-ssh-client:0.52.0
+    build:
+      context: .
+      target: go-crypto-ssh-client
+      args:
+        VERSION: 0.52.0
+    profiles: [client]
+  go-crypto-ssh-client-0.53.0:
+    image: rub-nds/go-crypto-ssh-client:0.53.0
+    build:
+      context: .
+      target: go-crypto-ssh-client
+      args:
+        VERSION: 0.53.0
+    profiles: [client]
+  go-crypto-ssh-client-0.54.0:
+    image: rub-nds/go-crypto-ssh-client:0.54.0
+    build:
+      context: .
+      target: go-crypto-ssh-client
+      args:
+        VERSION: 0.54.0
+    profiles: [client]
+  go-crypto-ssh-client-0.55.0:
+    image: rub-nds/go-crypto-ssh-client:0.55.0
+    build:
+      context: .
+      target: go-crypto-ssh-client
+      args:
+        VERSION: 0.55.0
+    profiles: [client]
+  go-crypto-ssh-client-0.56.0:
+    image: rub-nds/go-crypto-ssh-client:0.56.0
+    build:
+      context: .
+      target: go-crypto-ssh-client
+      args:
+        VERSION: 0.56.0
+    profiles: [client]
+  go-crypto-ssh-client-0.57.0:
+    image: rub-nds/go-crypto-ssh-client:0.57.0
+    build:
+      context: .
+      target: go-crypto-ssh-client
+      args:
+        VERSION: 0.57.0
+    profiles: [client]
+  go-crypto-ssh-client-0.58.0:
+    image: rub-nds/go-crypto-ssh-client:0.58.0
+    build:
+      context: .
+      target: go-crypto-ssh-client
+      args:
+        VERSION: 0.58.0
+    profiles: [client]

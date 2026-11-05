@@ -1,0 +1,81 @@
+services:
+  ssh-net-client-2020.0.1:
+    image: rub-nds/ssh-net-client:2020.0.1
+    build:
+      context: .
+      target: ssh-net-client
+      args:
+        VERSION: 2020.0.1
+    profiles: [client]
+  ssh-net-client-2020.0.2:
+    image: rub-nds/ssh-net-client:2020.0.2
+    build:
+      context: .
+      target: ssh-net-client
+      args:
+        VERSION: 2020.0.2
+    profiles: [client]
+  ssh-net-client-2023.0.0:
+    image: rub-nds/ssh-net-client:2023.0.0
+    build:
+      context: .
+      target: ssh-net-client
+      args:
+        VERSION: 2023.0.0
+    profiles: [client]
+  ssh-net-client-2023.0.1:
+    image: rub-nds/ssh-net-client:2023.0.1
+    build:
+      context: .
+      target: ssh-net-client
+      args:
+        VERSION: 2023.0.1
+    profiles: [client]
+  ssh-net-client-2024.0.0:
+    image: rub-nds/ssh-net-client:2024.0.0
+    build:
+      context: .
+      target: ssh-net-client
+      args:
+        VERSION: 2024.0.0
+    profiles: [client]
+  ssh-net-client-2024.1.0:
+    image: rub-nds/ssh-net-client:2024.1.0
+    build:
+      context: .
+      target: ssh-net-client
+      args:
+        VERSION: 2024.1.0
+    profiles: [client]
+  ssh-net-client-2024.2.0:
+    image: rub-nds/ssh-net-client:2024.2.0
+    build:
+      context: .
+      target: ssh-net-client
+      args:
+        VERSION: 2024.2.0
+    profiles: [client]
+  ssh-net-client-2025.0.0:
+    image: rub-nds/ssh-net-client:2025.0.0
+    build:
+      context: .
+      target: ssh-net-client
+      args:
+        VERSION: 2025.0.0
+    profiles: [client]
+  ssh-net-client-2025.1.0:
+    image: rub-nds/ssh-net-client:2025.1.0
+    build:
+      context: .
+      target: ssh-net-client
+      args:
+        VERSION: 2025.1.0
+    profiles: [client]
+  ssh-net-client-2026.0.0:
+    image: rub-nds/ssh-net-client:2026.0.0
+    build:
+      context: .
+      target: ssh-net-client
+      args:
+        VERSION: 2026.0.0
+    profiles: [client]

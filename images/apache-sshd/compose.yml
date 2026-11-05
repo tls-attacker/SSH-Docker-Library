@@ -1,0 +1,64 @@
+services:
+  apache-sshd-server-2.12.1:
+    image: rub-nds/apache-sshd-server:2.12.1
+    build:
+      context: .
+      target: apache-sshd-server
+      args:
+        VERSION: 2.12.1
+  apache-sshd-server-2.13.0:
+    image: rub-nds/apache-sshd-server:2.13.0
+    build:
+      context: .
+      target: apache-sshd-server
+      args:
+        VERSION: 2.13.0
+  apache-sshd-server-2.13.1:
+    image: rub-nds/apache-sshd-server:2.13.1
+    build:
+      context: .
+      target: apache-sshd-server
+      args:
+        VERSION: 2.13.1
+  apache-sshd-server-2.13.2:
+    image: rub-nds/apache-sshd-server:2.13.2
+    build:
+      context: .
+      target: apache-sshd-server
+      args:
+        VERSION: 2.13.2
+  apache-sshd-server-2.14.0:
+    image: rub-nds/apache-sshd-server:2.14.0
+    build:
+      context: .
+      target: apache-sshd-server
+      args:
+        VERSION: 2.14.0
+  apache-sshd-server-2.15.0:
+    image: rub-nds/apache-sshd-server:2.15.0
+    build:
+      context: .
+      target: apache-sshd-server
+      args:
+        VERSION: 2.15.0
+  apache-sshd-server-2.16.0:
+    image: rub-nds/apache-sshd-server:2.16.0
+    build:
+      context: .
+      target: apache-sshd-server
+      args:
+        VERSION: 2.16.0
+  apache-sshd-server-2.17.1:
+    image: rub-nds/apache-sshd-server:2.17.1
+    build:
+      context: .
+      target: apache-sshd-server
+      args:
+        VERSION: 2.17.1
+  apache-sshd-server-2.18.0:
+    image: rub-nds/apache-sshd-server:2.18.0
+    build:
+      context: .
+      target: apache-sshd-server
+      args:
+        VERSION: 2.18.0

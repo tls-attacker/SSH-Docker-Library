@@ -1,0 +1,81 @@
+services:
+  phpseclib-client-3.0.53:
+    image: rub-nds/phpseclib-client:3.0.53
+    build:
+      context: .
+      target: phpseclib-client
+      args:
+        VERSION: 3.0.53
+    profiles: [client]
+  phpseclib-client-3.0.54:
+    image: rub-nds/phpseclib-client:3.0.54
+    build:
+      context: .
+      target: phpseclib-client
+      args:
+        VERSION: 3.0.54
+    profiles: [client]
+  phpseclib-client-3.0.55:
+    image: rub-nds/phpseclib-client:3.0.55
+    build:
+      context: .
+      target: phpseclib-client
+      args:
+        VERSION: 3.0.55
+    profiles: [client]
+  phpseclib-client-3.0.56:
+    image: rub-nds/phpseclib-client:3.0.56
+    build:
+      context: .
+      target: phpseclib-client
+      args:
+        VERSION: 3.0.56
+    profiles: [client]
+  phpseclib-client-3.0.57:
+    image: rub-nds/phpseclib-client:3.0.57
+    build:
+      context: .
+      target: phpseclib-client
+      args:
+        VERSION: 3.0.57
+    profiles: [client]
+  phpseclib-client-3.0.58:
+    image: rub-nds/phpseclib-client:3.0.58
+    build:
+      context: .
+      target: phpseclib-client
+      args:
+        VERSION: 3.0.58
+    profiles: [client]
+  phpseclib-client-4.0.0:
+    image: rub-nds/phpseclib-client:4.0.0
+    build:
+      context: .
+      target: phpseclib-client
+      args:
+        VERSION: 4.0.0
+    profiles: [client]
+  phpseclib-client-4.0.1:
+    image: rub-nds/phpseclib-client:4.0.1
+    build:
+      context: .
+      target: phpseclib-client
+      args:
+        VERSION: 4.0.1
+    profiles: [client]
+  phpseclib-client-4.0.2:
+    image: rub-nds/phpseclib-client:4.0.2
+    build:
+      context: .
+      target: phpseclib-client
+      args:
+        VERSION: 4.0.2
+    profiles: [client]
+  phpseclib-client-4.0.3:
+    image: rub-nds/phpseclib-client:4.0.3
+    build:
+      context: .
+      target: phpseclib-client
+      args:
+        VERSION: 4.0.3
+    profiles: [client]

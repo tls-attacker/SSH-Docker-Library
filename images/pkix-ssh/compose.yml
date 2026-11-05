@@ -1,0 +1,241 @@
+services:
+  pkix-ssh-server-12.5:
+    image: rub-nds/pkix-ssh-server:12.5
+    build:
+      context: .
+      target: pkix-ssh-server
+      args:
+        VERSION: 12.5
+  pkix-ssh-server-13.2:
+    image: rub-nds/pkix-ssh-server:13.2
+    build:
+      context: .
+      target: pkix-ssh-server
+      args:
+        VERSION: 13.2
+  pkix-ssh-server-13.5:
+    image: rub-nds/pkix-ssh-server:13.5
+    build:
+      context: .
+      target: pkix-ssh-server
+      args:
+        VERSION: 13.5
+  pkix-ssh-server-14.1:
+    image: rub-nds/pkix-ssh-server:14.1
+    build:
+      context: .
+      target: pkix-ssh-server
+      args:
+        VERSION: 14.1
+  pkix-ssh-server-14.2:
+    image: rub-nds/pkix-ssh-server:14.2
+    build:
+      context: .
+      target: pkix-ssh-server
+      args:
+        VERSION: 14.2
+  pkix-ssh-server-15.0:
+    image: rub-nds/pkix-ssh-server:15.0
+    build:
+      context: .
+      target: pkix-ssh-server
+      args:
+        VERSION: 15.0
+  pkix-ssh-server-15.1:
+    image: rub-nds/pkix-ssh-server:15.1
+    build:
+      context: .
+      target: pkix-ssh-server
+      args:
+        VERSION: 15.1
+  pkix-ssh-server-15.2:
+    image: rub-nds/pkix-ssh-server:15.2
+    build:
+      context: .
+      target: pkix-ssh-server
+      args:
+        VERSION: 15.2
+  pkix-ssh-server-15.3:
+    image: rub-nds/pkix-ssh-server:15.3
+    build:
+      context: .
+      target: pkix-ssh-server
+      args:
+        VERSION: 15.3
+  pkix-ssh-server-16.0:
+    image: rub-nds/pkix-ssh-server:16.0
+    build:
+      context: .
+      target: pkix-ssh-server
+      args:
+        VERSION: 16.0
+  pkix-ssh-server-16.2:
+    image: rub-nds/pkix-ssh-server:16.2
+    build:
+      context: .
+      target: pkix-ssh-server
+      args:
+        VERSION: 16.2
+  pkix-ssh-server-17.0:
+    image: rub-nds/pkix-ssh-server:17.0
+    build:
+      context: .
+      target: pkix-ssh-server
+      args:
+        VERSION: 17.0
+  pkix-ssh-server-17.1.1:
+    image: rub-nds/pkix-ssh-server:17.1.1
+    build:
+      context: .
+      target: pkix-ssh-server
+      args:
+        VERSION: 17.1.1
+  pkix-ssh-server-17.1.2:
+    image: rub-nds/pkix-ssh-server:17.1.2
+    build:
+      context: .
+      target: pkix-ssh-server
+      args:
+        VERSION: 17.1.2
+  pkix-ssh-server-17.2.2:
+    image: rub-nds/pkix-ssh-server:17.2.2
+    build:
+      context: .
+      target: pkix-ssh-server
+      args:
+        VERSION: 17.2.2
+  pkix-ssh-server-18.0.2:
+    image: rub-nds/pkix-ssh-server:18.0.2
+    build:
+      context: .
+      target: pkix-ssh-server
+      args:
+        VERSION: 18.0.2
+  pkix-ssh-client-12.5:
+    image: rub-nds/pkix-ssh-client:12.5
+    build:
+      context: .
+      target: pkix-ssh-client
+      args:
+        VERSION: 12.5
+    profiles: [client]
+  pkix-ssh-client-13.2:
+    image: rub-nds/pkix-ssh-client:13.2
+    build:
+      context: .
+      target: pkix-ssh-client
+      args:
+        VERSION: 13.2
+    profiles: [client]
+  pkix-ssh-client-13.5:
+    image: rub-nds/pkix-ssh-client:13.5
+    build:
+      context: .
+      target: pkix-ssh-client
+      args:
+        VERSION: 13.5
+    profiles: [client]
+  pkix-ssh-client-14.1:
+    image: rub-nds/pkix-ssh-client:14.1
+    build:
+      context: .
+      target: pkix-ssh-client
+      args:
+        VERSION: 14.1
+    profiles: [client]
+  pkix-ssh-client-14.2:
+    image: rub-nds/pkix-ssh-client:14.2
+    build:
+      context: .
+      target: pkix-ssh-client
+      args:
+        VERSION: 14.2
+    profiles: [client]
+  pkix-ssh-client-15.0:
+    image: rub-nds/pkix-ssh-client:15.0
+    build:
+      context: .
+      target: pkix-ssh-client
+      args:
+        VERSION: 15.0
+    profiles: [client]
+  pkix-ssh-client-15.1:
+    image: rub-nds/pkix-ssh-client:15.1
+    build:
+      context: .
+      target: pkix-ssh-client
+      args:
+        VERSION: 15.1
+    profiles: [client]
+  pkix-ssh-client-15.2:
+    image: rub-nds/pkix-ssh-client:15.2
+    build:
+      context: .
+      target: pkix-ssh-client
+      args:
+        VERSION: 15.2
+    profiles: [client]
+  pkix-ssh-client-15.3:
+    image: rub-nds/pkix-ssh-client:15.3
+    build:
+      context: .
+      target: pkix-ssh-client
+      args:
+        VERSION: 15.3
+    profiles: [client]
+  pkix-ssh-client-16.0:
+    image: rub-nds/pkix-ssh-client:16.0
+    build:
+      context: .
+      target: pkix-ssh-client
+      args:
+        VERSION: 16.0
+    profiles: [client]
+  pkix-ssh-client-16.2:
+    image: rub-nds/pkix-ssh-client:16.2
+    build:
+      context: .
+      target: pkix-ssh-client
+      args:
+        VERSION: 16.2
+    profiles: [client]
+  pkix-ssh-client-17.0:
+    image: rub-nds/pkix-ssh-client:17.0
+    build:
+      context: .
+      target: pkix-ssh-client
+      args:
+        VERSION: 17.0
+    profiles: [client]
+  pkix-ssh-client-17.1.1:
+    image: rub-nds/pkix-ssh-client:17.1.1
+    build:
+      context: .
+      target: pkix-ssh-client
+      args:
+        VERSION: 17.1.1
+    profiles: [client]
+  pkix-ssh-client-17.1.2:
+    image: rub-nds/pkix-ssh-client:17.1.2
+    build:
+      context: .
+      target: pkix-ssh-client
+      args:
+        VERSION: 17.1.2
+    profiles: [client]
+  pkix-ssh-client-17.2.2:
+    image: rub-nds/pkix-ssh-client:17.2.2
+    build:
+      context: .
+      target: pkix-ssh-client
+      args:
+        VERSION: 17.2.2
+    profiles: [client]
+  pkix-ssh-client-18.0.2:
+    image: rub-nds/pkix-ssh-client:18.0.2
+    build:
+      context: .
+      target: pkix-ssh-client
+      args:
+        VERSION: 18.0.2
+    profiles: [client]

@@ -1,0 +1,151 @@
+services:
+  node-ssh2-server-1.8.0:
+    image: rub-nds/node-ssh2-server:1.8.0
+    build:
+      context: .
+      target: node-ssh2-server
+      args:
+        VERSION: 1.8.0
+  node-ssh2-server-1.9.0:
+    image: rub-nds/node-ssh2-server:1.9.0
+    build:
+      context: .
+      target: node-ssh2-server
+      args:
+        VERSION: 1.9.0
+  node-ssh2-server-1.10.0:
+    image: rub-nds/node-ssh2-server:1.10.0
+    build:
+      context: .
+      target: node-ssh2-server
+      args:
+        VERSION: 1.10.0
+  node-ssh2-server-1.11.0:
+    image: rub-nds/node-ssh2-server:1.11.0
+    build:
+      context: .
+      target: node-ssh2-server
+      args:
+        VERSION: 1.11.0
+  node-ssh2-server-1.12.0:
+    image: rub-nds/node-ssh2-server:1.12.0
+    build:
+      context: .
+      target: node-ssh2-server
+      args:
+        VERSION: 1.12.0
+  node-ssh2-server-1.13.0:
+    image: rub-nds/node-ssh2-server:1.13.0
+    build:
+      context: .
+      target: node-ssh2-server
+      args:
+        VERSION: 1.13.0
+  node-ssh2-server-1.14.0:
+    image: rub-nds/node-ssh2-server:1.14.0
+    build:
+      context: .
+      target: node-ssh2-server
+      args:
+        VERSION: 1.14.0
+  node-ssh2-server-1.15.0:
+    image: rub-nds/node-ssh2-server:1.15.0
+    build:
+      context: .
+      target: node-ssh2-server
+      args:
+        VERSION: 1.15.0
+  node-ssh2-server-1.16.0:
+    image: rub-nds/node-ssh2-server:1.16.0
+    build:
+      context: .
+      target: node-ssh2-server
+      args:
+        VERSION: 1.16.0
+  node-ssh2-server-1.17.0:
+    image: rub-nds/node-ssh2-server:1.17.0
+    build:
+      context: .
+      target: node-ssh2-server
+      args:
+        VERSION: 1.17.0
+  node-ssh2-client-1.8.0:
+    image: rub-nds/node-ssh2-client:1.8.0
+    build:
+      context: .
+      target: node-ssh2-client
+      args:
+        VERSION: 1.8.0
+    profiles: [client]
+  node-ssh2-client-1.9.0:
+    image: rub-nds/node-ssh2-client:1.9.0
+    build:
+      context: .
+      target: node-ssh2-client
+      args:
+        VERSION: 1.9.0
+    profiles: [client]
+  node-ssh2-client-1.10.0:
+    image: rub-nds/node-ssh2-client:1.10.0
+    build:
+      context: .
+      target: node-ssh2-client
+      args:
+        VERSION: 1.10.0
+    profiles: [client]
+  node-ssh2-client-1.11.0:
+    image: rub-nds/node-ssh2-client:1.11.0
+    build:
+      context: .
+      target: node-ssh2-client
+      args:
+        VERSION: 1.11.0
+    profiles: [client]
+  node-ssh2-client-1.12.0:
+    image: rub-nds/node-ssh2-client:1.12.0
+    build:
+      context: .
+      target: node-ssh2-client
+      args:
+        VERSION: 1.12.0
+    profiles: [client]
+  node-ssh2-client-1.13.0:
+    image: rub-nds/node-ssh2-client:1.13.0
+    build:
+      context: .
+      target: node-ssh2-client
+      args:
+        VERSION: 1.13.0
+    profiles: [client]
+  node-ssh2-client-1.14.0:
+    image: rub-nds/node-ssh2-client:1.14.0
+    build:
+      context: .
+      target: node-ssh2-client
+      args:
+        VERSION: 1.14.0
+    profiles: [client]
+  node-ssh2-client-1.15.0:
+    image: rub-nds/node-ssh2-client:1.15.0
+    build:
+      context: .
+      target: node-ssh2-client
+      args:
+        VERSION: 1.15.0
+    profiles: [client]
+  node-ssh2-client-1.16.0:
+    image: rub-nds/node-ssh2-client:1.16.0
+    build:
+      context: .
+      target: node-ssh2-client
+      args:
+        VERSION: 1.16.0
+    profiles: [client]
+  node-ssh2-client-1.17.0:
+    image: rub-nds/node-ssh2-client:1.17.0
+    build:
+      context: .
+      target: node-ssh2-client
+      args:
+        VERSION: 1.17.0
+    profiles: [client]
