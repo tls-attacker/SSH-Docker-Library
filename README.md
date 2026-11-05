@@ -33,6 +33,48 @@ After determining the correct port, you can connect to the SSH server using the 
     This key is not known by any other names
     Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
+## Covered implementations
+
+Generated from the per-image `specs.json` files; regenerate together with
+`compose.yml` via `tools/generate_compose_config.py`.
+
+| Directory | Roles | Server versions | Client versions | Newest | Upstream |
+|---|---|---|---|---|---|
+| `apache-sshd` | server | 9 | 0 | `2.18.0` | https://mina.apache.org/sshd-project/ |
+| `asyncssh` | server/client | 58 | 39 | `2.24.1` | https://asyncssh.readthedocs.io/en/latest/ |
+| `bitvise` | server/client | 54 | 54 | `9.43` | https://www.bitvise.com/index |
+| `dropbear` | server/client | 69 | 69 | `2026.94` | https://matt.ucc.asn.au/dropbear/CHANGES |
+| `erlang-ssh` | server/client | 152 | 152 | `29.1.2` | https://www.erlang.org/doc/man/ssh.html |
+| `go-crypto-ssh` | server/client | 10 | 10 | `0.58.0` | https://pkg.go.dev/golang.org/x/crypto/ssh |
+| `libssh` | server/client | 24 | 24 | `0.12.2` | https://www.libssh.org/files/ |
+| `libssh-0.7.x-0.8.x` | server | 18 | 0 | `0.8.9` | https://www.libssh.org/files/ |
+| `libssh2` | client | 0 | 10 | `1.11.1` | https://libssh2.org/ |
+| `libssh_mbedTLS` | server | 15 | 0 | `0.12.2` | https://git.libssh.org/projects/libssh.git/ |
+| `node-ssh2` | server/client | 10 | 10 | `1.17.0` | https://github.com/mscdex/ssh2 |
+| `openssh` | server/client | 29 | 29 | `10.6p1` | https://www.openssh.com/releasenotes.html |
+| `openssh-7.x` | server/client | 10 | 10 | `7.9p1` | https://www.openssh.com/releasenotes.html |
+| `paramiko` | client | 0 | 37 | `5.1.0` | https://docs.paramiko.org/en/stable/api/client.html |
+| `phpseclib` | client | 0 | 10 | `4.0.3` | https://github.com/phpseclib/phpseclib |
+| `pkix-ssh` | server/client | 16 | 16 | `18.0.2` | https://roumenpetrov.info/secsh/ |
+| `putty` | client | 0 | 15 | `0.85` | https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html |
+| `russh` | server/client | 70 | 70 | `0.65.1` | https://github.com/warp-tech/russh |
+| `ssh-net` | client | 0 | 10 | `2026.0.0` | https://github.com/sshnet/SSH.NET |
+| `sshd-lite` | server | 80 | 0 | `1.55.4` | https://github.com/jpillora/sshd-lite |
+| `tinyssh` | server | 38 | 0 | `20261101` | https://github.com/janmojzis/tinyssh |
+| `twisted-conch` | server/client | 10 | 10 | `26.10.0` | https://github.com/twisted/twisted |
+| `wolfssh` | server/client | 16 | 16 | `1.6.0` | https://www.wolfssl.com/docs/wolfssh-changelog/ |
+
+Not covered, and why:
+
+* **Tera Term/TTSSH, WinSCP, the Bitvise client and the mobile clients** are
+  Windows- or Android-only and cannot be built in a Linux container, even
+  though OpenSSH's compatibility table carries rows for several of them.
+* **HPN-SSH** ships its releases as patch sets against OpenSSH; the portable
+  repository carries only development branches and markers, with no release
+  tag or tarball scheme a version could be pinned to.
+* **lsh** last released in 2013 and needs `liboop` and a nettle 2.x that are
+  no longer packaged on any current base image.
+
 ## Building
 
 You can easily build the different Docker images using [docker compose](https://docs.docker.com/compose/):
