@@ -5,210 +5,210 @@ services:
       context: .
       target: openssh-server
       args:
-        VERSION: 8.0p1
+        VERSION: "8.0p1"
   openssh-server-8.1p1:
     image: rub-nds/openssh-server:8.1p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 8.1p1
+        VERSION: "8.1p1"
   openssh-server-8.2p1:
     image: rub-nds/openssh-server:8.2p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 8.2p1
+        VERSION: "8.2p1"
   openssh-server-8.3p1:
     image: rub-nds/openssh-server:8.3p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 8.3p1
+        VERSION: "8.3p1"
   openssh-server-8.4p1:
     image: rub-nds/openssh-server:8.4p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 8.4p1
+        VERSION: "8.4p1"
   openssh-server-8.5p1:
     image: rub-nds/openssh-server:8.5p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 8.5p1
+        VERSION: "8.5p1"
   openssh-server-8.6p1:
     image: rub-nds/openssh-server:8.6p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 8.6p1
+        VERSION: "8.6p1"
   openssh-server-8.7p1:
     image: rub-nds/openssh-server:8.7p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 8.7p1
+        VERSION: "8.7p1"
   openssh-server-8.8p1:
     image: rub-nds/openssh-server:8.8p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 8.8p1
+        VERSION: "8.8p1"
   openssh-server-8.9p1:
     image: rub-nds/openssh-server:8.9p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 8.9p1
+        VERSION: "8.9p1"
   openssh-server-9.0p1:
     image: rub-nds/openssh-server:9.0p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 9.0p1
+        VERSION: "9.0p1"
   openssh-server-9.1p1:
     image: rub-nds/openssh-server:9.1p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 9.1p1
+        VERSION: "9.1p1"
   openssh-server-9.2p1:
     image: rub-nds/openssh-server:9.2p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 9.2p1
+        VERSION: "9.2p1"
   openssh-server-9.3p1:
     image: rub-nds/openssh-server:9.3p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 9.3p1
+        VERSION: "9.3p1"
   openssh-server-9.4p1:
     image: rub-nds/openssh-server:9.4p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 9.4p1
+        VERSION: "9.4p1"
   openssh-server-9.5p1:
     image: rub-nds/openssh-server:9.5p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 9.5p1
+        VERSION: "9.5p1"
   openssh-server-9.6p1:
     image: rub-nds/openssh-server:9.6p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 9.6p1
+        VERSION: "9.6p1"
   openssh-server-9.7p1:
     image: rub-nds/openssh-server:9.7p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 9.7p1
+        VERSION: "9.7p1"
   openssh-server-9.8p1:
     image: rub-nds/openssh-server:9.8p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 9.8p1
+        VERSION: "9.8p1"
   openssh-server-9.9p1:
     image: rub-nds/openssh-server:9.9p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 9.9p1
+        VERSION: "9.9p1"
   openssh-server-9.9p2:
     image: rub-nds/openssh-server:9.9p2
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 9.9p2
+        VERSION: "9.9p2"
   openssh-server-10.0p1:
     image: rub-nds/openssh-server:10.0p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 10.0p1
+        VERSION: "10.0p1"
   openssh-server-10.0p2:
     image: rub-nds/openssh-server:10.0p2
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 10.0p2
+        VERSION: "10.0p2"
   openssh-server-10.1p1:
     image: rub-nds/openssh-server:10.1p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 10.1p1
+        VERSION: "10.1p1"
   openssh-server-10.2p1:
     image: rub-nds/openssh-server:10.2p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 10.2p1
+        VERSION: "10.2p1"
   openssh-server-10.3p1:
     image: rub-nds/openssh-server:10.3p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 10.3p1
+        VERSION: "10.3p1"
   openssh-server-10.4p1:
     image: rub-nds/openssh-server:10.4p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 10.4p1
+        VERSION: "10.4p1"
   openssh-server-10.5p1:
     image: rub-nds/openssh-server:10.5p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 10.5p1
+        VERSION: "10.5p1"
   openssh-server-10.6p1:
     image: rub-nds/openssh-server:10.6p1
     build:
       context: .
       target: openssh-server
       args:
-        VERSION: 10.6p1
+        VERSION: "10.6p1"
   openssh-client-8.0p1:
     image: rub-nds/openssh-client:8.0p1
     build:
       context: .
       target: openssh-client
       args:
-        VERSION: 8.0p1
+        VERSION: "8.0p1"
     profiles: [client]
   openssh-client-8.1p1:
     image: rub-nds/openssh-client:8.1p1
@@ -216,7 +216,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 8.1p1
+        VERSION: "8.1p1"
     profiles: [client]
   openssh-client-8.2p1:
     image: rub-nds/openssh-client:8.2p1
@@ -224,7 +224,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 8.2p1
+        VERSION: "8.2p1"
     profiles: [client]
   openssh-client-8.3p1:
     image: rub-nds/openssh-client:8.3p1
@@ -232,7 +232,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 8.3p1
+        VERSION: "8.3p1"
     profiles: [client]
   openssh-client-8.4p1:
     image: rub-nds/openssh-client:8.4p1
@@ -240,7 +240,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 8.4p1
+        VERSION: "8.4p1"
     profiles: [client]
   openssh-client-8.5p1:
     image: rub-nds/openssh-client:8.5p1
@@ -248,7 +248,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 8.5p1
+        VERSION: "8.5p1"
     profiles: [client]
   openssh-client-8.6p1:
     image: rub-nds/openssh-client:8.6p1
@@ -256,7 +256,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 8.6p1
+        VERSION: "8.6p1"
     profiles: [client]
   openssh-client-8.7p1:
     image: rub-nds/openssh-client:8.7p1
@@ -264,7 +264,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 8.7p1
+        VERSION: "8.7p1"
     profiles: [client]
   openssh-client-8.8p1:
     image: rub-nds/openssh-client:8.8p1
@@ -272,7 +272,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 8.8p1
+        VERSION: "8.8p1"
     profiles: [client]
   openssh-client-8.9p1:
     image: rub-nds/openssh-client:8.9p1
@@ -280,7 +280,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 8.9p1
+        VERSION: "8.9p1"
     profiles: [client]
   openssh-client-9.0p1:
     image: rub-nds/openssh-client:9.0p1
@@ -288,7 +288,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 9.0p1
+        VERSION: "9.0p1"
     profiles: [client]
   openssh-client-9.1p1:
     image: rub-nds/openssh-client:9.1p1
@@ -296,7 +296,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 9.1p1
+        VERSION: "9.1p1"
     profiles: [client]
   openssh-client-9.2p1:
     image: rub-nds/openssh-client:9.2p1
@@ -304,7 +304,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 9.2p1
+        VERSION: "9.2p1"
     profiles: [client]
   openssh-client-9.3p1:
     image: rub-nds/openssh-client:9.3p1
@@ -312,7 +312,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 9.3p1
+        VERSION: "9.3p1"
     profiles: [client]
   openssh-client-9.4p1:
     image: rub-nds/openssh-client:9.4p1
@@ -320,7 +320,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 9.4p1
+        VERSION: "9.4p1"
     profiles: [client]
   openssh-client-9.5p1:
     image: rub-nds/openssh-client:9.5p1
@@ -328,7 +328,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 9.5p1
+        VERSION: "9.5p1"
     profiles: [client]
   openssh-client-9.6p1:
     image: rub-nds/openssh-client:9.6p1
@@ -336,7 +336,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 9.6p1
+        VERSION: "9.6p1"
     profiles: [client]
   openssh-client-9.7p1:
     image: rub-nds/openssh-client:9.7p1
@@ -344,7 +344,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 9.7p1
+        VERSION: "9.7p1"
     profiles: [client]
   openssh-client-9.8p1:
     image: rub-nds/openssh-client:9.8p1
@@ -352,7 +352,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 9.8p1
+        VERSION: "9.8p1"
     profiles: [client]
   openssh-client-9.9p1:
     image: rub-nds/openssh-client:9.9p1
@@ -360,7 +360,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 9.9p1
+        VERSION: "9.9p1"
     profiles: [client]
   openssh-client-9.9p2:
     image: rub-nds/openssh-client:9.9p2
@@ -368,7 +368,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 9.9p2
+        VERSION: "9.9p2"
     profiles: [client]
   openssh-client-10.0p1:
     image: rub-nds/openssh-client:10.0p1
@@ -376,7 +376,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 10.0p1
+        VERSION: "10.0p1"
     profiles: [client]
   openssh-client-10.0p2:
     image: rub-nds/openssh-client:10.0p2
@@ -384,7 +384,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 10.0p2
+        VERSION: "10.0p2"
     profiles: [client]
   openssh-client-10.1p1:
     image: rub-nds/openssh-client:10.1p1
@@ -392,7 +392,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 10.1p1
+        VERSION: "10.1p1"
     profiles: [client]
   openssh-client-10.2p1:
     image: rub-nds/openssh-client:10.2p1
@@ -400,7 +400,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 10.2p1
+        VERSION: "10.2p1"
     profiles: [client]
   openssh-client-10.3p1:
     image: rub-nds/openssh-client:10.3p1
@@ -408,7 +408,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 10.3p1
+        VERSION: "10.3p1"
     profiles: [client]
   openssh-client-10.4p1:
     image: rub-nds/openssh-client:10.4p1
@@ -416,7 +416,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 10.4p1
+        VERSION: "10.4p1"
     profiles: [client]
   openssh-client-10.5p1:
     image: rub-nds/openssh-client:10.5p1
@@ -424,7 +424,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 10.5p1
+        VERSION: "10.5p1"
     profiles: [client]
   openssh-client-10.6p1:
     image: rub-nds/openssh-client:10.6p1
@@ -432,7 +432,7 @@ services:
       context: .
       target: openssh-client
       args:
-        VERSION: 10.6p1
+        VERSION: "10.6p1"
     profiles: [client]
   openssh-client-automated-8.0p1:
     image: rub-nds/openssh-client-automated:8.0p1
@@ -440,7 +440,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 8.0p1
+        VERSION: "8.0p1"
     profiles: [client-automated]
   openssh-client-automated-8.1p1:
     image: rub-nds/openssh-client-automated:8.1p1
@@ -448,7 +448,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 8.1p1
+        VERSION: "8.1p1"
     profiles: [client-automated]
   openssh-client-automated-8.2p1:
     image: rub-nds/openssh-client-automated:8.2p1
@@ -456,7 +456,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 8.2p1
+        VERSION: "8.2p1"
     profiles: [client-automated]
   openssh-client-automated-8.3p1:
     image: rub-nds/openssh-client-automated:8.3p1
@@ -464,7 +464,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 8.3p1
+        VERSION: "8.3p1"
     profiles: [client-automated]
   openssh-client-automated-8.4p1:
     image: rub-nds/openssh-client-automated:8.4p1
@@ -472,7 +472,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 8.4p1
+        VERSION: "8.4p1"
     profiles: [client-automated]
   openssh-client-automated-8.5p1:
     image: rub-nds/openssh-client-automated:8.5p1
@@ -480,7 +480,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 8.5p1
+        VERSION: "8.5p1"
     profiles: [client-automated]
   openssh-client-automated-8.6p1:
     image: rub-nds/openssh-client-automated:8.6p1
@@ -488,7 +488,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 8.6p1
+        VERSION: "8.6p1"
     profiles: [client-automated]
   openssh-client-automated-8.7p1:
     image: rub-nds/openssh-client-automated:8.7p1
@@ -496,7 +496,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 8.7p1
+        VERSION: "8.7p1"
     profiles: [client-automated]
   openssh-client-automated-8.8p1:
     image: rub-nds/openssh-client-automated:8.8p1
@@ -504,7 +504,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 8.8p1
+        VERSION: "8.8p1"
     profiles: [client-automated]
   openssh-client-automated-8.9p1:
     image: rub-nds/openssh-client-automated:8.9p1
@@ -512,7 +512,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 8.9p1
+        VERSION: "8.9p1"
     profiles: [client-automated]
   openssh-client-automated-9.0p1:
     image: rub-nds/openssh-client-automated:9.0p1
@@ -520,7 +520,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 9.0p1
+        VERSION: "9.0p1"
     profiles: [client-automated]
   openssh-client-automated-9.1p1:
     image: rub-nds/openssh-client-automated:9.1p1
@@ -528,7 +528,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 9.1p1
+        VERSION: "9.1p1"
     profiles: [client-automated]
   openssh-client-automated-9.2p1:
     image: rub-nds/openssh-client-automated:9.2p1
@@ -536,7 +536,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 9.2p1
+        VERSION: "9.2p1"
     profiles: [client-automated]
   openssh-client-automated-9.3p1:
     image: rub-nds/openssh-client-automated:9.3p1
@@ -544,7 +544,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 9.3p1
+        VERSION: "9.3p1"
     profiles: [client-automated]
   openssh-client-automated-9.4p1:
     image: rub-nds/openssh-client-automated:9.4p1
@@ -552,7 +552,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 9.4p1
+        VERSION: "9.4p1"
     profiles: [client-automated]
   openssh-client-automated-9.5p1:
     image: rub-nds/openssh-client-automated:9.5p1
@@ -560,7 +560,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 9.5p1
+        VERSION: "9.5p1"
     profiles: [client-automated]
   openssh-client-automated-9.6p1:
     image: rub-nds/openssh-client-automated:9.6p1
@@ -568,7 +568,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 9.6p1
+        VERSION: "9.6p1"
     profiles: [client-automated]
   openssh-client-automated-9.7p1:
     image: rub-nds/openssh-client-automated:9.7p1
@@ -576,7 +576,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 9.7p1
+        VERSION: "9.7p1"
     profiles: [client-automated]
   openssh-client-automated-9.8p1:
     image: rub-nds/openssh-client-automated:9.8p1
@@ -584,7 +584,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 9.8p1
+        VERSION: "9.8p1"
     profiles: [client-automated]
   openssh-client-automated-9.9p1:
     image: rub-nds/openssh-client-automated:9.9p1
@@ -592,7 +592,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 9.9p1
+        VERSION: "9.9p1"
     profiles: [client-automated]
   openssh-client-automated-9.9p2:
     image: rub-nds/openssh-client-automated:9.9p2
@@ -600,7 +600,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 9.9p2
+        VERSION: "9.9p2"
     profiles: [client-automated]
   openssh-client-automated-10.0p1:
     image: rub-nds/openssh-client-automated:10.0p1
@@ -608,7 +608,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 10.0p1
+        VERSION: "10.0p1"
     profiles: [client-automated]
   openssh-client-automated-10.0p2:
     image: rub-nds/openssh-client-automated:10.0p2
@@ -616,7 +616,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 10.0p2
+        VERSION: "10.0p2"
     profiles: [client-automated]
   openssh-client-automated-10.1p1:
     image: rub-nds/openssh-client-automated:10.1p1
@@ -624,7 +624,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 10.1p1
+        VERSION: "10.1p1"
     profiles: [client-automated]
   openssh-client-automated-10.2p1:
     image: rub-nds/openssh-client-automated:10.2p1
@@ -632,7 +632,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 10.2p1
+        VERSION: "10.2p1"
     profiles: [client-automated]
   openssh-client-automated-10.3p1:
     image: rub-nds/openssh-client-automated:10.3p1
@@ -640,7 +640,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 10.3p1
+        VERSION: "10.3p1"
     profiles: [client-automated]
   openssh-client-automated-10.4p1:
     image: rub-nds/openssh-client-automated:10.4p1
@@ -648,7 +648,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 10.4p1
+        VERSION: "10.4p1"
     profiles: [client-automated]
   openssh-client-automated-10.5p1:
     image: rub-nds/openssh-client-automated:10.5p1
@@ -656,7 +656,7 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 10.5p1
+        VERSION: "10.5p1"
     profiles: [client-automated]
   openssh-client-automated-10.6p1:
     image: rub-nds/openssh-client-automated:10.6p1
@@ -664,5 +664,5 @@ services:
       context: .
       target: openssh-client-automated
       args:
-        VERSION: 10.6p1
+        VERSION: "10.6p1"
     profiles: [client-automated]

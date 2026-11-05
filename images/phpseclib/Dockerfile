@@ -14,7 +14,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /app
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 ARG VERSION
-RUN composer require --no-interaction --no-progress "phpseclib/phpseclib:${VERSION}"
+# Composer verweigert seit 2.8 Versionen mit Sicherheitsadvisory. Dieses
+# Korpus fuehrt bewusst alte und verwundbare Staende (wie bei OpenSSH 7.x
+# oder Dropbear 0.23), also wird die Sperre hier abgeschaltet.
+RUN composer require --no-interaction --no-progress --no-security-blocking \
+      "phpseclib/phpseclib:${VERSION}"
 COPY files/client.php ./
 COPY files/id_rsa /root/.ssh/id_rsa
 RUN chmod 600 /root/.ssh/id_rsa

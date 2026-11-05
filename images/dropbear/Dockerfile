@@ -8,7 +8,21 @@ RUN apk add --no-cache bzip2 build-base zlib-dev linux-headers
 
 # Use any recent release version from https://matt.ucc.asn.au/dropbear/releases/ here.
 ARG VERSION
-RUN wget -O - -q "https://matt.ucc.asn.au/dropbear/releases/dropbear-${VERSION}.tar.bz2" | bunzip2 | tar -xf -
+# Der Stream-in-Dekompressor bricht bei gedrosselter Verbindung mit
+# "short read" ab. Erst vollstaendig laden, mit Wiederholungen, dann entpacken.
+# BusyBox-wget kennt keine Retry-Optionen. Die Schleife muss unter
+# "set -e" ueberleben, daher if/then statt &&-Ketten.
+RUN ok=0; \
+    for i in 1 2 3 4 5; do \
+      if wget -q -O /tmp/dropbear.tar.bz2 \
+           "https://matt.ucc.asn.au/dropbear/releases/dropbear-${VERSION}.tar.bz2"; then \
+        if tar -tjf /tmp/dropbear.tar.bz2 >/dev/null 2>&1; then ok=1; break; fi; \
+      fi; \
+      echo "Versuch $i fehlgeschlagen"; rm -f /tmp/dropbear.tar.bz2; sleep 5; \
+    done; \
+    if [ "$ok" != "1" ]; then echo "Download endgueltig fehlgeschlagen"; exit 1; fi; \
+    tar -xjf /tmp/dropbear.tar.bz2 && rm -f /tmp/dropbear.tar.bz2
+
 WORKDIR "/dropbear-${VERSION}"
 
 # Apply patches to fix the build for some very old versions.

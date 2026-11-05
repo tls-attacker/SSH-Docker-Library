@@ -4,257 +4,257 @@ services:
     build:
       context: .
       args:
-        VERSION: 2.5.0
+        VERSION: "2.5.0"
     profiles: [client]
   paramiko-client-2.5.1:
     image: rub-nds/paramiko-client:2.5.1
     build:
       context: .
       args:
-        VERSION: 2.5.1
+        VERSION: "2.5.1"
     profiles: [client]
   paramiko-client-2.6.0:
     image: rub-nds/paramiko-client:2.6.0
     build:
       context: .
       args:
-        VERSION: 2.6.0
+        VERSION: "2.6.0"
     profiles: [client]
   paramiko-client-2.7.0:
     image: rub-nds/paramiko-client:2.7.0
     build:
       context: .
       args:
-        VERSION: 2.7.0
+        VERSION: "2.7.0"
     profiles: [client]
   paramiko-client-2.7.1:
     image: rub-nds/paramiko-client:2.7.1
     build:
       context: .
       args:
-        VERSION: 2.7.1
+        VERSION: "2.7.1"
     profiles: [client]
   paramiko-client-2.7.2:
     image: rub-nds/paramiko-client:2.7.2
     build:
       context: .
       args:
-        VERSION: 2.7.2
+        VERSION: "2.7.2"
     profiles: [client]
   paramiko-client-2.8.0:
     image: rub-nds/paramiko-client:2.8.0
     build:
       context: .
       args:
-        VERSION: 2.8.0
+        VERSION: "2.8.0"
     profiles: [client]
   paramiko-client-2.8.1:
     image: rub-nds/paramiko-client:2.8.1
     build:
       context: .
       args:
-        VERSION: 2.8.1
+        VERSION: "2.8.1"
     profiles: [client]
   paramiko-client-2.9.0:
     image: rub-nds/paramiko-client:2.9.0
     build:
       context: .
       args:
-        VERSION: 2.9.0
+        VERSION: "2.9.0"
     profiles: [client]
   paramiko-client-2.9.1:
     image: rub-nds/paramiko-client:2.9.1
     build:
       context: .
       args:
-        VERSION: 2.9.1
+        VERSION: "2.9.1"
     profiles: [client]
   paramiko-client-2.9.2:
     image: rub-nds/paramiko-client:2.9.2
     build:
       context: .
       args:
-        VERSION: 2.9.2
+        VERSION: "2.9.2"
     profiles: [client]
   paramiko-client-2.9.3:
     image: rub-nds/paramiko-client:2.9.3
     build:
       context: .
       args:
-        VERSION: 2.9.3
+        VERSION: "2.9.3"
     profiles: [client]
   paramiko-client-2.9.4:
     image: rub-nds/paramiko-client:2.9.4
     build:
       context: .
       args:
-        VERSION: 2.9.4
+        VERSION: "2.9.4"
     profiles: [client]
   paramiko-client-2.9.5:
     image: rub-nds/paramiko-client:2.9.5
     build:
       context: .
       args:
-        VERSION: 2.9.5
+        VERSION: "2.9.5"
     profiles: [client]
   paramiko-client-2.10.0:
     image: rub-nds/paramiko-client:2.10.0
     build:
       context: .
       args:
-        VERSION: 2.10.0
+        VERSION: "2.10.0"
     profiles: [client]
   paramiko-client-2.10.1:
     image: rub-nds/paramiko-client:2.10.1
     build:
       context: .
       args:
-        VERSION: 2.10.1
+        VERSION: "2.10.1"
     profiles: [client]
   paramiko-client-2.10.2:
     image: rub-nds/paramiko-client:2.10.2
     build:
       context: .
       args:
-        VERSION: 2.10.2
+        VERSION: "2.10.2"
     profiles: [client]
   paramiko-client-2.10.3:
     image: rub-nds/paramiko-client:2.10.3
     build:
       context: .
       args:
-        VERSION: 2.10.3
+        VERSION: "2.10.3"
     profiles: [client]
   paramiko-client-2.10.4:
     image: rub-nds/paramiko-client:2.10.4
     build:
       context: .
       args:
-        VERSION: 2.10.4
+        VERSION: "2.10.4"
     profiles: [client]
   paramiko-client-2.10.5:
     image: rub-nds/paramiko-client:2.10.5
     build:
       context: .
       args:
-        VERSION: 2.10.5
+        VERSION: "2.10.5"
     profiles: [client]
   paramiko-client-2.11.0:
     image: rub-nds/paramiko-client:2.11.0
     build:
       context: .
       args:
-        VERSION: 2.11.0
+        VERSION: "2.11.0"
     profiles: [client]
   paramiko-client-2.11.1:
     image: rub-nds/paramiko-client:2.11.1
     build:
       context: .
       args:
-        VERSION: 2.11.1
+        VERSION: "2.11.1"
     profiles: [client]
   paramiko-client-2.12.0:
     image: rub-nds/paramiko-client:2.12.0
     build:
       context: .
       args:
-        VERSION: 2.12.0
+        VERSION: "2.12.0"
     profiles: [client]
   paramiko-client-3.0.0:
     image: rub-nds/paramiko-client:3.0.0
     build:
       context: .
       args:
-        VERSION: 3.0.0
+        VERSION: "3.0.0"
     profiles: [client]
   paramiko-client-3.1.0:
     image: rub-nds/paramiko-client:3.1.0
     build:
       context: .
       args:
-        VERSION: 3.1.0
+        VERSION: "3.1.0"
     profiles: [client]
   paramiko-client-3.2.0:
     image: rub-nds/paramiko-client:3.2.0
     build:
       context: .
       args:
-        VERSION: 3.2.0
+        VERSION: "3.2.0"
     profiles: [client]
   paramiko-client-3.3.0:
     image: rub-nds/paramiko-client:3.3.0
     build:
       context: .
       args:
-        VERSION: 3.3.0
+        VERSION: "3.3.0"
     profiles: [client]
   paramiko-client-3.3.1:
     image: rub-nds/paramiko-client:3.3.1
     build:
       context: .
       args:
-        VERSION: 3.3.1
+        VERSION: "3.3.1"
     profiles: [client]
   paramiko-client-3.3.2:
     image: rub-nds/paramiko-client:3.3.2
     build:
       context: .
       args:
-        VERSION: 3.3.2
+        VERSION: "3.3.2"
     profiles: [client]
   paramiko-client-3.4.0:
     image: rub-nds/paramiko-client:3.4.0
     build:
       context: .
       args:
-        VERSION: 3.4.0
+        VERSION: "3.4.0"
     profiles: [client]
   paramiko-client-3.4.1:
     image: rub-nds/paramiko-client:3.4.1
     build:
       context: .
       args:
-        VERSION: 3.4.1
+        VERSION: "3.4.1"
     profiles: [client]
   paramiko-client-3.5.0:
     image: rub-nds/paramiko-client:3.5.0
     build:
       context: .
       args:
-        VERSION: 3.5.0
+        VERSION: "3.5.0"
     profiles: [client]
   paramiko-client-3.5.1:
     image: rub-nds/paramiko-client:3.5.1
     build:
       context: .
       args:
-        VERSION: 3.5.1
+        VERSION: "3.5.1"
     profiles: [client]
   paramiko-client-4.0.0:
     image: rub-nds/paramiko-client:4.0.0
     build:
       context: .
       args:
-        VERSION: 4.0.0
+        VERSION: "4.0.0"
     profiles: [client]
   paramiko-client-5.0.0:
     image: rub-nds/paramiko-client:5.0.0
     build:
       context: .
       args:
-        VERSION: 5.0.0
+        VERSION: "5.0.0"
     profiles: [client]
   paramiko-client-5.0.1:
     image: rub-nds/paramiko-client:5.0.1
     build:
       context: .
       args:
-        VERSION: 5.0.1
+        VERSION: "5.0.1"
     profiles: [client]
   paramiko-client-5.1.0:
     image: rub-nds/paramiko-client:5.1.0
     build:
       context: .
       args:
-        VERSION: 5.1.0
+        VERSION: "5.1.0"
     profiles: [client]

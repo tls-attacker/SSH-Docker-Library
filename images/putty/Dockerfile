@@ -18,7 +18,12 @@ RUN apt-get update && \
 
 WORKDIR /usr/bin/putty
 ARG VERSION
-RUN curl -s https://the.earth.li/~sgtatham/putty/${VERSION}/putty-${VERSION}.tar.gz | tar xzf - --strip-components=1 -C .
+# the.earth.li liefert sporadisch "Error in the HTTP2 framing layer" und
+# in der Folge falsche 404; daher HTTP/1.1 erzwingen.
+RUN curl -fsSL --http1.1 --retry 5 --retry-delay 5 --retry-all-errors \
+      -o /tmp/putty.tar.gz \
+      "https://the.earth.li/~sgtatham/putty/${VERSION}/putty-${VERSION}.tar.gz" && \
+    tar xzf /tmp/putty.tar.gz --strip-components=1 -C . && rm -f /tmp/putty.tar.gz
 
 RUN if printf '%s\n%s\n' "0.77" "${VERSION}" | sort -c -g; then \
         # New build system using cmake since 0.77

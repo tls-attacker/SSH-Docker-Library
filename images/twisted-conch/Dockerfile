@@ -26,6 +26,8 @@ EXPOSE 22
 
 # Client image
 FROM twisted-conch-base AS twisted-conch-client
+COPY files/id_rsa /root/.ssh/id_rsa
+RUN chmod 600 /root/.ssh/id_rsa
 ARG VERSION
 LABEL ssh.implementation.name="twisted-conch" \
       ssh.implementation.version="${VERSION}" \

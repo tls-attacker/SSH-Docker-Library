@@ -15,8 +15,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 ARG VERSION
 WORKDIR /src
-RUN curl -fsSL "https://roumenpetrov.info/secsh/src/pkixssh-${VERSION}.tar.gz" \
-      | tar xzf - --strip-components=1 -C /src && \
+# roumenpetrov.info liefert sporadisch "Error in the HTTP2 framing layer" und
+# in der Folge falsche 404; daher HTTP/1.1 erzwingen.
+RUN curl -fsSL --http1.1 --retry 5 --retry-delay 5 --retry-all-errors \
+      -o /tmp/pkixssh.tar.gz \
+      "https://roumenpetrov.info/secsh/src/pkixssh-${VERSION}.tar.gz" && \
+    tar xzf /tmp/pkixssh.tar.gz --strip-components=1 -C /src && \
+    rm -f /tmp/pkixssh.tar.gz && \
     ./configure --prefix=/install --with-ssl-engine && \
     make -j"$(nproc)" && make install-files install-sysconf host-key
 

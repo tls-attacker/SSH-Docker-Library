@@ -1,35 +1,11 @@
 services:
-  libssh2-client-1.5.0:
-    image: rub-nds/libssh2-client:1.5.0
-    build:
-      context: .
-      target: libssh2-client
-      args:
-        VERSION: 1.5.0
-    profiles: [client]
-  libssh2-client-1.6.0:
-    image: rub-nds/libssh2-client:1.6.0
-    build:
-      context: .
-      target: libssh2-client
-      args:
-        VERSION: 1.6.0
-    profiles: [client]
-  libssh2-client-1.7.0:
-    image: rub-nds/libssh2-client:1.7.0
-    build:
-      context: .
-      target: libssh2-client
-      args:
-        VERSION: 1.7.0
-    profiles: [client]
   libssh2-client-1.8.0:
     image: rub-nds/libssh2-client:1.8.0
     build:
       context: .
       target: libssh2-client
       args:
-        VERSION: 1.8.0
+        VERSION: "1.8.0"
     profiles: [client]
   libssh2-client-1.8.1:
     image: rub-nds/libssh2-client:1.8.1
@@ -37,7 +13,7 @@ services:
       context: .
       target: libssh2-client
       args:
-        VERSION: 1.8.1
+        VERSION: "1.8.1"
     profiles: [client]
   libssh2-client-1.8.2:
     image: rub-nds/libssh2-client:1.8.2
@@ -45,7 +21,7 @@ services:
       context: .
       target: libssh2-client
       args:
-        VERSION: 1.8.2
+        VERSION: "1.8.2"
     profiles: [client]
   libssh2-client-1.9.0:
     image: rub-nds/libssh2-client:1.9.0
@@ -53,7 +29,7 @@ services:
       context: .
       target: libssh2-client
       args:
-        VERSION: 1.9.0
+        VERSION: "1.9.0"
     profiles: [client]
   libssh2-client-1.10.0:
     image: rub-nds/libssh2-client:1.10.0
@@ -61,7 +37,7 @@ services:
       context: .
       target: libssh2-client
       args:
-        VERSION: 1.10.0
+        VERSION: "1.10.0"
     profiles: [client]
   libssh2-client-1.11.0:
     image: rub-nds/libssh2-client:1.11.0
@@ -69,7 +45,7 @@ services:
       context: .
       target: libssh2-client
       args:
-        VERSION: 1.11.0
+        VERSION: "1.11.0"
     profiles: [client]
   libssh2-client-1.11.1:
     image: rub-nds/libssh2-client:1.11.1
@@ -77,5 +53,5 @@ services:
       context: .
       target: libssh2-client
       args:
-        VERSION: 1.11.1
+        VERSION: "1.11.1"
     profiles: [client]

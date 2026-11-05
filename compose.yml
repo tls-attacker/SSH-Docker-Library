@@ -4667,18 +4667,6 @@ services:
     extends:
       file: images/libssh/compose.yml
       service: libssh-client-0.12.2
-  libssh2-client-1.5.0:
-    extends:
-      file: images/libssh2/compose.yml
-      service: libssh2-client-1.5.0
-  libssh2-client-1.6.0:
-    extends:
-      file: images/libssh2/compose.yml
-      service: libssh2-client-1.6.0
-  libssh2-client-1.7.0:
-    extends:
-      file: images/libssh2/compose.yml
-      service: libssh2-client-1.7.0
   libssh2-client-1.8.0:
     extends:
       file: images/libssh2/compose.yml
@@ -5649,106 +5637,96 @@ services:
     extends:
       file: images/phpseclib/compose.yml
       service: phpseclib-client-4.0.3
-  pkix-ssh-server-12.5:
-    extends:
-      file: images/pkix-ssh/compose.yml
-      service: pkix-ssh-server-12.5
-    ports:
-      - '37000:22'
   pkix-ssh-server-13.2:
     extends:
       file: images/pkix-ssh/compose.yml
       service: pkix-ssh-server-13.2
     ports:
-      - '37001:22'
+      - '37000:22'
   pkix-ssh-server-13.5:
     extends:
       file: images/pkix-ssh/compose.yml
       service: pkix-ssh-server-13.5
     ports:
-      - '37002:22'
+      - '37001:22'
   pkix-ssh-server-14.1:
     extends:
       file: images/pkix-ssh/compose.yml
       service: pkix-ssh-server-14.1
     ports:
-      - '37003:22'
+      - '37002:22'
   pkix-ssh-server-14.2:
     extends:
       file: images/pkix-ssh/compose.yml
       service: pkix-ssh-server-14.2
     ports:
-      - '37004:22'
+      - '37003:22'
   pkix-ssh-server-15.0:
     extends:
       file: images/pkix-ssh/compose.yml
       service: pkix-ssh-server-15.0
     ports:
-      - '37005:22'
+      - '37004:22'
   pkix-ssh-server-15.1:
     extends:
       file: images/pkix-ssh/compose.yml
       service: pkix-ssh-server-15.1
     ports:
-      - '37006:22'
+      - '37005:22'
   pkix-ssh-server-15.2:
     extends:
       file: images/pkix-ssh/compose.yml
       service: pkix-ssh-server-15.2
     ports:
-      - '37007:22'
+      - '37006:22'
   pkix-ssh-server-15.3:
     extends:
       file: images/pkix-ssh/compose.yml
       service: pkix-ssh-server-15.3
     ports:
-      - '37008:22'
+      - '37007:22'
   pkix-ssh-server-16.0:
     extends:
       file: images/pkix-ssh/compose.yml
       service: pkix-ssh-server-16.0
     ports:
-      - '37009:22'
+      - '37008:22'
   pkix-ssh-server-16.2:
     extends:
       file: images/pkix-ssh/compose.yml
       service: pkix-ssh-server-16.2
     ports:
-      - '37010:22'
+      - '37009:22'
   pkix-ssh-server-17.0:
     extends:
       file: images/pkix-ssh/compose.yml
       service: pkix-ssh-server-17.0
     ports:
-      - '37011:22'
+      - '37010:22'
   pkix-ssh-server-17.1.1:
     extends:
       file: images/pkix-ssh/compose.yml
       service: pkix-ssh-server-17.1.1
     ports:
-      - '37012:22'
+      - '37011:22'
   pkix-ssh-server-17.1.2:
     extends:
       file: images/pkix-ssh/compose.yml
       service: pkix-ssh-server-17.1.2
     ports:
-      - '37013:22'
+      - '37012:22'
   pkix-ssh-server-17.2.2:
     extends:
       file: images/pkix-ssh/compose.yml
       service: pkix-ssh-server-17.2.2
     ports:
-      - '37014:22'
+      - '37013:22'
   pkix-ssh-server-18.0.2:
     extends:
       file: images/pkix-ssh/compose.yml
       service: pkix-ssh-server-18.0.2
     ports:
-      - '37015:22'
-  pkix-ssh-client-12.5:
-    extends:
-      file: images/pkix-ssh/compose.yml
-      service: pkix-ssh-client-12.5
+      - '37014:22'
   pkix-ssh-client-13.2:
     extends:
       file: images/pkix-ssh/compose.yml
@@ -5893,402 +5871,306 @@ services:
       service: russh-server-0.36.2
     ports:
       - '39003:22'
-  russh-server-0.37.0:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-server-0.37.0
-    ports:
-      - '39004:22'
-  russh-server-0.37.1:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-server-0.37.1
-    ports:
-      - '39005:22'
-  russh-server-0.38.0:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-server-0.38.0
-    ports:
-      - '39006:22'
-  russh-server-0.39.0:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-server-0.39.0
-    ports:
-      - '39007:22'
   russh-server-0.40.0:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.40.0
     ports:
-      - '39008:22'
+      - '39004:22'
   russh-server-0.40.1:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.40.1
     ports:
-      - '39009:22'
+      - '39005:22'
   russh-server-0.40.2:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.40.2
     ports:
-      - '39010:22'
+      - '39006:22'
   russh-server-0.42.0:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.42.0
     ports:
-      - '39011:22'
+      - '39007:22'
   russh-server-0.43.0:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.43.0
     ports:
-      - '39012:22'
+      - '39008:22'
   russh-server-0.44.0:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.44.0
     ports:
-      - '39013:22'
+      - '39009:22'
   russh-server-0.44.1:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.44.1
     ports:
-      - '39014:22'
+      - '39010:22'
   russh-server-0.45.0:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.45.0
     ports:
-      - '39015:22'
+      - '39011:22'
   russh-server-0.46.0:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.46.0
     ports:
-      - '39016:22'
-  russh-server-0.48.0:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-server-0.48.0
-    ports:
-      - '39017:22'
+      - '39012:22'
   russh-server-0.48.1:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.48.1
     ports:
-      - '39018:22'
+      - '39013:22'
   russh-server-0.48.2:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.48.2
     ports:
-      - '39019:22'
+      - '39014:22'
   russh-server-0.49.0:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.49.0
     ports:
-      - '39020:22'
+      - '39015:22'
   russh-server-0.49.1:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.49.1
     ports:
-      - '39021:22'
+      - '39016:22'
   russh-server-0.49.2:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.49.2
     ports:
-      - '39022:22'
+      - '39017:22'
   russh-server-0.50.0:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.50.0
     ports:
-      - '39023:22'
+      - '39018:22'
   russh-server-0.50.1:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.50.1
     ports:
-      - '39024:22'
+      - '39019:22'
   russh-server-0.50.2:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.50.2
     ports:
-      - '39025:22'
+      - '39020:22'
   russh-server-0.50.3:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.50.3
     ports:
-      - '39026:22'
+      - '39021:22'
   russh-server-0.50.4:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.50.4
     ports:
-      - '39027:22'
+      - '39022:22'
   russh-server-0.51.0:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.51.0
     ports:
-      - '39028:22'
+      - '39023:22'
   russh-server-0.51.1:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.51.1
     ports:
-      - '39029:22'
+      - '39024:22'
   russh-server-0.52.0:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.52.0
     ports:
-      - '39030:22'
+      - '39025:22'
   russh-server-0.52.1:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.52.1
     ports:
-      - '39031:22'
+      - '39026:22'
   russh-server-0.53.0:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.53.0
     ports:
-      - '39032:22'
+      - '39027:22'
   russh-server-0.54.0:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.54.0
     ports:
-      - '39033:22'
+      - '39028:22'
   russh-server-0.54.1:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.54.1
     ports:
-      - '39034:22'
+      - '39029:22'
   russh-server-0.54.2:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.54.2
     ports:
-      - '39035:22'
+      - '39030:22'
   russh-server-0.54.3:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.54.3
     ports:
-      - '39036:22'
+      - '39031:22'
   russh-server-0.54.4:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.54.4
     ports:
-      - '39037:22'
+      - '39032:22'
   russh-server-0.54.5:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.54.5
     ports:
-      - '39038:22'
-  russh-server-0.54.6:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-server-0.54.6
-    ports:
-      - '39039:22'
+      - '39033:22'
   russh-server-0.55.0:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.55.0
     ports:
-      - '39040:22'
-  russh-server-0.56.0:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-server-0.56.0
-    ports:
-      - '39041:22'
-  russh-server-0.57.0:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-server-0.57.0
-    ports:
-      - '39042:22'
-  russh-server-0.57.1:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-server-0.57.1
-    ports:
-      - '39043:22'
-  russh-server-0.58.0:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-server-0.58.0
-    ports:
-      - '39044:22'
-  russh-server-0.58.1:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-server-0.58.1
-    ports:
-      - '39045:22'
-  russh-server-0.59.0:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-server-0.59.0
-    ports:
-      - '39046:22'
-  russh-server-0.60.0:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-server-0.60.0
-    ports:
-      - '39047:22'
-  russh-server-0.60.1:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-server-0.60.1
-    ports:
-      - '39048:22'
+      - '39034:22'
   russh-server-0.60.2:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.60.2
     ports:
-      - '39049:22'
+      - '39035:22'
   russh-server-0.60.3:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.60.3
     ports:
-      - '39050:22'
-  russh-server-0.61.0:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-server-0.61.0
-    ports:
-      - '39051:22'
-  russh-server-0.61.1:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-server-0.61.1
-    ports:
-      - '39052:22'
+      - '39036:22'
   russh-server-0.61.2:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.61.2
     ports:
-      - '39053:22'
+      - '39037:22'
   russh-server-0.62.0:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.62.0
     ports:
-      - '39054:22'
+      - '39038:22'
   russh-server-0.62.1:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.62.1
     ports:
-      - '39055:22'
+      - '39039:22'
   russh-server-0.62.2:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.62.2
     ports:
-      - '39056:22'
+      - '39040:22'
   russh-server-0.62.3:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.62.3
     ports:
-      - '39057:22'
+      - '39041:22'
   russh-server-0.62.4:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.62.4
     ports:
-      - '39058:22'
+      - '39042:22'
   russh-server-0.62.5:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.62.5
     ports:
-      - '39059:22'
+      - '39043:22'
   russh-server-0.62.6:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.62.6
     ports:
-      - '39060:22'
+      - '39044:22'
   russh-server-0.62.7:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.62.7
     ports:
-      - '39061:22'
+      - '39045:22'
   russh-server-0.63.0:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.63.0
     ports:
-      - '39062:22'
+      - '39046:22'
   russh-server-0.63.1:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.63.1
     ports:
-      - '39063:22'
+      - '39047:22'
   russh-server-0.63.2:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.63.2
     ports:
-      - '39064:22'
+      - '39048:22'
   russh-server-0.63.3:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.63.3
     ports:
-      - '39065:22'
+      - '39049:22'
   russh-server-0.64.0:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.64.0
     ports:
-      - '39066:22'
+      - '39050:22'
   russh-server-0.64.1:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.64.1
     ports:
-      - '39067:22'
+      - '39051:22'
   russh-server-0.65.0:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.65.0
     ports:
-      - '39068:22'
+      - '39052:22'
   russh-server-0.65.1:
     extends:
       file: images/russh/compose.yml
       service: russh-server-0.65.1
     ports:
-      - '39069:22'
+      - '39053:22'
   russh-client-0.34.0:
     extends:
       file: images/russh/compose.yml
@@ -6305,22 +6187,6 @@ services:
     extends:
       file: images/russh/compose.yml
       service: russh-client-0.36.2
-  russh-client-0.37.0:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-client-0.37.0
-  russh-client-0.37.1:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-client-0.37.1
-  russh-client-0.38.0:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-client-0.38.0
-  russh-client-0.39.0:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-client-0.39.0
   russh-client-0.40.0:
     extends:
       file: images/russh/compose.yml
@@ -6357,10 +6223,6 @@ services:
     extends:
       file: images/russh/compose.yml
       service: russh-client-0.46.0
-  russh-client-0.48.0:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-client-0.48.0
   russh-client-0.48.1:
     extends:
       file: images/russh/compose.yml
@@ -6445,46 +6307,10 @@ services:
     extends:
       file: images/russh/compose.yml
       service: russh-client-0.54.5
-  russh-client-0.54.6:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-client-0.54.6
   russh-client-0.55.0:
     extends:
       file: images/russh/compose.yml
       service: russh-client-0.55.0
-  russh-client-0.56.0:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-client-0.56.0
-  russh-client-0.57.0:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-client-0.57.0
-  russh-client-0.57.1:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-client-0.57.1
-  russh-client-0.58.0:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-client-0.58.0
-  russh-client-0.58.1:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-client-0.58.1
-  russh-client-0.59.0:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-client-0.59.0
-  russh-client-0.60.0:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-client-0.60.0
-  russh-client-0.60.1:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-client-0.60.1
   russh-client-0.60.2:
     extends:
       file: images/russh/compose.yml
@@ -6493,14 +6319,6 @@ services:
     extends:
       file: images/russh/compose.yml
       service: russh-client-0.60.3
-  russh-client-0.61.0:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-client-0.61.0
-  russh-client-0.61.1:
-    extends:
-      file: images/russh/compose.yml
-      service: russh-client-0.61.1
   russh-client-0.61.2:
     extends:
       file: images/russh/compose.yml
@@ -6831,264 +6649,258 @@ services:
       service: sshd-lite-server-1.23.0
     ports:
       - '41036:22'
-  sshd-lite-server-1.23.1:
-    extends:
-      file: images/sshd-lite/compose.yml
-      service: sshd-lite-server-1.23.1
-    ports:
-      - '41037:22'
   sshd-lite-server-1.24.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.24.0
     ports:
-      - '41038:22'
+      - '41037:22'
   sshd-lite-server-1.25.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.25.0
     ports:
-      - '41039:22'
+      - '41038:22'
   sshd-lite-server-1.26.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.26.0
     ports:
-      - '41040:22'
+      - '41039:22'
   sshd-lite-server-1.27.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.27.0
     ports:
-      - '41041:22'
+      - '41040:22'
   sshd-lite-server-1.28.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.28.0
     ports:
-      - '41042:22'
+      - '41041:22'
   sshd-lite-server-1.29.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.29.0
     ports:
-      - '41043:22'
+      - '41042:22'
   sshd-lite-server-1.30.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.30.0
     ports:
-      - '41044:22'
+      - '41043:22'
   sshd-lite-server-1.31.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.31.0
     ports:
-      - '41045:22'
+      - '41044:22'
   sshd-lite-server-1.32.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.32.0
     ports:
-      - '41046:22'
+      - '41045:22'
   sshd-lite-server-1.33.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.33.0
     ports:
-      - '41047:22'
+      - '41046:22'
   sshd-lite-server-1.34.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.34.0
     ports:
-      - '41048:22'
+      - '41047:22'
   sshd-lite-server-1.35.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.35.0
     ports:
-      - '41049:22'
+      - '41048:22'
   sshd-lite-server-1.36.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.36.0
     ports:
-      - '41050:22'
+      - '41049:22'
   sshd-lite-server-1.37.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.37.0
     ports:
-      - '41051:22'
+      - '41050:22'
   sshd-lite-server-1.38.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.38.0
     ports:
-      - '41052:22'
+      - '41051:22'
   sshd-lite-server-1.39.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.39.0
     ports:
-      - '41053:22'
+      - '41052:22'
   sshd-lite-server-1.39.1:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.39.1
     ports:
-      - '41054:22'
+      - '41053:22'
   sshd-lite-server-1.39.2:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.39.2
     ports:
-      - '41055:22'
+      - '41054:22'
   sshd-lite-server-1.39.3:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.39.3
     ports:
-      - '41056:22'
+      - '41055:22'
   sshd-lite-server-1.40.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.40.0
     ports:
-      - '41057:22'
+      - '41056:22'
   sshd-lite-server-1.41.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.41.0
     ports:
-      - '41058:22'
+      - '41057:22'
   sshd-lite-server-1.42.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.42.0
     ports:
-      - '41059:22'
+      - '41058:22'
   sshd-lite-server-1.43.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.43.0
     ports:
-      - '41060:22'
+      - '41059:22'
   sshd-lite-server-1.44.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.44.0
     ports:
-      - '41061:22'
+      - '41060:22'
   sshd-lite-server-1.45.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.45.0
     ports:
-      - '41062:22'
+      - '41061:22'
   sshd-lite-server-1.46.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.46.0
     ports:
-      - '41063:22'
+      - '41062:22'
   sshd-lite-server-1.47.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.47.0
     ports:
-      - '41064:22'
+      - '41063:22'
   sshd-lite-server-1.48.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.48.0
     ports:
-      - '41065:22'
+      - '41064:22'
   sshd-lite-server-1.49.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.49.0
     ports:
-      - '41066:22'
+      - '41065:22'
   sshd-lite-server-1.50.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.50.0
     ports:
-      - '41067:22'
+      - '41066:22'
   sshd-lite-server-1.51.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.51.0
     ports:
-      - '41068:22'
+      - '41067:22'
   sshd-lite-server-1.51.1:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.51.1
     ports:
-      - '41069:22'
+      - '41068:22'
   sshd-lite-server-1.51.2:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.51.2
     ports:
-      - '41070:22'
+      - '41069:22'
   sshd-lite-server-1.51.3:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.51.3
     ports:
-      - '41071:22'
+      - '41070:22'
   sshd-lite-server-1.52.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.52.0
     ports:
-      - '41072:22'
+      - '41071:22'
   sshd-lite-server-1.53.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.53.0
     ports:
-      - '41073:22'
+      - '41072:22'
   sshd-lite-server-1.54.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.54.0
     ports:
-      - '41074:22'
+      - '41073:22'
   sshd-lite-server-1.54.1:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.54.1
     ports:
-      - '41075:22'
+      - '41074:22'
   sshd-lite-server-1.55.0:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.55.0
     ports:
-      - '41076:22'
+      - '41075:22'
   sshd-lite-server-1.55.2:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.55.2
     ports:
-      - '41077:22'
+      - '41076:22'
   sshd-lite-server-1.55.3:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.55.3
     ports:
-      - '41078:22'
+      - '41077:22'
   sshd-lite-server-1.55.4:
     extends:
       file: images/sshd-lite/compose.yml
       service: sshd-lite-server-1.55.4
     ports:
-      - '41079:22'
+      - '41078:22'
   tinyssh-server-20150801:
     extends:
       file: images/tinyssh/compose.yml

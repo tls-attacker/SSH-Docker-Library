@@ -5,119 +5,119 @@ services:
       context: .
       target: wolfssh-server
       args:
-        VERSION: 1.4.8
+        VERSION: "1.4.8"
   wolfssh-server-1.4.10:
     image: rub-nds/wolfssh-server:1.4.10
     build:
       context: .
       target: wolfssh-server
       args:
-        VERSION: 1.4.10
+        VERSION: "1.4.10"
   wolfssh-server-1.4.11:
     image: rub-nds/wolfssh-server:1.4.11
     build:
       context: .
       target: wolfssh-server
       args:
-        VERSION: 1.4.11
+        VERSION: "1.4.11"
   wolfssh-server-1.4.12:
     image: rub-nds/wolfssh-server:1.4.12
     build:
       context: .
       target: wolfssh-server
       args:
-        VERSION: 1.4.12
+        VERSION: "1.4.12"
   wolfssh-server-1.4.13:
     image: rub-nds/wolfssh-server:1.4.13
     build:
       context: .
       target: wolfssh-server
       args:
-        VERSION: 1.4.13
+        VERSION: "1.4.13"
   wolfssh-server-1.4.14:
     image: rub-nds/wolfssh-server:1.4.14
     build:
       context: .
       target: wolfssh-server
       args:
-        VERSION: 1.4.14
+        VERSION: "1.4.14"
   wolfssh-server-1.4.15:
     image: rub-nds/wolfssh-server:1.4.15
     build:
       context: .
       target: wolfssh-server
       args:
-        VERSION: 1.4.15
+        VERSION: "1.4.15"
   wolfssh-server-1.4.16:
     image: rub-nds/wolfssh-server:1.4.16
     build:
       context: .
       target: wolfssh-server
       args:
-        VERSION: 1.4.16
+        VERSION: "1.4.16"
   wolfssh-server-1.4.17:
     image: rub-nds/wolfssh-server:1.4.17
     build:
       context: .
       target: wolfssh-server
       args:
-        VERSION: 1.4.17
+        VERSION: "1.4.17"
   wolfssh-server-1.4.18:
     image: rub-nds/wolfssh-server:1.4.18
     build:
       context: .
       target: wolfssh-server
       args:
-        VERSION: 1.4.18
+        VERSION: "1.4.18"
   wolfssh-server-1.4.19:
     image: rub-nds/wolfssh-server:1.4.19
     build:
       context: .
       target: wolfssh-server
       args:
-        VERSION: 1.4.19
+        VERSION: "1.4.19"
   wolfssh-server-1.4.20:
     image: rub-nds/wolfssh-server:1.4.20
     build:
       context: .
       target: wolfssh-server
       args:
-        VERSION: 1.4.20
+        VERSION: "1.4.20"
   wolfssh-server-1.4.21:
     image: rub-nds/wolfssh-server:1.4.21
     build:
       context: .
       target: wolfssh-server
       args:
-        VERSION: 1.4.21
+        VERSION: "1.4.21"
   wolfssh-server-1.4.22:
     image: rub-nds/wolfssh-server:1.4.22
     build:
       context: .
       target: wolfssh-server
       args:
-        VERSION: 1.4.22
+        VERSION: "1.4.22"
   wolfssh-server-1.5.0:
     image: rub-nds/wolfssh-server:1.5.0
     build:
       context: .
       target: wolfssh-server
       args:
-        VERSION: 1.5.0
+        VERSION: "1.5.0"
   wolfssh-server-1.6.0:
     image: rub-nds/wolfssh-server:1.6.0
     build:
       context: .
       target: wolfssh-server
       args:
-        VERSION: 1.6.0
+        VERSION: "1.6.0"
   wolfssh-client-1.4.8:
     image: rub-nds/wolfssh-client:1.4.8
     build:
       context: .
       target: wolfssh-client
       args:
-        VERSION: 1.4.8
+        VERSION: "1.4.8"
     profiles: [client]
   wolfssh-client-1.4.10:
     image: rub-nds/wolfssh-client:1.4.10
@@ -125,7 +125,7 @@ services:
       context: .
       target: wolfssh-client
       args:
-        VERSION: 1.4.10
+        VERSION: "1.4.10"
     profiles: [client]
   wolfssh-client-1.4.11:
     image: rub-nds/wolfssh-client:1.4.11
@@ -133,7 +133,7 @@ services:
       context: .
       target: wolfssh-client
       args:
-        VERSION: 1.4.11
+        VERSION: "1.4.11"
     profiles: [client]
   wolfssh-client-1.4.12:
     image: rub-nds/wolfssh-client:1.4.12
@@ -141,7 +141,7 @@ services:
       context: .
       target: wolfssh-client
       args:
-        VERSION: 1.4.12
+        VERSION: "1.4.12"
     profiles: [client]
   wolfssh-client-1.4.13:
     image: rub-nds/wolfssh-client:1.4.13
@@ -149,7 +149,7 @@ services:
       context: .
       target: wolfssh-client
       args:
-        VERSION: 1.4.13
+        VERSION: "1.4.13"
     profiles: [client]
   wolfssh-client-1.4.14:
     image: rub-nds/wolfssh-client:1.4.14
@@ -157,7 +157,7 @@ services:
       context: .
       target: wolfssh-client
       args:
-        VERSION: 1.4.14
+        VERSION: "1.4.14"
     profiles: [client]
   wolfssh-client-1.4.15:
     image: rub-nds/wolfssh-client:1.4.15
@@ -165,7 +165,7 @@ services:
       context: .
       target: wolfssh-client
       args:
-        VERSION: 1.4.15
+        VERSION: "1.4.15"
     profiles: [client]
   wolfssh-client-1.4.16:
     image: rub-nds/wolfssh-client:1.4.16
@@ -173,7 +173,7 @@ services:
       context: .
       target: wolfssh-client
       args:
-        VERSION: 1.4.16
+        VERSION: "1.4.16"
     profiles: [client]
   wolfssh-client-1.4.17:
     image: rub-nds/wolfssh-client:1.4.17
@@ -181,7 +181,7 @@ services:
       context: .
       target: wolfssh-client
       args:
-        VERSION: 1.4.17
+        VERSION: "1.4.17"
     profiles: [client]
   wolfssh-client-1.4.18:
     image: rub-nds/wolfssh-client:1.4.18
@@ -189,7 +189,7 @@ services:
       context: .
       target: wolfssh-client
       args:
-        VERSION: 1.4.18
+        VERSION: "1.4.18"
     profiles: [client]
   wolfssh-client-1.4.19:
     image: rub-nds/wolfssh-client:1.4.19
@@ -197,7 +197,7 @@ services:
       context: .
       target: wolfssh-client
       args:
-        VERSION: 1.4.19
+        VERSION: "1.4.19"
     profiles: [client]
   wolfssh-client-1.4.20:
     image: rub-nds/wolfssh-client:1.4.20
@@ -205,7 +205,7 @@ services:
       context: .
       target: wolfssh-client
       args:
-        VERSION: 1.4.20
+        VERSION: "1.4.20"
     profiles: [client]
   wolfssh-client-1.4.21:
     image: rub-nds/wolfssh-client:1.4.21
@@ -213,7 +213,7 @@ services:
       context: .
       target: wolfssh-client
       args:
-        VERSION: 1.4.21
+        VERSION: "1.4.21"
     profiles: [client]
   wolfssh-client-1.4.22:
     image: rub-nds/wolfssh-client:1.4.22
@@ -221,7 +221,7 @@ services:
       context: .
       target: wolfssh-client
       args:
-        VERSION: 1.4.22
+        VERSION: "1.4.22"
     profiles: [client]
   wolfssh-client-1.5.0:
     image: rub-nds/wolfssh-client:1.5.0
@@ -229,7 +229,7 @@ services:
       context: .
       target: wolfssh-client
       args:
-        VERSION: 1.5.0
+        VERSION: "1.5.0"
     profiles: [client]
   wolfssh-client-1.6.0:
     image: rub-nds/wolfssh-client:1.6.0
@@ -237,5 +237,5 @@ services:
       context: .
       target: wolfssh-client
       args:
-        VERSION: 1.6.0
+        VERSION: "1.6.0"
     profiles: [client]

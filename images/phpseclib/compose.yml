@@ -5,7 +5,7 @@ services:
       context: .
       target: phpseclib-client
       args:
-        VERSION: 3.0.53
+        VERSION: "3.0.53"
     profiles: [client]
   phpseclib-client-3.0.54:
     image: rub-nds/phpseclib-client:3.0.54
@@ -13,7 +13,7 @@ services:
       context: .
       target: phpseclib-client
       args:
-        VERSION: 3.0.54
+        VERSION: "3.0.54"
     profiles: [client]
   phpseclib-client-3.0.55:
     image: rub-nds/phpseclib-client:3.0.55
@@ -21,7 +21,7 @@ services:
       context: .
       target: phpseclib-client
       args:
-        VERSION: 3.0.55
+        VERSION: "3.0.55"
     profiles: [client]
   phpseclib-client-3.0.56:
     image: rub-nds/phpseclib-client:3.0.56
@@ -29,7 +29,7 @@ services:
       context: .
       target: phpseclib-client
       args:
-        VERSION: 3.0.56
+        VERSION: "3.0.56"
     profiles: [client]
   phpseclib-client-3.0.57:
     image: rub-nds/phpseclib-client:3.0.57
@@ -37,7 +37,7 @@ services:
       context: .
       target: phpseclib-client
       args:
-        VERSION: 3.0.57
+        VERSION: "3.0.57"
     profiles: [client]
   phpseclib-client-3.0.58:
     image: rub-nds/phpseclib-client:3.0.58
@@ -45,7 +45,7 @@ services:
       context: .
       target: phpseclib-client
       args:
-        VERSION: 3.0.58
+        VERSION: "3.0.58"
     profiles: [client]
   phpseclib-client-4.0.0:
     image: rub-nds/phpseclib-client:4.0.0
@@ -53,7 +53,7 @@ services:
       context: .
       target: phpseclib-client
       args:
-        VERSION: 4.0.0
+        VERSION: "4.0.0"
     profiles: [client]
   phpseclib-client-4.0.1:
     image: rub-nds/phpseclib-client:4.0.1
@@ -61,7 +61,7 @@ services:
       context: .
       target: phpseclib-client
       args:
-        VERSION: 4.0.1
+        VERSION: "4.0.1"
     profiles: [client]
   phpseclib-client-4.0.2:
     image: rub-nds/phpseclib-client:4.0.2
@@ -69,7 +69,7 @@ services:
       context: .
       target: phpseclib-client
       args:
-        VERSION: 4.0.2
+        VERSION: "4.0.2"
     profiles: [client]
   phpseclib-client-4.0.3:
     image: rub-nds/phpseclib-client:4.0.3
@@ -77,5 +77,5 @@ services:
       context: .
       target: phpseclib-client
       args:
-        VERSION: 4.0.3
+        VERSION: "4.0.3"
     profiles: [client]

@@ -4,103 +4,103 @@ services:
     build:
       context: .
       args:
-        VERSION: 0.71
+        VERSION: "0.71"
     profiles: [client]
   putty-client-0.72:
     image: rub-nds/putty-client:0.72
     build:
       context: .
       args:
-        VERSION: 0.72
+        VERSION: "0.72"
     profiles: [client]
   putty-client-0.73:
     image: rub-nds/putty-client:0.73
     build:
       context: .
       args:
-        VERSION: 0.73
+        VERSION: "0.73"
     profiles: [client]
   putty-client-0.74:
     image: rub-nds/putty-client:0.74
     build:
       context: .
       args:
-        VERSION: 0.74
+        VERSION: "0.74"
     profiles: [client]
   putty-client-0.75:
     image: rub-nds/putty-client:0.75
     build:
       context: .
       args:
-        VERSION: 0.75
+        VERSION: "0.75"
     profiles: [client]
   putty-client-0.76:
     image: rub-nds/putty-client:0.76
     build:
       context: .
       args:
-        VERSION: 0.76
+        VERSION: "0.76"
     profiles: [client]
   putty-client-0.77:
     image: rub-nds/putty-client:0.77
     build:
       context: .
       args:
-        VERSION: 0.77
+        VERSION: "0.77"
     profiles: [client]
   putty-client-0.78:
     image: rub-nds/putty-client:0.78
     build:
       context: .
       args:
-        VERSION: 0.78
+        VERSION: "0.78"
     profiles: [client]
   putty-client-0.79:
     image: rub-nds/putty-client:0.79
     build:
       context: .
       args:
-        VERSION: 0.79
+        VERSION: "0.79"
     profiles: [client]
   putty-client-0.80:
     image: rub-nds/putty-client:0.80
     build:
       context: .
       args:
-        VERSION: 0.80
+        VERSION: "0.80"
     profiles: [client]
   putty-client-0.81:
     image: rub-nds/putty-client:0.81
     build:
       context: .
       args:
-        VERSION: 0.81
+        VERSION: "0.81"
     profiles: [client]
   putty-client-0.82:
     image: rub-nds/putty-client:0.82
     build:
       context: .
       args:
-        VERSION: 0.82
+        VERSION: "0.82"
     profiles: [client]
   putty-client-0.83:
     image: rub-nds/putty-client:0.83
     build:
       context: .
       args:
-        VERSION: 0.83
+        VERSION: "0.83"
     profiles: [client]
   putty-client-0.84:
     image: rub-nds/putty-client:0.84
     build:
       context: .
       args:
-        VERSION: 0.84
+        VERSION: "0.84"
     profiles: [client]
   putty-client-0.85:
     image: rub-nds/putty-client:0.85
     build:
       context: .
       args:
-        VERSION: 0.85
+        VERSION: "0.85"
     profiles: [client]

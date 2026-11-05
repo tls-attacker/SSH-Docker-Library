@@ -13,7 +13,7 @@ services:
       dockerfile: {{ specs.defaultServerDockerfile }}
       {% endif %}
       args:
-        VERSION: {{ version }}
+        VERSION: "{{ version }}"
   {% endif %}
   {% if version is mapping %}
   {{ specs.name }}-server-{{ version.version }}:
@@ -35,10 +35,10 @@ services:
       args:
         {% if version.args is defined %}
         {% for arg in version.args %}
-        {{ arg.name }}: {{ arg.value }}
+        {{ arg.name }}: "{{ arg.value }}"
         {% endfor %}
         {% else %}
-        VERSION: {{ version.version }}
+        VERSION: "{{ version.version }}"
         {% endif %}
     {% endif %}
   {% endfor %}
@@ -56,7 +56,7 @@ services:
       dockerfile: {{ specs.defaultClientDockerfile }}
       {% endif %}
       args:
-        VERSION: {{ version }}
+        VERSION: "{{ version }}"
     profiles: [client]
   {% endfor %}
 {% endif %}
@@ -73,7 +73,7 @@ services:
       dockerfile: {{ specs.defaultClientAutomatedDockerfile }}
       {% endif %}
       args:
-        VERSION: {{ version }}
+        VERSION: "{{ version }}"
     profiles: [client-automated]
   {% endfor %}
 {% endif %}

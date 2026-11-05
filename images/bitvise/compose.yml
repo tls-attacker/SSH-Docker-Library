@@ -5,385 +5,385 @@ services:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.15
+        VERSION: "8.15"
   bitvise-server-8.16:
     image: rub-nds/bitvise-server:8.16
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.16
+        VERSION: "8.16"
   bitvise-server-8.17:
     image: rub-nds/bitvise-server:8.17
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.17
+        VERSION: "8.17"
   bitvise-server-8.18:
     image: rub-nds/bitvise-server:8.18
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.18
+        VERSION: "8.18"
   bitvise-server-8.19:
     image: rub-nds/bitvise-server:8.19
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.19
+        VERSION: "8.19"
   bitvise-server-8.21:
     image: rub-nds/bitvise-server:8.21
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.21
+        VERSION: "8.21"
   bitvise-server-8.22:
     image: rub-nds/bitvise-server:8.22
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.22
+        VERSION: "8.22"
   bitvise-server-8.24:
     image: rub-nds/bitvise-server:8.24
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.24
+        VERSION: "8.24"
   bitvise-server-8.25:
     image: rub-nds/bitvise-server:8.25
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.25
+        VERSION: "8.25"
   bitvise-server-8.26:
     image: rub-nds/bitvise-server:8.26
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.26
+        VERSION: "8.26"
   bitvise-server-8.27:
     image: rub-nds/bitvise-server:8.27
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.27
+        VERSION: "8.27"
   bitvise-server-8.28:
     image: rub-nds/bitvise-server:8.28
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.28
+        VERSION: "8.28"
   bitvise-server-8.29:
     image: rub-nds/bitvise-server:8.29
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.29
+        VERSION: "8.29"
   bitvise-server-8.31:
     image: rub-nds/bitvise-server:8.31
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.31
+        VERSION: "8.31"
   bitvise-server-8.32:
     image: rub-nds/bitvise-server:8.32
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.32
+        VERSION: "8.32"
   bitvise-server-8.33:
     image: rub-nds/bitvise-server:8.33
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.33
+        VERSION: "8.33"
   bitvise-server-8.34:
     image: rub-nds/bitvise-server:8.34
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.34
+        VERSION: "8.34"
   bitvise-server-8.35:
     image: rub-nds/bitvise-server:8.35
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.35
+        VERSION: "8.35"
   bitvise-server-8.36:
     image: rub-nds/bitvise-server:8.36
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.36
+        VERSION: "8.36"
   bitvise-server-8.37:
     image: rub-nds/bitvise-server:8.37
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.37
+        VERSION: "8.37"
   bitvise-server-8.38:
     image: rub-nds/bitvise-server:8.38
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.38
+        VERSION: "8.38"
   bitvise-server-8.39:
     image: rub-nds/bitvise-server:8.39
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.39
+        VERSION: "8.39"
   bitvise-server-8.41:
     image: rub-nds/bitvise-server:8.41
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.41
+        VERSION: "8.41"
   bitvise-server-8.42:
     image: rub-nds/bitvise-server:8.42
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.42
+        VERSION: "8.42"
   bitvise-server-8.43:
     image: rub-nds/bitvise-server:8.43
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.43
+        VERSION: "8.43"
   bitvise-server-8.44:
     image: rub-nds/bitvise-server:8.44
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.44
+        VERSION: "8.44"
   bitvise-server-8.45:
     image: rub-nds/bitvise-server:8.45
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.45
+        VERSION: "8.45"
   bitvise-server-8.47:
     image: rub-nds/bitvise-server:8.47
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.47
+        VERSION: "8.47"
   bitvise-server-8.48:
     image: rub-nds/bitvise-server:8.48
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.48
+        VERSION: "8.48"
   bitvise-server-8.49:
     image: rub-nds/bitvise-server:8.49
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 8.49
+        VERSION: "8.49"
   bitvise-server-9.12:
     image: rub-nds/bitvise-server:9.12
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.12
+        VERSION: "9.12"
   bitvise-server-9.14:
     image: rub-nds/bitvise-server:9.14
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.14
+        VERSION: "9.14"
   bitvise-server-9.16:
     image: rub-nds/bitvise-server:9.16
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.16
+        VERSION: "9.16"
   bitvise-server-9.17:
     image: rub-nds/bitvise-server:9.17
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.17
+        VERSION: "9.17"
   bitvise-server-9.18:
     image: rub-nds/bitvise-server:9.18
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.18
+        VERSION: "9.18"
   bitvise-server-9.19:
     image: rub-nds/bitvise-server:9.19
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.19
+        VERSION: "9.19"
   bitvise-server-9.21:
     image: rub-nds/bitvise-server:9.21
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.21
+        VERSION: "9.21"
   bitvise-server-9.22:
     image: rub-nds/bitvise-server:9.22
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.22
+        VERSION: "9.22"
   bitvise-server-9.23:
     image: rub-nds/bitvise-server:9.23
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.23
+        VERSION: "9.23"
   bitvise-server-9.24:
     image: rub-nds/bitvise-server:9.24
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.24
+        VERSION: "9.24"
   bitvise-server-9.25:
     image: rub-nds/bitvise-server:9.25
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.25
+        VERSION: "9.25"
   bitvise-server-9.26:
     image: rub-nds/bitvise-server:9.26
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.26
+        VERSION: "9.26"
   bitvise-server-9.27:
     image: rub-nds/bitvise-server:9.27
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.27
+        VERSION: "9.27"
   bitvise-server-9.28:
     image: rub-nds/bitvise-server:9.28
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.28
+        VERSION: "9.28"
   bitvise-server-9.31:
     image: rub-nds/bitvise-server:9.31
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.31
+        VERSION: "9.31"
   bitvise-server-9.33:
     image: rub-nds/bitvise-server:9.33
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.33
+        VERSION: "9.33"
   bitvise-server-9.34:
     image: rub-nds/bitvise-server:9.34
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.34
+        VERSION: "9.34"
   bitvise-server-9.35:
     image: rub-nds/bitvise-server:9.35
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.35
+        VERSION: "9.35"
   bitvise-server-9.37:
     image: rub-nds/bitvise-server:9.37
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.37
+        VERSION: "9.37"
   bitvise-server-9.38:
     image: rub-nds/bitvise-server:9.38
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.38
+        VERSION: "9.38"
   bitvise-server-9.39:
     image: rub-nds/bitvise-server:9.39
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.39
+        VERSION: "9.39"
   bitvise-server-9.41:
     image: rub-nds/bitvise-server:9.41
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.41
+        VERSION: "9.41"
   bitvise-server-9.42:
     image: rub-nds/bitvise-server:9.42
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.42
+        VERSION: "9.42"
   bitvise-server-9.43:
     image: rub-nds/bitvise-server:9.43
     build:
       context: .
       dockerfile: Dockerfile.server
       args:
-        VERSION: 9.43
+        VERSION: "9.43"
   bitvise-client-8.15:
     image: rub-nds/bitvise-client:8.15
     build:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.15
+        VERSION: "8.15"
     profiles: [client]
   bitvise-client-8.16:
     image: rub-nds/bitvise-client:8.16
@@ -391,7 +391,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.16
+        VERSION: "8.16"
     profiles: [client]
   bitvise-client-8.17:
     image: rub-nds/bitvise-client:8.17
@@ -399,7 +399,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.17
+        VERSION: "8.17"
     profiles: [client]
   bitvise-client-8.18:
     image: rub-nds/bitvise-client:8.18
@@ -407,7 +407,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.18
+        VERSION: "8.18"
     profiles: [client]
   bitvise-client-8.19:
     image: rub-nds/bitvise-client:8.19
@@ -415,7 +415,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.19
+        VERSION: "8.19"
     profiles: [client]
   bitvise-client-8.21:
     image: rub-nds/bitvise-client:8.21
@@ -423,7 +423,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.21
+        VERSION: "8.21"
     profiles: [client]
   bitvise-client-8.22:
     image: rub-nds/bitvise-client:8.22
@@ -431,7 +431,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.22
+        VERSION: "8.22"
     profiles: [client]
   bitvise-client-8.24:
     image: rub-nds/bitvise-client:8.24
@@ -439,7 +439,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.24
+        VERSION: "8.24"
     profiles: [client]
   bitvise-client-8.25:
     image: rub-nds/bitvise-client:8.25
@@ -447,7 +447,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.25
+        VERSION: "8.25"
     profiles: [client]
   bitvise-client-8.26:
     image: rub-nds/bitvise-client:8.26
@@ -455,7 +455,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.26
+        VERSION: "8.26"
     profiles: [client]
   bitvise-client-8.27:
     image: rub-nds/bitvise-client:8.27
@@ -463,7 +463,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.27
+        VERSION: "8.27"
     profiles: [client]
   bitvise-client-8.28:
     image: rub-nds/bitvise-client:8.28
@@ -471,7 +471,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.28
+        VERSION: "8.28"
     profiles: [client]
   bitvise-client-8.29:
     image: rub-nds/bitvise-client:8.29
@@ -479,7 +479,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.29
+        VERSION: "8.29"
     profiles: [client]
   bitvise-client-8.31:
     image: rub-nds/bitvise-client:8.31
@@ -487,7 +487,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.31
+        VERSION: "8.31"
     profiles: [client]
   bitvise-client-8.32:
     image: rub-nds/bitvise-client:8.32
@@ -495,7 +495,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.32
+        VERSION: "8.32"
     profiles: [client]
   bitvise-client-8.33:
     image: rub-nds/bitvise-client:8.33
@@ -503,7 +503,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.33
+        VERSION: "8.33"
     profiles: [client]
   bitvise-client-8.34:
     image: rub-nds/bitvise-client:8.34
@@ -511,7 +511,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.34
+        VERSION: "8.34"
     profiles: [client]
   bitvise-client-8.35:
     image: rub-nds/bitvise-client:8.35
@@ -519,7 +519,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.35
+        VERSION: "8.35"
     profiles: [client]
   bitvise-client-8.36:
     image: rub-nds/bitvise-client:8.36
@@ -527,7 +527,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.36
+        VERSION: "8.36"
     profiles: [client]
   bitvise-client-8.37:
     image: rub-nds/bitvise-client:8.37
@@ -535,7 +535,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.37
+        VERSION: "8.37"
     profiles: [client]
   bitvise-client-8.38:
     image: rub-nds/bitvise-client:8.38
@@ -543,7 +543,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.38
+        VERSION: "8.38"
     profiles: [client]
   bitvise-client-8.39:
     image: rub-nds/bitvise-client:8.39
@@ -551,7 +551,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.39
+        VERSION: "8.39"
     profiles: [client]
   bitvise-client-8.41:
     image: rub-nds/bitvise-client:8.41
@@ -559,7 +559,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.41
+        VERSION: "8.41"
     profiles: [client]
   bitvise-client-8.42:
     image: rub-nds/bitvise-client:8.42
@@ -567,7 +567,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.42
+        VERSION: "8.42"
     profiles: [client]
   bitvise-client-8.43:
     image: rub-nds/bitvise-client:8.43
@@ -575,7 +575,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.43
+        VERSION: "8.43"
     profiles: [client]
   bitvise-client-8.44:
     image: rub-nds/bitvise-client:8.44
@@ -583,7 +583,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.44
+        VERSION: "8.44"
     profiles: [client]
   bitvise-client-8.45:
     image: rub-nds/bitvise-client:8.45
@@ -591,7 +591,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.45
+        VERSION: "8.45"
     profiles: [client]
   bitvise-client-8.47:
     image: rub-nds/bitvise-client:8.47
@@ -599,7 +599,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.47
+        VERSION: "8.47"
     profiles: [client]
   bitvise-client-8.48:
     image: rub-nds/bitvise-client:8.48
@@ -607,7 +607,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.48
+        VERSION: "8.48"
     profiles: [client]
   bitvise-client-8.49:
     image: rub-nds/bitvise-client:8.49
@@ -615,7 +615,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 8.49
+        VERSION: "8.49"
     profiles: [client]
   bitvise-client-9.12:
     image: rub-nds/bitvise-client:9.12
@@ -623,7 +623,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.12
+        VERSION: "9.12"
     profiles: [client]
   bitvise-client-9.14:
     image: rub-nds/bitvise-client:9.14
@@ -631,7 +631,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.14
+        VERSION: "9.14"
     profiles: [client]
   bitvise-client-9.16:
     image: rub-nds/bitvise-client:9.16
@@ -639,7 +639,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.16
+        VERSION: "9.16"
     profiles: [client]
   bitvise-client-9.17:
     image: rub-nds/bitvise-client:9.17
@@ -647,7 +647,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.17
+        VERSION: "9.17"
     profiles: [client]
   bitvise-client-9.18:
     image: rub-nds/bitvise-client:9.18
@@ -655,7 +655,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.18
+        VERSION: "9.18"
     profiles: [client]
   bitvise-client-9.19:
     image: rub-nds/bitvise-client:9.19
@@ -663,7 +663,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.19
+        VERSION: "9.19"
     profiles: [client]
   bitvise-client-9.21:
     image: rub-nds/bitvise-client:9.21
@@ -671,7 +671,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.21
+        VERSION: "9.21"
     profiles: [client]
   bitvise-client-9.22:
     image: rub-nds/bitvise-client:9.22
@@ -679,7 +679,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.22
+        VERSION: "9.22"
     profiles: [client]
   bitvise-client-9.23:
     image: rub-nds/bitvise-client:9.23
@@ -687,7 +687,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.23
+        VERSION: "9.23"
     profiles: [client]
   bitvise-client-9.24:
     image: rub-nds/bitvise-client:9.24
@@ -695,7 +695,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.24
+        VERSION: "9.24"
     profiles: [client]
   bitvise-client-9.25:
     image: rub-nds/bitvise-client:9.25
@@ -703,7 +703,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.25
+        VERSION: "9.25"
     profiles: [client]
   bitvise-client-9.26:
     image: rub-nds/bitvise-client:9.26
@@ -711,7 +711,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.26
+        VERSION: "9.26"
     profiles: [client]
   bitvise-client-9.27:
     image: rub-nds/bitvise-client:9.27
@@ -719,7 +719,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.27
+        VERSION: "9.27"
     profiles: [client]
   bitvise-client-9.28:
     image: rub-nds/bitvise-client:9.28
@@ -727,7 +727,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.28
+        VERSION: "9.28"
     profiles: [client]
   bitvise-client-9.31:
     image: rub-nds/bitvise-client:9.31
@@ -735,7 +735,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.31
+        VERSION: "9.31"
     profiles: [client]
   bitvise-client-9.33:
     image: rub-nds/bitvise-client:9.33
@@ -743,7 +743,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.33
+        VERSION: "9.33"
     profiles: [client]
   bitvise-client-9.34:
     image: rub-nds/bitvise-client:9.34
@@ -751,7 +751,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.34
+        VERSION: "9.34"
     profiles: [client]
   bitvise-client-9.35:
     image: rub-nds/bitvise-client:9.35
@@ -759,7 +759,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.35
+        VERSION: "9.35"
     profiles: [client]
   bitvise-client-9.37:
     image: rub-nds/bitvise-client:9.37
@@ -767,7 +767,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.37
+        VERSION: "9.37"
     profiles: [client]
   bitvise-client-9.38:
     image: rub-nds/bitvise-client:9.38
@@ -775,7 +775,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.38
+        VERSION: "9.38"
     profiles: [client]
   bitvise-client-9.39:
     image: rub-nds/bitvise-client:9.39
@@ -783,7 +783,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.39
+        VERSION: "9.39"
     profiles: [client]
   bitvise-client-9.41:
     image: rub-nds/bitvise-client:9.41
@@ -791,7 +791,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.41
+        VERSION: "9.41"
     profiles: [client]
   bitvise-client-9.42:
     image: rub-nds/bitvise-client:9.42
@@ -799,7 +799,7 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.42
+        VERSION: "9.42"
     profiles: [client]
   bitvise-client-9.43:
     image: rub-nds/bitvise-client:9.43
@@ -807,5 +807,5 @@ services:
       context: .
       dockerfile: Dockerfile.client
       args:
-        VERSION: 9.43
+        VERSION: "9.43"
     profiles: [client]

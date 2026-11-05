@@ -10,6 +10,11 @@ ARG VERSION=1.3.1
 # cache layers.
 # hadolint ignore=DL3003
 ENV GOTOOLCHAIN=auto
+# Tags 1.23.1 and 1.36.0 ship a go.work whose `go` directive (1.25) is
+# lower than what the module itself requires (>= 1.25.0), so the Go
+# toolchain refuses the workspace. The workspace adds nothing for this
+# single-module build, so ignore it; tags without go.work are unaffected.
+ENV GOWORK=off
 RUN git clone --branch "v${VERSION}" --depth 1 https://github.com/jpillora/sshd-lite.git && cd sshd-lite && go build
 LABEL ssh.implementation.name="sshd-lite" \
       ssh.implementation.version="${VERSION}" \

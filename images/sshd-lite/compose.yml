@@ -4,478 +4,472 @@ services:
     build:
       context: .
       args:
-        VERSION: 1.2.0
+        VERSION: "1.2.0"
   sshd-lite-server-1.2.1:
     image: rub-nds/sshd-lite-server:1.2.1
     build:
       context: .
       args:
-        VERSION: 1.2.1
+        VERSION: "1.2.1"
   sshd-lite-server-1.2.2:
     image: rub-nds/sshd-lite-server:1.2.2
     build:
       context: .
       args:
-        VERSION: 1.2.2
+        VERSION: "1.2.2"
   sshd-lite-server-1.2.3:
     image: rub-nds/sshd-lite-server:1.2.3
     build:
       context: .
       args:
-        VERSION: 1.2.3
+        VERSION: "1.2.3"
   sshd-lite-server-1.3.0:
     image: rub-nds/sshd-lite-server:1.3.0
     build:
       context: .
       args:
-        VERSION: 1.3.0
+        VERSION: "1.3.0"
   sshd-lite-server-1.3.1:
     image: rub-nds/sshd-lite-server:1.3.1
     build:
       context: .
       args:
-        VERSION: 1.3.1
+        VERSION: "1.3.1"
   sshd-lite-server-1.4.0:
     image: rub-nds/sshd-lite-server:1.4.0
     build:
       context: .
       args:
-        VERSION: 1.4.0
+        VERSION: "1.4.0"
   sshd-lite-server-1.4.1:
     image: rub-nds/sshd-lite-server:1.4.1
     build:
       context: .
       args:
-        VERSION: 1.4.1
+        VERSION: "1.4.1"
   sshd-lite-server-1.4.2:
     image: rub-nds/sshd-lite-server:1.4.2
     build:
       context: .
       args:
-        VERSION: 1.4.2
+        VERSION: "1.4.2"
   sshd-lite-server-1.4.3:
     image: rub-nds/sshd-lite-server:1.4.3
     build:
       context: .
       args:
-        VERSION: 1.4.3
+        VERSION: "1.4.3"
   sshd-lite-server-1.5.0:
     image: rub-nds/sshd-lite-server:1.5.0
     build:
       context: .
       args:
-        VERSION: 1.5.0
+        VERSION: "1.5.0"
   sshd-lite-server-1.6.0:
     image: rub-nds/sshd-lite-server:1.6.0
     build:
       context: .
       args:
-        VERSION: 1.6.0
+        VERSION: "1.6.0"
   sshd-lite-server-1.7.0:
     image: rub-nds/sshd-lite-server:1.7.0
     build:
       context: .
       args:
-        VERSION: 1.7.0
+        VERSION: "1.7.0"
   sshd-lite-server-1.7.1:
     image: rub-nds/sshd-lite-server:1.7.1
     build:
       context: .
       args:
-        VERSION: 1.7.1
+        VERSION: "1.7.1"
   sshd-lite-server-1.8.0:
     image: rub-nds/sshd-lite-server:1.8.0
     build:
       context: .
       args:
-        VERSION: 1.8.0
+        VERSION: "1.8.0"
   sshd-lite-server-1.8.1:
     image: rub-nds/sshd-lite-server:1.8.1
     build:
       context: .
       args:
-        VERSION: 1.8.1
+        VERSION: "1.8.1"
   sshd-lite-server-1.8.2:
     image: rub-nds/sshd-lite-server:1.8.2
     build:
       context: .
       args:
-        VERSION: 1.8.2
+        VERSION: "1.8.2"
   sshd-lite-server-1.8.3:
     image: rub-nds/sshd-lite-server:1.8.3
     build:
       context: .
       args:
-        VERSION: 1.8.3
+        VERSION: "1.8.3"
   sshd-lite-server-1.9.0:
     image: rub-nds/sshd-lite-server:1.9.0
     build:
       context: .
       args:
-        VERSION: 1.9.0
+        VERSION: "1.9.0"
   sshd-lite-server-1.10.0:
     image: rub-nds/sshd-lite-server:1.10.0
     build:
       context: .
       args:
-        VERSION: 1.10.0
+        VERSION: "1.10.0"
   sshd-lite-server-1.11.0:
     image: rub-nds/sshd-lite-server:1.11.0
     build:
       context: .
       args:
-        VERSION: 1.11.0
+        VERSION: "1.11.0"
   sshd-lite-server-1.12.0:
     image: rub-nds/sshd-lite-server:1.12.0
     build:
       context: .
       args:
-        VERSION: 1.12.0
+        VERSION: "1.12.0"
   sshd-lite-server-1.13.0:
     image: rub-nds/sshd-lite-server:1.13.0
     build:
       context: .
       args:
-        VERSION: 1.13.0
+        VERSION: "1.13.0"
   sshd-lite-server-1.13.1:
     image: rub-nds/sshd-lite-server:1.13.1
     build:
       context: .
       args:
-        VERSION: 1.13.1
+        VERSION: "1.13.1"
   sshd-lite-server-1.13.2:
     image: rub-nds/sshd-lite-server:1.13.2
     build:
       context: .
       args:
-        VERSION: 1.13.2
+        VERSION: "1.13.2"
   sshd-lite-server-1.13.3:
     image: rub-nds/sshd-lite-server:1.13.3
     build:
       context: .
       args:
-        VERSION: 1.13.3
+        VERSION: "1.13.3"
   sshd-lite-server-1.14.0:
     image: rub-nds/sshd-lite-server:1.14.0
     build:
       context: .
       args:
-        VERSION: 1.14.0
+        VERSION: "1.14.0"
   sshd-lite-server-1.15.0:
     image: rub-nds/sshd-lite-server:1.15.0
     build:
       context: .
       args:
-        VERSION: 1.15.0
+        VERSION: "1.15.0"
   sshd-lite-server-1.16.0:
     image: rub-nds/sshd-lite-server:1.16.0
     build:
       context: .
       args:
-        VERSION: 1.16.0
+        VERSION: "1.16.0"
   sshd-lite-server-1.17.0:
     image: rub-nds/sshd-lite-server:1.17.0
     build:
       context: .
       args:
-        VERSION: 1.17.0
+        VERSION: "1.17.0"
   sshd-lite-server-1.18.0:
     image: rub-nds/sshd-lite-server:1.18.0
     build:
       context: .
       args:
-        VERSION: 1.18.0
+        VERSION: "1.18.0"
   sshd-lite-server-1.18.1:
     image: rub-nds/sshd-lite-server:1.18.1
     build:
       context: .
       args:
-        VERSION: 1.18.1
+        VERSION: "1.18.1"
   sshd-lite-server-1.19.0:
     image: rub-nds/sshd-lite-server:1.19.0
     build:
       context: .
       args:
-        VERSION: 1.19.0
+        VERSION: "1.19.0"
   sshd-lite-server-1.20.0:
     image: rub-nds/sshd-lite-server:1.20.0
     build:
       context: .
       args:
-        VERSION: 1.20.0
+        VERSION: "1.20.0"
   sshd-lite-server-1.21.0:
     image: rub-nds/sshd-lite-server:1.21.0
     build:
       context: .
       args:
-        VERSION: 1.21.0
+        VERSION: "1.21.0"
   sshd-lite-server-1.22.0:
     image: rub-nds/sshd-lite-server:1.22.0
     build:
       context: .
       args:
-        VERSION: 1.22.0
+        VERSION: "1.22.0"
   sshd-lite-server-1.23.0:
     image: rub-nds/sshd-lite-server:1.23.0
     build:
       context: .
       args:
-        VERSION: 1.23.0
-  sshd-lite-server-1.23.1:
-    image: rub-nds/sshd-lite-server:1.23.1
-    build:
-      context: .
-      args:
-        VERSION: 1.23.1
+        VERSION: "1.23.0"
   sshd-lite-server-1.24.0:
     image: rub-nds/sshd-lite-server:1.24.0
     build:
       context: .
       args:
-        VERSION: 1.24.0
+        VERSION: "1.24.0"
   sshd-lite-server-1.25.0:
     image: rub-nds/sshd-lite-server:1.25.0
     build:
       context: .
       args:
-        VERSION: 1.25.0
+        VERSION: "1.25.0"
   sshd-lite-server-1.26.0:
     image: rub-nds/sshd-lite-server:1.26.0
     build:
       context: .
       args:
-        VERSION: 1.26.0
+        VERSION: "1.26.0"
   sshd-lite-server-1.27.0:
     image: rub-nds/sshd-lite-server:1.27.0
     build:
       context: .
       args:
-        VERSION: 1.27.0
+        VERSION: "1.27.0"
   sshd-lite-server-1.28.0:
     image: rub-nds/sshd-lite-server:1.28.0
     build:
       context: .
       args:
-        VERSION: 1.28.0
+        VERSION: "1.28.0"
   sshd-lite-server-1.29.0:
     image: rub-nds/sshd-lite-server:1.29.0
     build:
       context: .
       args:
-        VERSION: 1.29.0
+        VERSION: "1.29.0"
   sshd-lite-server-1.30.0:
     image: rub-nds/sshd-lite-server:1.30.0
     build:
       context: .
       args:
-        VERSION: 1.30.0
+        VERSION: "1.30.0"
   sshd-lite-server-1.31.0:
     image: rub-nds/sshd-lite-server:1.31.0
     build:
       context: .
       args:
-        VERSION: 1.31.0
+        VERSION: "1.31.0"
   sshd-lite-server-1.32.0:
     image: rub-nds/sshd-lite-server:1.32.0
     build:
       context: .
       args:
-        VERSION: 1.32.0
+        VERSION: "1.32.0"
   sshd-lite-server-1.33.0:
     image: rub-nds/sshd-lite-server:1.33.0
     build:
       context: .
       args:
-        VERSION: 1.33.0
+        VERSION: "1.33.0"
   sshd-lite-server-1.34.0:
     image: rub-nds/sshd-lite-server:1.34.0
     build:
       context: .
       args:
-        VERSION: 1.34.0
+        VERSION: "1.34.0"
   sshd-lite-server-1.35.0:
     image: rub-nds/sshd-lite-server:1.35.0
     build:
       context: .
       args:
-        VERSION: 1.35.0
+        VERSION: "1.35.0"
   sshd-lite-server-1.36.0:
     image: rub-nds/sshd-lite-server:1.36.0
     build:
       context: .
       args:
-        VERSION: 1.36.0
+        VERSION: "1.36.0"
   sshd-lite-server-1.37.0:
     image: rub-nds/sshd-lite-server:1.37.0
     build:
       context: .
       args:
-        VERSION: 1.37.0
+        VERSION: "1.37.0"
   sshd-lite-server-1.38.0:
     image: rub-nds/sshd-lite-server:1.38.0
     build:
       context: .
       args:
-        VERSION: 1.38.0
+        VERSION: "1.38.0"
   sshd-lite-server-1.39.0:
     image: rub-nds/sshd-lite-server:1.39.0
     build:
       context: .
       args:
-        VERSION: 1.39.0
+        VERSION: "1.39.0"
   sshd-lite-server-1.39.1:
     image: rub-nds/sshd-lite-server:1.39.1
     build:
       context: .
       args:
-        VERSION: 1.39.1
+        VERSION: "1.39.1"
   sshd-lite-server-1.39.2:
     image: rub-nds/sshd-lite-server:1.39.2
     build:
       context: .
       args:
-        VERSION: 1.39.2
+        VERSION: "1.39.2"
   sshd-lite-server-1.39.3:
     image: rub-nds/sshd-lite-server:1.39.3
     build:
       context: .
       args:
-        VERSION: 1.39.3
+        VERSION: "1.39.3"
   sshd-lite-server-1.40.0:
     image: rub-nds/sshd-lite-server:1.40.0
     build:
       context: .
       args:
-        VERSION: 1.40.0
+        VERSION: "1.40.0"
   sshd-lite-server-1.41.0:
     image: rub-nds/sshd-lite-server:1.41.0
     build:
       context: .
       args:
-        VERSION: 1.41.0
+        VERSION: "1.41.0"
   sshd-lite-server-1.42.0:
     image: rub-nds/sshd-lite-server:1.42.0
     build:
       context: .
       args:
-        VERSION: 1.42.0
+        VERSION: "1.42.0"
   sshd-lite-server-1.43.0:
     image: rub-nds/sshd-lite-server:1.43.0
     build:
       context: .
       args:
-        VERSION: 1.43.0
+        VERSION: "1.43.0"
   sshd-lite-server-1.44.0:
     image: rub-nds/sshd-lite-server:1.44.0
     build:
       context: .
       args:
-        VERSION: 1.44.0
+        VERSION: "1.44.0"
   sshd-lite-server-1.45.0:
     image: rub-nds/sshd-lite-server:1.45.0
     build:
       context: .
       args:
-        VERSION: 1.45.0
+        VERSION: "1.45.0"
   sshd-lite-server-1.46.0:
     image: rub-nds/sshd-lite-server:1.46.0
     build:
       context: .
       args:
-        VERSION: 1.46.0
+        VERSION: "1.46.0"
   sshd-lite-server-1.47.0:
     image: rub-nds/sshd-lite-server:1.47.0
     build:
       context: .
       args:
-        VERSION: 1.47.0
+        VERSION: "1.47.0"
   sshd-lite-server-1.48.0:
     image: rub-nds/sshd-lite-server:1.48.0
     build:
       context: .
       args:
-        VERSION: 1.48.0
+        VERSION: "1.48.0"
   sshd-lite-server-1.49.0:
     image: rub-nds/sshd-lite-server:1.49.0
     build:
       context: .
       args:
-        VERSION: 1.49.0
+        VERSION: "1.49.0"
   sshd-lite-server-1.50.0:
     image: rub-nds/sshd-lite-server:1.50.0
     build:
       context: .
       args:
-        VERSION: 1.50.0
+        VERSION: "1.50.0"
   sshd-lite-server-1.51.0:
     image: rub-nds/sshd-lite-server:1.51.0
     build:
       context: .
       args:
-        VERSION: 1.51.0
+        VERSION: "1.51.0"
   sshd-lite-server-1.51.1:
     image: rub-nds/sshd-lite-server:1.51.1
     build:
       context: .
       args:
-        VERSION: 1.51.1
+        VERSION: "1.51.1"
   sshd-lite-server-1.51.2:
     image: rub-nds/sshd-lite-server:1.51.2
     build:
       context: .
       args:
-        VERSION: 1.51.2
+        VERSION: "1.51.2"
   sshd-lite-server-1.51.3:
     image: rub-nds/sshd-lite-server:1.51.3
     build:
       context: .
       args:
-        VERSION: 1.51.3
+        VERSION: "1.51.3"
   sshd-lite-server-1.52.0:
     image: rub-nds/sshd-lite-server:1.52.0
     build:
       context: .
       args:
-        VERSION: 1.52.0
+        VERSION: "1.52.0"
   sshd-lite-server-1.53.0:
     image: rub-nds/sshd-lite-server:1.53.0
     build:
       context: .
       args:
-        VERSION: 1.53.0
+        VERSION: "1.53.0"
   sshd-lite-server-1.54.0:
     image: rub-nds/sshd-lite-server:1.54.0
     build:
       context: .
       args:
-        VERSION: 1.54.0
+        VERSION: "1.54.0"
   sshd-lite-server-1.54.1:
     image: rub-nds/sshd-lite-server:1.54.1
     build:
       context: .
       args:
-        VERSION: 1.54.1
+        VERSION: "1.54.1"
   sshd-lite-server-1.55.0:
     image: rub-nds/sshd-lite-server:1.55.0
     build:
       context: .
       args:
-        VERSION: 1.55.0
+        VERSION: "1.55.0"
   sshd-lite-server-1.55.2:
     image: rub-nds/sshd-lite-server:1.55.2
     build:
       context: .
       args:
-        VERSION: 1.55.2
+        VERSION: "1.55.2"
   sshd-lite-server-1.55.3:
     image: rub-nds/sshd-lite-server:1.55.3
     build:
       context: .
       args:
-        VERSION: 1.55.3
+        VERSION: "1.55.3"
   sshd-lite-server-1.55.4:
     image: rub-nds/sshd-lite-server:1.55.4
     build:
       context: .
       args:
-        VERSION: 1.55.4
+        VERSION: "1.55.4"

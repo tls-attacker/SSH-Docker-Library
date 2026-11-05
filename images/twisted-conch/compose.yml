@@ -5,77 +5,77 @@ services:
       context: .
       target: twisted-conch-server
       args:
-        VERSION: 22.10.0
+        VERSION: "22.10.0"
   twisted-conch-server-23.8.0:
     image: rub-nds/twisted-conch-server:23.8.0
     build:
       context: .
       target: twisted-conch-server
       args:
-        VERSION: 23.8.0
+        VERSION: "23.8.0"
   twisted-conch-server-23.10.0:
     image: rub-nds/twisted-conch-server:23.10.0
     build:
       context: .
       target: twisted-conch-server
       args:
-        VERSION: 23.10.0
+        VERSION: "23.10.0"
   twisted-conch-server-24.3.0:
     image: rub-nds/twisted-conch-server:24.3.0
     build:
       context: .
       target: twisted-conch-server
       args:
-        VERSION: 24.3.0
+        VERSION: "24.3.0"
   twisted-conch-server-24.7.0:
     image: rub-nds/twisted-conch-server:24.7.0
     build:
       context: .
       target: twisted-conch-server
       args:
-        VERSION: 24.7.0
+        VERSION: "24.7.0"
   twisted-conch-server-24.10.0:
     image: rub-nds/twisted-conch-server:24.10.0
     build:
       context: .
       target: twisted-conch-server
       args:
-        VERSION: 24.10.0
+        VERSION: "24.10.0"
   twisted-conch-server-24.11.0:
     image: rub-nds/twisted-conch-server:24.11.0
     build:
       context: .
       target: twisted-conch-server
       args:
-        VERSION: 24.11.0
+        VERSION: "24.11.0"
   twisted-conch-server-25.5.0:
     image: rub-nds/twisted-conch-server:25.5.0
     build:
       context: .
       target: twisted-conch-server
       args:
-        VERSION: 25.5.0
+        VERSION: "25.5.0"
   twisted-conch-server-26.4.0:
     image: rub-nds/twisted-conch-server:26.4.0
     build:
       context: .
       target: twisted-conch-server
       args:
-        VERSION: 26.4.0
+        VERSION: "26.4.0"
   twisted-conch-server-26.10.0:
     image: rub-nds/twisted-conch-server:26.10.0
     build:
       context: .
       target: twisted-conch-server
       args:
-        VERSION: 26.10.0
+        VERSION: "26.10.0"
   twisted-conch-client-22.10.0:
     image: rub-nds/twisted-conch-client:22.10.0
     build:
       context: .
       target: twisted-conch-client
       args:
-        VERSION: 22.10.0
+        VERSION: "22.10.0"
     profiles: [client]
   twisted-conch-client-23.8.0:
     image: rub-nds/twisted-conch-client:23.8.0
@@ -83,7 +83,7 @@ services:
       context: .
       target: twisted-conch-client
       args:
-        VERSION: 23.8.0
+        VERSION: "23.8.0"
     profiles: [client]
   twisted-conch-client-23.10.0:
     image: rub-nds/twisted-conch-client:23.10.0
@@ -91,7 +91,7 @@ services:
       context: .
       target: twisted-conch-client
       args:
-        VERSION: 23.10.0
+        VERSION: "23.10.0"
     profiles: [client]
   twisted-conch-client-24.3.0:
     image: rub-nds/twisted-conch-client:24.3.0
@@ -99,7 +99,7 @@ services:
       context: .
       target: twisted-conch-client
       args:
-        VERSION: 24.3.0
+        VERSION: "24.3.0"
     profiles: [client]
   twisted-conch-client-24.7.0:
     image: rub-nds/twisted-conch-client:24.7.0
@@ -107,7 +107,7 @@ services:
       context: .
       target: twisted-conch-client
       args:
-        VERSION: 24.7.0
+        VERSION: "24.7.0"
     profiles: [client]
   twisted-conch-client-24.10.0:
     image: rub-nds/twisted-conch-client:24.10.0
@@ -115,7 +115,7 @@ services:
       context: .
       target: twisted-conch-client
       args:
-        VERSION: 24.10.0
+        VERSION: "24.10.0"
     profiles: [client]
   twisted-conch-client-24.11.0:
     image: rub-nds/twisted-conch-client:24.11.0
@@ -123,7 +123,7 @@ services:
       context: .
       target: twisted-conch-client
       args:
-        VERSION: 24.11.0
+        VERSION: "24.11.0"
     profiles: [client]
   twisted-conch-client-25.5.0:
     image: rub-nds/twisted-conch-client:25.5.0
@@ -131,7 +131,7 @@ services:
       context: .
       target: twisted-conch-client
       args:
-        VERSION: 25.5.0
+        VERSION: "25.5.0"
     profiles: [client]
   twisted-conch-client-26.4.0:
     image: rub-nds/twisted-conch-client:26.4.0
@@ -139,7 +139,7 @@ services:
       context: .
       target: twisted-conch-client
       args:
-        VERSION: 26.4.0
+        VERSION: "26.4.0"
     profiles: [client]
   twisted-conch-client-26.10.0:
     image: rub-nds/twisted-conch-client:26.10.0
@@ -147,5 +147,5 @@ services:
       context: .
       target: twisted-conch-client
       args:
-        VERSION: 26.10.0
+        VERSION: "26.10.0"
     profiles: [client]

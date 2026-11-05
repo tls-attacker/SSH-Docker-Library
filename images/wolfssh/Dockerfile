@@ -40,8 +40,14 @@ RUN ./autogen.sh && \
     make && \
     make install
 
-RUN curl -LS "https://github.com/wolfSSL/wolfssh/archive/refs/tags/v${VERSION}-stable.tar.gz" | tar xzf - &&\
-    mv "wolfssh-${VERSION}-stable" /src/wolfssh
+# Fast alle wolfSSH-Tags tragen das Suffix -stable; v1.4.16 nicht.
+RUN if curl -fsSLI -o /dev/null "https://github.com/wolfSSL/wolfssh/archive/refs/tags/v${VERSION}-stable.tar.gz"; then \
+      tag="v${VERSION}-stable"; dir="wolfssh-${VERSION}-stable"; \
+    else \
+      tag="v${VERSION}"; dir="wolfssh-${VERSION}"; \
+    fi && \
+    curl -LS "https://github.com/wolfSSL/wolfssh/archive/refs/tags/${tag}.tar.gz" | tar xzf - && \
+    mv "${dir}" /src/wolfssh
 WORKDIR /src/wolfssh
 RUN ./autogen.sh && \
     ./configure --with-wolfssl=/install/wolfSSL --prefix=/install/wolfSSH --libdir=/install/wolfSSL/lib --includedir=/install/wolfSSL/include --enable-debug --enable-sshd && \
