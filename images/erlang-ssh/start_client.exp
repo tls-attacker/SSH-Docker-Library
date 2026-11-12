@@ -6,23 +6,46 @@ set user [lindex $argv 2]
 set password [lindex $argv 3]
 set command [lindex $argv 4]
 
-spawn /usr/local/bin/erl
+# How to treat a host key that is not in known_hosts: there is no prompt, Erlang decides by its options. Keys in
+# known_hosts are trusted either way.
+set hostkey_prompt "yes"
+if {[info exists env(ACCEPT_HOSTKEY)]} {
+    set hostkey_prompt $env(ACCEPT_HOSTKEY)
+}
+switch -- $hostkey_prompt {
+    yes { set hostkey_options "{silently_accept_hosts, true}" }
+    once { set hostkey_options "{silently_accept_hosts, true}, {save_accepted_host, false}" }
+    no { set hostkey_options "{silently_accept_hosts, false}, {user_interaction, false}" }
+    default {
+        puts stderr "ACCEPT_HOSTKEY=$hostkey_prompt is not supported by Erlang/OTP ssh"
+        exit 1
+    }
+}
 
 set timeout 5
-expect {
-    "1> " {
-        send "ssh:start().\r"
-    }
-}
 
-expect {
-	"2> " {
-        set erlang_string0 "{ok, S} = ssh:connect(\"$ip\", $port, \[{identity_file, \"/home/sshattacker/.ssh/id_rsa\"}\])"
-        set erlang_string1 "{ok, S} = ssh:connect(\"$ip\", $port, \[{user, \"$user\"}\])"
-        send "$erlang_string1.\r"
-    }
-}
+spawn /usr/local/bin/erl
 
+expect -re {\d+> $}
+send "ssh:start().\r"
+
+expect -re {\d+> $}
+send "{ok, S} = ssh:connect(\"$ip\", $port, \[{user, \"$user\"}, {password, \"$password\"}, $hostkey_options, {auth_methods, \"password\"}\]).\r"
+
+expect -re {\d+> $}
+send "{ok, Ch} = ssh_connection:session_channel(S, infinity).\r"
+
+expect -re {\d+> $}
+send "ssh_connection:exec(S, Ch, \"$command\", infinity).\r"
+
+expect -re {\d+> $}
+send "flush().\r"
+
+expect -re {\d+> $}
+send "ssh:close(S).\r"
+
+expect -re {\d+> $}
+send "init:stop().\r"
 
 expect eof
 exit 0

@@ -22,11 +22,14 @@ RUN apt-get update && \
 # (wc_ForceZero) that wolfSSL 5.6.3 does not export, while wolfSSH <= 1.4.14
 # does not compile against wolfSSL 5.8.x at all ('heap' undeclared). Pick the
 # wolfSSL release by the wolfSSH version unless VERSION_SSL is given.
+# wolfSSH 1.6.0 is built against 5.9.1, the release its own CI tests against.
 ARG VERSION
 ARG VERSION_SSL=""
 RUN if [ -z "${VERSION_SSL}" ]; then \
       if printf '%s\n%s\n' "${VERSION}" "1.4.14" | sort -V -C; then \
         VERSION_SSL="5.6.3"; \
+      elif printf '%s\n%s\n' "1.6.0" "${VERSION}" | sort -V -C; then \
+        VERSION_SSL="5.9.1"; \
       else \
         VERSION_SSL="5.8.4"; \
       fi; \
@@ -35,8 +38,13 @@ RUN if [ -z "${VERSION_SSL}" ]; then \
     curl -LS "https://github.com/wolfSSL/wolfssl/archive/refs/tags/v${VERSION_SSL}-stable.tar.gz" | tar xzf - && \
     mv "wolfssl-${VERSION_SSL}-stable" /src/wolfssl
 WORKDIR /src/wolfssl
+# HAVE_ECC384/HAVE_ECC521 are not exposed as ./configure flags but gate
+# wolfSSH's nistp384/nistp521 KEX and host-key algorithms (see
+# wolfssh/internal.h); without them the client/server only ever offer
+# nistp256, so they can't negotiate with a peer restricted to P-521 (e.g.
+# SSH-State-Learner's default server config).
 RUN ./autogen.sh && \
-    ./configure --enable-ssh --prefix=/install/wolfSSL --enable-cryptonly && \
+    CFLAGS="-DHAVE_ECC384 -DHAVE_ECC521" ./configure --enable-ssh --prefix=/install/wolfSSL --enable-cryptonly && \
     make && \
     make install
 
@@ -94,3 +102,27 @@ LABEL "ssh.implementation.name"="wolfssh" \
     "ssh.implementation.type"="client"
 
 ENTRYPOINT [ "/src/wolfssh/examples/client/client" ]
+
+# Automated client image
+# The example client accepts host keys automatically and takes -u/-P/-c
+# flags for non-interactive login and command execution, so no
+# expect-driven wrapper is needed here, just argument translation.
+FROM wolfssh-client AS wolfssh-client-automated
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+COPY run-client.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/run-client.sh
+
+ARG VERSION
+LABEL "ssh.implementation.name"="wolfssh" \
+    "ssh.implementation.version"="${VERSION}" \
+    "ssh.implementation.type"="client-automated"
+
+# the example client accepts every host key; ACCEPT_HOSTKEY=no makes it reject them
+RUN apt-get update && apt-get install -y --no-install-recommends patch && rm -rf /var/lib/apt/lists/*
+COPY accept-hostkey.patch /src/
+WORKDIR /src/wolfssh
+RUN patch -p1 < /src/accept-hostkey.patch && LD_LIBRARY_PATH="/install/wolfSSL/lib" make
+# answers the host key prompt as ACCEPT_HOSTKEY says (wolfSSH keeps no known hosts), see README.md
+LABEL ssh.client.accept-hostkey="once,no"
+ENTRYPOINT [ "/usr/local/bin/run-client.sh" ]

@@ -557,6 +557,240 @@ services:
     extends:
       file: images/asyncssh/compose.yml
       service: asyncssh-client-2.24.1
+  asyncssh-client-automated-2.0.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.0.0
+    ports:
+      - '23097:22'
+  asyncssh-client-automated-2.0.1:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.0.1
+    ports:
+      - '23098:22'
+  asyncssh-client-automated-2.1.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.1.0
+    ports:
+      - '23099:22'
+  asyncssh-client-automated-2.2.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.2.0
+    ports:
+      - '23100:22'
+  asyncssh-client-automated-2.2.1:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.2.1
+    ports:
+      - '23101:22'
+  asyncssh-client-automated-2.3.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.3.0
+    ports:
+      - '23102:22'
+  asyncssh-client-automated-2.4.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.4.0
+    ports:
+      - '23103:22'
+  asyncssh-client-automated-2.4.1:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.4.1
+    ports:
+      - '23104:22'
+  asyncssh-client-automated-2.4.2:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.4.2
+    ports:
+      - '23105:22'
+  asyncssh-client-automated-2.5.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.5.0
+    ports:
+      - '23106:22'
+  asyncssh-client-automated-2.6.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.6.0
+    ports:
+      - '23107:22'
+  asyncssh-client-automated-2.7.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.7.0
+    ports:
+      - '23108:22'
+  asyncssh-client-automated-2.7.1:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.7.1
+    ports:
+      - '23109:22'
+  asyncssh-client-automated-2.7.2:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.7.2
+    ports:
+      - '23110:22'
+  asyncssh-client-automated-2.8.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.8.0
+    ports:
+      - '23111:22'
+  asyncssh-client-automated-2.8.1:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.8.1
+    ports:
+      - '23112:22'
+  asyncssh-client-automated-2.9.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.9.0
+    ports:
+      - '23113:22'
+  asyncssh-client-automated-2.10.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.10.0
+    ports:
+      - '23114:22'
+  asyncssh-client-automated-2.10.1:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.10.1
+    ports:
+      - '23115:22'
+  asyncssh-client-automated-2.11.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.11.0
+    ports:
+      - '23116:22'
+  asyncssh-client-automated-2.12.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.12.0
+    ports:
+      - '23117:22'
+  asyncssh-client-automated-2.13.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.13.0
+    ports:
+      - '23118:22'
+  asyncssh-client-automated-2.13.1:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.13.1
+    ports:
+      - '23119:22'
+  asyncssh-client-automated-2.14.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.14.0
+    ports:
+      - '23120:22'
+  asyncssh-client-automated-2.14.1:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.14.1
+    ports:
+      - '23121:22'
+  asyncssh-client-automated-2.14.2:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.14.2
+    ports:
+      - '23122:22'
+  asyncssh-client-automated-2.15.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.15.0
+    ports:
+      - '23123:22'
+  asyncssh-client-automated-2.16.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.16.0
+    ports:
+      - '23124:22'
+  asyncssh-client-automated-2.17.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.17.0
+    ports:
+      - '23125:22'
+  asyncssh-client-automated-2.18.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.18.0
+    ports:
+      - '23126:22'
+  asyncssh-client-automated-2.19.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.19.0
+    ports:
+      - '23127:22'
+  asyncssh-client-automated-2.20.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.20.0
+    ports:
+      - '23128:22'
+  asyncssh-client-automated-2.21.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.21.0
+    ports:
+      - '23129:22'
+  asyncssh-client-automated-2.21.1:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.21.1
+    ports:
+      - '23130:22'
+  asyncssh-client-automated-2.22.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.22.0
+    ports:
+      - '23131:22'
+  asyncssh-client-automated-2.23.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.23.0
+    ports:
+      - '23132:22'
+  asyncssh-client-automated-2.23.1:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.23.1
+    ports:
+      - '23133:22'
+  asyncssh-client-automated-2.24.0:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.24.0
+    ports:
+      - '23134:22'
+  asyncssh-client-automated-2.24.1:
+    extends:
+      file: images/asyncssh/compose.yml
+      service: asyncssh-client-automated-2.24.1
+    ports:
+      - '23135:22'
   bitvise-server-8.15:
     extends:
       file: images/bitvise/compose.yml
@@ -1787,6 +2021,420 @@ services:
     extends:
       file: images/dropbear/compose.yml
       service: dropbear-client-2026.94
+  dropbear-client-automated-0.23:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.23
+    ports:
+      - '25138:22'
+  dropbear-client-automated-0.28:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.28
+    ports:
+      - '25139:22'
+  dropbear-client-automated-0.29:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.29
+    ports:
+      - '25140:22'
+  dropbear-client-automated-0.30:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.30
+    ports:
+      - '25141:22'
+  dropbear-client-automated-0.31:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.31
+    ports:
+      - '25142:22'
+  dropbear-client-automated-0.32:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.32
+    ports:
+      - '25143:22'
+  dropbear-client-automated-0.33:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.33
+    ports:
+      - '25144:22'
+  dropbear-client-automated-0.34:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.34
+    ports:
+      - '25145:22'
+  dropbear-client-automated-0.35:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.35
+    ports:
+      - '25146:22'
+  dropbear-client-automated-0.36:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.36
+    ports:
+      - '25147:22'
+  dropbear-client-automated-0.37:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.37
+    ports:
+      - '25148:22'
+  dropbear-client-automated-0.38:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.38
+    ports:
+      - '25149:22'
+  dropbear-client-automated-0.39:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.39
+    ports:
+      - '25150:22'
+  dropbear-client-automated-0.40:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.40
+    ports:
+      - '25151:22'
+  dropbear-client-automated-0.41:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.41
+    ports:
+      - '25152:22'
+  dropbear-client-automated-0.42:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.42
+    ports:
+      - '25153:22'
+  dropbear-client-automated-0.43:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.43
+    ports:
+      - '25154:22'
+  dropbear-client-automated-0.44:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.44
+    ports:
+      - '25155:22'
+  dropbear-client-automated-0.45:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.45
+    ports:
+      - '25156:22'
+  dropbear-client-automated-0.46:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.46
+    ports:
+      - '25157:22'
+  dropbear-client-automated-0.47:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.47
+    ports:
+      - '25158:22'
+  dropbear-client-automated-0.48:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.48
+    ports:
+      - '25159:22'
+  dropbear-client-automated-0.49:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.49
+    ports:
+      - '25160:22'
+  dropbear-client-automated-0.50:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.50
+    ports:
+      - '25161:22'
+  dropbear-client-automated-0.51:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.51
+    ports:
+      - '25162:22'
+  dropbear-client-automated-0.52:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.52
+    ports:
+      - '25163:22'
+  dropbear-client-automated-0.53.1:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.53.1
+    ports:
+      - '25164:22'
+  dropbear-client-automated-0.53:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.53
+    ports:
+      - '25165:22'
+  dropbear-client-automated-0.255:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-0.255
+    ports:
+      - '25166:22'
+  dropbear-client-automated-2011.54:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2011.54
+    ports:
+      - '25167:22'
+  dropbear-client-automated-2012.55:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2012.55
+    ports:
+      - '25168:22'
+  dropbear-client-automated-2013.56:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2013.56
+    ports:
+      - '25169:22'
+  dropbear-client-automated-2013.57:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2013.57
+    ports:
+      - '25170:22'
+  dropbear-client-automated-2013.58:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2013.58
+    ports:
+      - '25171:22'
+  dropbear-client-automated-2013.59:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2013.59
+    ports:
+      - '25172:22'
+  dropbear-client-automated-2013.60:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2013.60
+    ports:
+      - '25173:22'
+  dropbear-client-automated-2013.62:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2013.62
+    ports:
+      - '25174:22'
+  dropbear-client-automated-2014.63:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2014.63
+    ports:
+      - '25175:22'
+  dropbear-client-automated-2014.64:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2014.64
+    ports:
+      - '25176:22'
+  dropbear-client-automated-2014.65:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2014.65
+    ports:
+      - '25177:22'
+  dropbear-client-automated-2014.66:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2014.66
+    ports:
+      - '25178:22'
+  dropbear-client-automated-2015.67:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2015.67
+    ports:
+      - '25179:22'
+  dropbear-client-automated-2015.68:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2015.68
+    ports:
+      - '25180:22'
+  dropbear-client-automated-2015.69:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2015.69
+    ports:
+      - '25181:22'
+  dropbear-client-automated-2015.70:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2015.70
+    ports:
+      - '25182:22'
+  dropbear-client-automated-2015.71:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2015.71
+    ports:
+      - '25183:22'
+  dropbear-client-automated-2016.72:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2016.72
+    ports:
+      - '25184:22'
+  dropbear-client-automated-2016.73:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2016.73
+    ports:
+      - '25185:22'
+  dropbear-client-automated-2016.74:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2016.74
+    ports:
+      - '25186:22'
+  dropbear-client-automated-2017.75:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2017.75
+    ports:
+      - '25187:22'
+  dropbear-client-automated-2018.76:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2018.76
+    ports:
+      - '25188:22'
+  dropbear-client-automated-2019.77:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2019.77
+    ports:
+      - '25189:22'
+  dropbear-client-automated-2019.78:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2019.78
+    ports:
+      - '25190:22'
+  dropbear-client-automated-2020.79:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2020.79
+    ports:
+      - '25191:22'
+  dropbear-client-automated-2020.80:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2020.80
+    ports:
+      - '25192:22'
+  dropbear-client-automated-2020.81:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2020.81
+    ports:
+      - '25193:22'
+  dropbear-client-automated-2022.82:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2022.82
+    ports:
+      - '25194:22'
+  dropbear-client-automated-2022.83:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2022.83
+    ports:
+      - '25195:22'
+  dropbear-client-automated-2024.84:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2024.84
+    ports:
+      - '25196:22'
+  dropbear-client-automated-2024.85:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2024.85
+    ports:
+      - '25197:22'
+  dropbear-client-automated-2024.86:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2024.86
+    ports:
+      - '25198:22'
+  dropbear-client-automated-2025.87:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2025.87
+    ports:
+      - '25199:22'
+  dropbear-client-automated-2025.88:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2025.88
+    ports:
+      - '25200:22'
+  dropbear-client-automated-2025.89:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2025.89
+    ports:
+      - '25201:22'
+  dropbear-client-automated-2026.90:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2026.90
+    ports:
+      - '25202:22'
+  dropbear-client-automated-2026.91:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2026.91
+    ports:
+      - '25203:22'
+  dropbear-client-automated-2026.92:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2026.92
+    ports:
+      - '25204:22'
+  dropbear-client-automated-2026.93:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2026.93
+    ports:
+      - '25205:22'
+  dropbear-client-automated-2026.94:
+    extends:
+      file: images/dropbear/compose.yml
+      service: dropbear-client-automated-2026.94
+    ports:
+      - '25206:22'
   erlang-ssh-server-17.5:
     extends:
       file: images/erlang-ssh/compose.yml
@@ -4319,6 +4967,72 @@ services:
     extends:
       file: images/go-crypto-ssh/compose.yml
       service: go-crypto-ssh-client-0.58.0
+  go-crypto-ssh-client-automated-0.43.0:
+    extends:
+      file: images/go-crypto-ssh/compose.yml
+      service: go-crypto-ssh-client-automated-0.43.0
+    ports:
+      - '27020:22'
+  go-crypto-ssh-client-automated-0.49.0:
+    extends:
+      file: images/go-crypto-ssh/compose.yml
+      service: go-crypto-ssh-client-automated-0.49.0
+    ports:
+      - '27021:22'
+  go-crypto-ssh-client-automated-0.50.0:
+    extends:
+      file: images/go-crypto-ssh/compose.yml
+      service: go-crypto-ssh-client-automated-0.50.0
+    ports:
+      - '27022:22'
+  go-crypto-ssh-client-automated-0.51.0:
+    extends:
+      file: images/go-crypto-ssh/compose.yml
+      service: go-crypto-ssh-client-automated-0.51.0
+    ports:
+      - '27023:22'
+  go-crypto-ssh-client-automated-0.52.0:
+    extends:
+      file: images/go-crypto-ssh/compose.yml
+      service: go-crypto-ssh-client-automated-0.52.0
+    ports:
+      - '27024:22'
+  go-crypto-ssh-client-automated-0.53.0:
+    extends:
+      file: images/go-crypto-ssh/compose.yml
+      service: go-crypto-ssh-client-automated-0.53.0
+    ports:
+      - '27025:22'
+  go-crypto-ssh-client-automated-0.54.0:
+    extends:
+      file: images/go-crypto-ssh/compose.yml
+      service: go-crypto-ssh-client-automated-0.54.0
+    ports:
+      - '27026:22'
+  go-crypto-ssh-client-automated-0.55.0:
+    extends:
+      file: images/go-crypto-ssh/compose.yml
+      service: go-crypto-ssh-client-automated-0.55.0
+    ports:
+      - '27027:22'
+  go-crypto-ssh-client-automated-0.56.0:
+    extends:
+      file: images/go-crypto-ssh/compose.yml
+      service: go-crypto-ssh-client-automated-0.56.0
+    ports:
+      - '27028:22'
+  go-crypto-ssh-client-automated-0.57.0:
+    extends:
+      file: images/go-crypto-ssh/compose.yml
+      service: go-crypto-ssh-client-automated-0.57.0
+    ports:
+      - '27029:22'
+  go-crypto-ssh-client-automated-0.58.0:
+    extends:
+      file: images/go-crypto-ssh/compose.yml
+      service: go-crypto-ssh-client-automated-0.58.0
+    ports:
+      - '27030:22'
   libssh-server-0.7.0:
     extends:
       file: images/libssh-0.7.x-0.8.x/compose.yml
@@ -4667,6 +5381,150 @@ services:
     extends:
       file: images/libssh/compose.yml
       service: libssh-client-0.12.2
+  libssh-client-automated-0.9.0:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.9.0
+    ports:
+      - '29048:22'
+  libssh-client-automated-0.9.1:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.9.1
+    ports:
+      - '29049:22'
+  libssh-client-automated-0.9.2:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.9.2
+    ports:
+      - '29050:22'
+  libssh-client-automated-0.9.3:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.9.3
+    ports:
+      - '29051:22'
+  libssh-client-automated-0.9.4:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.9.4
+    ports:
+      - '29052:22'
+  libssh-client-automated-0.9.5:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.9.5
+    ports:
+      - '29053:22'
+  libssh-client-automated-0.9.6:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.9.6
+    ports:
+      - '29054:22'
+  libssh-client-automated-0.9.7:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.9.7
+    ports:
+      - '29055:22'
+  libssh-client-automated-0.9.8:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.9.8
+    ports:
+      - '29056:22'
+  libssh-client-automated-0.10.0:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.10.0
+    ports:
+      - '29057:22'
+  libssh-client-automated-0.10.2:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.10.2
+    ports:
+      - '29058:22'
+  libssh-client-automated-0.10.3:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.10.3
+    ports:
+      - '29059:22'
+  libssh-client-automated-0.10.4:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.10.4
+    ports:
+      - '29060:22'
+  libssh-client-automated-0.10.5:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.10.5
+    ports:
+      - '29061:22'
+  libssh-client-automated-0.10.6:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.10.6
+    ports:
+      - '29062:22'
+  libssh-client-automated-0.11.0:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.11.0
+    ports:
+      - '29063:22'
+  libssh-client-automated-0.11.1:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.11.1
+    ports:
+      - '29064:22'
+  libssh-client-automated-0.11.2:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.11.2
+    ports:
+      - '29065:22'
+  libssh-client-automated-0.11.3:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.11.3
+    ports:
+      - '29066:22'
+  libssh-client-automated-0.11.4:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.11.4
+    ports:
+      - '29067:22'
+  libssh-client-automated-0.11.5:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.11.5
+    ports:
+      - '29068:22'
+  libssh-client-automated-0.12.0:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.12.0
+    ports:
+      - '29069:22'
+  libssh-client-automated-0.12.1:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.12.1
+    ports:
+      - '29070:22'
+  libssh-client-automated-0.12.2:
+    extends:
+      file: images/libssh/compose.yml
+      service: libssh-client-automated-0.12.2
+    ports:
+      - '29071:22'
   libssh2-client-1.8.0:
     extends:
       file: images/libssh2/compose.yml
@@ -6387,6 +7245,168 @@ services:
     extends:
       file: images/russh/compose.yml
       service: russh-client-0.65.1
+  russh-client-automated-0.50.1:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.50.1
+    ports:
+      - '39108:22'
+  russh-client-automated-0.50.2:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.50.2
+    ports:
+      - '39109:22'
+  russh-client-automated-0.50.3:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.50.3
+    ports:
+      - '39110:22'
+  russh-client-automated-0.50.4:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.50.4
+    ports:
+      - '39111:22'
+  russh-client-automated-0.51.0:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.51.0
+    ports:
+      - '39112:22'
+  russh-client-automated-0.51.1:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.51.1
+    ports:
+      - '39113:22'
+  russh-client-automated-0.52.0:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.52.0
+    ports:
+      - '39114:22'
+  russh-client-automated-0.52.1:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.52.1
+    ports:
+      - '39115:22'
+  russh-client-automated-0.53.0:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.53.0
+    ports:
+      - '39116:22'
+  russh-client-automated-0.54.0:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.54.0
+    ports:
+      - '39117:22'
+  russh-client-automated-0.54.1:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.54.1
+    ports:
+      - '39118:22'
+  russh-client-automated-0.54.2:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.54.2
+    ports:
+      - '39119:22'
+  russh-client-automated-0.54.3:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.54.3
+    ports:
+      - '39120:22'
+  russh-client-automated-0.54.4:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.54.4
+    ports:
+      - '39121:22'
+  russh-client-automated-0.54.5:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.54.5
+    ports:
+      - '39122:22'
+  russh-client-automated-0.55.0:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.55.0
+    ports:
+      - '39123:22'
+  russh-client-automated-0.60.2:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.60.2
+    ports:
+      - '39124:22'
+  russh-client-automated-0.60.3:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.60.3
+    ports:
+      - '39125:22'
+  russh-client-automated-0.61.2:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.61.2
+    ports:
+      - '39126:22'
+  russh-client-automated-0.62.0:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.62.0
+    ports:
+      - '39127:22'
+  russh-client-automated-0.62.1:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.62.1
+    ports:
+      - '39128:22'
+  russh-client-automated-0.62.2:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.62.2
+    ports:
+      - '39129:22'
+  russh-client-automated-0.62.3:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.62.3
+    ports:
+      - '39130:22'
+  russh-client-automated-0.62.4:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.62.4
+    ports:
+      - '39131:22'
+  russh-client-automated-0.62.5:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.62.5
+    ports:
+      - '39132:22'
+  russh-client-automated-0.62.6:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.62.6
+    ports:
+      - '39133:22'
+  russh-client-automated-0.62.7:
+    extends:
+      file: images/russh/compose.yml
+      service: russh-client-automated-0.62.7
+    ports:
+      - '39134:22'
   ssh-net-client-2020.0.1:
     extends:
       file: images/ssh-net/compose.yml
@@ -7389,3 +8409,99 @@ services:
     extends:
       file: images/wolfssh/compose.yml
       service: wolfssh-client-1.6.0
+  wolfssh-client-automated-1.4.8:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.4.8
+    ports:
+      - '44032:22'
+  wolfssh-client-automated-1.4.10:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.4.10
+    ports:
+      - '44033:22'
+  wolfssh-client-automated-1.4.11:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.4.11
+    ports:
+      - '44034:22'
+  wolfssh-client-automated-1.4.12:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.4.12
+    ports:
+      - '44035:22'
+  wolfssh-client-automated-1.4.13:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.4.13
+    ports:
+      - '44036:22'
+  wolfssh-client-automated-1.4.14:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.4.14
+    ports:
+      - '44037:22'
+  wolfssh-client-automated-1.4.15:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.4.15
+    ports:
+      - '44038:22'
+  wolfssh-client-automated-1.4.16:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.4.16
+    ports:
+      - '44039:22'
+  wolfssh-client-automated-1.4.17:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.4.17
+    ports:
+      - '44040:22'
+  wolfssh-client-automated-1.4.18:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.4.18
+    ports:
+      - '44041:22'
+  wolfssh-client-automated-1.4.19:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.4.19
+    ports:
+      - '44042:22'
+  wolfssh-client-automated-1.4.20:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.4.20
+    ports:
+      - '44043:22'
+  wolfssh-client-automated-1.4.21:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.4.21
+    ports:
+      - '44044:22'
+  wolfssh-client-automated-1.4.22:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.4.22
+    ports:
+      - '44045:22'
+  wolfssh-client-automated-1.5.0:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.5.0
+    ports:
+      - '44046:22'
+  wolfssh-client-automated-1.6.0:
+    extends:
+      file: images/wolfssh/compose.yml
+      service: wolfssh-client-automated-1.6.0
+    ports:
+      - '44047:22'

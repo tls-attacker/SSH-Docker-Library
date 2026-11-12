@@ -19,6 +19,8 @@ SHELL ["/bin/ash", "-o", "pipefail", "-c"]
 ARG USERNAME=sshattacker
 ARG PASSWORD=secret
 ARG DOTSSH=dotssh-server
+ENV SSH_USERNAME="${USERNAME}"
+ENV SSH_PASSWORD="${PASSWORD}"
 RUN adduser -D "${USERNAME}" && echo "${USERNAME}:${PASSWORD}" | chpasswd
 COPY --chown="${USERNAME}:${USERNAME}" "${DOTSSH}" "/home/${USERNAME}/.ssh/"
 RUN chmod -R g=,o= "/home/${USERNAME}/.ssh"
@@ -29,7 +31,7 @@ LABEL ssh.implementation.name="erlang-ssh" \
       ssh.implementation.version="${VERSION}" \
       ssh.implementation.type="server"
 ENTRYPOINT [ "/usr/local/bin/erl", "-noshell", "-eval", "ssh:start()" , "-eval" ]
-CMD [ "ssh:daemon(22)" ]
+CMD [ "ssh:daemon(22, [{pwdfun, fun(U, P) -> U =:= os:getenv(\"SSH_USERNAME\") andalso P =:= os:getenv(\"SSH_PASSWORD\") end}])" ]
 EXPOSE 22
 
 # Client image
@@ -57,4 +59,6 @@ ARG VERSION
 LABEL ssh.implementation.name="erlang-ssh" \
       ssh.implementation.version="${VERSION}" \
       ssh.implementation.type="client-automated"
+# answers the host key prompt as ACCEPT_HOSTKEY says, see README.md
+LABEL ssh.client.accept-hostkey="yes,once,no"
 ENTRYPOINT [ "expect" , "start_client.exp" ]

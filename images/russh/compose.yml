@@ -809,3 +809,219 @@ services:
       args:
         VERSION: "0.65.1"
     profiles: [client]
+  russh-client-automated-0.50.1:
+    image: rub-nds/russh-client-automated:0.50.1
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.50.1"
+    profiles: [client-automated]
+  russh-client-automated-0.50.2:
+    image: rub-nds/russh-client-automated:0.50.2
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.50.2"
+    profiles: [client-automated]
+  russh-client-automated-0.50.3:
+    image: rub-nds/russh-client-automated:0.50.3
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.50.3"
+    profiles: [client-automated]
+  russh-client-automated-0.50.4:
+    image: rub-nds/russh-client-automated:0.50.4
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.50.4"
+    profiles: [client-automated]
+  russh-client-automated-0.51.0:
+    image: rub-nds/russh-client-automated:0.51.0
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.51.0"
+    profiles: [client-automated]
+  russh-client-automated-0.51.1:
+    image: rub-nds/russh-client-automated:0.51.1
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.51.1"
+    profiles: [client-automated]
+  russh-client-automated-0.52.0:
+    image: rub-nds/russh-client-automated:0.52.0
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.52.0"
+    profiles: [client-automated]
+  russh-client-automated-0.52.1:
+    image: rub-nds/russh-client-automated:0.52.1
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.52.1"
+    profiles: [client-automated]
+  russh-client-automated-0.53.0:
+    image: rub-nds/russh-client-automated:0.53.0
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.53.0"
+    profiles: [client-automated]
+  russh-client-automated-0.54.0:
+    image: rub-nds/russh-client-automated:0.54.0
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.54.0"
+    profiles: [client-automated]
+  russh-client-automated-0.54.1:
+    image: rub-nds/russh-client-automated:0.54.1
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.54.1"
+    profiles: [client-automated]
+  russh-client-automated-0.54.2:
+    image: rub-nds/russh-client-automated:0.54.2
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.54.2"
+    profiles: [client-automated]
+  russh-client-automated-0.54.3:
+    image: rub-nds/russh-client-automated:0.54.3
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.54.3"
+    profiles: [client-automated]
+  russh-client-automated-0.54.4:
+    image: rub-nds/russh-client-automated:0.54.4
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.54.4"
+    profiles: [client-automated]
+  russh-client-automated-0.54.5:
+    image: rub-nds/russh-client-automated:0.54.5
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.54.5"
+    profiles: [client-automated]
+  russh-client-automated-0.55.0:
+    image: rub-nds/russh-client-automated:0.55.0
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.55.0"
+    profiles: [client-automated]
+  russh-client-automated-0.60.2:
+    image: rub-nds/russh-client-automated:0.60.2
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.60.2"
+    profiles: [client-automated]
+  russh-client-automated-0.60.3:
+    image: rub-nds/russh-client-automated:0.60.3
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.60.3"
+    profiles: [client-automated]
+  russh-client-automated-0.61.2:
+    image: rub-nds/russh-client-automated:0.61.2
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.61.2"
+    profiles: [client-automated]
+  russh-client-automated-0.62.0:
+    image: rub-nds/russh-client-automated:0.62.0
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.62.0"
+    profiles: [client-automated]
+  russh-client-automated-0.62.1:
+    image: rub-nds/russh-client-automated:0.62.1
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.62.1"
+    profiles: [client-automated]
+  russh-client-automated-0.62.2:
+    image: rub-nds/russh-client-automated:0.62.2
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.62.2"
+    profiles: [client-automated]
+  russh-client-automated-0.62.3:
+    image: rub-nds/russh-client-automated:0.62.3
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.62.3"
+    profiles: [client-automated]
+  russh-client-automated-0.62.4:
+    image: rub-nds/russh-client-automated:0.62.4
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.62.4"
+    profiles: [client-automated]
+  russh-client-automated-0.62.5:
+    image: rub-nds/russh-client-automated:0.62.5
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.62.5"
+    profiles: [client-automated]
+  russh-client-automated-0.62.6:
+    image: rub-nds/russh-client-automated:0.62.6
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.62.6"
+    profiles: [client-automated]
+  russh-client-automated-0.62.7:
+    image: rub-nds/russh-client-automated:0.62.7
+    build:
+      context: .
+      target: russh-client-automated
+      args:
+        VERSION: "0.62.7"
+    profiles: [client-automated]

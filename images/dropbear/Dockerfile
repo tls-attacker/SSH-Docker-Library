@@ -99,3 +99,18 @@ LABEL ssh.implementation.name="dropbear" \
 ENTRYPOINT [ "dbclient" ]
 # dbclient [-Tt] [-p port] [-i id] [-L l:h:r] [-R l:h:r] [-l user] host [command]
 # include public key like the following -i /root/.ssh/id_rsa.db
+
+# Automated client image
+FROM dropbear-client AS dropbear-client-automated
+
+RUN apk add --no-cache expect
+
+COPY login.exp start.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/start.sh
+
+LABEL ssh.implementation.name="dropbear" \
+      ssh.implementation.version="${VERSION}" \
+      ssh.implementation.type="client-automated"
+# answers the host key prompt as ACCEPT_HOSTKEY says, see README.md
+LABEL ssh.client.accept-hostkey="yes,no"
+ENTRYPOINT [ "/usr/local/bin/start.sh" ]

@@ -63,3 +63,27 @@ LABEL ssh.implementation.name="russh" \
       ssh.implementation.version="${VERSION}" \
       ssh.implementation.type="client"
 ENTRYPOINT [ "/install/bin/russh-client" ]
+
+# Automated client: client_exec_simple patched (password-client.patch) to log
+# in with a password instead of a key, to prefer ecdh-sha2-nistp521 and to
+# answer the host key prompt as ACCEPT_HOSTKEY says. The patch applies to the
+# releases 0.50.1 to 0.62.7, see automatedClientVersions in specs.json.
+FROM russh-base AS russh-automated-build
+COPY password-client.patch /app/
+# optional, to bound the memory of the build
+ARG CARGO_BUILD_JOBS
+RUN patch -p1 < /app/password-client.patch && \
+    cargo build --release --manifest-path russh/Cargo.toml --example client_exec_simple && \
+    cp target/release/examples/client_exec_simple /install/bin/russh-client-automated
+
+FROM debian:bookworm-slim AS russh-client-automated
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libssl3 ca-certificates && rm -rf /var/lib/apt/lists/*
+COPY --from=russh-automated-build /install/bin/russh-client-automated /install/bin/russh-client
+ARG VERSION
+LABEL ssh.implementation.name="russh" \
+      ssh.implementation.version="${VERSION}" \
+      ssh.implementation.type="client-automated"
+# answers the host key prompt as ACCEPT_HOSTKEY says, see README.md
+LABEL ssh.client.accept-hostkey="yes,once,no"
+ENTRYPOINT [ "/install/bin/russh-client" ]

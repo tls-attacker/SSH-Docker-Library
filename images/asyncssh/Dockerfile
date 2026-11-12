@@ -40,4 +40,12 @@ LABEL ssh.implementation.name="asyncssh" \
       ssh.implementation.version="${VERSION}" \
       ssh.implementation.type="client"
 
+# answers the host key prompt as ACCEPT_HOSTKEY says, see README.md
+LABEL ssh.client.accept-hostkey="once,no"
 ENTRYPOINT [ "python", "/app/simple_client.py" ]
+
+# Automated client image: the client script is already non-interactive (it
+# logs in with -u/-P and runs -c), so this is the client image under the
+# client-automated name and type.
+FROM asyncssh-client AS asyncssh-client-automated
+LABEL ssh.implementation.type="client-automated"
