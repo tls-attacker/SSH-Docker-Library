@@ -1,0 +1,18 @@
+--- a/examples/client/common.c
++++ b/examples/client/common.c
+@@ -429,6 +429,15 @@
+ #endif
+ #endif
+ 
++    /* The example client keeps no known hosts and accepts every key; reject them if ACCEPT_HOSTKEY=no */
++    if (ret == 0) {
++        const char* prompt = getenv("ACCEPT_HOSTKEY");
++        if (prompt != NULL && strcmp(prompt, "no") == 0) {
++            printf("Rejecting the host key (ACCEPT_HOSTKEY=no)\n");
++            ret = -1;
++        }
++    }
++
+     return ret;
+ }
+ 

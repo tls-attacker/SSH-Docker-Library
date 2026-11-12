@@ -1,0 +1,66 @@
+#!/usr/bin/expect -f
+
+set ip [lindex $argv 0]
+set port [lindex $argv 1]
+set user [lindex $argv 2]
+set password [lindex $argv 3]
+set command [lindex $argv 4]
+
+# How to answer the host key prompt (ACCEPT_HOSTKEY): yes (accept and store) or no; Dropbear cannot trust a key once without storing it
+set hostkey_prompt "yes"
+if {[info exists env(ACCEPT_HOSTKEY)]} {
+    set hostkey_prompt $env(ACCEPT_HOSTKEY)
+}
+switch -- $hostkey_prompt {
+    yes { set hostkey_answer "y" }
+    no { set hostkey_answer "n" }
+    default {
+        puts stderr "ACCEPT_HOSTKEY=$hostkey_prompt is not supported by Dropbear"
+        exit 1
+    }
+}
+
+spawn /usr/local/bin/dbclient "$ip" "-p" "$port" "-l" "$user"
+
+set timeout 5
+# if the host key is known, there is no prompt and the password prompt comes first
+set password_sent 0
+expect {
+    "y/n" {
+        send "$hostkey_answer\r"
+    }
+    "$user@$ip's password:" {
+        send "$password\r"
+        set password_sent 1
+    }
+}
+if {!$password_sent} {
+    expect {
+        "$user@$ip's password:" {
+            send "$password\r"
+        }
+    }
+}
+expect {
+    "$ " {
+       send "$command\r"
+        }
+}
+expect {
+    "$ " {
+       send "$command\r"
+        }
+}
+expect {
+    "$ " {
+       send "$command\r"
+        }
+}
+expect {
+    "$ " {
+       send "exit\r"
+        }
+}
+
+
+expect eof

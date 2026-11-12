@@ -75,3 +75,21 @@ LABEL "ssh.implementation.name"="libssh" \
     "ssh.implementation.version"="${VERSION}" \
     "ssh.implementation.type"="client"
 ENTRYPOINT [ "/install/examples/ssh-client" ]
+
+FROM libssh-client AS libssh-client-automated
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  expect \
+  && rm -rf /var/lib/apt/lists/*
+
+COPY login.exp /usr/local/bin/
+WORKDIR /usr/local/bin
+
+ARG VERSION
+LABEL "ssh.implementation.name"="libssh" \
+    "ssh.implementation.version"="${VERSION}" \
+    "ssh.implementation.type"="client-automated"
+# answers the host key prompt as ACCEPT_HOSTKEY says, see README.md
+LABEL ssh.client.accept-hostkey="yes,once,no"
+ENTRYPOINT [ "expect", "login.exp" ]

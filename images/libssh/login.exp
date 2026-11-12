@@ -1,0 +1,49 @@
+#!/usr/bin/expect -f
+
+set ip [lindex $argv 0]
+set port [lindex $argv 1]
+set user [lindex $argv 2]
+set password [lindex $argv 3]
+set command [lindex $argv 4]
+
+# How to answer the host key prompt: whether to trust the key, and whether to write it to known_hosts
+set hostkey_prompt "yes"
+if {[info exists env(ACCEPT_HOSTKEY)]} {
+    set hostkey_prompt $env(ACCEPT_HOSTKEY)
+}
+switch -- $hostkey_prompt {
+    yes { set trust_answer "yes"; set store_answer "yes" }
+    once { set trust_answer "yes"; set store_answer "no" }
+    no { set trust_answer "no"; set store_answer "no" }
+    default {
+        puts stderr "ACCEPT_HOSTKEY=$hostkey_prompt is not supported by libssh"
+        exit 1
+    }
+}
+
+set timeout 5
+
+spawn /install/examples/ssh-client "$ip" -l "$user" -p "$port" "$command"
+
+# up to four prompts, each waited for as long as before; which of them appear depends on whether the host key is
+# known, and the password is the last one
+set password_sent 0
+for {set round 0} {$round < 4 && !$password_sent} {incr round} {
+    expect {
+        "yes/no" {
+            send "$trust_answer\r"
+        }
+        "agree" {
+            send "$store_answer\r"
+        }
+        "specific key" {
+            send "n\r"
+        }
+        "Password:" {
+            send "$password\r"
+            set password_sent 1
+        }
+    }
+}
+
+expect eof

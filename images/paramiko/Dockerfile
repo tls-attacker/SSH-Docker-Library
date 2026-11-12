@@ -11,8 +11,9 @@ ARG VERSION
 RUN pip install --no-cache-dir paramiko==${VERSION}
 COPY paramiko-client-script.py paramiko-client-script-pubkey.py /usr/src/
 
-# Add publickey support to all versions after 2.8.0
-RUN if printf '%s\n%s\n' "${VERSION}" "2.8.0" | sort -c -g; then \
+# Add publickey support to all versions from 2.8.0 on (sort -V: with -g, 2.10/2.11 compared below 2.8 and 3.x+
+# kept the script without it)
+RUN if printf '%s\n%s\n' "2.8.0" "${VERSION}" | sort -c -V; then \
         rm paramiko-client-script.py && mv paramiko-client-script-pubkey.py paramiko-client-script.py; \
     fi
 ARG DOTSSH=dotssh-client
@@ -21,4 +22,6 @@ COPY "${DOTSSH}" /usr/src/.ssh
 LABEL ssh.implementation.name="paramiko" \
       ssh.implementation.version="${VERSION}" \
       ssh.implementation.type="client"
+# answers the host key prompt as ACCEPT_HOSTKEY says, see README.md
+LABEL ssh.client.accept-hostkey="yes,once,no"
 ENTRYPOINT ["python", "paramiko-client-script.py"]

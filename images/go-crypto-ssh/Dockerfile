@@ -46,3 +46,20 @@ LABEL ssh.implementation.name="go-crypto-ssh" \
       ssh.implementation.version="${VERSION}" \
       ssh.implementation.type="client"
 ENTRYPOINT [ "/usr/local/bin/ssh-client" ]
+
+# Automated client: files/automated_client.go logs in with a password, runs
+# one command and answers the host key prompt as ACCEPT_HOSTKEY says.
+# hadolint ignore=DL3049
+FROM go-crypto-ssh-builder AS go-crypto-ssh-automated-builder
+COPY files/automated_client.go ./
+RUN go mod tidy && go build -o /out/ssh-client-automated automated_client.go
+
+FROM go-crypto-ssh-base AS go-crypto-ssh-client-automated
+COPY --from=go-crypto-ssh-automated-builder /out/ssh-client-automated /usr/local/bin/ssh-client-automated
+ARG VERSION
+LABEL ssh.implementation.name="go-crypto-ssh" \
+      ssh.implementation.version="${VERSION}" \
+      ssh.implementation.type="client-automated"
+# answers the host key prompt as ACCEPT_HOSTKEY says, see README.md
+LABEL ssh.client.accept-hostkey="yes,once,no"
+ENTRYPOINT [ "/usr/local/bin/ssh-client-automated" ]
