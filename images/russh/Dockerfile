@@ -69,6 +69,9 @@ ENTRYPOINT [ "/install/bin/russh-client" ]
 # answer the host key prompt as ACCEPT_HOSTKEY says. The patch applies to the
 # releases 0.50.1 to 0.62.7, see automatedClientVersions in specs.json.
 FROM russh-base AS russh-automated-build
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends patch \
+    && rm -rf /var/lib/apt/lists/*
 COPY password-client.patch /app/
 # optional, to bound the memory of the build
 ARG CARGO_BUILD_JOBS
